@@ -1,14 +1,10 @@
 main {
   margin: 0 auto;
   max-width: 100%;
-  font-family: Roboto condensed;
+  font-family: Raleway;
   text-align: center;
-  
-  /* border: 1px solid #333;
-  border-color: rgb(187, 187, 187) rgb(84, 84, 84) rgb(0, 0, 0); */
 }
 
-body,
 .bg-darker {
   background: #2f2f2f;
 }
@@ -19,15 +15,23 @@ body,
 }
 
 .container-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .flex-column {
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container-grid {
+  display: -ms-grid;
   display: grid;
 }
 
@@ -37,7 +41,9 @@ body,
 }
 
 .container-center {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 button {
@@ -55,3 +61,4 @@ p {
   border-radius: 20px;
   margin: 20px 0;
 }
+/*# sourceMappingURL=main.css.map */
