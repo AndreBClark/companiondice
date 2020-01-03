@@ -5,32 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>D&D Dice Tool </title>
+    <title>DJ DarkMode Dice</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.4/tailwind.min.css" rel="stylesheet">
+    <link href="main.scss" rel="stylesheet"> -->
+    <link href="main.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- https://codepen.io/cosmicdivision/pen/xxbPqbb -->
+
+    <!-- reference:
+- https://codepen.io/cosmicdivision/pen/xxbPqbb
+- https://codepen.io/hankthewhale/pen/NwKvLy -->
+
     <main class="bg-darker container-flex container-content flex-column container-center">
-        <button class="bg-dark" onclick="document.getElementById('d20').innerHTML = RNG(1,20)">ROLL D20</button>
-        <p id="d20">&nbsp;</p>
+        <!-- <button class="bg-dark" onclick="document.getElementById('d20').innerHTML = RNG(1,20)">ROLL D20</button>
+        <p id="d20">&nbsp;</p> -->
+        <!-- <button id="dTwentyBtn" class="bg-dark">ROLL D20</button> -->
+        <button id="dTwentyBtn" class="bg-dark"><img src="https://cdn2.iconfinder.com/data/icons/roleplay-and-tabletop-dice-glyph/430/9_glyph-512.png"></button>
+        <p id="dTwentyOutPut">&nbsp;</p>
 
-        <button class="bg-dark" onclick="document.getElementById('d12').innerHTML = RNG(1,12)">ROLL D12</button>
+        <!-- <button class="bg-dark" onclick="document.getElementById('d12').innerHTML = RNG(1,12)">ROLL D12</button>
         <p id="d12">&nbsp;</p>
-
+    
         <button class="bg-dark" onclick="document.getElementById('d10').innerHTML = RNG(1,10)">ROLL D10</button>
         <p id="d10">&nbsp;</p>
-
+    
         <button class="bg-dark" onclick="document.getElementById('d8').innerHTML = RNG(1,8)">ROLL D8</button>
         <p id="d8">&nbsp;</p>
-
+    
         <button class="bg-dark" onclick="document.getElementById('d6').innerHTML = RNG(1,6)">ROLL D6</button>
         <p id="d6">&nbsp;</p>
-
+    
         <button class="bg-dark" onclick="document.getElementById('d4').innerHTML = RNG(1,4)">ROLL D4</button>
-        <p id="d4">&nbsp;</p>
+        <p id="d4">&nbsp;</p> -->
     </main>
+
     <script src="main.js"></script>
 </body>
 
