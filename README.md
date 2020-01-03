@@ -23,6 +23,7 @@ __Example:__
 - :construction: `:construction:` Work in progress
 - :recycle: `:recycle:` reformat or refactor code
 - :book: `:book:` documentation
+- :truck: `:truck:` move files/change folders
 
 **Resources on emoji based commits**
 - [gitmoji](https://gitmoji.carloscuesta.me/)
