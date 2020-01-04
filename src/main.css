@@ -1,8 +1,13 @@
+body {
+  background-color: #333333;
+  font-family: Roboto condensed;
+  text-align: center;
+}
+
 main {
   margin: 0 auto;
+  width: 960px;
   max-width: 100%;
-  font-family: Raleway;
-  text-align: center;
 }
 
 .bg-darker {
@@ -36,7 +41,7 @@ main {
 }
 
 .container-content {
-  max-width: 760px;
+  max-width: 960px;
   padding: 2em;
 }
 
@@ -50,6 +55,8 @@ button {
   font-size: 2em;
   border-radius: 10px;
   border: 0;
+  background-image: url("src/d20.svg");
+  background-size: contain;
 }
 
 p {
