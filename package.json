@@ -1,0 +1,27 @@
+{
+    "name": "dndroller",
+    "version": "1.0.0",
+    "description": "- commit subject lines should be 50 characters or less\r - begin with an emoji write them with a keyword wrapped in colons `:book:` :book:\r - followed by a verb in the imperative ie: add, remove, compile\r - ending with a reference to the relevant issue number with a hashtag and in parentheses ie: `(#24)`",
+    "main": "index.js",
+    "scripts": {
+        "build": "postcss src/main.css -o public/build/app.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AndreBClark/dndroller.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AndreBClark/dndroller/issues"
+    },
+    "homepage": "https://github.com/AndreBClark/dndroller#readme",
+    "dependencies": {
+        "autoprefixer": "^9.7.3",
+        "postcss-cli": "^6.1.3",
+        "postcss-modules": "^1.4.1"
+    },
+    "devDependencies": {
+    }
+}
