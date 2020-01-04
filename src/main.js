@@ -25,8 +25,6 @@ function RespondNumbs() {
         );
     }
 
-    randomNumbers.sort((a, b) => { return a - b });
-
     console.log(randomNumbers.length)
 
     let z = 0;
