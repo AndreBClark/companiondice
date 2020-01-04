@@ -23,5 +23,8 @@
         "postcss-modules": "^1.4.1"
     },
     "devDependencies": {
+        "cssnano": "^4.1.10",
+        "tailwind": "^4.0.0",
+        "tailwindcss": "^1.1.4"
     }
 }
