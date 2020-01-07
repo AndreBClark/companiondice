@@ -1,8 +1,4 @@
-function RNG(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+randomNumberGenerator = (max) => Math.ceil(Math.random() * max)
 
 const x = document.getElementById("dTwentyBtn");
 const y = document.getElementById("dTwentyOutPut");
