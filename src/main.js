@@ -1,7 +1,7 @@
 randomNumGen = (max) => Math.ceil(Math.random() * max)
 
 const d20 = document.getElementById("dTwentyBtn");
-const d20Display = document.getElementById("dTwentyOutPut");
+const d20Display = document.getElementById("dTwentyOutput");
 
 d20.addEventListener("click", function() {
     rollNSidedDie(20)
