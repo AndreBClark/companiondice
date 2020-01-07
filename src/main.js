@@ -8,9 +8,9 @@ d20.addEventListener("click", function() {
 })
 
 function rollNSidedDie(sides) {
-    let ticks = 20;
     let speed = 60;
     let result = randomNumGen(sides);
+    let ticks = randomNumGen(10) + 9;
 
     d20Display.innerHTML = result;
 
