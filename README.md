@@ -39,3 +39,10 @@ __Example:__
 **Resources on emoji based commits**
 - [gitmoji](https://gitmoji.carloscuesta.me/)
 - [emoji-log](https://opensource.com/article/19/2/emoji-log-git-commit-messages)
+
+### References && Resources
+
+- [Andre's DND Dice Tool](https://codepen.io/cosmicdivision/pen/xxbPqbb) - Old project created in early 2019 during college
+- [ParcelJS](https://en.parceljs.org/) - Blazing fast, zero configuration web application bundler
+- [PostCSS](https://postcss.org/) - Tool for transforming CSS with JavaScript
+- [Number animation](https://codepen.io/hankthewhale/pen/NwKvLy) - By [Dave Beshero](https://codepen.io/hankthewhale)
