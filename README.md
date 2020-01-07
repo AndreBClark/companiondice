@@ -1,5 +1,16 @@
 # D&D Dice Tool
 
+### Local Development Setup
+
+- **Clone** project
+- **Navigate** to project directory
+- **Open** terminal in project directory and run `npm install`
+- **Run** `npm start` a dev server will open at `localhost:1234`
+- **Edit** && **Save** will live update and refresh the page on the dev server
+- **Push to Remote** after verifying functionality locally
+
+
+
 ### Commit Guidelines
 - commit subject lines should be 50 characters or less
 - begin with an emoji write them with a keyword wrapped in colons `:book:` :book:
