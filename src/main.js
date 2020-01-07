@@ -1,4 +1,4 @@
-randomNumberGenerator = (max) => Math.ceil(Math.random() * max)
+randomNumGen = (max) => Math.ceil(Math.random() * max)
 
 const d20 = document.getElementById("dTwentyBtn");
 const d20Display = document.getElementById("dTwentyOutPut");
@@ -8,9 +8,9 @@ d20.addEventListener("click", function() {
 })
 
 function rollNSidedDie(sides) {
-    let result = randomNumberGenerator(sides);
     let ticks = 20;
     let speed = 60;
+    let result = randomNumGen(sides);
 
     d20Display.innerHTML = result;
 
@@ -18,16 +18,16 @@ function rollNSidedDie(sides) {
 
     for (let i = 0; i < ticks - 1; i++) {
         randomArray.unshift(
-            randomNumberGenerator(sides)
+            randomNumGen(sides)
         );
     }
 
-    let z = 0;
+    let displayRefresh = 0;
     let interval = setInterval(function() {
 
         d20Display.innerHTML = randomArray.shift();
 
-        if (++z === ticks) {
+        if (++displayRefresh === ticks) {
             window.clearInterval(interval);
         }
 
