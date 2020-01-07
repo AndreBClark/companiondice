@@ -7,3 +7,6 @@ button {
     background-repeat: no-repeat;
     background-position: center;
 }
+.btn-d-twenty {
+    @apply bg-blue-700 mx-auto rounded-lg my-8 h-64 w-64 flex;
+}
