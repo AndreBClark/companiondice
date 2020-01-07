@@ -49,7 +49,7 @@ __Example:__
 - [Number animation](https://codepen.io/hankthewhale/pen/NwKvLy) - By [Dave Beshero](https://codepen.io/hankthewhale)
 
 
-#### Using Tailwind and PostCSS
+#### Using Tailwind
 - [Introduction to Tailwind](https://tailwindcss.com/docs/utility-first) 
 - [Tailwind Docs](https://tailwindcss.com/docs/installation/) 
 - [Extracting Components](https://tailwindcss.com/docs/extracting-components) append tailwind classes to other css classes
