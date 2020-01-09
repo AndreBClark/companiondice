@@ -1,12 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-button {
-    background-image: url("/src/d20.svg");
+body {
+    @apply bg-gray-900 min-h-screen max-h-screen
+}
+
+.btn-d-twenty {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-image: url("/src/d20.svg");
+    @apply bg-blue-500 mx-auto rounded-lg my-8 h-64 w-64 flex;
 }
-.btn-d-twenty {
-    @apply bg-blue-700 mx-auto rounded-lg my-8 h-64 w-64 flex;
+
+.btn {
+    @apply bg-gray-400 font-bold mx-1 w-full text-4xl
 }
