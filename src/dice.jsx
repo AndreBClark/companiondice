@@ -4,23 +4,34 @@ import { useState,useEffect } from 'preact/hooks';
 
 
 const Dice = props => {
-    const [count, setCount] = useState(0);
+    function randomNumGen(max) {return Math.ceil(Math.random() * max)};
+    let ticks = randomNumGen(10) + 10; 
+    let speed = 60;
+    const [roll, setRoll] = useState(() => randomNumGen(props.sides));
+    let randomArray = [roll]
     useEffect(() => {
-      var timerID = setInterval(() => tick(), 1000);
-      return function cleanup() {
-        clearInterval(timerID);
+      var interval = setInterval(function() {
+        roll = randomArray.shift();
+    }, speed);
+    for (let i = 0; i < ticks; i++) {
+        randomArray.unshift(
+            randomNumGen(sides)
+        );
+    }
+    if (++displayRefresh === ticks) {
+        return function cleanup() {
+            clearInterval(interval);
+        }
       };
     });
-    const tick = () => setDate(new Date());
     return (
         <div class="container mx-auto">
-            <button onClick={() => setCount(count+1)}id="dTwentyBtn" class="btn-d-twenty">
+            <button onClick={() => setRoll(props.sides)} id="dTwentyBtn" class="btn-d-twenty">
             <p id="dTwentyOutput" class="text-blue-400 font-bold m-4 my-auto mx-auto my-auto text-4xl">
-                {count} 
+                {roll} 
             </p>
-                <h3></h3>
             </button>
-            <Link class="text-gray-300 mx-auto text-center" to="/">Home</Link>
+            <Link class="text-gray-300 mx-auto text-center block" to="/">Home</Link>
         </div>
         ) 
 }
