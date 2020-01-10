@@ -24,12 +24,12 @@ class App extends Component {
 render() {
     return (
         <div class="container mx-auto bg-gray-800 flex justify-between flex-1">
-        <button class="btn d4">D4</button>
-        <button class="btn d6">D6</button>
-        <button class="btn d8">D8</button>
-        <button class="btn d10">D10</button>
-        <button class="btn d12">D12</button>
-    <Link class="btn d20" to="dice/20">D{this.renderSides(20)}</Link>
+        <Link class="btn" to="dice/4">D4</Link>
+        <Link class="btn" to="dice/6">D6</Link>
+        <Link class="btn" to="dice/8">D8</Link>
+        <Link class="btn" to="dice/10">D10</Link>
+        <Link class="btn" to="dice/12">D12</Link>
+    <Link class="btn" to="dice/20">D{this.renderSides(20)}</Link>
     </div>
         )
     }
