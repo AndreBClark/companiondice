@@ -4,7 +4,7 @@ import { useState,useEffect } from 'preact/hooks';
 
 
 const Dice = props => {
-    const [date, setDate] = useState(new Date());
+    const [count, setCount] = useState(0);
     useEffect(() => {
       var timerID = setInterval(() => tick(), 1000);
       return function cleanup() {
@@ -14,11 +14,11 @@ const Dice = props => {
     const tick = () => setDate(new Date());
     return (
         <div class="container mx-auto">
-            <button id="dTwentyBtn" class="btn-d-twenty">
+            <button onClick={() => setCount(count+1)}id="dTwentyBtn" class="btn-d-twenty">
             <p id="dTwentyOutput" class="text-blue-400 font-bold m-4 my-auto mx-auto my-auto text-4xl">
-                {props.sides} 
+                {count} 
             </p>
-                <h3>{date.toLocaleTimeString()}</h3>
+                <h3></h3>
             </button>
             <Link class="text-gray-300 mx-auto text-center" to="/">Home</Link>
         </div>
