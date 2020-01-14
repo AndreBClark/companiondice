@@ -40,9 +40,18 @@ __Example:__
 - [gitmoji](https://gitmoji.carloscuesta.me/)
 - [emoji-log](https://opensource.com/article/19/2/emoji-log-git-commit-messages)
 
+
 ### References && Resources
 
 - [Andre's DND Dice Tool](https://codepen.io/cosmicdivision/pen/xxbPqbb) - Old project created in early 2019 during college
 - [ParcelJS](https://en.parceljs.org/) - Blazing fast, zero configuration web application bundler
 - [PostCSS](https://postcss.org/) - Tool for transforming CSS with JavaScript
 - [Number animation](https://codepen.io/hankthewhale/pen/NwKvLy) - By [Dave Beshero](https://codepen.io/hankthewhale)
+
+
+#### Using Tailwind
+- [Introduction to Tailwind](https://tailwindcss.com/docs/utility-first) 
+- [Tailwind Docs](https://tailwindcss.com/docs/installation/) 
+- [Extracting Components](https://tailwindcss.com/docs/extracting-components) append tailwind classes to other css classes
+- [Default Tailwind colors](https://tailwindcss.com/docs/customizing-colors/#default-color-palette)
+- [Display Utilities](https://tailwindcss.com/docs/display) quickly add flex
