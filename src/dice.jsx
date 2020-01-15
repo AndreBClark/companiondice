@@ -2,36 +2,24 @@ import { h,render } from 'preact';
 import { Link } from '@reach/router';
 import { useState,useEffect } from 'preact/hooks';
 
-
-const Dice = props => {
-    function randomNumGen(max) {return Math.ceil(Math.random() * max)};
-    let ticks = randomNumGen(10) + 10; 
-    let speed = 60;
-    const [roll, setRoll] = useState(() => randomNumGen(props.sides));
-    let randomArray = [roll]
-    useEffect(() => {
-      var interval = setInterval(function() {
-        roll = randomArray.shift();
-    }, speed);
-    for (let i = 0; i < ticks; i++) {
-        randomArray.unshift(
-            randomNumGen(sides)
-        );
+function Dice(props) {
+    function randomNumGen(max) {
+         return Math.ceil(Math.random() * max)
     }
-    if (++displayRefresh === ticks) {
-        return function cleanup() {
-            clearInterval(interval);
-        }
-      };
-    });
+    function handleClick(e) {
+        const result = randomNumGen(props.sides);
+        console.log(result);
+    }
     return (
         <div class="container mx-auto">
-            <button onClick={() => setRoll(props.sides)} id="dTwentyBtn" class="btn-d-twenty">
-            <p id="dTwentyOutput" class="text-blue-400 font-bold m-4 my-auto mx-auto my-auto text-4xl">
-                {roll} 
-            </p>
+            <button onClick={handleClick} 
+            class="btn-d-twenty text-blue-400 py-auto font-bold m-4 my-auto          text-4xl">
+                    <span class="m-auto">{props.sides}</span>
             </button>
-            <Link class="text-gray-300 mx-auto text-center block" to="/">Home</Link>
+            <Link to="/"
+                class="text-gray-300 font-bold mx-auto text-center block bg-blue-800 p-5">
+                Home
+            </Link>
         </div>
         ) 
 }
