@@ -14,7 +14,7 @@ class Dice extends Component {
     }
     handleClick() {
         this.setState({result: randomNumGen(this.props.sides)});
-        const randomArray = [this.state.result]
+        const randomArray = [this.state.result];
         for (let i = 0; i < this.state.ticks; i++) {
             randomArray.unshift(
                 randomNumGen(this.props.sides)
