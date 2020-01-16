@@ -1,7 +1,7 @@
 import { h,render, Component } from 'preact';
 import { Link } from '@reach/router';
 import { useState,useEffect } from 'preact/hooks';
-         return Math.ceil(Math.random() * max)
+export const randomNumGen = (max) => Math.ceil(Math.random() * max);
 class Dice extends Component {
     constructor(props) {
         super(props);
