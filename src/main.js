@@ -1,7 +1,7 @@
-randomNumGen = (max) => Math.ceil(Math.random() * max)
+randomNumGen = max => Math.ceil(Math.random() * max);
 
-const d20 = document.getElementById("dTwentyBtn");
-const d20Display = document.getElementById("dTwentyOutput");
+const d20 = document.getElementById('dTwentyBtn');
+const d20Display = document.getElementById('dTwentyOutput');
 
 function rollNSidedDie(sides) {
     let speed = 60;
@@ -10,12 +10,10 @@ function rollNSidedDie(sides) {
 
     d20Display.innerHTML = result;
 
-    let randomArray = [result]
+    let randomArray = [result];
 
     for (let i = 0; i < ticks; i++) {
-        randomArray.unshift(
-            randomNumGen(sides)
-        );
+        randomArray.unshift(randomNumGen(sides));
     }
 
     let displayRefresh = 0;
