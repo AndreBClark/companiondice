@@ -34,14 +34,12 @@ class Dice extends Component {
             <div class="container mx-auto">
                 <button
                     onClick={this.handleClick}
-                    class="btn-d-twenty text-blue-400 py-auto font-bold m-4 my-auto text-4xl"
-                >
+                    class="btn-d-twenty text-blue-400 py-auto font-bold m-4 my-auto text-4xl">
                     <span class="m-auto">{this.state.result}</span>
                 </button>
                 <Link
                     to="/"
-                    class="text-gray-300 font-bold mx-auto text-center block bg-blue-800 p-5"
-                >
+                    class="text-gray-300 font-bold mx-auto text-center block bg-blue-800 p-5">
                     Home
                 </Link>
             </div>

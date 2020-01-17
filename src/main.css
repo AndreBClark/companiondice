@@ -14,5 +14,5 @@ body {
 }
 
 .btn {
-    @apply font-bold mx-1 text-4xl
+    @apply font-bold mx-1 text-4xl;
 }

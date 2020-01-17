@@ -9,7 +9,6 @@ class Sides extends Component {
         return <span>{this.props.value}</span>;
     }
 }
-class Board extends Component {}
 
 class App extends Component {
     renderSides(i) {
