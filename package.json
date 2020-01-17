@@ -33,6 +33,7 @@
     },
     "devDependencies": {
         "cssnano": "^4.1.10",
+        "stylelint": "^13.0.0",
         "tailwind": "^4.0.0",
         "tailwindcss": "^1.1.4"
     }
