@@ -1,21 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html {
+    @apply h-full;
+}
 body {
-    @apply bg-gray-900 max-h-screen h-screen;
+    @apply bg-purple-800 min-h-screen;
 }
 
 .btn-d-twenty {
-    background-repeat: no-repeat;
-    background-image: url("/assets/d20.svg");
-    background-position: center;
-    background-size: contain;
-    @apply m-auto my-8 h-64 w-64 flex text-blue-400 font-bold text-5xl;
+    @apply m-auto my-8 h-64 w-64 flex font-bold text-6xl;
 }
 
 .btn {
-    @apply font-bold mx-1 text-xl text-center;
-    &>* {
-        @apply p-2 rounded-full bg-indigo-400
+    @apply font-bold mx-3 text-center;
+    & span {
+        @apply p-2 fill-current text-green-400 flex flex-col justify-between h-full opacity-50;
+        &:hover {
+            @apply opacity-100;
+        }
+        & svg {
+            @apply fill-current text-green-400 w-16;
+        }
     }
 }

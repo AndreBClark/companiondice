@@ -1,5 +1,6 @@
 import { h, Component, Fragment } from 'preact';
 import { Menu } from './menu';
+import D20 from '../assets/d20.svg';
 export const randomNumGen = max => Math.ceil(Math.random() * max);
 class Dice extends Component {
     constructor(props) {
@@ -31,12 +32,14 @@ class Dice extends Component {
     }
     render() {
         return (
-            <div class="container mx-auto h-full">
-                <div class="bg-indigo-800 text-indigo-100 px-5 text-3xl font-bold">
-                    {this.props.sides}
+            <div class="mx-auto flex flex-col h-screen">
+                
+                <div class="container-md mt-10 xl:mt-32 mx-auto text-purple-400 p-3 text-5xl font-bold">
+                    D{this.props.sides}
                 </div>
-                <button onClick={this.handleClick} class="btn-d-twenty">
-                    <span class="m-auto">{this.state.result}</span>
+                <button onClick={this.handleClick} class="btn-d-twenty relative">
+                    <D20 class="absolute top-0 fill-current left-auto px-5 text-green-400 h-full" />
+                    <span class="m-auto text-purple-700 z-10">{this.state.result}</span>
                 </button>
                 <Menu />
             </div>
