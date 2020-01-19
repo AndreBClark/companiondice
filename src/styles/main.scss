@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 body {
-    @apply bg-gray-900 min-h-screen max-h-screen;
+    @apply bg-gray-900 max-h-screen h-screen;
 }
 
 .btn-d-twenty {
@@ -10,9 +10,12 @@ body {
     background-image: url("/assets/d20.svg");
     background-position: center;
     background-size: contain;
-    @apply bg-blue-500 mx-auto rounded-lg my-8 h-64 w-64 flex;
+    @apply m-auto my-8 h-64 w-64 flex text-blue-400 font-bold text-5xl;
 }
 
 .btn {
-    @apply font-bold mx-1 text-4xl;
+    @apply font-bold mx-1 text-xl text-center;
+    &>* {
+        @apply p-2 rounded-full bg-indigo-400
+    }
 }

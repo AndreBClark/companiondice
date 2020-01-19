@@ -7,7 +7,7 @@
         "start": "parcel index.html",
         "build": "parcel build index.html --public-url ./",
         "format": "npm run format-css && npm run format-js",
-        "format-css": "stylelint src/main.css --fix",
+        "format-css": "stylelint src/styles/main.scss --fix",
         "format-js": "prettier --write src/**/*.{js,jsx}"
     },
     "repository": {
