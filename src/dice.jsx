@@ -32,10 +32,11 @@ class Dice extends Component {
     }
     render() {
         return (
-            <div class="container mx-auto">
-                <button
-                    onClick={this.handleClick}
-                    class="btn-d-twenty text-blue-400 py-auto font-bold m-4 my-auto text-4xl">
+            <div class="container mx-auto h-full">
+                <div class="bg-indigo-800 text-indigo-100 px-5 text-3xl font-bold">
+                    {this.props.sides}
+                </div>
+                <button onClick={this.handleClick} class="btn-d-twenty">
                     <span class="m-auto">{this.state.result}</span>
                 </button>
                 <Menu />
