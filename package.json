@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "@reach/router": "^1.2.1",
+        "@svgr/parcel-plugin-svgr": "^5.0.1",
         "autoprefixer": "^9.7.3",
         "eslint": "^6.8.0",
         "eslint-config-standard-preact": "^1.1.6",
