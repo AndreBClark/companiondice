@@ -1,6 +1,5 @@
 import { h, Component, Fragment } from 'preact';
-import { Link } from '@reach/router';
-import { Menu } from './index';
+import { Menu } from './menu';
 export const randomNumGen = max => Math.ceil(Math.random() * max);
 class Dice extends Component {
     constructor(props) {
