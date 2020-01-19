@@ -11,29 +11,46 @@ class Sides extends Component {
 }
 
 class App extends Component {
+    render() {
+        return (
+            <div class="mx-auto bg-indigo-900 h-screen flex justify-between flex-1">
+                <Dice sides="20" />
+            </div>
+        );
+    }
+}
+
+export class Menu extends Component {
     renderSides(i) {
         return <Sides value={i} />;
     }
     render() {
         return (
-            <div class="container mx-auto bg-gray-800 flex justify-between flex-1">
-                <Link class="btn" to="dice/4">
-                    <div className="m-4 rounded-full bg-indigo-400">D4</div>
-                </Link>
-                <Link class="btn" to="dice/6">
-                    D6
-                </Link>
-                <Link class="btn" to="dice/8">
-                    D8
-                </Link>
-                <Link class="btn" to="dice/10">
-                    D10
-                </Link>
-                <Link class="btn" to="dice/12">
-                    D12
-                </Link>
-                <Link class="btn" to="dice/20">
-                    D{this.renderSides(20)}
+            <div>
+                <div class="mb-3 flex justify-around w-full">
+                    <Link class="btn" to="/dice/4">
+                        <span>D4</span>
+                    </Link>
+                    <Link class="btn" to="/dice/6">
+                        <span>D6</span>
+                    </Link>
+                    <Link class="btn" to="/dice/8">
+                        <span>D8</span>
+                    </Link>
+                    <Link class="btn" to="/dice/10">
+                        <span>D10</span>
+                    </Link>
+                    <Link class="btn" to="/dice/12">
+                        <span>D12</span>
+                    </Link>
+                    <Link class="btn" to="/dice/20">
+                        <span>D20</span>
+                    </Link>
+                </div>
+                <Link
+                    to="/"
+                    class="text-gray-300 font-bold mx-auto text-center block bg-blue-800 p-5 w-full">
+                    Home
                 </Link>
             </div>
         );
@@ -43,8 +60,8 @@ class App extends Component {
 render(
     <Router>
         <App path="/" exact />
-        <Dice path="dice" exact />
-        <Dice path="dice/:sides" />
+        <Dice path="/dice" exact />
+        <Dice path="/dice/:sides" />
     </Router>,
     document.body
 );

@@ -1,5 +1,6 @@
 import { h, Component, Fragment } from 'preact';
 import { Link } from '@reach/router';
+import { Menu } from './index';
 export const randomNumGen = max => Math.ceil(Math.random() * max);
 class Dice extends Component {
     constructor(props) {
@@ -37,11 +38,7 @@ class Dice extends Component {
                     class="btn-d-twenty text-blue-400 py-auto font-bold m-4 my-auto text-4xl">
                     <span class="m-auto">{this.state.result}</span>
                 </button>
-                <Link
-                    to="/"
-                    class="text-gray-300 font-bold mx-auto text-center block bg-blue-800 p-5">
-                    Home
-                </Link>
+                <Menu />
             </div>
         );
     }
