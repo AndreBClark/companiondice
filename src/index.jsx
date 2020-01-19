@@ -1,4 +1,4 @@
-import { render, Component } from 'preact';
+import { h, render, Component } from 'preact';
 import { Router, Link } from '@reach/router';
 import Dice from './dice';
 if (module.hot) {
