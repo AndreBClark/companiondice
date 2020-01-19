@@ -41,6 +41,7 @@
         "cssnano": "^4.1.10",
         "prettier": "1.19.1",
         "prettier-eslint": "^9.0.1",
+        "sass": "^1.25.0",
         "stylelint": "^13.0.0",
         "stylelint-config-recommended": "^3.0.0",
         "tailwind": "^4.0.0",
