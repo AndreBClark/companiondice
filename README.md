@@ -1,5 +1,7 @@
 # D&D Dice Tool
 
+https://dnddiceroll.netlify.com/
+
 ### Local Development Setup
 
 - **Clone** project
