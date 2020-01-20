@@ -37,14 +37,14 @@ export default class CurrentDie extends Component {
                 if (++displayRefresh === this.state.ticks) {
                     window.clearInterval(interval);
                     this.setState({
-                        active: false
-                    })
+                        active: false,
+                    });
                 }
             }.bind(this),
             this.state.speed
         );
     }
-    
+
     render() {
         return (
             <div class="mx-auto flex flex-col h-screen">
