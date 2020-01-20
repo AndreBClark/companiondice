@@ -1,11 +1,12 @@
 import { h, Component, Fragment } from 'preact';
-import { Menu } from './menu';
+import Menu from './menu';
 import D4 from './assets/d4.svg';
 import D6 from './assets/d6.svg';
 import D8 from './assets/d8.svg';
 import D10 from './assets/d10.svg';
 import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
+
 export const randomNumGen = max => Math.ceil(Math.random() * max);
 export default class CurrentDie extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ export default class CurrentDie extends Component {
             current: this.props.sides,
             result: this.props.sides,
             speed: 60,
-            ticks: randomNumGen(this.props.sides) + 20,
+            ticks: randomNumGen(this.props.sides - 20) + 40,
             active: false,
         };
     }
@@ -35,11 +36,15 @@ export default class CurrentDie extends Component {
                 this.setState({ result: randomArray.shift() });
                 if (++displayRefresh === this.state.ticks) {
                     window.clearInterval(interval);
+                    this.setState({
+                        active: false
+                    })
                 }
             }.bind(this),
             this.state.speed
         );
     }
+    
     render() {
         return (
             <div class="mx-auto flex flex-col h-screen">
@@ -48,7 +53,7 @@ export default class CurrentDie extends Component {
                 </div>
                 <button
                     onClick={this.handleClick}
-                    class={this.state.active ? 'dice active' : 'dice'}>
+                    class={'dice ' + (this.state.active ? 'active' : '')}>
                     {(() => {
                         switch (this.props.sides) {
                             case '4':
