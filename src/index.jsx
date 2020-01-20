@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact';
-import Dice from './dice';
 import { Router } from '@reach/router';
+import CurrentDie from './CurrentDie';
 if (module.hot) {
     module.hot.accept();
 }
@@ -14,7 +14,7 @@ class App extends Component {
     render() {
         return (
             <div class="mx-auto h-screen flex justify-between flex-1">
-                <Dice sides="20" />
+                <CurrentDie sides="20" />
             </div>
         );
     }
