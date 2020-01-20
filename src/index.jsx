@@ -23,7 +23,7 @@ class App extends Component {
 render(
     <Router>
         <App path="/" exact />
-        <Die path="/:sides" />
+        <CurrentDie path="/:sides" />
     </Router>,
     document.body
 );
