@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact';
-import { Router, Link } from '@reach/router';
 import Dice from './dice';
+import { Router } from '@reach/router';
 if (module.hot) {
     module.hot.accept();
 }
@@ -23,8 +23,7 @@ class App extends Component {
 render(
     <Router>
         <App path="/" exact />
-        <Dice path="/dice" exact />
-        <Dice path="/dice/:sides" />
+        <Die path="/:sides" />
     </Router>,
     document.body
 );
