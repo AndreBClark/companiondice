@@ -5,7 +5,7 @@
     "main": "src/index.jsx",
     "scripts": {
         "start": "parcel index.html",
-        "build": "parcel build index.html --public-url ./ && mv /_redirects /dist/",
+        "build": "parcel build index.html --public-url ./",
         "format": "npm run format-css && npm run format-js",
         "format-css": "stylelint src/styles/main.scss --fix",
         "format-js": "prettier --write src/**/*.{js,jsx}"
