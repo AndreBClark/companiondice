@@ -11,6 +11,7 @@ export class Menu extends Component {
     renderSides(i) {
         return <Sides value={i} />;
     }
+
     render() {
         return (
             <div class="mt-auto xl:mb-48 container-md mx-auto">
