@@ -9,14 +9,22 @@ body {
     @apply bg-purple-800 min-h-screen;
 }
 
-.btn-d-twenty {
-    @apply m-auto my-8 h-64 w-64 flex font-bold text-6xl;
+.dice {
+    @apply relative m-auto my-8 h-64 w-64 flex font-bold text-6xl;
+    & svg {
+        @apply absolute top-0 fill-current m-auto w-full text-green-400 h-full;
+    }
+}
+
+.active svg {
+    animation: rotation infinite 10s ease-in-out;
 }
 
 .btn {
     @apply font-bold mx-3 text-center;
     & span {
         transition: opacity 500ms, transform 500ms;
+        transition-timing-function: ease-in-out;
         @apply p-2 fill-current text-green-400 flex flex-col justify-between h-full opacity-75;
         &:hover,
         &.active {
@@ -26,5 +34,14 @@ body {
         & svg {
             @apply fill-current text-green-400 w-16;
         }
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
