@@ -17,13 +17,14 @@ body {
 }
 
 .active svg {
-    animation: rotation infinite 5s ease-in;
+    animation: rotation infinite 10s ease-in-out;
 }
 
 .btn {
     @apply font-bold mx-3 text-center;
     & span {
         transition: opacity 500ms, transform 500ms;
+        transition-timing-function: ease-in-out;
         @apply p-2 fill-current text-green-400 flex flex-col justify-between h-full opacity-75;
         &:hover,
         &.active {
