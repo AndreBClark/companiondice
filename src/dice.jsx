@@ -33,13 +33,16 @@ class Dice extends Component {
     render() {
         return (
             <div class="mx-auto flex flex-col h-screen">
-                
                 <div class="container-md mt-10 xl:mt-32 mx-auto text-purple-400 p-3 text-5xl font-bold">
                     D{this.props.sides}
                 </div>
-                <button onClick={this.handleClick} class="btn-d-twenty relative">
+                <button
+                    onClick={this.handleClick}
+                    class="btn-d-twenty relative">
                     <D20 class="absolute top-0 fill-current left-auto px-5 text-green-400 h-full" />
-                    <span class="m-auto text-purple-700 z-10">{this.state.result}</span>
+                    <span class="m-auto text-purple-700 z-10">
+                        {this.state.result}
+                    </span>
                 </button>
                 <Menu />
             </div>

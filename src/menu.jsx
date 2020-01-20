@@ -17,13 +17,13 @@ export class Menu extends Component {
                 <div class="flex justify-around w-full flex-wrap">
                     <Link class="btn" to="/dice/4">
                         <span>
-                            <D4  />
+                            <D4 />
                             D4
                         </span>
                     </Link>
                     <Link class="btn" to="/dice/6">
                         <span>
-                        <D6 />
+                            <D6 />
                             D6
                         </span>
                     </Link>
