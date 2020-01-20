@@ -7,7 +7,7 @@ import D10 from './assets/d10.svg';
 import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
 
-export class Menu extends Component {
+export default class Menu extends Component {
     render() {
         return (
             <div class="mt-auto xl:mb-48 container-md mx-auto">
