@@ -23,8 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 .cache
 public
-dist
-
+dist/*.html
+dist/*.css
+dist/*.js
+dist/*.map
 # IDE generated files #
 ######################
 .vscode/*
