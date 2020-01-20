@@ -7,7 +7,7 @@
         "start": "parcel index.html",
         "build": "parcel build index.html --public-url ./",
         "format": "npm run format-css && npm run format-js",
-        "format-css": "stylelint src/styles/main.scss --fix",
+        "format-css": "prettier --write src/styles/**/*.{css,scss} ",
         "format-js": "prettier --write src/**/*.{js,jsx}"
     },
     "repository": {
@@ -40,12 +40,13 @@
     },
     "devDependencies": {
         "cssnano": "^4.1.10",
-        "prettier": "1.19.1",
+        "prettier": "^1.19.1",
         "prettier-eslint": "^9.0.1",
         "prettier-eslint-cli": "^5.0.0",
         "sass": "^1.25.0",
         "stylelint": "^13.0.0",
         "stylelint-config-recommended": "^3.0.0",
+        "stylelint-prettier": "^1.1.2",
         "tailwind": "^4.0.0",
         "tailwindcss": "^1.1.4"
     }

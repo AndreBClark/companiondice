@@ -1,6 +1,8 @@
 module.exports = {
+    "plugins": ["stylelint-prettier"],
     "extends": 'stylelint-config-recommended',
     "rules": {
+        "prettier/prettier": true,
         "at-rule-no-unknown": [true, {
             "ignoreAtRules": [
                 "screen",
