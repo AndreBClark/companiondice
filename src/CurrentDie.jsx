@@ -12,9 +12,12 @@ export default class CurrentDie extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.incrementAmount = this.incrementAmount.bind(this);
+        this.decrementAmount = this.decrementAmount.bind(this);
         this.state = {
             current: this.props.sides,
             result: this.props.sides,
+            amount: 1,
             speed: 60,
             ticks: randomNumGen(this.props.sides - 20) + 40,
             active: false,
@@ -28,7 +31,7 @@ export default class CurrentDie extends Component {
         });
         const randomArray = [this.state.result];
         for (let i = 0; i < this.state.ticks; i++) {
-            randomArray.unshift(randomNumGen(this.props.sides));
+            randomArray.unshift(this.state.amount * randomNumGen(this.props.sides));
         }
         let displayRefresh = 0;
         let interval = setInterval(
@@ -44,12 +47,24 @@ export default class CurrentDie extends Component {
             this.state.speed
         );
     }
+    incrementAmount() {
+        this.setState((state) => ({
+            amount: state.amount + 1
+        }))
+    }
+    decrementAmount() {
+        this.setState((state) => ({
+            amount: state.amount - 1
+        }))
+    }
 
     render() {
         return (
             <div class="mx-auto flex flex-col h-screen">
-                <div class="container-md mt-10 xl:mt-32 mx-auto text-purple-400 p-3 text-5xl font-bold">
-                    D{this.props.sides}
+                <div class="container-md mt-10 xl:mt-32 mx-auto text-purple-600 p-3 text-5xl font-bold">
+                    <button class="font-bold opacity-50 px-2" onClick={this.incrementAmount}>+</button>
+                    {this.state.amount}D{this.props.sides}
+                    <button class="font-bold opacity-50 px-2" onClick={this.decrementAmount}>-</button>
                 </div>
                 <button
                     onClick={this.handleClick}
