@@ -6,17 +6,17 @@ html {
 }
 
 body {
-    @apply bg-purple-900 min-h-screen;
+    @apply bg-indigo-900 min-h-screen;
 }
 
 .dice {
-    @apply relative m-auto my-8 h-64 w-64 flex font-bold text-6xl;
+    @apply relative m-auto h-64 w-64 flex font-bold text-6xl;
     &:focus {
         @apply outline-none;
     }
     & svg {
         transition: transform ease-out 1s;
-        @apply absolute top-0 fill-current m-auto w-full text-green-400 h-full;
+        @apply absolute top-0 fill-current m-auto w-full text-green-600 h-full;
     }
 }
 
@@ -30,14 +30,14 @@ body {
     & span {
         transition: opacity 500ms, transform 500ms;
         transition-timing-function: ease-in-out;
-        @apply p-2 fill-current text-green-400 flex flex-col justify-between h-full opacity-75;
+        @apply p-2 fill-current text-green-600 flex flex-col justify-between h-full opacity-75;
         &:hover,
         &.active {
             @apply opacity-100;
             transform: scale(1.2);
         }
         & svg {
-            @apply fill-current text-green-400 w-16;
+            @apply fill-current text-green-600 w-16;
         }
     }
 }
