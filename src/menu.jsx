@@ -1,4 +1,4 @@
-import { h, render, Component } from 'preact';
+import { h, render, Component, Fragment } from 'preact';
 import { Link } from '@reach/router';
 import D4 from './assets/d4.svg';
 import D6 from './assets/d6.svg';
@@ -10,7 +10,7 @@ import D20 from './assets/d20.svg';
 export default class Menu extends Component {
     render() {
         return (
-            <div class="mt-auto xl:mb-48 container-md mx-auto">
+            <Fragment>
                 <div class="flex justify-around w-full flex-wrap pb-4">
                     <Link class="btn" to="/4">
                         <span>
@@ -49,7 +49,7 @@ export default class Menu extends Component {
                         </span>
                     </Link>
                 </div>
-            </div>
+            </Fragment>
         );
     }
 }
