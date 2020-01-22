@@ -68,7 +68,7 @@ export default class CurrentDie extends Component {
                 </div>
                 <button
                     onClick={this.handleClick}
-                    class={'dice ' + (this.state.active ? 'active' : '')}>
+                    class={`dice${(this.state.active ? ' active' : '')}`}>
                     {(() => {
                         switch (this.props.sides) {
                             case '4':
