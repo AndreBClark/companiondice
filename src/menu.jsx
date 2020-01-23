@@ -11,7 +11,7 @@ export default class Menu extends Component {
     render() {
         return (
             <Fragment>
-                <div class="flex justify-around w-full flex-wrap mt-auto xl:mt-16">
+                <div class="flex justify-around w-full flex-wrap mt-auto xl:mt-16 pb-4">
                     <Link class="btn" to="/4">
                         <span>
                             <D4 />
