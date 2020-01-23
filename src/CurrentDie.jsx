@@ -14,7 +14,8 @@ export default class CurrentDie extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.incrementAmount = this.incrementAmount.bind(this);
         this.decrementAmount = this.decrementAmount.bind(this);
-        this.state = {
+        this.resetAmount= this.resetAmount.bind(this);
+        this.initialState = {
             current: this.props.sides,
             result: this.props.sides,
             amount: 1,
@@ -22,6 +23,7 @@ export default class CurrentDie extends Component {
             ticks: randomNumGen(this.props.sides - 20) + 40,
             active: false,
         };
+        this.state = this.initialState
     }
     handleClick() {
         const currentState = this.state.active;
@@ -58,10 +60,15 @@ export default class CurrentDie extends Component {
             amount: state.amount - 1,
         }));
     }
+    resetAmount() {
+        this.setState({
+            amount: 1,
+        })
+    }
     render() {
         return (
             <div class="mx-auto flex flex-col h-screen container max-w-2xl">
-                <div class="flex justify-between mt-4 xl:mt-32 mx-auto text-indigo-400 p-3 text-5xl font-bold">
+                <div class="flex justify-between mt-4 md:mt-32 mx-auto text-indigo-400 pt-3 px-3 text-5xl font-bold">
                     {this.state.amount < 99 ? (
                         <button
                             class="block font-bold opacity-50 px-2"
@@ -71,7 +78,7 @@ export default class CurrentDie extends Component {
                     ) : (
                         <button class="block px-2 opacity-0">+</button>
                     )}
-                    {this.state.amount}d{this.props.sides}
+                        {this.state.amount}d{this.props.sides}
                     {this.state.amount > 1 ? (
                         <button
                             class="block font-bold opacity-50 px-2"
@@ -82,6 +89,11 @@ export default class CurrentDie extends Component {
                         <button class="block px-2 opacity-0">-</button>
                     )}
                 </div>
+                <button 
+                    class="text-indigo-400 uppercase font-bold block opacity-75"
+                    onClick={this.resetAmount}>
+                        Reset
+                </button>
                 <button
                     onClick={this.handleClick}
                     class={`dice${this.state.active ? ' active' : ''}`}>
