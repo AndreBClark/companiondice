@@ -30,7 +30,9 @@ export default class CurrentDie extends Component {
         });
         const randomArray = [this.state.result];
         for (let i = 0; i < this.state.ticks; i++) {
-            randomArray.unshift( randomNumGen(this.state.amount * this.props.sides));
+            randomArray.unshift(
+                randomNumGen(this.state.amount * this.props.sides)
+            );
         }
         let displayRefresh = 0;
         let interval = setInterval(
@@ -47,32 +49,42 @@ export default class CurrentDie extends Component {
         );
     }
     incrementAmount() {
-        this.setState((state) => ({
-            amount: state.amount + 1
-        }))
+        this.setState(state => ({
+            amount: state.amount + 1,
+        }));
     }
     decrementAmount() {
-        this.setState((state) => ({
-            amount: state.amount - 1
-        }))
+        this.setState(state => ({
+            amount: state.amount - 1,
+        }));
     }
     render() {
         return (
             <div class="mx-auto flex flex-col h-screen container max-w-2xl">
-                <div class="flex justify-between mt-4 xl:mt-32 mx-auto text-purple-600 p-3 text-5xl font-bold">
-                    {(this.state.amount < 99) 
-                        ? <button class="block font-bold opacity-50 px-2" onClick={this.incrementAmount}>+</button> 
-                        : <button class="block px-2 opacity-0">+</button>
-                    }
-                        {this.state.amount}d{this.props.sides}
-                    {(this.state.amount > 1) 
-                        ? <button class="block font-bold opacity-50 px-2" onClick={this.decrementAmount}>-</button> 
-                        : <button class="block px-2 opacity-0">-</button>
-                    }
+                <div class="flex justify-between mt-4 xl:mt-32 mx-auto text-indigo-400 p-3 text-5xl font-bold">
+                    {this.state.amount < 99 ? (
+                        <button
+                            class="block font-bold opacity-50 px-2"
+                            onClick={this.incrementAmount}>
+                            +
+                        </button>
+                    ) : (
+                        <button class="block px-2 opacity-0">+</button>
+                    )}
+                    {this.state.amount}d{this.props.sides}
+                    {this.state.amount > 1 ? (
+                        <button
+                            class="block font-bold opacity-50 px-2"
+                            onClick={this.decrementAmount}>
+                            -
+                        </button>
+                    ) : (
+                        <button class="block px-2 opacity-0">-</button>
+                    )}
                 </div>
                 <button
                     onClick={this.handleClick}
-                    class={`dice${(this.state.active ? ' active' : '')}`}>
+                    class={`dice${this.state.active ? ' active' : ''}`}>
                     {(() => {
                         switch (this.props.sides) {
                             case '4':
@@ -89,7 +101,7 @@ export default class CurrentDie extends Component {
                                 return <D20 />;
                         }
                     })()}
-                    <span class="m-auto text-purple-800 z-10">
+                    <span class="m-auto text-indigo-900 z-10">
                         {this.state.result}
                     </span>
                 </button>

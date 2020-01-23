@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 html {
-    @apply h-full;
+    @apply h-full bg-black;
 }
 
 body {
-    @apply bg-purple-900 min-h-screen;
+    @apply bg-indigo-900 min-h-screen;
 }
 
 .dice {
@@ -17,7 +17,7 @@ body {
     }
     & svg {
         transition: transform ease-out 1s;
-        @apply absolute top-0 fill-current m-auto w-full text-green-400 h-full;
+        @apply absolute top-0 fill-current m-auto w-full text-teal-400 h-full;
     }
 }
 
@@ -27,7 +27,7 @@ body {
 }
 
 .btn {
-    @apply font-bold mx-3 text-center opacity-50;
+    @apply font-bold mx-6 text-center opacity-50;
     &[aria-current] {
         @apply opacity-100;
         transform: scale(1.2);
@@ -36,7 +36,7 @@ body {
         font-variant-numeric: tabular-nums;
         transition: opacity 500ms, transform 500ms;
         transition-timing-function: ease-in-out;
-        @apply p-2 fill-current text-green-400 flex flex-col justify-between h-full font-bold;
+        @apply p-2 fill-current text-teal-400 flex rounded-full flex-col justify-between h-full font-black;
         &:hover,
         &.active,
         &[aria-current] {
@@ -44,7 +44,7 @@ body {
             transform: scale(1.2);
         }
         & svg {
-            @apply fill-current text-green-400 w-16;
+            @apply fill-current text-teal-400 w-12;
         }
     }
 }

@@ -40,7 +40,7 @@ class Dice extends Component {
                 <button
                     onClick={this.handleClick}
                     class="btn-d-twenty relative">
-                    <D20 class="absolute top-0 fill-current left-auto px-5 text-green-400 h-full" />
+                    <D20 class="absolute top-0 fill-current left-auto px-5 text-teal-400 h-full" />
                     <span class="m-auto text-purple-700 z-10">
                         {this.state.result}
                     </span>

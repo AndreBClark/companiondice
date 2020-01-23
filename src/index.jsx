@@ -13,9 +13,7 @@ class Sides extends Component {
 class App extends Component {
     render() {
         return (
-            <div class="container mx-auto h-screen flex justify-between flex-1">
                 <CurrentDie sides="20" />
-            </div>
         );
     }
 }
