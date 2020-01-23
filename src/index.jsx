@@ -12,9 +12,7 @@ class Sides extends Component {
 
 class App extends Component {
     render() {
-        return (
-                <CurrentDie sides="20" />
-        );
+        return <CurrentDie sides="20" />;
     }
 }
 

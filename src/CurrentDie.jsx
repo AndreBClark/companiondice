@@ -14,7 +14,7 @@ export default class CurrentDie extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.incrementAmount = this.incrementAmount.bind(this);
         this.decrementAmount = this.decrementAmount.bind(this);
-        this.resetAmount= this.resetAmount.bind(this);
+        this.resetAmount = this.resetAmount.bind(this);
         this.initialState = {
             current: this.props.sides,
             result: this.props.sides,
@@ -23,7 +23,7 @@ export default class CurrentDie extends Component {
             ticks: randomNumGen(this.props.sides - 20) + 40,
             active: false,
         };
-        this.state = this.initialState
+        this.state = this.initialState;
     }
     handleClick() {
         const currentState = this.state.active;
@@ -63,7 +63,7 @@ export default class CurrentDie extends Component {
     resetAmount() {
         this.setState({
             amount: 1,
-        })
+        });
     }
     render() {
         return (
@@ -78,7 +78,7 @@ export default class CurrentDie extends Component {
                     ) : (
                         <button class="block px-2 opacity-0">+</button>
                     )}
-                        {this.state.amount}d{this.props.sides}
+                    {this.state.amount}d{this.props.sides}
                     {this.state.amount > 1 ? (
                         <button
                             class="block font-bold opacity-50 px-2"
@@ -89,10 +89,10 @@ export default class CurrentDie extends Component {
                         <button class="block px-2 opacity-0">-</button>
                     )}
                 </div>
-                <button 
+                <button
                     class="text-indigo-400 uppercase font-bold block opacity-75"
                     onClick={this.resetAmount}>
-                        Reset
+                    Reset
                 </button>
                 <button
                     onClick={this.handleClick}
