@@ -33,21 +33,17 @@ body {
 
 .btn {
     @apply font-bold mx-6 text-center opacity-50;
+    transition: opacity 500ms, transform 500ms;
+    transition-timing-function: ease-in-out;
+    &:hover,
+    &.active,
     &[aria-current] {
         @apply opacity-100;
         transform: scale(1.2);
     }
     & span {
         font-variant-numeric: tabular-nums;
-        transition: opacity 500ms, transform 500ms;
-        transition-timing-function: ease-in-out;
         @apply p-2 fill-current text-teal-400 flex rounded-full flex-col justify-between h-full font-black;
-        &:hover,
-        &.active,
-        &[aria-current] {
-            @apply opacity-100;
-            transform: scale(1.2);
-        }
         & svg {
             @apply fill-current text-teal-400 w-12;
         }
