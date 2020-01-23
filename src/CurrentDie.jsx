@@ -7,7 +7,7 @@ import D10 from './assets/d10.svg';
 import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
 
-export const randomNumGen = (min, max) => Math.ceil(Math.random() * (max - min) + min);
+export const randomNumGen = (min, max) => Math.ceil(Math.random() * (max - min));
 export default class CurrentDie extends Component {
     constructor(props) {
         super(props);
