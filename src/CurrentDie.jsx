@@ -30,7 +30,7 @@ export default class CurrentDie extends Component {
         });
         const randomArray = [this.state.result];
         for (let i = 0; i < this.state.ticks; i++) {
-            randomArray.unshift(this.state.amount * randomNumGen(this.props.sides));
+            randomArray.unshift( randomNumGen(this.state.amount * this.props.sides));
         }
         let displayRefresh = 0;
         let interval = setInterval(
