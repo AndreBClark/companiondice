@@ -25,7 +25,11 @@
         "display": "standalone",
         "generateIconOptions": {
             "baseIcon": "./src/assets/d20.svg",
-            "sizes": [192, 384, 512],
+            "sizes": [
+                192,
+                384,
+                512
+            ],
             "genFavicons": true
         }
     },

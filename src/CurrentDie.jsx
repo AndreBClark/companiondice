@@ -7,7 +7,7 @@ import D10 from './assets/d10.svg';
 import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
 
-export const randomNumGen = max => Math.ceil(Math.random() * max);
+export const randomNumGen = (min, max) => Math.ceil(Math.random() * (max - min) + min);
 export default class CurrentDie extends Component {
     constructor(props) {
         super(props);
@@ -20,7 +20,7 @@ export default class CurrentDie extends Component {
             result: this.props.sides,
             amount: 1,
             speed: 60,
-            ticks: randomNumGen(this.props.sides - 20) + 40,
+            ticks: randomNumGen(this.props.sides - 20, 1) + 40,
             active: false,
         };
         this.state = this.initialState;
@@ -33,7 +33,7 @@ export default class CurrentDie extends Component {
         const randomArray = [this.state.result];
         for (let i = 0; i < this.state.ticks; i++) {
             randomArray.unshift(
-                randomNumGen(this.state.amount * this.props.sides)
+                randomNumGen(this.state.amount * this.props.sides, this.state.amount)
             );
         }
         let displayRefresh = 0;
