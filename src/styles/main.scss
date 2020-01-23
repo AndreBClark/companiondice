@@ -27,14 +27,19 @@ body {
 }
 
 .btn {
-    @apply font-bold mx-3 text-center;
+    @apply font-bold mx-3 text-center opacity-50;
+    &[aria-current] {
+        @apply opacity-100;
+        transform: scale(1.2);
+    }
     & span {
         font-variant-numeric: tabular-nums;
         transition: opacity 500ms, transform 500ms;
         transition-timing-function: ease-in-out;
-        @apply p-2 fill-current text-green-400 flex flex-col justify-between h-full opacity-75;
+        @apply p-2 fill-current text-green-400 flex flex-col justify-between h-full font-bold;
         &:hover,
-        &.active {
+        &.active,
+        &[aria-current] {
             @apply opacity-100;
             transform: scale(1.2);
         }

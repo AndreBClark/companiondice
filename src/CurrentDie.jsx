@@ -56,17 +56,14 @@ export default class CurrentDie extends Component {
             amount: state.amount - 1
         }))
     }
-
     render() {
         return (
             <div class="mx-auto flex flex-col h-screen container max-w-2xl">
-                <div class="flex justify-between mt-10 xl:mt-32 mx-auto text-purple-600 p-3 text-5xl font-bold">
-                    {(this.state.amount < 100) 
-                        ? <button class="block font-bold opacity-50 px-1" onClick={this.incrementAmount}>+</button> 
-                        : <button class="block px-5"></button>}
+                <div class="flex justify-between mt-4 xl:mt-32 mx-auto text-purple-600 p-3 text-5xl font-bold">
+                        : <button class="block px-2 opacity-0">+</button>
+                    }
                         {this.state.amount}d{this.props.sides}
                     {(this.state.amount > 1) 
-                        ? <button class="block font-bold opacity-50 px-1" onClick={this.decrementAmount}>-</button> 
                         : <button class="block px-2">&nbsp;</button>}
                 </div>
                 <button
