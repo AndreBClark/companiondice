@@ -26,7 +26,6 @@ export default class CurrentDie extends Component {
     handleClick() {
         const currentState = this.state.active;
         this.setState({
-            result: randomNumGen(this.props.sides),
             active: !currentState,
         });
         const randomArray = [this.state.result];
