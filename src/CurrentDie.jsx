@@ -72,6 +72,29 @@ export default class CurrentDie extends Component {
     render() {
         return (
             <div class="mx-auto flex flex-col h-screen container max-w-2xl">
+                <button
+                    onClick={this.handleClick}
+                    class={`dice${this.state.active ? ' active' : ''}`}>
+                    {(() => {
+                        switch (this.props.sides) {
+                            case '4':
+                                return <D4 />;
+                            case '6':
+                                return <D6 />;
+                            case '8':
+                                return <D8 />;
+                            case '10':
+                                return <D10 />;
+                            case '12':
+                                return <D12 />;
+                            case '20':
+                                return <D20 />;
+                        }
+                    })()}
+                    <span class="m-auto text-indigo-900 z-10">
+                        {this.state.result}
+                    </span>
+                </button>
                 <div class="flex justify-between mt-4 md:mt-32 mx-auto text-indigo-400 pt-3 px-3 text-5xl font-bold">
                     {this.state.amount > 1 ? (
                         <button
@@ -97,29 +120,6 @@ export default class CurrentDie extends Component {
                     class="text-indigo-400 uppercase font-bold block opacity-75"
                     onClick={this.resetAmount}>
                     Reset
-                </button>
-                <button
-                    onClick={this.handleClick}
-                    class={`dice${this.state.active ? ' active' : ''}`}>
-                    {(() => {
-                        switch (this.props.sides) {
-                            case '4':
-                                return <D4 />;
-                            case '6':
-                                return <D6 />;
-                            case '8':
-                                return <D8 />;
-                            case '10':
-                                return <D10 />;
-                            case '12':
-                                return <D12 />;
-                            case '20':
-                                return <D20 />;
-                        }
-                    })()}
-                    <span class="m-auto text-indigo-900 z-10">
-                        {this.state.result}
-                    </span>
                 </button>
                 <Menu />
             </div>
