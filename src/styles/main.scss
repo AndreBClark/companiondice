@@ -21,7 +21,6 @@ body {
         @apply outline-none;
     }
     & svg {
-        transition: transform ease-out 1s;
         @apply absolute top-0 fill-current m-auto w-full text-teal-400 h-full;
     }
 }
