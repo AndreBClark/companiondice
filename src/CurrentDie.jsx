@@ -7,7 +7,8 @@ import D10 from './assets/d10.svg';
 import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
 
-export const randomNumGen = (min, max) => Math.ceil(Math.random() * (max - min)) + min;
+export const randomNumGen = (min, max) =>
+    Math.ceil(Math.random() * (max - min)) + min;
 export default class CurrentDie extends Component {
     constructor(props) {
         super(props);
@@ -33,7 +34,10 @@ export default class CurrentDie extends Component {
         const randomArray = [this.state.result];
         for (let i = 0; i < this.state.ticks; i++) {
             randomArray.unshift(
-                randomNumGen(this.state.amount, this.state.amount * this.props.sides)
+                randomNumGen(
+                    this.state.amount,
+                    this.state.amount * this.props.sides
+                )
             );
         }
         let displayRefresh = 0;
@@ -69,16 +73,6 @@ export default class CurrentDie extends Component {
         return (
             <div class="mx-auto flex flex-col h-screen container max-w-2xl">
                 <div class="flex justify-between mt-4 md:mt-32 mx-auto text-indigo-400 pt-3 px-3 text-5xl font-bold">
-                    {this.state.amount < 99 ? (
-                        <button
-                            class="block font-bold opacity-50 px-2"
-                            onClick={this.incrementAmount}>
-                            +
-                        </button>
-                    ) : (
-                        <button class="block px-2 opacity-0">+</button>
-                    )}
-                    {this.state.amount}d{this.props.sides}
                     {this.state.amount > 1 ? (
                         <button
                             class="block font-bold opacity-50 px-2"
@@ -87,6 +81,16 @@ export default class CurrentDie extends Component {
                         </button>
                     ) : (
                         <button class="block px-2 opacity-0">-</button>
+                    )}
+                    {this.state.amount}d{this.props.sides}
+                    {this.state.amount < 99 ? (
+                        <button
+                            class="block font-bold opacity-50 px-2"
+                            onClick={this.incrementAmount}>
+                            +
+                        </button>
+                    ) : (
+                        <button class="block px-2 opacity-0">+</button>
                     )}
                 </div>
                 <button
