@@ -4,7 +4,7 @@
     "description": "- commit subject lines should be 50 characters or less\r - begin with an emoji write them with a keyword wrapped in colons `:book:` :book:\r - followed by a verb in the imperative ie: add, remove, compile\r - ending with a reference to the relevant issue number with a hashtag and in parentheses ie: `(#24)`",
     "main": "src/index.jsx",
     "scripts": {
-        "start": "parcel index.html",
+        "start": "parcel src/index.html",
         "build": "npm run format && parcel build index.html --public-url ./",
         "format": "npm run format-css && npm run format-js",
         "format-css": "prettier --write src/styles/**/*.{css,scss} ",
