@@ -7,27 +7,35 @@
 
 @tailwind utilities;
 html {
-    @apply h-full bg-black;
+    font-variant-numeric: tabular-nums;
+    @apply h-full bg-indigo-900;
 }
 
 body {
-    @apply bg-indigo-900 min-h-screen;
+    @apply min-h-screen relative;
+    &::before {
+        content: '';
+        @apply h-full w-full opacity-50 bg-gray-900 absolute top-0;
+    }
 }
 
 .dice {
-    font-variant-numeric: tabular-nums;
     @apply relative m-auto my-8 h-64 w-64 flex font-bold text-6xl;
     &:focus {
         @apply outline-none;
     }
+    & div {
+        filter: brightness(0.5);
+    }
     & svg {
-        transition: transform ease-out 1s;
         @apply absolute top-0 fill-current m-auto w-full text-teal-400 h-full;
+        transform: rotate(0deg);
+        transition: transform ease-out 200ms;
     }
 }
 
 .active svg {
-    animation: rotation infinite ease-in-out 2.5s;
+    animation: rotation infinite ease-in 2s;
 }
 
 .btn {
