@@ -1,7 +1,6 @@
 /* purgecss start ignore */
 
 @tailwind base;
-@tailwind components;
 
 /* purgecss end ignore */
 
@@ -12,7 +11,7 @@ html {
 }
 
 body {
-    @apply min-h-screen relative;
+    @apply min-h-screen relative bg-purple-900;
     &::before {
         content: '';
         @apply h-full w-full opacity-50 bg-gray-900 absolute top-0;
