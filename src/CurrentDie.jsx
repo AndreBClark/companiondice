@@ -117,7 +117,7 @@ export default class CurrentDie extends Component {
                     )}
                 </div>
                 <button
-                    class="text-indigo-400 uppercase font-bold block opacity-75"
+                    class="text-indigo-600 uppercase font-bold block opacity-50"
                     onClick={this.resetAmount}>
                     Reset
                 </button>
