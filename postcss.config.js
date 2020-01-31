@@ -4,7 +4,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     ],
     defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
 });
-const cssnano = require('cssnano')('cssnane-advanced-preset');
+const cssnano = require('cssnano')('cssnano-advanced-preset');
 
 module.exports = {
     "plugins": [
