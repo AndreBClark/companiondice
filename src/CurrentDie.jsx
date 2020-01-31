@@ -106,7 +106,7 @@ export default class CurrentDie extends Component {
                         <button class="block px-2 opacity-0">-</button>
                     )}
                     {this.state.amount}d{this.props.sides}
-                    {this.state.amount < 99 ? (
+                    {this.state.amount < 20 ? (
                         <button
                             class="block font-bold opacity-50 px-2"
                             onClick={this.incrementAmount}>
