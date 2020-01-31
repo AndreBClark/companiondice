@@ -14,12 +14,12 @@ body {
     @apply min-h-screen relative bg-purple-900;
     &::before {
         content: '';
-        @apply h-full w-full opacity-50 bg-gray-900 absolute top-0;
+        @apply h-full w-full opacity-75 bg-gray-900 absolute top-0;
     }
 }
 
 .dice {
-    @apply relative m-auto my-8 h-64 w-64 flex font-bold text-6xl;
+    @apply relative mx-auto h-64 w-64 flex font-bold text-6xl;
     &:focus {
         @apply outline-none;
     }
@@ -29,16 +29,15 @@ body {
     & svg {
         @apply absolute top-0 fill-current m-auto w-full text-teal-400 h-full;
         transform: rotate(0deg);
-        transition: transform ease-out 200ms;
+        transition: transform ease-out 300ms;
+    }
+    &.active svg {
+        animation: rotation infinite ease-in 3s;
     }
 }
 
-.active svg {
-    animation: rotation infinite ease-in 2s;
-}
-
 .btn {
-    @apply font-bold mx-6 text-center opacity-50;
+    @apply font-bold text-center opacity-50;
     transition: opacity 500ms, transform 500ms;
     transition-timing-function: ease-in-out;
     &:hover,
@@ -49,10 +48,16 @@ body {
     }
     & span {
         font-variant-numeric: tabular-nums;
-        @apply p-2 fill-current text-teal-400 flex rounded-full flex-col justify-between h-full font-black;
+        @apply fill-current text-teal-400 flex rounded-full flex-col justify-between h-full;
         & svg {
-            @apply fill-current text-teal-400 w-12;
+            @apply fill-current text-teal-400 w-12 mx-auto;
         }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .btn {
+        @apply w-1/3;
     }
 }
 

@@ -71,7 +71,7 @@ export default class CurrentDie extends Component {
     }
     render() {
         return (
-            <div class="mx-auto flex flex-col h-screen container max-w-2xl">
+            <div class="mx-auto flex flex-col h-screen container max-w-2xl justify-around">
                 <button
                     onClick={this.handleClick}
                     class={`dice${this.state.active ? ' active' : ''}`}>
@@ -91,36 +91,38 @@ export default class CurrentDie extends Component {
                                 return <D20 />;
                         }
                     })()}
-                    <span class="m-auto text-indigo-900 z-10">
+                    <span class="m-auto text-gray-900 z-10">
                         {this.state.result}
                     </span>
                 </button>
-                <div class="flex justify-between mt-4 md:mt-32 mx-auto text-indigo-400 pt-3 px-3 text-5xl font-bold">
-                    {this.state.amount > 1 ? (
-                        <button
-                            class="block font-bold opacity-50 px-2"
-                            onClick={this.decrementAmount}>
-                            -
-                        </button>
-                    ) : (
-                        <button class="block px-2 opacity-0">-</button>
-                    )}
-                    {this.state.amount}d{this.props.sides}
-                    {this.state.amount < 20 ? (
-                        <button
-                            class="block font-bold opacity-50 px-2"
-                            onClick={this.incrementAmount}>
-                            +
-                        </button>
-                    ) : (
-                        <button class="block px-2 opacity-0">+</button>
-                    )}
+                <div class="max-w-lg mx-auto">
+                    <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold z-10 opacity-75">
+                        {this.state.amount > 1 ? (
+                            <button
+                                class="block font-bold opacity-75 px-2"
+                                onClick={this.decrementAmount}>
+                                -
+                            </button>
+                        ) : (
+                            <button class="block px-2 opacity-0">-</button>
+                        )}
+                        {this.state.amount}d{this.props.sides}
+                        {this.state.amount < 20 ? (
+                            <button
+                                class="block font-bold opacity-75 px-2"
+                                onClick={this.incrementAmount}>
+                                +
+                            </button>
+                        ) : (
+                            <button class="block px-2 opacity-0">+</button>
+                        )}
+                    </div>
+                    <button
+                        class="text-indigo-600 uppercase font-bold block opacity-75 w-full"
+                        onClick={this.resetAmount}>
+                        Reset
+                    </button>
                 </div>
-                <button
-                    class="text-indigo-600 uppercase font-bold block opacity-50"
-                    onClick={this.resetAmount}>
-                    Reset
-                </button>
                 <Menu />
             </div>
         );
