@@ -35,15 +35,18 @@ body {
 }
 
 .dice {
-    @apply relative h-64 w-64 flex font-bold text-6xl;
+    @apply relative flex font-bold text-6xl block w-64 h-64 max-h-screen m-auto;
     &:focus {
         @apply outline-none;
     }
-    & div {
+    & span {
+        position: relative;
         filter: brightness(0.5);
     }
     & svg {
-        @apply absolute h-64 w-64 top-0 fill-current m-auto w-full text-teal-400 h-full;
+        @apply absolute top-0 fill-current m-auto text-teal-400 w-full h-full;
+        transform-box: border-box;
+        transform-origin: center;
     }
     &.active svg {
         animation: rotation infinite ease-in-out 2.5s;
@@ -61,6 +64,6 @@ body {
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: rotate(1turn);
     }
 }
