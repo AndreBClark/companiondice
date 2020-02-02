@@ -21,7 +21,7 @@ export default class CurrentDie extends Component {
             result: this.props.sides,
             amount: 1,
             speed: 60,
-            ticks: randomNumGen(this.props.sides - 20, 1) + 40,
+            ticks: 40,
             active: false,
         };
         this.state = this.initialState;
