@@ -72,30 +72,30 @@ export default class CurrentDie extends Component {
     render() {
         return (
             <div class="mx-auto flex flex-col h-screen container max-w-2xl justify-around">
-                <button
-                    onClick={this.handleClick}
-                    class={`dice${this.state.active ? ' active' : ''}`}>
-                    {(() => {
-                        switch (this.props.sides) {
-                            case '4':
-                                return <D4 />;
-                            case '6':
-                                return <D6 />;
-                            case '8':
-                                return <D8 />;
-                            case '10':
-                                return <D10 />;
-                            case '12':
-                                return <D12 />;
-                            case '20':
-                                return <D20 />;
-                        }
-                    })()}
-                    <span class="m-auto text-gray-900 z-10">
-                        {this.state.result}
-                    </span>
-                </button>
                 <div class="max-w-lg mx-auto">
+                    <button
+                        onClick={this.handleClick}
+                        class={`dice${this.state.active ? ' active' : ''}`}>
+                        {(() => {
+                            switch (this.props.sides) {
+                                case '4':
+                                    return <D4 />;
+                                case '6':
+                                    return <D6 />;
+                                case '8':
+                                    return <D8 />;
+                                case '10':
+                                    return <D10 />;
+                                case '12':
+                                    return <D12 />;
+                                case '20':
+                                    return <D20 />;
+                            }
+                        })()}
+                        <span class="m-auto text-gray-900 z-10">
+                            {this.state.result}
+                        </span>
+                    </button>
                     <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold z-10 opacity-75">
                         {this.state.amount > 1 ? (
                             <button

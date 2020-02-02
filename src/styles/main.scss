@@ -7,19 +7,35 @@
 @tailwind utilities;
 html {
     font-variant-numeric: tabular-nums;
-    @apply h-full bg-indigo-900;
+    @apply h-full bg-indigo-900 overflow-hidden;
 }
 
 body {
-    @apply min-h-screen relative bg-purple-900;
+    @apply relative bg-purple-900;
     &::before {
         content: '';
         @apply h-full w-full opacity-75 bg-gray-900 absolute top-0;
     }
 }
 
+.btn {
+    @apply font-bold text-center opacity-50 fill-current text-teal-400 flex rounded-full flex-col justify-between items-center content-center pb-3;
+    transition: opacity 500ms, transform 500ms;
+    transition-timing-function: ease-in-out;
+    font-variant-numeric: tabular-nums;
+    & svg {
+        @apply fill-current w-12;
+    }
+    &:hover,
+    &.active,
+    &[aria-current] {
+        @apply opacity-100;
+        transform: scale(1.2);
+    }
+}
+
 .dice {
-    @apply relative mx-auto h-64 w-64 flex font-bold text-6xl;
+    @apply relative h-64 w-64 flex font-bold text-6xl;
     &:focus {
         @apply outline-none;
     }
@@ -27,31 +43,10 @@ body {
         filter: brightness(0.5);
     }
     & svg {
-        @apply absolute top-0 fill-current m-auto w-full text-teal-400 h-full;
-        transform: rotate(0deg);
-        transition: transform ease-out 300ms;
+        @apply absolute h-64 w-64 top-0 fill-current m-auto w-full text-teal-400 h-full;
     }
     &.active svg {
-        animation: rotation infinite ease-in 3s;
-    }
-}
-
-.btn {
-    @apply font-bold text-center opacity-50;
-    transition: opacity 500ms, transform 500ms;
-    transition-timing-function: ease-in-out;
-    &:hover,
-    &.active,
-    &[aria-current] {
-        @apply opacity-100;
-        transform: scale(1.2);
-    }
-    & span {
-        font-variant-numeric: tabular-nums;
-        @apply fill-current text-teal-400 flex rounded-full flex-col justify-between h-full;
-        & svg {
-            @apply fill-current text-teal-400 w-12 mx-auto;
-        }
+        animation: rotation infinite ease-in-out 2.5s;
     }
 }
 

@@ -13,40 +13,28 @@ export default class Menu extends Component {
             <Fragment>
                 <div class="flex justify-around w-full flex-wrap">
                     <Link class="btn" to="/4">
-                        <span>
-                            <D4 />
-                            d4
-                        </span>
+                        <D4 />
+                        d4
                     </Link>
                     <Link class="btn" to="/6">
-                        <span>
-                            <D6 />
-                            d6
-                        </span>
+                        <D6 />
+                        d6
                     </Link>
                     <Link class="btn" to="/8">
-                        <span>
-                            <D8 />
-                            d8
-                        </span>
+                        <D8 />
+                        d8
                     </Link>
                     <Link class="btn" to="/10">
-                        <span>
-                            <D10 />
-                            d10
-                        </span>
+                        <D10 />
+                        d10
                     </Link>
                     <Link class="btn" to="/12">
-                        <span>
-                            <D12 />
-                            d12
-                        </span>
+                        <D12 />
+                        d12
                     </Link>
                     <Link class="btn" to="/20">
-                        <span>
-                            <D20 />
-                            d20
-                        </span>
+                        <D20 />
+                        d20
                     </Link>
                 </div>
             </Fragment>
