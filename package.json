@@ -24,7 +24,7 @@
         "theme": "#3c366b",
         "display": "standalone",
         "generateIconOptions": {
-            "baseIcon": "./src/assets/d20.svg",
+            "baseIcon": "./src/assets/thumbnail.svg",
             "sizes": [
                 192,
                 384,
