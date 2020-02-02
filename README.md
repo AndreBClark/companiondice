@@ -1,5 +1,4 @@
-# D&D Dice Tool
-
+# :game_die: Companion Dice For Tabletop Games
 https://dnddiceroll.netlify.com/
 ### Features
 - **Select** from 4, 6, 8, 10, 12, 20 sided dice
