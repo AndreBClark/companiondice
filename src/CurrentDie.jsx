@@ -71,7 +71,7 @@ export default class CurrentDie extends Component {
     }
     render() {
         return (
-            <div class="mx-auto flex flex-col h-screen container max-w-2xl justify-around">
+            <Fragment>
                 <div class="max-w-lg mx-auto">
                     <button
                         onClick={this.handleClick}
@@ -124,7 +124,7 @@ export default class CurrentDie extends Component {
                     </button>
                 </div>
                 <Menu />
-            </div>
+            </Fragment>
         );
     }
 }

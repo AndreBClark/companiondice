@@ -7,10 +7,10 @@ import D10 from './assets/d10.svg';
 import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
 
+
 export default class Menu extends Component {
     render() {
         return (
-            <Fragment>
                 <div class="flex justify-around w-full flex-wrap">
                     <Link class="btn" to="/4">
                         <D4 />
@@ -37,7 +37,6 @@ export default class Menu extends Component {
                         d20
                     </Link>
                 </div>
-            </Fragment>
         );
     }
 }
