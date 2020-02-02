@@ -5,8 +5,8 @@ module.exports = {
         extend: {
             colors: {
                 deeppurple: {
-                    900: darken(.3, "#44337a"),
-                    800: darken(.25, "#44337a"),
+                    900: darken(.25, "#44337a"),
+                    800: darken(.225, "#44337a"),
                     700: darken(.2, "#44337a"),
                     600: darken(.175, "#44337a"),
                     500: darken(.15, "#44337a"),

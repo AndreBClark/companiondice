@@ -15,7 +15,7 @@ body {
 }
 
 .btn {
-    @apply font-bold text-center opacity-50 fill-current text-teal-400 flex rounded-full flex-col justify-between items-center content-center pb-3;
+    @apply font-bold text-center opacity-50 fill-current text-teal-400 flex flex-col justify-between items-center content-center pb-3;
     transition: opacity 500ms, transform 500ms;
     transition-timing-function: ease-in-out;
     font-variant-numeric: tabular-nums;
@@ -38,7 +38,6 @@ body {
     & span {
         @apply text-deeppurple-800;
         position: relative;
-        filter: brightness(0.5);
     }
     & svg {
         @apply absolute top-0 fill-current m-auto text-teal-400 w-full h-full;
