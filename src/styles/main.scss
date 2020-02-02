@@ -7,15 +7,11 @@
 @tailwind utilities;
 html {
     font-variant-numeric: tabular-nums;
-    @apply h-full bg-indigo-900 overflow-hidden;
+    @apply max-h-screen overflow-hidden;
 }
 
 body {
-    @apply relative bg-purple-900;
-    &::before {
-        content: '';
-        @apply h-full w-full opacity-75 bg-gray-900 absolute top-0;
-    }
+    @apply bg-deeppurple-800;
 }
 
 .btn {
@@ -40,6 +36,7 @@ body {
         @apply outline-none;
     }
     & span {
+        @apply text-deeppurple-500;
         position: relative;
         filter: brightness(0.5);
     }
