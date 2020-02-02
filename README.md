@@ -6,7 +6,16 @@ https://dnddiceroll.netlify.com/
 - **Responsive** Mobile friendly layout
 - **PWA** Download as an offline Progressive Web App onto your phone 
 
-
+### Built With
+- **[ParcelJS](https://parceljs.org/)** Blazing fast, zero configuration web application bundler  
+- **[Preact](https://preactjs.com/)** Fast 3kB alternative to [React](https://reactjs.org/) with the same modern API
+- **[postCSS](https://postcss.org/)** tool for transforming CSS with JavaScript
+- **[TailwindCSS](https://tailwindcss.com/)** A utility-first CSS framework for rapidly building custom designs
+- **[Netlify](https://www.netlify.com/)** - All-in-one platform for automating modern web projects
+- **[Reach Router](https://reach.tech/router)** - Accessible Routing for React by managing the focus of your app on route transitions.
+- **[Polished](https://polished.js.org/)** - lightweight toolset for writing styles in JavaScript
+- **[PrettierJS](https://prettier.io/)** - opinionated code formatter
+- **[ESlint](https://eslint.org)** - Pluggable JavaScript linter
 
 ## Contributing
 
@@ -59,9 +68,10 @@ __Example:__
 - [Number animation](https://codepen.io/hankthewhale/pen/NwKvLy) - By [Dave Beshero](https://codepen.io/hankthewhale)
 
 
-#### Using Tailwind
+### Using Tailwind
 - [Introduction to Tailwind](https://tailwindcss.com/docs/utility-first) 
 - [Tailwind Docs](https://tailwindcss.com/docs/installation/) 
 - [Extracting Components](https://tailwindcss.com/docs/extracting-components) append tailwind classes to other css classes
 - [Default Tailwind colors](https://tailwindcss.com/docs/customizing-colors/#default-color-palette)
 - [Display Utilities](https://tailwindcss.com/docs/display) quickly add flex
+
