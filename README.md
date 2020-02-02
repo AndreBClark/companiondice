@@ -1,6 +1,15 @@
 # D&D Dice Tool
 
 https://dnddiceroll.netlify.com/
+### Features
+- **Select** from 4, 6, 8, 10, 12, 20 sided dice
+- **Supports** rolling multiple dice of one type
+- **Responsive** Mobile friendly layout
+- **PWA** Download as an offline Progressive Web App onto your phone 
+
+
+
+## Contributing
 
 ### Local Development Setup
 
