@@ -49,7 +49,7 @@ body {
     }
     &.done svg {
         filter: drop-shadow(0 0 30px #4fd1c5);
-        transition: filter 1s ease-out;
+        transition: filter 200ms ease-out;
     }
 }
 
