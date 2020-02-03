@@ -17,20 +17,21 @@ export default class CurrentDie extends Component {
         this.incrementAmount = this.incrementAmount.bind(this);
         this.decrementAmount = this.decrementAmount.bind(this);
         this.resetAmount = this.resetAmount.bind(this);
-        this.initialState = {
+        this.state = {
             current: this.props.sides,
             result: this.props.sides,
             amount: 1,
             speed: 60,
             ticks: 40,
             active: false,
+            done: false
         };
-        this.state = this.initialState;
     }
     handleClick() {
         const currentState = this.state.active;
         this.setState({
             active: !currentState,
+            done: false,
         });
         const randomArray = [this.state.result];
         for (let i = 0; i < this.state.ticks; i++) {
@@ -49,6 +50,7 @@ export default class CurrentDie extends Component {
                     window.clearInterval(interval);
                     this.setState({
                         active: false,
+                        done: true
                     });
                 }
             }.bind(this),
@@ -73,7 +75,7 @@ export default class CurrentDie extends Component {
     render() {
         return (
             <div class="mx-auto flex flex-col container max-w-2xl justify-around h-screen">
-                <header class="mx-auto flex justify-around text-teal-900 font-bold max-w-xs  w-64 p-4">
+                <header class="mx-auto flex justify-around text-teal-400 font-bold max-w-xs  w-64 p-4">
                     <a href="https://github.com/AndreBClark/companiondice">
                         <span class="sr-only">Github Link</span>
                         <GithubSVG class="h-6 fill-current" />
@@ -83,7 +85,7 @@ export default class CurrentDie extends Component {
                 <div class="max-w-lg mx-auto">
                     <button
                         onClick={this.handleClick}
-                        class={`dice${this.state.active ? ' active' : ''}`}>
+                        class={`dice ${this.state.active ? ' active ' : ''} ${this.state.done ? ' done ' : ''}`}>
                         {(() => {
                             switch (this.props.sides) {
                                 case '4':

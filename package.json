@@ -7,7 +7,7 @@
         "start": "parcel src/index.html",
         "build": "npm run format && parcel build src/index.html --public-url ./",
         "format": "npm run format-css && npm run format-js",
-        "format-css": "prettier --write src/styles/**/*.{css,scss} ",
+        "format-css": "prettier --write src/styles/**/*.{css,scss}",
         "format-js": "prettier --write src/**/*.{js,jsx}"
     },
     "repository": {
