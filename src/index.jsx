@@ -13,11 +13,7 @@ class Sides extends Component {
 
 class App extends Component {
     render() {
-        return (
-            <div class="mx-auto flex flex-col container max-w-2xl justify-around h-screen">
-                <CurrentDie sides="20" />
-            </div>
-        );
+        return <CurrentDie sides="20" />;
     }
 }
 

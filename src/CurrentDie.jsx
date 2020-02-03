@@ -72,7 +72,7 @@ export default class CurrentDie extends Component {
     }
     render() {
         return (
-            <Fragment>
+            <div class="mx-auto flex flex-col container max-w-2xl justify-around h-screen">
                 <header class="mx-auto flex justify-around text-teal-900 font-bold max-w-xs  w-64 p-4">
                     <a href="https://github.com/AndreBClark/companiondice">
                         <span class="sr-only">Github Link</span>
@@ -132,7 +132,7 @@ export default class CurrentDie extends Component {
                     </button>
                 </div>
                 <Menu />
-            </Fragment>
+            </div>
         );
     }
 }
