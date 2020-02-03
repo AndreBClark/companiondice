@@ -7,36 +7,35 @@ import D10 from './assets/d10.svg';
 import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
 
-
 export default class Menu extends Component {
     render() {
         return (
-                <div class="flex justify-around w-full flex-wrap">
-                    <Link class="btn" to="/4">
-                        <D4 />
-                        d4
-                    </Link>
-                    <Link class="btn" to="/6">
-                        <D6 />
-                        d6
-                    </Link>
-                    <Link class="btn" to="/8">
-                        <D8 />
-                        d8
-                    </Link>
-                    <Link class="btn" to="/10">
-                        <D10 />
-                        d10
-                    </Link>
-                    <Link class="btn" to="/12">
-                        <D12 />
-                        d12
-                    </Link>
-                    <Link class="btn" to="/20">
-                        <D20 />
-                        d20
-                    </Link>
-                </div>
+            <div class="flex justify-around w-full flex-wrap">
+                <Link class="btn" to="/4">
+                    <D4 />
+                    d4
+                </Link>
+                <Link class="btn" to="/6">
+                    <D6 />
+                    d6
+                </Link>
+                <Link class="btn" to="/8">
+                    <D8 />
+                    d8
+                </Link>
+                <Link class="btn" to="/10">
+                    <D10 />
+                    d10
+                </Link>
+                <Link class="btn" to="/12">
+                    <D12 />
+                    d12
+                </Link>
+                <Link class="btn" to="/20">
+                    <D20 />
+                    d20
+                </Link>
+            </div>
         );
     }
 }
