@@ -84,7 +84,8 @@ export default class CurrentDie extends Component {
                             <span class="sr-only">Github Link</span>
                             <GithubSVG class="h-6 fill-current align-middle" />
                         </a>
-                        <a href="https://cosmicdivision.dev">cosmicdivision.dev</a>
+                        <span>|</span>
+                        <a href="https://cosmicdivision.dev">Andre Clark</a>
                     </div>
                 </header>
                 <div class="max-w-lg mx-auto">
