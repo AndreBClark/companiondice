@@ -77,7 +77,7 @@ export default class CurrentDie extends Component {
             <div class="mx-auto flex flex-col container max-w-2xl justify-around h-screen">
                 <header class="mx-auto text-teal-400 max-w-xs p-4">
                     <h1 className="text-xl text-center font-black mb-3">
-                        Dice Companion 
+                        Companion Dice
                     </h1>
                     <div class="flex justify-around font-bold">
                         <a href="https://github.com/AndreBClark/companiondice" class="mx-3">
