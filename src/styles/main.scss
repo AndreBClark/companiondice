@@ -6,8 +6,20 @@
 
 @tailwind utilities;
 html {
+    --glow-passive: drop-shadow(0 0 2px #4fd1c5);
+    --glow-done: drop-shadow(0 0 30px #4fd1c5);
     font-variant-numeric: tabular-nums;
     @apply max-h-screen overflow-hidden;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+a:focus,
+button:focus {
+    outline: none !important;
+    filter: brightness(1.5);
+    transition: filter 200ms ease-out;
 }
 
 body {
@@ -31,8 +43,6 @@ body {
 }
 
 .dice {
-    --glow-passive: drop-shadow(0 0 2px #4fd1c5);
-    --glow-done: drop-shadow(0 0 30px #4fd1c5);
     @apply relative flex font-bold text-6xl block w-64 h-64 max-h-screen m-auto;
     &:focus {
         @apply outline-none;
