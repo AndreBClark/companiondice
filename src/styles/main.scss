@@ -43,13 +43,14 @@ body {
         @apply absolute top-0 fill-current m-auto text-teal-400 w-full h-full;
         transform-box: border-box;
         transform-origin: center;
+        filter: drop-shadow(0 0 10px #4fd1c5);
     }
     &.active svg {
         animation: rotation infinite ease-in-out 2.5s;
     }
     &.done svg {
         filter: drop-shadow(0 0 30px #4fd1c5);
-        transition: filter 200ms ease-in-out;
+        transition: filter 200ms ease-in;
     }
 }
 
