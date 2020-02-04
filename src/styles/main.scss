@@ -14,9 +14,7 @@ html {
 
 input:focus,
 textarea:focus,
-select:focus,
-a:focus,
-button:focus {
+select:focus {
     outline: none !important;
     filter: brightness(1.5);
     transition: filter 200ms ease-out;
