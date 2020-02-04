@@ -79,7 +79,7 @@ export default class CurrentDie extends Component {
                     <h1 className="text-xl text-center font-black mb-3">
                         Companion Dice
                     </h1>
-                    <div class="flex justify-around font-bold">
+                    <div class="justify-around font-bold hidden sm:flex">
                         <a href="https://github.com/AndreBClark/companiondice" class="mx-3">
                             <span class="sr-only">Github Link</span>
                             <GithubSVG class="h-6 fill-current align-middle" />
