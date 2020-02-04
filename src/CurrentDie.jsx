@@ -75,12 +75,17 @@ export default class CurrentDie extends Component {
     render() {
         return (
             <div class="mx-auto flex flex-col container max-w-2xl justify-around h-screen">
-                <header class="mx-auto flex justify-around text-teal-400 font-bold max-w-xs  w-64 p-4">
-                    <a href="https://github.com/AndreBClark/companiondice">
-                        <span class="sr-only">Github Link</span>
-                        <GithubSVG class="h-6 fill-current" />
-                    </a>
-                    <a href="https://cosmicdivision.dev">cosmicdivision.dev</a>
+                <header class="mx-auto text-teal-400 max-w-xs p-4">
+                    <h1 className="text-xl text-center font-black mb-3">
+                        Dice Companion 
+                    </h1>
+                    <div class="flex justify-around font-bold">
+                        <a href="https://github.com/AndreBClark/companiondice" class="mx-3">
+                            <span class="sr-only">Github Link</span>
+                            <GithubSVG class="h-6 fill-current align-middle" />
+                        </a>
+                        <a href="https://cosmicdivision.dev">cosmicdivision.dev</a>
+                    </div>
                 </header>
                 <div class="max-w-lg mx-auto">
                     <button
