@@ -1,13 +1,16 @@
 /* purgecss start ignore */
 
 @tailwind base;
+:root {
+    --glow-passive: drop-shadow(0 0 2px #4fd1c5);
+    --glow-done: drop-shadow(0 0 30px #4fd1c5);
+}
+
 
 /* purgecss end ignore */
 
 @tailwind utilities;
 html {
-    --glow-passive: drop-shadow(0 0 2px #4fd1c5);
-    --glow-done: drop-shadow(0 0 30px #4fd1c5);
     font-variant-numeric: tabular-nums;
     @apply max-h-screen overflow-hidden;
 }
@@ -28,7 +31,6 @@ body {
     @apply font-bold text-center opacity-50 fill-current text-teal-400 flex flex-col justify-between items-center content-center pb-3;
     transition: opacity 500ms, transform 500ms;
     transition-timing-function: ease-in-out;
-    font-variant-numeric: tabular-nums;
     & svg {
         @apply fill-current w-12;
     }
