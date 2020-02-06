@@ -13,39 +13,27 @@ export default class Menu extends Component {
             <nav>
                 <Link class="btn" to="/4">
                     <D4 />
-                    <span>
-                        d4
-                    </span>
+                    <span>d4</span>
                 </Link>
                 <Link class="btn" to="/6">
                     <D6 />
-                    <span>
-                    d6
-                    </span>
+                    <span>d6</span>
                 </Link>
                 <Link class="btn" to="/8">
                     <D8 />
-                    <span>
-                        d8
-                    </span>
+                    <span>d8</span>
                 </Link>
                 <Link class="btn" to="/10">
                     <D10 />
-                    <span>
-                        d10
-                    </span>
+                    <span>d10</span>
                 </Link>
                 <Link class="btn" to="/12">
                     <D12 />
-                    <span>
-                        d12
-                    </span>
+                    <span>d12</span>
                 </Link>
                 <Link class="btn" to="/20">
                     <D20 />
-                    <span>
-                        d20
-                    </span>
+                    <span>d20</span>
                 </Link>
             </nav>
         );

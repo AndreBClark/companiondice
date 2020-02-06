@@ -137,11 +137,11 @@ export default class CurrentDie extends Component {
                             <button class="block px-2 opacity-0">+</button>
                         )}
                     </div>
-                        <button
-                            class="text-indigo-600 uppercase font-bold block opacity-75 w-full"
-                            onClick={this.resetAmount}>
-                            Reset
-                        </button>
+                    <button
+                        class="text-indigo-600 uppercase font-bold block opacity-75 w-full"
+                        onClick={this.resetAmount}>
+                        Reset
+                    </button>
                 </main>
                 <Menu />
             </div>
