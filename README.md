@@ -6,6 +6,10 @@ https://companiondice.netlify.com/
 - **Responsive** Mobile friendly layout
 - **PWA** Download as an offline Progressive Web App onto your phone 
 
+### Acknowledgement
+Created in collaboration with [Nathan Goullete](https://github.com/NathanGoullette)
+
+
 ### Built With
 - **[ParcelJS](https://parceljs.org/)** Blazing fast, zero configuration web application bundler  
 - **[Preact](https://preactjs.com/)** Fast 3kB alternative to [React](https://reactjs.org/) with the same modern API
