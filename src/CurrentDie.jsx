@@ -24,7 +24,7 @@ export default class CurrentDie extends Component {
             speed: 60,
             ticks: 40,
             active: false,
-            done: false
+            done: false,
         };
     }
     handleClick() {
@@ -50,7 +50,7 @@ export default class CurrentDie extends Component {
                     window.clearInterval(interval);
                     this.setState({
                         active: false,
-                        done: true
+                        done: true,
                     });
                 }
             }.bind(this),
@@ -75,12 +75,14 @@ export default class CurrentDie extends Component {
     render() {
         return (
             <div class="mx-auto flex flex-col container max-w-2xl justify-around h-screen">
-                <header class="mx-auto text-teal-400 max-w-xs p-4">
-                    <h1 className="text-xl text-center font-black mb-3">
+                <header class="text-teal-400 max-w-xs p-4">
+                    <h1 className="text-xl text-center font-black xl:mb-3">
                         Companion Dice
                     </h1>
                     <div class="justify-around font-bold hidden sm:flex">
-                        <a href="https://github.com/AndreBClark/companiondice" class="mx-3">
+                        <a
+                            href="https://github.com/AndreBClark/companiondice"
+                            class="mx-3">
                             <span class="sr-only">Github Link</span>
                             <GithubSVG class="h-6 fill-current align-middle" />
                         </a>
@@ -88,10 +90,12 @@ export default class CurrentDie extends Component {
                         <a href="https://cosmicdivision.dev">Andre Clark</a>
                     </div>
                 </header>
-                <div class="max-w-lg mx-auto">
+                <main class="max-w-lg xs:-mt-4">
                     <button
                         onClick={this.handleClick}
-                        class={`dice ${this.state.active ? ' active ' : ''} ${this.state.done ? ' done ' : ''}`}>
+                        class={`dice ${this.state.active ? ' active ' : ''} ${
+                            this.state.done ? ' done ' : ''
+                        }`}>
                         {(() => {
                             switch (this.props.sides) {
                                 case '4':
@@ -112,7 +116,7 @@ export default class CurrentDie extends Component {
                             {this.state.result}
                         </span>
                     </button>
-                    <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold z-10 opacity-75">
+                    <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold opacity-75">
                         {this.state.amount > 1 ? (
                             <button
                                 class="block font-bold opacity-75 px-2"
@@ -133,12 +137,12 @@ export default class CurrentDie extends Component {
                             <button class="block px-2 opacity-0">+</button>
                         )}
                     </div>
-                    <button
-                        class="text-indigo-600 uppercase font-bold block opacity-75 w-full"
-                        onClick={this.resetAmount}>
-                        Reset
-                    </button>
-                </div>
+                        <button
+                            class="text-indigo-600 uppercase font-bold block opacity-75 w-full"
+                            onClick={this.resetAmount}>
+                            Reset
+                        </button>
+                </main>
                 <Menu />
             </div>
         );

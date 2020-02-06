@@ -3,6 +3,9 @@ const darken = require('polished/lib/color/darken');
 module.exports = {
     theme: {
         extend: {
+            screens: {
+                'xs': '330px'
+            },
             colors: {
                 deeppurple: {
                     900: darken(.25, "#44337a"),
