@@ -31,7 +31,7 @@ select:focus {
 
 .dice {
     @apply relative flex font-bold text-5xl w-48 h-48 block max-h-screen m-auto;
-    @screen md {
+    @screen xs {
         @apply text-6xl w-64 h-64;
     }
     &:focus {
