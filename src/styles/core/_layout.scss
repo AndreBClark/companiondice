@@ -30,3 +30,11 @@ header {
 nav {
     @apply mb-6 flex justify-around w-full flex-wrap;
 }
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    filter: brightness(1.2);
+    transition: filter 200ms ease-out;
+}

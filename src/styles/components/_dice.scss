@@ -3,32 +3,6 @@
     --glow-done: drop-shadow(0 0 30px #4fd1c5);
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none !important;
-    filter: brightness(1.2);
-    transition: filter 200ms ease-out;
-}
-
-.btn {
-    @apply font-bold text-center opacity-50 fill-current text-teal-400 flex flex-col justify-between items-center content-center mb-5 w-1/3;
-    transition: opacity 500ms, transform 500ms;
-    transition-timing-function: ease-in-out;
-    @screen md {
-        @apply w-auto;
-    }
-    & svg {
-        @apply fill-current w-12 p-2 bg-teal-900 rounded-full;
-    }
-    &:hover,
-    &.active,
-    &[aria-current] {
-        @apply opacity-100;
-        transform: scale(1.2);
-    }
-}
-
 .dice {
     @apply relative flex font-bold text-5xl w-48 h-48 block max-h-screen m-auto;
     @screen xs {
@@ -52,7 +26,7 @@ select:focus {
         filter: var(--glow-passive);
     }
     &.done svg {
-        animation: bling 400ms ease-in;
+        animation: bling 500ms ease-in;
     }
 }
 
