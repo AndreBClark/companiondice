@@ -1,7 +1,7 @@
 {
     "name": "dndroller",
     "version": "1.0.0",
-    "description": "- commit subject lines should be 50 characters or less\r - begin with an emoji write them with a keyword wrapped in colons `:book:` :book:\r - followed by a verb in the imperative ie: add, remove, compile\r - ending with a reference to the relevant issue number with a hashtag and in parentheses ie: `(#24)`",
+    "description": "Dice Rolling app for Playing Table Top Games ",
     "main": "src/index.jsx",
     "scripts": {
         "start": "parcel src/index.html",
@@ -12,14 +12,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/AndreBClark/dndroller.git"
+        "url": "git+https://github.com/AndreBClark/companiondice.git"
     },
     "keywords": [],
     "author": "Andre Clark",
     "license": "GPL-3.0",
     "pwaManifest": {
-        "name": "Tabletop Companion",
-        "shortName": "D&D Companion",
+        "name": "Companion Dice Tabletop Games",
+        "shortName": "Dice Companion",
         "startURL": "./",
         "theme": "#3c366b",
         "display": "standalone",
@@ -34,9 +34,9 @@
         }
     },
     "bugs": {
-        "url": "https://github.com/AndreBClark/dndroller/issues"
+        "url": "https://github.com/AndreBClark/companiondice/issues"
     },
-    "homepage": "https://github.com/AndreBClark/dndroller# readme ",
+    "homepage": "https://github.com/AndreBClark/companiondice# readme ",
     "alias": {
         "react": "preact/compat",
         "react-dom/test-utils": "preact/test-utils",
