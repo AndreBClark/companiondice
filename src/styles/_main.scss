@@ -1,27 +1,6 @@
-/* purgecss start ignore */
-
-@tailwind base;
 :root {
     --glow-passive: drop-shadow(0 0 2px #4fd1c5);
     --glow-done: drop-shadow(0 0 30px #4fd1c5);
-}
-
-header,
-main {
-    @apply mx-auto;
-}
-
-main {
-    @apply pb-4;
-}
-
-
-/* purgecss end ignore */
-
-@tailwind utilities;
-html {
-    font-variant-numeric: tabular-nums;
-    @apply max-h-screen overflow-hidden;
 }
 
 input:focus,
@@ -30,25 +9,6 @@ select:focus {
     outline: none !important;
     filter: brightness(1.2);
     transition: filter 200ms ease-out;
-}
-
-body {
-    @apply bg-deeppurple-800 max-h-screen overflow-hidden;
-}
-
-header {
-    & a,
-    span {
-        @apply opacity-50;
-    }
-    a:hover {
-        @apply opacity-100;
-        transition: opacity ease-in-out 500ms;
-    }
-}
-
-nav {
-    @apply mb-6 flex justify-around w-full flex-wrap;
 }
 
 .btn {

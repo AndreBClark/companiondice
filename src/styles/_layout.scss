@@ -1,0 +1,32 @@
+header,
+main {
+    @apply mx-auto;
+}
+
+main {
+    @apply pb-4;
+}
+
+html {
+    font-variant-numeric: tabular-nums;
+    @apply max-h-screen overflow-hidden;
+}
+
+body {
+    @apply bg-deeppurple-800 max-h-screen overflow-hidden;
+}
+
+header {
+    & a,
+    span {
+        @apply opacity-50;
+    }
+    a:hover {
+        @apply opacity-100;
+        transition: opacity ease-in-out 500ms;
+    }
+}
+
+nav {
+    @apply mb-6 flex justify-around w-full flex-wrap;
+}
