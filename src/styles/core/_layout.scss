@@ -18,8 +18,14 @@ body {
 
 header {
     & a,
-    span {
-        @apply opacity-50;
+    p {
+        @apply opacity-50 flex;
+    }
+    & span {
+        @apply mx-3;
+    }
+    & svg {
+        @apply h-6 fill-current align-middle;
     }
     a:hover {
         @apply opacity-100;
