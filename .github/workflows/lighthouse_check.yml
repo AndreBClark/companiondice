@@ -13,17 +13,8 @@ jobs:
           author: ${{ github.actor }}
           branch: ${{ github.ref }}
           outputDirectory: /tmp/artifacts
-          urls: 'https://companiondice.netlify.com/'
+          urls: 'https://cosmicdivision.dev,https://cosmicdivision.dev/blog,https://cosmicdivision.dev/projects'
           sha: ${{ github.sha }}
-      - name: Handle Lighthouse Check results
-        uses: foo-software/lighthouse-check-status-action@master
-        with:
-          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-          minAccessibilityScore: "90"
-          minBestPracticesScore: "50"
-          minPerformanceScore: "50"
-          minProgressiveWebAppScore: "50"
-          minSeoScore: "50"
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:
