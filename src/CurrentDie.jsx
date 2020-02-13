@@ -1,5 +1,6 @@
 import { h, Component, Fragment } from 'preact';
 import Menu from './menu';
+import Base from './Base';
 import D4 from './assets/d4.svg';
 import D6 from './assets/d6.svg';
 import D8 from './assets/d8.svg';
@@ -8,7 +9,7 @@ import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
 import GithubSVG from './assets/github.svg';
 import CosmicSVG from './assets/cosmicdivision.svg';
-import NateSVG from './assets/nkg.svg'
+import NateSVG from './assets/nkg.svg';
 
 export const randomNumGen = (min, max) =>
     Math.ceil(Math.random() * (max - min)) + min;
@@ -76,26 +77,7 @@ export default class CurrentDie extends Component {
     }
     render() {
         return (
-            <div class="mx-auto flex flex-col container max-w-2xl justify-around h-screen">
-                <header class="text-teal-400 w-full p-4">
-                    <h1 class="h2 md:text-5xl text-center font-black xl:mb-3">
-                        Companion Dice
-                    </h1>
-                    <div class="justify-around w-full font-bold hidden sm:flex">
-                        <a href="https://cosmicdivision.dev">
-                            <CosmicSVG/>
-                            <span>Andre Clark</span>
-                        </a>
-                        <a href="https://nathangoulette.com">
-                            <NateSVG/>
-                            <span>Nathan Goulette</span>
-                        </a>
-                        <a href="https://github.com/AndreBClark/companiondice">
-                            <GithubSVG />
-                            <span>Github</span>
-                        </a>
-                    </div>
-                </header>
+            <Base>
                 <main class="max-w-lg xs:-mt-4">
                     <button
                         onClick={this.handleClick}
@@ -150,7 +132,7 @@ export default class CurrentDie extends Component {
                     </button>
                 </main>
                 <Menu />
-            </div>
+            </Base>
         );
     }
 }

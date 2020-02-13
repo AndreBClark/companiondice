@@ -11,11 +11,9 @@ class Sides extends Component {
     }
 }
 
-class App extends Component {
-    render() {
-        return <CurrentDie sides="20" />;
-    }
-}
+const App = ({ children }) => {
+    return <CurrentDie sides="20" />;
+};
 
 render(
     <Router>
