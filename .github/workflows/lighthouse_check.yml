@@ -1,3 +1,4 @@
+
 name: Test Lighthouse Check
 on: [push]
 
@@ -8,15 +9,25 @@ jobs:
       - uses: actions/checkout@master
       - run: mkdir /tmp/artifacts
       - name: Run Lighthouse
+        id: lighthouseCheck
         uses: foo-software/lighthouse-check-action@master
         with:
           author: ${{ github.actor }}
           branch: ${{ github.ref }}
           outputDirectory: /tmp/artifacts
-          urls: 'https://cosmicdivision.dev,https://cosmicdivision.dev/blog,https://cosmicdivision.dev/projects'
+          urls: https://companiondice.netlify.com/
           sha: ${{ github.sha }}
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:
           name: Lighthouse reports
           path: /tmp/artifacts
+      - name: Handle Lighthouse Check results
+        uses: foo-software/lighthouse-check-status-action@master
+        with:
+          lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
+          minAccessibilityScore: "90"
+          minBestPracticesScore: "90"
+          minPerformanceScore: "90"
+          minProgressiveWebAppScore: "90"
+          minSeoScore: "90"
