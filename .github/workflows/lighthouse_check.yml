@@ -15,12 +15,15 @@ jobs:
           outputDirectory: /tmp/artifacts
           urls: 'https://companiondice.netlify.com/'
           sha: ${{ github.sha }}
+      - name: Handle Lighthouse Check results
+        uses: foo-software/lighthouse-check-status-action@master
+        with:
           lighthouseCheckResults: ${{ steps.lighthouseCheck.outputs.lighthouseCheckResults }}
-          minAccessibilityScore: "99"
-          minBestPracticesScore: "99"
-          minPerformanceScore: "90"
-          minProgressiveWebAppScore: "99"
-          minSeoScore: "99"
+          minAccessibilityScore: "90"
+          minBestPracticesScore: "50"
+          minPerformanceScore: "50"
+          minProgressiveWebAppScore: "50"
+          minSeoScore: "50"
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:
