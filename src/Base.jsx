@@ -14,9 +14,9 @@ const Base = ({ children }) => {
                         <CosmicSVG />
                         <span>Andre Clark</span>
                     </a>
-                    <a href="https://nathangoulette.com">
+                    <a href="https://nathangoullette.com">
                         <NateSVG />
-                        <span>Nathan Goulette</span>
+                        <span>Nathan Goullette</span>
                     </a>
                     <a href="https://github.com/AndreBClark/companiondice">
                         <GithubSVG />
