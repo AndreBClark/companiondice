@@ -1,4 +1,4 @@
-import { h, render } from 'preact';
+import { h } from 'preact';
 import GithubSVG from './assets/github.svg';
 import CosmicSVG from './assets/cosmicdivision.svg';
 import NateSVG from './assets/nkg.svg';

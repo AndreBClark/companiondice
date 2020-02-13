@@ -7,9 +7,7 @@ import D8 from './assets/d8.svg';
 import D10 from './assets/d10.svg';
 import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
-import GithubSVG from './assets/github.svg';
-import CosmicSVG from './assets/cosmicdivision.svg';
-import NateSVG from './assets/nkg.svg';
+
 
 export const randomNumGen = (min, max) =>
     Math.ceil(Math.random() * (max - min)) + min;
@@ -27,7 +25,7 @@ export default class CurrentDie extends Component {
             speed: 60,
             ticks: 40,
             active: false,
-            done: false,
+            done: true,
         };
     }
     handleClick() {
