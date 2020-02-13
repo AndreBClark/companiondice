@@ -20,7 +20,7 @@ const Base = ({ children }) => {
                     </a>
                     <a href="https://github.com/AndreBClark/companiondice">
                         <GithubSVG />
-                        <span>Github</span>
+                        <span>Github Repo</span>
                     </a>
                 </div>
             </header>
