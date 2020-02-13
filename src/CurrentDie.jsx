@@ -8,6 +8,7 @@ import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
 import GithubSVG from './assets/github.svg';
 import CosmicSVG from './assets/cosmicdivision.svg';
+import NateSVG from './assets/nkg.svg'
 
 export const randomNumGen = (min, max) =>
     Math.ceil(Math.random() * (max - min)) + min;
@@ -76,19 +77,22 @@ export default class CurrentDie extends Component {
     render() {
         return (
             <div class="mx-auto flex flex-col container max-w-2xl justify-around h-screen">
-                <header class="text-teal-400 max-w-xs md:max-w-lg p-4">
+                <header class="text-teal-400 w-full p-4">
                     <h1 class="h2 md:text-5xl text-center font-black xl:mb-3">
                         Companion Dice
                     </h1>
-                    <div class="justify-around font-bold hidden sm:flex">
-                        <a href="https://github.com/AndreBClark/companiondice">
-                            <GithubSVG />
-                            <span>Github</span>
-                        </a>
-                        <p>&nbsp;|&nbsp;</p>
+                    <div class="justify-around w-full font-bold hidden sm:flex">
                         <a href="https://cosmicdivision.dev">
                             <CosmicSVG/>
                             <span>Andre Clark</span>
+                        </a>
+                        <a href="https://nathangoulette.com">
+                            <NateSVG/>
+                            <span>Nathan Goulette</span>
+                        </a>
+                        <a href="https://github.com/AndreBClark/companiondice">
+                            <GithubSVG />
+                            <span>Github</span>
                         </a>
                     </div>
                 </header>
