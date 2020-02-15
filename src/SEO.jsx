@@ -4,7 +4,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-import { h  } from 'preact';
+import { h } from 'preact';
 import PropTypes from 'prop-types';
 import Helmet from 'preact-helmet';
 
@@ -12,14 +12,12 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
   const site = {
     title: `Companion Dice`,
     author: `Andre Clark`,
-    description: `Dice Rolling app for Playing Table Top Games `,
+    description: `Dice Rolling app for Playing Table Top Games`,
     siteUrl: `https://companiondice.netlify.com`,
     social: {
         github: `AndreBClark`,
     },
 }
-
-  const metaDescription = description || site.description
 
   return (
     <Helmet
@@ -31,15 +29,14 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: site.description
         },
         {
           property: `og:title`,
-          content: title,
+          content: site.title,
         },
         {
           property: `og:description`,
-          content: metaDescription,
         },
         {
           property: `og:type`,
@@ -55,12 +52,12 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: site.title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
-        },
+          content: site.description,
+        }
       ]
         .concat(
           keywords.length > 0
