@@ -54,7 +54,8 @@
         "postcss-preset-env": "^6.7.0",
         "preact": "^10.2.1",
         "preact-helmet": "^4.0.0-alpha-3",
-        "prop-types": "^15.7.2"
+        "prop-types": "^15.7.2",
+        "workbox-cli": "^5.0.0"
     },
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^2.0.4",
