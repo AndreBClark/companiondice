@@ -101,7 +101,7 @@ export default class CurrentDie extends Component {
                                 -
                             </button>
                         ) : (
-                            <button class="block px-2 opacity-0">-</button>
+                            <button class="block px-2 opacity-0 cursor-not-allowed">-</button>
                         )}
                         {this.state.amount}d{this.props.sides}
                         {this.state.amount < 20 ? (
@@ -111,7 +111,7 @@ export default class CurrentDie extends Component {
                                 +
                             </button>
                         ) : (
-                            <button class="block px-2 opacity-0">+</button>
+                            <button class="block px-2 opacity-0 cursor-not-allowed">+</button>
                         )}
                     </div>
                     <button
