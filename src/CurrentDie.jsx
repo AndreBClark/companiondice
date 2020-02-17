@@ -93,10 +93,10 @@ export default class CurrentDie extends Component {
                             {this.state.result}
                         </span>
                     </button>
-                    <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold opacity-75">
+                    <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
                         {this.state.amount > 1 ? (
                             <button
-                                class="block font-bold opacity-75 px-2"
+                                class="block font-bold px-2"
                                 onClick={this.decrementAmount}>
                                 -
                             </button>
@@ -106,7 +106,7 @@ export default class CurrentDie extends Component {
                         {this.state.amount}d{this.props.sides}
                         {this.state.amount < 20 ? (
                             <button
-                                class="block font-bold opacity-75 px-2"
+                                class="block font-bold px-2"
                                 onClick={this.incrementAmount}>
                                 +
                             </button>
