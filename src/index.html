@@ -10,19 +10,9 @@
 </head>
 
 <body>
-    <noscript>
-    This App Requires that JavaScript be enabled to function
-</noscript>
+    <noscript>This App Requires that JavaScript be enabled to function</noscript>
     <script src="index.jsx"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker
-                .register('../dist/service-worker.js')
-                .then(function() {
-                    console.log("Service Worker Registered");
-                });
-        }
-    </script>
+    <script src="registration.js"></script>
 </body>
 
 </html>
