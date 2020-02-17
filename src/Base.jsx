@@ -3,6 +3,7 @@ import GithubSVG from './assets/github.svg';
 import CosmicSVG from './assets/cosmicdivision.svg';
 import NateSVG from './assets/nkg2.svg';
 import SEO from './SEO';
+import Menu from './menu';
 const Base = ({ children }) => {
     return (
         <Fragment>
@@ -27,8 +28,9 @@ const Base = ({ children }) => {
                     </a>
                 </div>
             </header>
-            {children}
-        </div>
+                {children}
+                <Menu />
+            </div>
         </Fragment>
     );
 };
