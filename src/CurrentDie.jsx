@@ -1,5 +1,4 @@
 import { h, Component, Fragment } from 'preact';
-import Menu from './menu';
 import Base from './Base';
 import D4 from './assets/d4.svg';
 import D6 from './assets/d6.svg';
@@ -126,7 +125,6 @@ export default class CurrentDie extends Component {
                         Reset
                     </button>
                 </main>
-                <Menu />
             </Base>
         );
     }
