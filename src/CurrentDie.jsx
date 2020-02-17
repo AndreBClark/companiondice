@@ -7,16 +7,7 @@ import D8 from './assets/d8.svg';
 import D10 from './assets/d10.svg';
 import D12 from './assets/d12.svg';
 import D20 from './assets/d20.svg';
-const CryptoRNG = (min, max) => {
-    let array = new Uint32Array(1);
-    crypto.getRandomValues(array);
-    let exponentscamble = array[0]/(Math.pow(2, 32));
-    let randNum = Math.floor(exponentscamble * (max - min + 1)) + min;
-    return randNum
-}
-
-export const randomNumGen = (min, max) =>
-    Math.ceil(Math.random() * (max - min)) + min;
+import { cryptoRandomNumberGen } from './rng';
 export default class CurrentDie extends Component {
     constructor(props) {
         super(props);
@@ -43,7 +34,7 @@ export default class CurrentDie extends Component {
         const randomArray = [this.state.result];
         for (let i = 0; i < this.state.ticks; i++) {
             randomArray.unshift(
-                CryptoRNG(
+                cryptoRandomNumberGen(
                     this.state.amount,
                     this.state.amount * this.props.sides
                 )
