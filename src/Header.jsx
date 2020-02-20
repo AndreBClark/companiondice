@@ -3,7 +3,7 @@ import GithubSVG from './assets/github.svg';
 import CosmicSVG from './assets/cosmicdivision.svg';
 import NateSVG from './assets/nkg2.svg';
 const Header = () => {
-    return(
+    return (
         <header class="text-teal-400 w-full p-4">
             <h1 class="h2 md:text-5xl text-center font-black xl:mb-3">
                 Companion Dice
@@ -23,6 +23,6 @@ const Header = () => {
                 </a>
             </div>
         </header>
-    )
-}
+    );
+};
 export default Header;
