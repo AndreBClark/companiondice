@@ -1,14 +1,8 @@
-import { h, render, Component, Fragment } from 'preact';
+import { h } from 'preact';
 import { Link } from '@reach/router';
-import D4 from './assets/d4.svg';
-import D6 from './assets/d6.svg';
-import D8 from './assets/d8.svg';
-import D10 from './assets/d10.svg';
-import D12 from './assets/d12.svg';
-import D20 from './assets/d20.svg';
+import { D4, D6, D8, D10, D12, D20 } from './dice';
 
-export default class Menu extends Component {
-    render() {
+const Menu = props => {
         return (
             <nav>
                 <Link class="btn" to="/4">
@@ -38,4 +32,4 @@ export default class Menu extends Component {
             </nav>
         );
     }
-}
+export default Menu;
