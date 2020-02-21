@@ -6,7 +6,7 @@ if (module.hot) {
     module.hot.accept();
 }
 
-const App = ({ children }) => {
+const App = () => {
     return <CurrentDie sides="20" />;
 };
 

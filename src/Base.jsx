@@ -8,7 +8,7 @@ const Base = ({ children }) => {
             <SEO />
             <div class="mx-auto flex flex-col container max-w-2xl justify-around h-screen overflow-hidden">
                 <Header />
-                {children}
+                <main class="max-w-lg xs:-mt-4">{children}</main>
                 <Menu />
             </div>
         </Fragment>
