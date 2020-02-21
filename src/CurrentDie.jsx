@@ -10,12 +10,12 @@ const CurrentDie = props => {
     const [amount, setAmount] = useState(1);
     const [speed, setSpeed] = useState(60);
     const [ticks, setTicks] = useState(40);
-    const [active, setActive] = useState(false);
-    const [done, setDone] = useState(true);
+    const [active, isActive] = useState(false);
+    const [done, isDone] = useState(true);
     setSides(props.sides);
     const handleClick = () => {
-        setActive(true);
-        setDone(false);
+        isActive(true);
+        isDone(false);
         const randomArray = [result];
         for (let i = 0; i < ticks; i++) {
             randomArray.unshift(cryptoRandomNumberGen(amount, amount * sides));
@@ -25,41 +25,37 @@ const CurrentDie = props => {
             setResult(randomArray.shift());
             if (++displayRefresh === ticks) {
                 window.clearInterval(interval);
-                setActive(false);
-                setDone(true);
+                isActive(false);
+                isDone(true);
             }
         }, speed);
     };
     return (
         <Base>
-                <button
-                    onClick={handleClick}
-                    class={`dice ${active ? ' active ' : ''} ${
-                        done ? ' done ' : ''
-                    }`}>
-                    {(() => {
-                        switch (sides) {
-                            case '4':
-                                return <D4 />;
-                            case '6':
-                                return <D6 />;
-                            case '8':
-                                return <D8 />;
-                            case '10':
-                                return <D10 />;
-                            case '12':
-                                return <D12 />;
-                            case '20':
-                                return <D20 />;
-                        }
-                    })()}
-                    <span class="m-auto text-gray-900 z-10">{result}</span>
-                </button>
-                <Amount
-                    amount={amount}
-                    sides={sides}
-                    setAmount={setAmount}
-                />
+            <button
+                onClick={handleClick}
+                class={`dice ${active ? ' active ' : ''} ${
+                    done ? ' done ' : ''
+                }`}>
+                {(() => {
+                    switch (sides) {
+                        case '4':
+                            return <D4 />;
+                        case '6':
+                            return <D6 />;
+                        case '8':
+                            return <D8 />;
+                        case '10':
+                            return <D10 />;
+                        case '12':
+                            return <D12 />;
+                        case '20':
+                            return <D20 />;
+                    }
+                })()}
+                <span class="m-auto text-gray-900 z-10">{result}</span>
+            </button>
+            <Amount amount={amount} sides={sides} setAmount={setAmount} />
         </Base>
     );
 };
