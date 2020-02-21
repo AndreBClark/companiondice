@@ -12,7 +12,7 @@ const CurrentDie = props => {
     const [ticks, setTicks] = useState(40);
     const [active, setActive] = useState(false);
     const [done, setDone] = useState(true);
-
+    setSides(props.sides);
     const handleClick = () => {
         setActive(true);
         setDone(false);
