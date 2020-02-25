@@ -15,3 +15,18 @@
         transform: scale(1.2);
     }
 }
+
+.modal {
+    @apply justify-around w-full font-bold;
+    &--active {
+        @apply rounded flex-col h-84 z-20 p-3 bg-black inset-x-0 p-4 max-w-full absolute flex;
+        opacity: 0.9;
+        left: 0;
+    }
+    a {
+        @apply mb-4 flex flex-col text-center;
+        @screen sm {
+            @apply flex-row;
+        }
+    }
+}

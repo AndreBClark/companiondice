@@ -3,15 +3,15 @@ import { useState } from 'preact/hooks';
 import Base from './Base';
 import { D4, D6, D8, D10, D12, D20 } from './dice';
 import { cryptoRandomNumberGen } from './rng';
-import { Amount } from './Amount';
+import Amount from './Amount';
 const CurrentDie = props => {
     const [sides, setSides] = useState(props.sides);
     const [result, setResult] = useState(props.sides);
     const [amount, setAmount] = useState(1);
-    const [speed, setSpeed] = useState(60);
-    const [ticks, setTicks] = useState(40);
     const [active, isActive] = useState(false);
     const [done, isDone] = useState(true);
+    const ticks = 40;
+    const speed = 60;
     setSides(props.sides);
     const handleClick = () => {
         isActive(true);

@@ -1,6 +1,6 @@
-import { h, render, Component, Fragment } from 'preact';
+import { h, render } from 'preact';
 import { Router } from '@reach/router';
-import CurrentDie from './CurrentDie';
+import CurrentDie from './components/CurrentDie';
 
 if (module.hot) {
     module.hot.accept();

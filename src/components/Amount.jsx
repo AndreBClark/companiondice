@@ -1,6 +1,6 @@
 import { h, Fragment } from 'preact';
 
-export const Amount = props => {
+const Amount = props => {
     return (
         <Fragment>
             <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
@@ -36,3 +36,4 @@ export const Amount = props => {
         </Fragment>
     );
 };
+export default Amount;
