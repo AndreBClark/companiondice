@@ -28,7 +28,7 @@ const Header = () => {
             <div
                 class={`modal${infobtn ? ' modal--active' : ''}`}
                 ref={ref}>
-                    <h3 class="text-center mb-6">Created By</h3>
+                    <h3 class="text-center">Created By</h3>
                 <a href="https://cosmicdivision.dev">
                     <CosmicSVG />
                     Andre Clark

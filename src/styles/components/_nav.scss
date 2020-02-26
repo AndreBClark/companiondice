@@ -17,13 +17,13 @@
 }
 
 .modal {
-    @apply justify-around font-bold mx-auto transition duration-700 ease-out transition-all absolute p-4 z-20 p-8 rounded bg-deeppurple-500 inset-x-0 content-between flex-col flex text-center max-w-full;
+    @apply justify-around font-bold mx-auto transition duration-700 ease-out transition-all absolute p-4 z-20 h-96 rounded bg-deeppurple-500 inset-x-0 flex-col flex text-center max-w-full;
     @screen lg {
         width: 20vw;
     }
     top: -500px;
     a {
-        @apply mb-4 flex flex-col;
+        @apply flex flex-col;
         @screen sm {
             svg {
                 @apply pr-2;
