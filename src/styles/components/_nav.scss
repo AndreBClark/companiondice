@@ -17,11 +17,11 @@
 }
 
 .modal {
-    @apply justify-around w-full font-bold;
+    @apply justify-around w-full font-bold transition duration-700 ease-out transition-all absolute h-84 p-4 max-w-full flex mx-auto z-20 p-3 rounded flex-col bg-deeppurple-500 inset-x-0;
+    width: 70vw;
+    top: -500px;
     &--active {
-        @apply rounded flex-col h-84 z-20 p-3 bg-black inset-x-0 p-4 max-w-full absolute flex;
-        opacity: 0.9;
-        left: 0;
+        top: 30px;
     }
     a {
         @apply mb-4 flex flex-col text-center;

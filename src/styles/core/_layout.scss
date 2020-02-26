@@ -17,9 +17,18 @@ body {
 }
 
 header {
-    & a,
-    p {
-        @apply opacity-50 flex;
+    @apply text-teal-400 w-full p-4;
+    @screen xs {
+        @apply relative;
+    }
+    a p {
+        @apply block opacity-50 font-normal;
+    }
+    @screen md {
+        & a,
+        p {
+            @apply opacity-50 flex;
+        }
     }
     & span {
         @apply mx-3;
@@ -30,6 +39,14 @@ header {
     a:hover {
         @apply opacity-100;
         transition: opacity ease-in-out 500ms;
+    }
+    &::before {
+        content: '';
+        @apply w-screen bg-black opacity-0 absolute top-0 left-0 hidden transition duration-700 ease-out transition-all z-0;
+    }
+    &.overlay::before {
+        content: '';
+        @apply h-screen block opacity-75 z-10;
     }
 }
 
