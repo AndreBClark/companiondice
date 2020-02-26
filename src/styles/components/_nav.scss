@@ -16,8 +16,24 @@
     }
 }
 
+.credits {
+    @apply justify-around w-full font-bold max-w-full mx-auto;
+    @screen sm {
+        @apply flex;
+    }
+    a {
+        @apply mb-4 flex flex-col text-center;
+        @screen sm {
+            @apply flex-row;
+            svg {
+                @apply pr-2;
+            }
+        }
+    }
+}
+
 .modal {
-    @apply justify-around w-full font-bold transition duration-700 ease-out transition-all absolute h-84 p-4 max-w-full flex mx-auto z-20 p-3 rounded flex-col bg-deeppurple-500 inset-x-0;
+    @apply transition duration-700 ease-out transition-all absolute h-64 p-4 z-20 p-3 rounded flex-col bg-deeppurple-500 inset-x-0;
     width: 70vw;
     top: -500px;
     &--active {

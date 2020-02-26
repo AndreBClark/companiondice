@@ -19,8 +19,26 @@ const Header = () => {
                     <InfoSVG />
                 </button>
             </h1>
+            <div class="credits hidden">
+                    <a href="https://cosmicdivision.dev">
+                        <CosmicSVG />
+                        Andre Clark
+                        &nbsp;
+                        <p>Developer</p>
+                    </a>
+                    <a href="https://nathangoullette.com">
+                        <NateSVG />
+                        Nathan Goullette
+                        &nbsp;
+                        <p>Designer</p>
+                    </a>
+                    <a href="https://github.com/AndreBClark/companiondice">
+                        <GithubSVG />
+                        Github Repo
+                    </a>
+                </div>
             <OutsideClickHandler onOutsideClick={() => infoClicked(false)}>
-                <div class={`modal${infobtn ? ' modal--active' : ''}`}>
+                <div class={`credits modal${infobtn ? ' modal--active' : ''}`}>
                     <a href="https://cosmicdivision.dev">
                         <CosmicSVG />
                         Andre Clark

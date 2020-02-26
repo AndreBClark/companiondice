@@ -45,8 +45,9 @@ header {
         @apply w-screen bg-black opacity-0 absolute top-0 left-0 hidden transition duration-700 ease-out transition-all z-0;
     }
     &.overlay::before {
-        content: '';
         @apply h-screen block opacity-75 z-10;
+        content: '';
+        top: -20px;
     }
 }
 
