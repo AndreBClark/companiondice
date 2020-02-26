@@ -6,6 +6,8 @@
  */
 import { h } from 'preact';
 import Helmet from 'preact-helmet';
+import PropTypes from 'prop-types';
+
 
 const SEO = ({ description, lang, meta, keywords, title }) => {
     const site = {
@@ -36,6 +38,7 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
                 },
                 {
                     property: `og:description`,
+                    content: site.description,
                 },
                 {
                     property: `og:type`,
@@ -69,6 +72,21 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
                 .concat(meta)}
         />
     );
+};
+
+SEO.defaultProps = {
+    lang: `en`,
+    meta: [],
+    keywords: [],
+    description: ``,
+};
+
+SEO.propTypes = {
+    description: PropTypes.string,
+    lang: PropTypes.string,
+    meta: PropTypes.arrayOf(PropTypes.object),
+    keywords: PropTypes.arrayOf(PropTypes.string),
+    title: PropTypes.string,
 };
 
 export default SEO;

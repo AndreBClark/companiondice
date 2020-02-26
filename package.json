@@ -52,6 +52,7 @@
         "postcss-modules": "^1.4.1",
         "postcss-preset-env": "^6.7.0",
         "preact": "^10.2.1",
+        "prop-types": "^15.7.2",
         "preact-helmet": "^4.0.0-alpha-3"
     },
     "devDependencies": {
