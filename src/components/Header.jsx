@@ -1,60 +1,49 @@
 import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import { useState, useRef } from 'preact/hooks';
 import GithubSVG from '../assets/github.svg';
 import CosmicSVG from '../assets/cosmicdivision.svg';
 import NateSVG from '../assets/nkg2.svg';
 import InfoSVG from '../assets/info.svg';
-import OutsideClickHandler from 'react-outside-click-handler/build/OutsideClickHandler';
+import useOutsideClick from '../hooks/useOutsideClick';
 
 const Header = () => {
     const [infobtn, infoClicked] = useState(false);
+    const ref = useRef();
+    useOutsideClick(ref, () => {
+        if (infobtn === true) {
+            infoClicked(false);
+        }
+    });
     return (
         <header class={`${infobtn ? 'overlay' : ''}`}>
             <h1 class="h2 md:text-5xl text-center font-black xl:mb-3">
                 Companion Dice
                 <button
                     aria-label="more info button"
-                    class="sm:hidden p-2"
+                    class="p-2"
                     onClick={() => infoClicked(!infobtn)}>
                     <InfoSVG />
                 </button>
             </h1>
-            <div class="credits hidden">
-                    <a href="https://cosmicdivision.dev">
-                        <CosmicSVG />
-                        Andre Clark
-                        &nbsp;
-                        <p>Developer</p>
-                    </a>
-                    <a href="https://nathangoullette.com">
-                        <NateSVG />
-                        Nathan Goullette
-                        &nbsp;
-                        <p>Designer</p>
-                    </a>
-                    <a href="https://github.com/AndreBClark/companiondice">
-                        <GithubSVG />
-                        Github Repo
-                    </a>
-                </div>
-            <OutsideClickHandler onOutsideClick={() => infoClicked(false)}>
-                <div class={`credits modal${infobtn ? ' modal--active' : ''}`}>
-                    <a href="https://cosmicdivision.dev">
-                        <CosmicSVG />
-                        Andre Clark
-                        <p>Developer</p>
-                    </a>
-                    <a href="https://nathangoullette.com">
-                        <NateSVG />
-                        Nathan Goullette
-                        <p>Designer</p>
-                    </a>
-                    <a href="https://github.com/AndreBClark/companiondice">
-                        <GithubSVG />
-                        Github Repo
-                    </a>
-                </div>
-            </OutsideClickHandler>
+            <div
+                class={`modal${infobtn ? ' modal--active' : ''}`}
+                ref={ref}>
+                    <h3 class="text-center mb-6">Created By</h3>
+                <a href="https://cosmicdivision.dev">
+                    <CosmicSVG />
+                    Andre Clark
+                    <p>Developer</p>
+                </a>
+                <a href="https://nathangoullette.com">
+                    <NateSVG />
+                    Nathan Goullette
+                    <p>Designer</p>
+                </a>
+                <a href="https://github.com/AndreBClark/companiondice">
+                    <GithubSVG />
+                    Github Repo
+                </a>
+            </div>
         </header>
     );
 };
