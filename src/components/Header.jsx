@@ -20,7 +20,7 @@ const Header = () => {
                 Companion Dice
                 <button
                     aria-label="more info button"
-                    class="p-2"
+                    class="py-4 px-2"
                     onClick={() => infoClicked(!infobtn)}>
                     <InfoSVG />
                 </button>
@@ -28,7 +28,7 @@ const Header = () => {
             <div
                 class={`modal${infobtn ? ' modal--active' : ''}`}
                 ref={ref}>
-                    <h3 class="text-center">Created By</h3>
+                    <h2 class="text-center">Created By</h2>
                 <a href="https://cosmicdivision.dev">
                     <CosmicSVG />
                     Andre Clark
