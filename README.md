@@ -1,7 +1,7 @@
 # :game_die: Companion Dice For Tabletop Games 
 ![Test Lighthouse Check](https://github.com/AndreBClark/companiondice/workflows/Test%20Lighthouse%20Check/badge.svg)[![Netlify Status](https://api.netlify.com/api/v1/badges/5a23c7a3-919a-4d82-8b77-f21199613137/deploy-status)](https://app.netlify.com/sites/companiondice/deploys)
 
-https://companiondice.netlify.com/
+https://companiondice.netlify.app/
 ### Features
 - **Select** from 4, 6, 8, 10, 12, 20 sided dice
 - **Supports** rolling multiple dice of one type
