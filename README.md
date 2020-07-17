@@ -7,6 +7,7 @@ https://companiondice.netlify.app/
 - **Supports** rolling multiple dice of one type
 - **Responsive** Mobile friendly layout
 - **PWA** Download as an offline Progressive Web App onto your phone 
+- **NEW in 1.1** You can Now roll 100 sided, and roll for Ability Scores
 
 ### Acknowledgement
 Created in collaboration with [Nathan Goullete](https://github.com/NathanGoullette)
