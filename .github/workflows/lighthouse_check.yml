@@ -15,7 +15,7 @@ jobs:
           author: ${{ github.actor }}
           branch: ${{ github.ref }}
           outputDirectory: /tmp/artifacts
-          urls: https://companiondice.netlify.com/
+          urls: https://companiondice.netlify.app/
           sha: ${{ github.sha }}
       - name: Upload artifacts
         uses: actions/upload-artifact@master
