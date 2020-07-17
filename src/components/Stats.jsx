@@ -38,7 +38,7 @@ const RollStats = props => {
                     done ? ' done ' : ''
                     }`}>
                 <D6 />
-                <span class="m-auto text-gray-900 z-10">{result}</span>
+                <span class="m-auto text-gray-900 bg-teal-400 z-10">{result}</span>
             </button>
         </Base>
     );
