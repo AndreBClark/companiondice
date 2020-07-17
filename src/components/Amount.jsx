@@ -16,7 +16,7 @@ const Amount = props => {
                     </button>
                 )}
                 {props.amount}d{props.sides}
-                {props.amount < 20 ? (
+                {props.amount < 40 ? (
                     <button
                         class="block font-bold px-2"
                         onClick={() => props.setAmount(props.amount + 1)}>
