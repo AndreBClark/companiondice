@@ -1,9 +1,10 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import Base from './Base';
-import { D4, D6, D8, D10, D12, D20 } from './dice';
+import { D4, D6, D8, D10, D12, D20, D100 } from './dice';
 import { cryptoRandomNumberGen } from './rng';
 import Amount from './Amount';
+
 const CurrentDie = props => {
     const [sides, setSides] = useState(props.sides);
     const [result, setResult] = useState(props.sides);
@@ -51,6 +52,8 @@ const CurrentDie = props => {
                             return <D12 />;
                         case '20':
                             return <D20 />;
+                        case '100':
+                            return <D100 />;
                     }
                 })()}
                 <span class="m-auto text-gray-900 z-10">{result}</span>

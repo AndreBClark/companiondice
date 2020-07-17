@@ -13,7 +13,7 @@ const App = () => {
 render(
     <Router>
         <App path="/" exact />
-        <CurrentDie path="/:sides" />
+        <CurrentDie exact path="/:sides" />
     </Router>,
     document.body
 );
