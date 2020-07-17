@@ -10,16 +10,7 @@
 
 # production
 /build
-/dist/*.html
-/dist/*.css
-/dist/*.js
-/dist/*.map
-/dist/*.png
-/dist/*.webp
-/dist/*.xml
-/dist/*.webmanifest
-/dist/*.jpg
-/dist/*.jpeg
+/dist
 /public
 # misc
 .DS_Store
