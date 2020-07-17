@@ -33,6 +33,10 @@ const Menu = props => {
                 <D100 />
                 <span>d100</span>
             </Link>
+            <Link class="btn" to="/stats">
+                <D20 />
+                <span>STATS</span>
+            </Link>
         </nav>
     );
 };
