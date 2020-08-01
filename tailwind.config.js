@@ -1,6 +1,9 @@
 const tint = require('polished/lib/color/tint');
 const darken = require('polished/lib/color/darken');
 module.exports = {
+    purge: [
+        "./src/**/*.jsx",
+    ],
     theme: {
         extend: {
             spacing: {
