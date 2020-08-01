@@ -37,7 +37,7 @@ const HealthTracker = props => {
                                 />
                         </div>
                         <div class="w-1/2">
-                        <div class="text-10xl leading-0 font-black -mt-6">
+                        <div class="text-6xl xl:text-10xl leading-0 font-black -mt-6">
                             <span class="text-2xl font-bold leading-0 ">Current</span>
                                 <InputNum
                                     enableMobileNumericKeyboard
