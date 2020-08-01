@@ -1,8 +1,7 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import Base from './Base';
-import { D4, D6, D8, D10, D12, D20, D100 } from './dice';
-import { cryptoRandomNumberGen } from './rng';
+import { D6 } from './dice';
 import Amount from './Amount';
 
 const RollStats = props => {

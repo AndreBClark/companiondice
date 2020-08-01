@@ -3,6 +3,16 @@ import Base from './Base'
 import Button from './Button'
 import useLocalStorage from '../hooks/useLocalStorage'
 import InputNumber from 'react-input-number'
+import styled from 'styled-components';
+
+const InputNum = styled(InputNumber)`
+    background: none;
+    outline: none;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+`
 
 const HealthTracker = props => {
     const [hitpoints, setHitpoints] = useLocalStorage('currentHP', maxHP);
@@ -27,30 +37,28 @@ const HealthTracker = props => {
                                 />
                         </div>
                         <div class="w-1/2">
-                            <div class="input-reset text-6xl xl:text-10xl leading-0 font-bold xl:-mt-6">
-                                <span class="text-2xl font-bold leading-0 ">Current</span>
-                                    <InputNumber
-                                        enableMobileNumericKeyboard
-                                        class="inputn"
-                                        value={hitpoints}
-                                        onChange={setHitpoints}
-                                        step={1}
-                                        min={0}
-                                        max={maxHP}
-                                        placeholder={maxHP}
-                                    />
-                            </div>
-                        <div class="input-reset">
-                            <span>Max</span>
-                            <InputNumber
-                                enableMobileNumericKeyboard
-                                min={hitpoints}
-                                class="inputn"
-                                step={1}
-                                min={0}
-                                value={maxHP}
-                                onChange={setMaxHP}
+                        <div class="text-10xl leading-0 font-black -mt-6">
+                            <span class="text-2xl font-bold leading-0 ">Current</span>
+                                <InputNum
+                                    enableMobileNumericKeyboard
+                                    value={hitpoints}
+                                    onChange={setHitpoints}
+                                    step={1}
+                                    min={0}
+                                    max={maxHP}
+                                    placeholder={maxHP}
                                 />
+                            </div>
+                            <div>
+                                <span>Max</span>
+                                <InputNum
+                                    enableMobileNumericKeyboard
+                                    min={hitpoints}
+                                    step={1}
+                                    min={0}
+                                    value={maxHP}
+                                    onChange={setMaxHP}
+                                    />
                             </div>
                         </div>
                         <div class="w-1/4">

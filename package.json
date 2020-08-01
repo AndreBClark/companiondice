@@ -55,7 +55,8 @@
         "preact": "^10.2.1",
         "preact-helmet": "^4.0.0-alpha-3",
         "prop-types": "^15.7.2",
-        "react-input-number": "^5.0.19"
+        "react-input-number": "^5.0.19",
+        "styled-components": "^5.1.1"
     },
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^2.0.4",
