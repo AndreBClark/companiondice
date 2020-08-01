@@ -9,8 +9,8 @@ const HealthTracker = props => {
     const [maxHP, setMaxHP] = useLocalStorage('maxHP', maxHP);
     return (
             <Base>
-                <div class="text-center mx-auto text-indigo-600 font-bold w-2xl">
-                    <div class="flex justify-between text-center text-2xl w-full">
+                <div class="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl">
+                    <div class="flex justify-between text-center w-full">
                         <div class="w-1/4">
                             <div>Damage</div>
                             <Button
@@ -26,9 +26,9 @@ const HealthTracker = props => {
                                 label="10"
                                 />
                         </div>
-                        <div class="w-1/2 items-start">
-                        <div class="text-10xl leading-0 font-black -mt-4">
-                            <span class="text-lg font-semibold leading-0 ">Current</span>
+                        <div class="w-1/2">
+                        <div class="text-10xl leading-0 font-black -mt-6">
+                            <span class="text-2xl font-bold leading-0 ">Current</span>
                                 <InputNumber
                                     enableMobileNumericKeyboard
                                     value={hitpoints}
@@ -42,12 +42,12 @@ const HealthTracker = props => {
                             <div>
                                 <span>Max</span>
                                 <InputNumber
+                                    enableMobileNumericKeyboard
                                     min={hitpoints}
                                     step={1}
                                     min={0}
                                     value={maxHP}
                                     onChange={setMaxHP}
-                                    enableMobileNumericKeyboard
                                     />
                             </div>
                         </div>
