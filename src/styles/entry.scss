@@ -5,6 +5,9 @@
 /* purgecss end ignore */
 
 @tailwind utilities;
+.bg-none {
+    background: none;
+}
 @import 'core/core';
 @import 'components/components';
 @import 'theme/theme';

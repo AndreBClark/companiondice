@@ -3,10 +3,6 @@ main {
     @apply mx-auto;
 }
 
-main {
-    @apply pb-4;
-}
-
 html {
     font-variant-numeric: tabular-nums;
     @apply max-h-screen overflow-hidden;
