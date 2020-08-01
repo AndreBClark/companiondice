@@ -31,6 +31,7 @@ const HealthTracker = props => {
                                 <span class="text-2xl font-bold leading-0 ">Current</span>
                                     <InputNumber
                                         enableMobileNumericKeyboard
+                                        class="inputn"
                                         value={hitpoints}
                                         onChange={setHitpoints}
                                         step={1}
@@ -44,6 +45,7 @@ const HealthTracker = props => {
                             <InputNumber
                                 enableMobileNumericKeyboard
                                 min={hitpoints}
+                                class="inputn"
                                 step={1}
                                 min={0}
                                 value={maxHP}
