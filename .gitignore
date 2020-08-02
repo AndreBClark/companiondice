@@ -10,7 +10,7 @@
 
 # production
 /build
-/dist
+/dist/*
 !/dist/_redirects
 /public
 # misc
