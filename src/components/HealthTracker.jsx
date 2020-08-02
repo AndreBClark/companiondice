@@ -24,17 +24,17 @@ const HealthTracker = props => {
                     <div class="w-1/4">
                         <div>Damage</div>
                         <Button
-                            onClick={() => setHitpoints(hitpoints - 1)}
-                            label="1"
-                        />
+                            onClick={() => setHitpoints(hitpoints - 1)}>
+                            1
+                        </Button>
                         <Button
-                            onClick={() => setHitpoints(hitpoints - 5)}
-                            label="5"
-                        />
+                            onClick={() => setHitpoints(hitpoints - 5)}>
+                            5
+                        </Button>
                         <Button
-                            onClick={() => setHitpoints(hitpoints - 10)}
-                            label="10"
-                        />
+                            onClick={() => setHitpoints(hitpoints - 10)}>
+                            10
+                        </Button>
                     </div>
                     <div class="w-1/2">
                         <div class="text-6xl xl:text-10xl leading-0 font-black lg:-mt-6">
@@ -66,17 +66,17 @@ const HealthTracker = props => {
                     <div class="w-1/4">
                         <div>Heal</div>
                         <Button
-                            onClick={() => setHitpoints(hitpoints + 1)}
-                            label="1"
-                        />
+                            onClick={() => setHitpoints(hitpoints + 1)}>
+                            1
+                        </Button>
                         <Button
-                            onClick={() => setHitpoints(hitpoints + 5)}
-                            label="5"
-                        />
+                            onClick={() => setHitpoints(hitpoints + 5)}>
+                            5
+                        </Button>
                         <Button
-                            onClick={() => setHitpoints(hitpoints + 10)}
-                            label="10"
-                        />
+                            onClick={() => setHitpoints(hitpoints + 10)}>
+                            10
+                        </Button>
                     </div>
                 </div>
             </div>

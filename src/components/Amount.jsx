@@ -1,38 +1,41 @@
 import { h, Fragment } from 'preact';
+import Button from './Button'
 
 const Amount = props => {
     return (
         <Fragment>
             <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
                 {props.amount > 1 ? (
-                    <button
-                        class="block font-bold px-2"
+                    <Button
                         onClick={() => props.setAmount(props.amount - 1)}>
                         -
-                    </button>
+                    </Button>
                 ) : (
-                    <button class="block px-2 opacity-0 cursor-not-allowed">
+                    <Button 
+                        class="cursor-not-allowed">
                         -
-                    </button>
+                    </Button>
                 )}
-                {props.amount}d{props.sides}
+                <span class="p-4">{props.amount}d{props.sides}</span>
                 {props.amount < 40 ? (
-                    <button
+                    <Button
                         class="block font-bold px-2"
                         onClick={() => props.setAmount(props.amount + 1)}>
                         +
-                    </button>
+                    </Button>
                 ) : (
-                    <button class="block px-2 opacity-0 cursor-not-allowed">
+                    <Button 
+                        class="cursor-not-allowed">
                         +
-                    </button>
+                    </Button>
                 )}
             </div>
-            <button
-                class="text-indigo-500 uppercase font-bold block w-full"
-                onClick={() => props.setAmount(1)}>
-                Reset
-            </button>
+            <div class="text-2xl">
+                <Button
+                    onClick={() => props.setAmount(1)}>
+                    Reset
+                </Button>
+            </div>
         </Fragment>
     );
 };
