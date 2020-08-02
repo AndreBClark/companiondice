@@ -4,7 +4,7 @@
     "description": "Dice Rolling app for Playing Table Top Games ",
     "main": "src/index.jsx",
     "scripts": {
-        "start": "parcel src/index.html --no-source-maps",
+        "start": "parcel src/index.html",
         "reset": "powershell Remove-Item –path node_modules –recurse; Remove-Item –path .cache –recurse; Remove-Item –path dist –recurse; npm i",
         "build": "parcel build src/index.html --public-url ./",
         "format": "npm run format-css && npm run format-js",

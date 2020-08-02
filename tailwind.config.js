@@ -1,5 +1,10 @@
 const darken = require('polished/lib/color/darken');
 module.exports = {
+    purge: [
+        './src/**/*.html',
+        './src/**/*.vue',
+        './src/**/*.jsx',
+    ],
     theme: {
         extend: {
             spacing: {
