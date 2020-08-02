@@ -67,6 +67,7 @@
         "cssnano": "^4.1.10",
         "cssnano-preset-advanced": "^4.0.7",
         "parcel-bundler": "^1.12.4",
+        "parcel-plugin-robot": "^1.0.0",
         "polished": "^3.4.4",
         "postcss-cli": "^6.1.3",
         "prettier": "^1.19.1",
