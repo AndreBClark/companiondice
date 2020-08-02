@@ -8,7 +8,6 @@ import { h } from 'preact';
 import Helmet from 'preact-helmet';
 import PropTypes from 'prop-types';
 
-
 const SEO = ({ description, lang, meta, keywords, title }) => {
     const site = {
         title: `Companion Dice`,

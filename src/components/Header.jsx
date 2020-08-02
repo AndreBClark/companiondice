@@ -25,10 +25,8 @@ const Header = () => {
                     <InfoSVG />
                 </button>
             </h1>
-            <div
-                class={`modal${infobtn ? ' modal--active' : ''}`}
-                ref={ref}>
-                    <h2 class="text-center">Created By</h2>
+            <div class={`modal${infobtn ? ' modal--active' : ''}`} ref={ref}>
+                <h2 class="text-center">Created By</h2>
                 <a href="https://cosmicdivision.dev">
                     <CosmicSVG />
                     Andre Clark

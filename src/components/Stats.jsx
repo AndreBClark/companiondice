@@ -20,7 +20,7 @@ const RollStats = props => {
             randomArray.unshift(cryptoRandomNumberGen(6, 18));
         }
         let displayRefresh = 0;
-        let interval = setInterval(function () {
+        let interval = setInterval(function() {
             setResult(randomArray.shift());
             if (++displayRefresh === ticks) {
                 window.clearInterval(interval);
@@ -35,9 +35,11 @@ const RollStats = props => {
                 onClick={handleClick}
                 class={`dice ${active ? ' active ' : ''} ${
                     done ? ' done ' : ''
-                    }`}>
+                }`}>
                 <D6 />
-                <span class="m-auto text-gray-900 bg-teal-400 z-10">{result}</span>
+                <span class="m-auto text-gray-900 bg-teal-400 z-10">
+                    {result}
+                </span>
             </button>
         </Base>
     );

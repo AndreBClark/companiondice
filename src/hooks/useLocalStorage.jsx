@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks'
+import { useState } from 'preact/hooks';
 
 export default function useLocalStorage(key, initialValue) {
     // State to store our value
@@ -14,7 +14,7 @@ export default function useLocalStorage(key, initialValue) {
             console.log(error);
             return initialValue;
         }
-});
+    });
     const setValue = value => {
         try {
             // Allow value to be a function so we have same API as useState
