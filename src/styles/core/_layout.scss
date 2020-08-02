@@ -5,7 +5,7 @@ main {
 
 html {
     font-variant-numeric: tabular-nums;
-    @apply max-h-screen overflow-hidden;
+    @apply max-h-screen overflow-hidden font-sans;
 }
 
 body {
