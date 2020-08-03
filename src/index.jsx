@@ -16,7 +16,7 @@ render(
     <Router>
         <App path="/" exact />
         <CurrentDie exact path="/dice/:sides" />
-        <RollStats exact path="/dice/stats" sides="20" />
+        <RollStats exact path="/stats" sides="20" />
         <HealthTracker exact path="/hp" />
     </Router>,
     document.body

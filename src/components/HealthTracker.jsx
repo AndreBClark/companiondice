@@ -6,15 +6,18 @@ import InputNumber from 'react-input-number';
 import styled from 'styled-components';
 
 const InputNum = styled(InputNumber).attrs({
-    className: 'text-6xl xl:text-10xl bg-none text-center mx-auto block w-full text-teal-500',
+    className: `text-8xl xl:text-10xl bg-none text-center mx-auto block w-full text-teal-500`,
 })`
-    background: none;
-    outline: none;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-    width: 100%;
+background: none;
+outline: none;
+text-align: center;
+margin: 0 auto;
+display: block;
+width: 100%;
 `;
+const InputNumMax = styled(InputNum).attrs({
+    className: `text-indigo-500`
+})``
 
 const HealthTracker = props => {
     const [hitpoints, setHitpoints] = useLocalStorage('currentHP', maxHP);
@@ -22,21 +25,23 @@ const HealthTracker = props => {
     return (
         <Base>
             <div class="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl px-2">
-                <div class="flex justify-around text-center w-full">
-                    <div class="w-1/4">
-                        <div>Damage</div>
-                        <HPButton onClick={() => setHitpoints(hitpoints - 1)}>
-                            1
-                        </HPButton>
-                        <HPButton onClick={() => setHitpoints(hitpoints - 5)}>
-                            5
-                        </HPButton>
-                        <HPButton onClick={() => setHitpoints(hitpoints - 10)}>
-                            10
-                        </HPButton>
+                <div class="flex flex-col justify-around text-center w-full">
+                    <div>
+                        <div>Heal</div>
+                        <div className="flex gap-2">
+                            <HPButton onClick={() => setHitpoints(hitpoints + 1)}>
+                                1
+                            </HPButton>
+                            <HPButton onClick={() => setHitpoints(hitpoints + 5)}>
+                                5
+                            </HPButton>
+                            <HPButton onClick={() => setHitpoints(hitpoints + 10)}>
+                                10
+                            </HPButton>
+                        </div>
                     </div>
-                    <div class="w-1/2">
-                        <div class="text-6xl xl:text-10xl leading-0 font-black lg:-mt-6">
+                    <div class="flex">
+                        <div class="w-1/2 text-6xl xl:text-10xl leading-0 font-black">
                             <span class="text-2xl font-bold leading-0 ">
                                 Current
                             </span>
@@ -50,9 +55,9 @@ const HealthTracker = props => {
                                 placeholder={maxHP}
                             />
                         </div>
-                        <div>
-                            <span>Max</span>
-                            <InputNum
+                        <div class="w-1/2 text-6xl xl:text-10xl leading-0 font-black">
+                            <span class="text-2xl font-bold leading-0">Max</span>
+                            <InputNumMax
                                 enableMobileNumericKeyboard
                                 min={hitpoints}
                                 step={1}
@@ -62,17 +67,19 @@ const HealthTracker = props => {
                             />
                         </div>
                     </div>
-                    <div class="w-1/4">
-                        <div>Heal</div>
-                        <HPButton onClick={() => setHitpoints(hitpoints + 1)}>
-                            1
-                        </HPButton>
-                        <HPButton onClick={() => setHitpoints(hitpoints + 5)}>
-                            5
-                        </HPButton>
-                        <HPButton onClick={() => setHitpoints(hitpoints + 10)}>
-                            10
-                        </HPButton>
+                    <div>
+                        <div>Damage</div>
+                        <div className="flex gap-2">
+                            <HPButton onClick={() => setHitpoints(hitpoints - 1)}>
+                                1
+                            </HPButton>
+                            <HPButton onClick={() => setHitpoints(hitpoints - 5)}>
+                                5
+                            </HPButton>
+                            <HPButton onClick={() => setHitpoints(hitpoints - 10)}>
+                                10
+                            </HPButton>
+                        </div>
                     </div>
                 </div>
             </div>

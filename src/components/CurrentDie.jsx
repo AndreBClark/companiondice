@@ -56,7 +56,7 @@ const CurrentDie = props => {
                             return <D100 />;
                     }
                 })()}
-                <span class="m-auto text-gray-900 bg-teal-400 z-10">
+                <span class="m-auto text-gray-900 bg-teal-400 z-10 rounded-full">
                     {result}
                 </span>
             </button>
