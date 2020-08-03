@@ -6,7 +6,7 @@ const Base = ({ children }) => {
     return (
         <Fragment>
             <SEO />
-            <div class="mx-auto flex flex-col container max-w-2xl justify-between h-screen font-sans">
+            <div class="mx-auto flex flex-col container max-w-2xl justify-between xl:justify-around h-screen font-sans">
                 <Header />
                 <main class="w-full">{children}</main>
                 <Menu />
