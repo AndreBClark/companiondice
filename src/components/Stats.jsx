@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import Base from './Base';
 import { D6 } from './dice';
-import Amount from './Amount';
+import { cryptoRandomNumberGen } from './rng';
 
 const RollStats = props => {
     const [sides, setSides] = useState(props.sides);
@@ -33,9 +33,7 @@ const RollStats = props => {
         <Base>
             <button
                 onClick={handleClick}
-                class={`dice ${active ? ' active ' : ''} ${
-                    done ? ' done ' : ''
-                }`}>
+                class={`dice ${active ? ' active ' : ''} ${done ? ' done ' : ''}`}>
                 <D6 />
                 <span class="m-auto text-gray-900 bg-teal-400 z-10">
                     {result}

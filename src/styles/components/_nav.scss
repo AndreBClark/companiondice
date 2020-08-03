@@ -1,5 +1,5 @@
 .btn {
-    @apply font-bold text-center opacity-75 mb-3 fill-current text-teal-400 flex flex-col justify-between items-center content-center w-1/5;
+    @apply font-bold text-center opacity-75 mb-4 fill-current text-teal-400 flex flex-col justify-between items-center content-center w-1/5;
     transition: opacity 500ms, transform 500ms;
     transition-timing-function: ease-in-out;
     @screen md {
