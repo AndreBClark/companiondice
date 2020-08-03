@@ -6,7 +6,7 @@ import InputNumber from 'react-input-number';
 import styled from 'styled-components';
 
 const InputNum = styled(InputNumber).attrs({
-    className: 'text-6xl xl:text-10xl bg-none text-center mx-auto block w-full',
+    className: 'text-6xl xl:text-10xl bg-none text-center mx-auto block w-full text-teal-500',
 })`
     background: none;
     outline: none;
