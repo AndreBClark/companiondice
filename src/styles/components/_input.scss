@@ -1,4 +1,6 @@
-.input-reset input[type='number'],
-.inputn {
-    @apply bg-none text-center mx-auto block w-full;
+.input-reset input[type='number'] {
+    @apply bg-none text-center mx-auto block w-full text-6xl;
+    @screen xl {
+        @apply text-10xl;
+    }
 }
