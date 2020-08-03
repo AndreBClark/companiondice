@@ -28,7 +28,7 @@ const HealthTracker = props => {
                 <div class="flex flex-col justify-around text-center w-full">
                     <div>
                         <div>Heal</div>
-                        <div className="flex col-gap-2 gap-2">
+                        <div className="flex col-gap-2 gap-2 mx-2">
                             <HPButton onClick={() => setHitpoints(hitpoints + 1)}>
                                 1
                             </HPButton>
@@ -69,7 +69,7 @@ const HealthTracker = props => {
                     </div>
                     <div>
                         <div>Damage</div>
-                        <div className="flex col-gap-2 gap-2">
+                        <div className="flex col-gap-2 gap-2 mx-2">
                             <HPButton onClick={() => setHitpoints(hitpoints - 1)}>
                                 1
                             </HPButton>
