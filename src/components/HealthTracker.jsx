@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import Base from './Base';
-import Button from './Button';
+import { HPButton} from './Button';
 import useLocalStorage from '../hooks/useLocalStorage';
 import InputNumber from 'react-input-number';
 import styled from 'styled-components';
@@ -23,18 +23,18 @@ const HealthTracker = props => {
                 <div class="flex justify-around text-center w-full">
                     <div class="w-1/4">
                         <div>Damage</div>
-                        <Button
+                        <HPButton
                             onClick={() => setHitpoints(hitpoints - 1)}>
                             1
-                        </Button>
-                        <Button
+                        </HPButton>
+                        <HPButton
                             onClick={() => setHitpoints(hitpoints - 5)}>
                             5
-                        </Button>
-                        <Button
+                        </HPButton>
+                        <HPButton
                             onClick={() => setHitpoints(hitpoints - 10)}>
                             10
-                        </Button>
+                        </HPButton>
                     </div>
                     <div class="w-1/2">
                         <div class="text-6xl xl:text-10xl leading-0 font-black lg:-mt-6">
@@ -65,18 +65,18 @@ const HealthTracker = props => {
                     </div>
                     <div class="w-1/4">
                         <div>Heal</div>
-                        <Button
+                        <HPButton
                             onClick={() => setHitpoints(hitpoints + 1)}>
                             1
-                        </Button>
-                        <Button
+                        </HPButton>
+                        <HPButton
                             onClick={() => setHitpoints(hitpoints + 5)}>
                             5
-                        </Button>
-                        <Button
+                        </HPButton>
+                        <HPButton
                             onClick={() => setHitpoints(hitpoints + 10)}>
                             10
-                        </Button>
+                        </HPButton>
                     </div>
                 </div>
             </div>

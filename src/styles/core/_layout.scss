@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    @apply text-teal-400 w-full p-4;
+    @apply text-teal-400 w-full;
     p {
         @apply block opacity-100 font-normal;
     }
@@ -45,7 +45,7 @@ header {
 }
 
 nav {
-    @apply mb-6 flex justify-between w-full flex-wrap;
+    @apply flex justify-between w-full flex-wrap;
 }
 
 input:focus,

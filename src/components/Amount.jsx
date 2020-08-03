@@ -1,36 +1,28 @@
 import { h, Fragment } from 'preact';
-import Button from './Button'
+import { Button } from './Button'
+import { useState } from 'preact/hooks';
 
 const Amount = props => {
+    const [oneOrLess, setOneOrLess ] = useState(true);
+    const [reachedLimit, setReachedLimit ] = useState(false);
+    (props.amount <= 1) ? setOneOrLess(true) : setOneOrLess(false);
+    (props.amount >= 40) ? setReachedLimit(true) : setReachedLimit(false);
     return (
         <Fragment>
-            <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
-                {props.amount > 1 ? (
-                    <Button
-                        onClick={() => props.setAmount(props.amount - 1)}>
-                        -
-                    </Button>
-                ) : (
-                    <Button 
-                        class="cursor-not-allowed">
-                        -
-                    </Button>
-                )}
+            <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold px-2">
+                <Button
+                    onClick={() => props.setAmount(props.amount - 1)}
+                    oneOrLess={oneOrLess}>
+                    -
+                </Button>
                 <span class="p-4">{props.amount}d{props.sides}</span>
-                {props.amount < 40 ? (
-                    <Button
-                        class="block font-bold px-2"
-                        onClick={() => props.setAmount(props.amount + 1)}>
-                        +
-                    </Button>
-                ) : (
-                    <Button 
-                        class="cursor-not-allowed">
-                        +
-                    </Button>
-                )}
+                <Button
+                    onClick={() => props.setAmount(props.amount + 1)}
+                    reachedLimit={reachedLimit}>
+                    +
+                </Button>
             </div>
-            <div class="text-2xl">
+            <div class="text-2xl px-2">
                 <Button
                     onClick={() => props.setAmount(1)}>
                     Reset
