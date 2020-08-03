@@ -29,15 +29,9 @@ const HealthTracker = props => {
                     <div>
                         <div>Heal</div>
                         <div className="flex col-gap-2 gap-2 mx-2">
-                            <HPButton onClick={() => setHitpoints(hitpoints + 1)}>
-                                1
-                            </HPButton>
-                            <HPButton onClick={() => setHitpoints(hitpoints + 5)}>
-                                5
-                            </HPButton>
-                            <HPButton onClick={() => setHitpoints(hitpoints + 10)}>
-                                10
-                            </HPButton>
+                            <HPButton mod={1}>1</HPButton>
+                            <HPButton mod={5}>5</HPButton>
+                            <HPButton mod={10}>10</HPButton>
                         </div>
                     </div>
                     <div class="flex">
@@ -70,15 +64,9 @@ const HealthTracker = props => {
                     <div>
                         <div>Damage</div>
                         <div className="flex col-gap-2 gap-2 mx-2">
-                            <HPButton onClick={() => setHitpoints(hitpoints - 1)}>
-                                1
-                            </HPButton>
-                            <HPButton onClick={() => setHitpoints(hitpoints - 5)}>
-                                5
-                            </HPButton>
-                            <HPButton onClick={() => setHitpoints(hitpoints - 10)}>
-                                10
-                            </HPButton>
+                            <HPButton mod={~1}>1</HPButton>
+                            <HPButton mod={~5}>5</HPButton>
+                            <HPButton mod={~10}>10</HPButton>
                         </div>
                     </div>
                 </div>
