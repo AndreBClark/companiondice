@@ -16,7 +16,7 @@ export const Button = ({ children, ...props }) => {
 export const HPButton = ({ children, ...props }) => {
     return (
         <button
-            onClick={() => setHitpoints(hitpoints + props.mod)}
+            onClick={props.onClick}
             class={`w-full block font-bold mx-auto bg-teal-600 text-deeppurple-800 m-2 rounded-md py-2`}>
             {children}
         </button>
