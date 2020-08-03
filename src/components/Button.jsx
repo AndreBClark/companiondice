@@ -1,5 +1,4 @@
 import { h } from 'preact';
-import Location from '../index';
 export const Button = ({ children, ...props }) => {
     return (
         <button
