@@ -5,7 +5,7 @@
     "main": "src/index.jsx",
     "scripts": {
         "start": "parcel src/index.html",
-        "reset": "powershell Remove-Item –path node_modules –recurse; Remove-Item –path .cache –recurse; Remove-Item –path dist –recurse; npm i",
+        "reset": "powershell Remove-Item –path .cache –recurse;",
         "build": "parcel build src/index.html --public-url ./",
         "format": "npm run format-css && npm run format-js",
         "format-css": "prettier --write src/styles/**/*.{css,scss}",
@@ -58,8 +58,9 @@
         "preact": "^10.2.1",
         "preact-helmet": "^4.0.0-alpha-3",
         "prop-types": "^15.7.2",
-        "react-input-number": "^5.0.19",
-        "styled-components": "^5.1.1"
+        "react-numeric-input": "^2.2.3",
+        "styled-components": "^5.1.1",
+        "use-persisted-state": "^0.3.0"
     },
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^2.0.4",
