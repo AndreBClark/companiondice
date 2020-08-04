@@ -11,6 +11,9 @@ const HealthTracker = props => {
         <Base>
             <div class="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl px-2">
                 <div class="flex flex-col justify-around text-center w-full">
+                    <div className="mx-2">
+                        <HPButton onClick={longRest}>Long Rest</HPButton>
+                    </div>
                     <div>
                         <div>Heal</div>
                         <div className="flex col-gap-2 gap-2 mx-2">
@@ -72,12 +75,6 @@ const HealthTracker = props => {
                             </HPButton>
                             <HPButton onClick={() => modifyHP(-10)}>
                                 10
-                            </HPButton>
-                        </div>
-                        <div className="mx-2">
-                            <HPButton 
-                                onClick={longRest}>
-                                Long Rest
                             </HPButton>
                         </div>
                     </div>
