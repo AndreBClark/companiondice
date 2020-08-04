@@ -5,7 +5,7 @@ import { useHP } from '../hooks/useHP';
 import NumericInput from 'react-numeric-input';
 
 const HealthTracker = props => {
-    const { hitpoints, setHitpoints, maxHP, setMaxHP, modifyHP } = useHP();
+    const { hitpoints, setHitpoints, maxHP, setMaxHP, modifyHP, longRest } = useHP();
 
     return (
         <Base>
@@ -55,7 +55,7 @@ const HealthTracker = props => {
                                 max={999}
                                 onChange={setMaxHP}
                                 snap
-                                className='w-full bg-none text-center text-6xl xl:text-10xl'
+                                className=' text-indigo-600 w-full bg-none text-center text-6xl xl:text-10xl'
                                 noStyle
                                 strict
                                 />
@@ -72,6 +72,12 @@ const HealthTracker = props => {
                             </HPButton>
                             <HPButton onClick={() => modifyHP(-10)}>
                                 10
+                            </HPButton>
+                        </div>
+                        <div className="mx-2">
+                            <HPButton 
+                                onClick={longRest}>
+                                Long Rest
                             </HPButton>
                         </div>
                     </div>

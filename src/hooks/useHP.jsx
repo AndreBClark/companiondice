@@ -5,5 +5,8 @@ export function useHP() {
     const modifyHP = (mod) => {
         setHitpoints(hitpoints + mod);
     }
-    return {maxHP, setMaxHP, hitpoints, setHitpoints, modifyHP};
+    const longRest = () => {
+        setHitpoints(maxHP)
+    }
+    return {maxHP, setMaxHP, hitpoints, setHitpoints, modifyHP, longRest};
 }
