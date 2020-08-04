@@ -2,23 +2,7 @@ import { h } from 'preact';
 import Base from './Base';
 import { HPButton } from './Button';
 import { useHP } from '../hooks/useHP';
-import useInput from '../hooks/useInput';
 import NumericInput from 'react-numeric-input';
-import styled from 'styled-components';
-
-// const InputNum = styled(NumericInput).attrs({
-//     className: `text-8xl xl:text-10xl bg-none text-center mx-auto block w-full text-teal-500`,
-// })`
-// background: none;
-// outline: none;
-// text-align: center;
-// margin: 0 auto;
-// display: block;
-// width: 100%;
-// `;
-// const InputNumMax = styled(InputNum).attrs({
-//     className: `text-indigo-500`
-// })``
 
 const HealthTracker = props => {
     const { hitpoints, setHitpoints, maxHP, setMaxHP, modifyHP } = useHP();
