@@ -12,7 +12,7 @@ const HealthTracker = props => {
             <div class="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl px-2">
                 <div class="flex flex-col justify-around text-center w-full">
                     <div className="mx-2">
-                        <HPButton onClick={longRest}>Long Rest</HPButton>
+                        <HPButton class="mx-0" onClick={longRest}>Long Rest</HPButton>
                     </div>
                     <div>
                         <div>Heal</div>
@@ -29,7 +29,7 @@ const HealthTracker = props => {
                         </div>
                     </div>
                     <div class="flex mx-2">
-                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg ">
+                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg mx-2">
                             <span class="text-2xl font-bold">
                                 Current
                             </span>
@@ -48,7 +48,7 @@ const HealthTracker = props => {
                                 />
                         </div>
                         <span class="flex-col justify-center pt-4 text-8xl xl:text-10xl w-1/3">/</span> 
-                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg">
+                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg mx-2">
                             <span class="text-2xl font-bold">Max</span>
                             <NumericInput
                                 placeholder="--"
