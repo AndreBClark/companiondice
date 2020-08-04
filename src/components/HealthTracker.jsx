@@ -40,28 +40,29 @@ const HealthTracker = props => {
                         </div>
                     </div>
                     <div class="flex">
-                        <div class="w-1/2 text-6xl xl:text-10xl leading-0 font-black">
+                        <div class="w-1/3 text-6xl xl:text-10xl leading-0 font-black">
                             <span class="text-2xl font-bold leading-0 ">
                                 Current
                             </span>
                             <InputNum
+                                placeholder="--"
                                 enableMobileNumericKeyboard
                                 value={hitpoints}
                                 onChange={setHitpoints}
                                 step={1}
                                 min={0}
                                 max={maxHP}
-                                placeholder={maxHP}
                             />
                         </div>
-                        <div class="w-1/2 text-6xl xl:text-10xl leading-0 font-black">
+                        <span class="text-6xl py-8 w-1/3">/</span> 
+                        <div class="w-1/3 text-6xl xl:text-10xl leading-0 font-black">
                             <span class="text-2xl font-bold leading-0">Max</span>
                             <InputNumMax
+                                placeholder="--"
                                 enableMobileNumericKeyboard
-                                min={hitpoints}
+                                value={maxHP}
                                 step={1}
                                 min={0}
-                                value={maxHP}
                                 onChange={setMaxHP}
                             />
                         </div>

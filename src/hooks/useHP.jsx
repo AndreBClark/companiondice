@@ -1,7 +1,7 @@
 import useLocalStorage from './useLocalStorage'
 export function useHP() {
-    const [hitpoints, setHitpoints] = useLocalStorage('currentHP', hitpoints || 20);
-    const [maxHP, setMaxHP] = useLocalStorage('maxHP', maxHP || 20);
+    const [hitpoints, setHitpoints] = useLocalStorage('currentHP', hitpoints);
+    const [maxHP, setMaxHP] = useLocalStorage('maxHP', maxHP);
     const modifyHP = (mod) => {
         setHitpoints(hitpoints + mod);
     }
