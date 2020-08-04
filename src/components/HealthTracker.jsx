@@ -16,7 +16,7 @@ const HealthTracker = props => {
                     </div>
                     <div>
                         <div>Heal</div>
-                        <div className="flex col-gap-2 gap-2 mx-2">
+                        <div className="flex mx-2">
                             <HPButton onClick={() => modifyHP(1)}>
                             +
                             </HPButton>
@@ -42,7 +42,7 @@ const HealthTracker = props => {
                                 max={maxHP}
                                 className="w-full text-center bg-none text-teal-400 text-6xl xl:text-10xl"
                                 noStyle
-                                pattern="[0-9]"
+                                inputmode="numeric"
                                 snap
                                 strict
                                 />
@@ -66,7 +66,7 @@ const HealthTracker = props => {
                     </div>
                     <div>
                         <div>Damage</div>
-                        <div className="flex col-gap-2 gap-2 mx-2">
+                        <div className="flex mx-2">
                             <HPButton onClick={() => modifyHP(-1)}>
                                 -
                             </HPButton>
