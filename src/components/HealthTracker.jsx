@@ -26,7 +26,7 @@ const HealthTracker = props => {
                         </div>
                     </div>
                     <div class="flex mx-2">
-                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 my-8 rounded-lg ">
+                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg ">
                             <span class="text-2xl font-bold">
                                 Current
                             </span>
@@ -44,8 +44,8 @@ const HealthTracker = props => {
                                 strict
                                 />
                         </div>
-                        <span class=" flex-col justify-center text-8xl xl:text-10xl pt-6 pb-8 w-1/3">/</span> 
-                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 my-8 rounded-lg">
+                        <span class="flex-col justify-center pt-4 text-8xl xl:text-10xl w-1/3">/</span> 
+                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg">
                             <span class="text-2xl font-bold">Max</span>
                             <NumericInput
                                 placeholder="--"
