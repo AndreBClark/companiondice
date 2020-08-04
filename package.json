@@ -23,7 +23,7 @@
         "shortName": "Dice Companion",
         "startURL": "./",
         "theme": "#3c366b",
-        "display": "standalone",
+        "display": "fullscreen",
         "generateIconOptions": {
             "baseIcon": "./src/assets/thumbnail.png",
             "sizes": [
