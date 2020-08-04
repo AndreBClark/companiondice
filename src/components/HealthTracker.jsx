@@ -9,14 +9,14 @@ const HealthTracker = props => {
 
     return (
         <Base>
-            <div class="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl px-2">
+            <div class="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl">
                 <div class="flex flex-col justify-around text-center w-full">
-                    <div className="mx-2">
-                        <HPButton class="mx-0" onClick={longRest}>Long Rest</HPButton>
+                    <div className="">
+                        <HPButton onClick={longRest}>Long Rest</HPButton>
                     </div>
                     <div>
                         <div>Heal</div>
-                        <div className="flex mx-2">
+                        <div className="flex justify-between col-gap-4 gap-4">
                             <HPButton onClick={() => modifyHP(1)}>
                             +
                             </HPButton>
@@ -28,8 +28,8 @@ const HealthTracker = props => {
                             </HPButton>
                         </div>
                     </div>
-                    <div class="flex mx-2">
-                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg mx-2">
+                    <div class="flex justify-between col-gap-4 gap-4 mt-4">
+                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg">
                             <span class="text-2xl font-bold">
                                 Current
                             </span>
@@ -48,7 +48,7 @@ const HealthTracker = props => {
                                 />
                         </div>
                         <span class="flex-col justify-center pt-4 text-8xl xl:text-10xl w-1/3">/</span> 
-                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg mx-2">
+                        <div class="flex flex-col justify-center w-1/3 font-black bg-deeppurple-700 rounded-lg">
                             <span class="text-2xl font-bold">Max</span>
                             <NumericInput
                                 placeholder="--"
@@ -60,13 +60,14 @@ const HealthTracker = props => {
                                 snap
                                 className=' text-indigo-600 w-full bg-none text-center text-6xl xl:text-10xl'
                                 noStyle
+                                inputmode='numeric'
                                 strict
                                 />
                         </div>
                     </div>
                     <div>
                         <div>Damage</div>
-                        <div className="flex mx-2">
+                        <div className="flex justify-between col-gap-4 gap-4">
                             <HPButton onClick={() => modifyHP(-1)}>
                                 -
                             </HPButton>
