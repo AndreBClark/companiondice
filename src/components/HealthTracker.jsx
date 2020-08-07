@@ -10,13 +10,13 @@ const HealthTracker = props => {
     return (
         <Base>
             <div class="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl">
-                <div class="flex flex-col justify-around text-center w-full">
+                <div class="flex flex-col justify-around text-center w-full px-4 xl:px-0">
                     <div className="">
                         <HPButton onClick={longRest}>Long Rest</HPButton>
                     </div>
                     <div>
                         <div>Heal</div>
-                        <div className="grid grid-cols-3 col-gap-4 gap-4">
+                        <div className="grid grid-cols-3 gap-4 col-gap-4">
                             <HPButton onClick={() => modifyHP(1)}>
                             +
                             </HPButton>
@@ -40,7 +40,7 @@ const HealthTracker = props => {
                                 step={1}
                                 min={0}
                                 max={maxHP}
-                                className="w-full text-center bg-none text-teal-400 text-6xl xl:text-10xl"
+                                className="w-full text-6xl text-center text-teal-400 bg-none xl:text-10xl"
                                 noStyle
                                 inputmode="numeric"
                                 snap
@@ -58,7 +58,7 @@ const HealthTracker = props => {
                                 max={999}
                                 onChange={setMaxHP}
                                 snap
-                                className=' text-indigo-600 w-full bg-none text-center text-6xl xl:text-10xl'
+                                className='w-full text-6xl text-center text-indigo-600  bg-none xl:text-10xl'
                                 noStyle
                                 inputmode='numeric'
                                 strict
@@ -67,7 +67,7 @@ const HealthTracker = props => {
                     </div>
                     <div>
                         <div>Damage</div>
-                        <div className=" grid grid-cols-3 col-gap-4 gap-4">
+                        <div className="grid grid-cols-3 gap-4 col-gap-4 ">
                             <HPButton onClick={() => modifyHP(-1)}>
                                 -
                             </HPButton>
