@@ -10,7 +10,7 @@ const Amount = props => {
     return (
         <div class="px-4 lg:px-0">
             <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
-                <div class="w-1/5 xl:w-1/4">
+                <div class="w-1/5 md:w-1/4">
                     <Button
                         onClick={() => props.setAmount(props.amount - 1)}
                         oneOrLess={oneOrLess}
@@ -18,10 +18,10 @@ const Amount = props => {
                         -
                     </Button>
                 </div>
-                <span class="w-3/5 xl:w-1/2 pt-2 text-center">
+                <span class="w-3/5 md:w-1/2 pt-2 text-center">
                     {props.amount}d{props.sides}
                 </span>
-                <div class="w-1/5 xl:w-1/4">
+                <div class="w-1/5 md:w-1/4">
                     <Button
                         onClick={() => props.setAmount(props.amount + 1)}
                         reachedLimit={reachedLimit}>
