@@ -1,0 +1,32 @@
+h1,
+.h1 {
+  @apply text-4xl font-bold;
+}
+
+h2,
+.h2 {
+  @apply text-2xl font-light;
+}
+
+h3,
+.h3 {
+  @apply text-2xl font-bold;
+}
+
+h4,
+.h4 {
+  @apply text-xl;
+}
+
+h5,
+.h5 {
+  @apply text-lg;
+}
+
+h6,
+.h6 {
+  @apply text-base;
+}
+.leading-0 {
+  line-height: 0rem;
+}

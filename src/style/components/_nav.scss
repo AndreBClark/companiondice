@@ -1,0 +1,39 @@
+.btn {
+  @apply font-bold text-center opacity-75 mb-4 fill-current text-teal-400 flex flex-col justify-between items-center content-center w-1/5;
+  transition: opacity 500ms, transform 500ms;
+  transition-timing-function: ease-in-out;
+  @screen md {
+    @apply w-auto;
+  }
+  & svg {
+    @apply fill-current w-12 p-2 bg-teal-900 rounded-full;
+  }
+  &:hover,
+  &.active,
+  &[aria-current] {
+    @apply opacity-100;
+    transform: scale(1.2);
+  }
+}
+
+.modal {
+  @apply justify-around font-bold mx-auto transition duration-700 ease-out transition-all absolute p-4 z-20 h-96 rounded bg-deeppurple-500 inset-x-0 flex-col flex text-center max-w-full;
+  @screen lg {
+    width: 20vw;
+  }
+  top: -500px;
+  a {
+    @apply flex flex-col;
+    @screen sm {
+      svg {
+        @apply pr-2;
+      }
+    }
+  }
+  p {
+    @apply mx-auto;
+  }
+  &--active {
+    top: 0;
+  }
+}
