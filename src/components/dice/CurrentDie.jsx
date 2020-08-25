@@ -12,7 +12,6 @@ const CurrentDie = props => {
   const [done, isDone] = useState(true);
   const ticks = 40;
   const speed = 60;
-  setSides(props.sides);
   const handleClick = () => {
     isActive(true);
     isDone(false);
