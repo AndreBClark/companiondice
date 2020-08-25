@@ -1,0 +1,19 @@
+html {
+  font-variant-numeric: tabular-nums;
+  @apply max-h-screen overflow-hidden font-sans;
+}
+
+body {
+  @apply bg-deeppurple-800 max-h-screen overflow-hidden font-sans;
+}
+
+.base {
+  @apply mx-auto flex flex-col max-w-2xl justify-between h-screen font-sans;
+  @screen xl {
+    @apply justify-around;
+  }
+}
+
+main {
+  @apply w-full;
+}

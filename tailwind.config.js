@@ -1,5 +1,8 @@
 const darken = require('polished/lib/color/darken');
 module.exports = {
+    future: {
+        removeDeprecatedGapUtilities: true,
+    },
     purge: [
         './src/**/*.html',
         './src/**/*.vue',
@@ -8,11 +11,11 @@ module.exports = {
     theme: {
         extend: {
             spacing: {
-                '72': '18rem',
-                '84': '21rem',
-                '96': '24rem',
-                '108': '27rem',
-                '120': '30rem'
+                72: '18rem',
+                84: '21rem',
+                96: '24rem',
+                108: '27rem',
+                120: '30rem'
             },
             fontSize: {
                 "7xl": "5rem",
@@ -21,7 +24,7 @@ module.exports = {
                 "10xl": "8rem"
             },
             screens: {
-                'xs': '330px'
+                xs: '330px'
             },
             colors: {
                 deeppurple: {

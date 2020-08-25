@@ -1,10 +1,9 @@
 module.exports = {
-    "plugins": ["stylelint-prettier"],
-    "extends": 'stylelint-config-recommended',
-    "rules": {
-        "prettier/prettier": true,
+    plugins: ["stylelint-prettier"],
+    extends: 'stylelint-config-recommended',
+    rules: {
         "at-rule-no-unknown": [true, {
-            "ignoreAtRules": [
+            ignoreAtRules: [
                 "screen",
                 "extends",
                 "responsive",
@@ -14,5 +13,5 @@ module.exports = {
         }],
         "block-no-empty": null,
     },
-    "fix": true
+    fix: true
 }

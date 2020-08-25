@@ -1,41 +1,7 @@
 :root {
   --glow-passive: drop-shadow(0 0 2px #4fd1c5);
   --glow-done: drop-shadow(0 0 30px #4fd1c5);
-}
-
-.dice {
-  @apply relative flex font-bold text-5xl w-56 h-56 block max-h-screen m-auto mb-3;
-  @screen xs {
-  }
-  @screen sm {
-    @apply w-64 h-64;
-  }
-  @screen md {
-    @apply w-84 h-84 text-7xl;
-  }
-  &:focus {
-    @apply outline-none;
-  }
-  & span {
-    @apply text-deeppurple-800;
-    position: relative;
-  }
-  & svg {
-    @apply absolute top-0 fill-current m-auto text-teal-400 w-full h-full;
-    transform-box: border-box;
-    transform-origin: center;
-    filter: var(--glow-passive);
-  }
-  &.active svg {
-    animation: rotation infinite ease-in-out 2.5s;
-    filter: var(--glow-passive);
-  }
-  &.done svg {
-    animation: bling 500ms ease-in;
-  }
-}
-
-@keyframes rotation {
+  @keyframes rotation {
   from {
     transform: rotate(0deg);
   }
@@ -55,3 +21,36 @@
     filter: var(--glow-passive);
   }
 }
+}
+
+.dice {
+  @apply relative flex font-bold text-5xl w-56 h-56 block max-h-screen m-auto mb-3;
+  @screen sm {
+    @apply w-64 h-64;
+  }
+  @screen md {
+    @apply w-84 h-84 text-7xl;
+  }
+  &:focus {
+    @apply outline-none;
+  }
+  & span {
+    @apply text-deeppurple-800;
+    position: relative;
+  }
+  & svg {
+    @apply absolute top-0 fill-current m-auto text-teal-400 w-full h-full;
+    transform-box: border-box;
+    transform-origin: center;
+    filter: var(--glow-passive);
+  }
+}
+
+.active svg {
+  animation: rotation infinite ease-in-out 2.5s;
+  filter: var(--glow-passive);
+}
+.done svg {
+  animation: bling 500ms ease-in;
+}
+

@@ -7,7 +7,8 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 const cssnano = require('cssnano')('cssnano-advanced-preset');
 
 module.exports = {
-    "plugins": [
+    parser: 'postcss-scss',
+    plugins: [
         require('stylelint')('./stylelint.config.js'),
         require('tailwindcss'),
         require('autoprefixer'),

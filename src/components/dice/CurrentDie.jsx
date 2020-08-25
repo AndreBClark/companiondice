@@ -1,26 +1,27 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
-import Base from './Base';
-import { D6 } from './dice';
-import { cryptoRandomNumberGen } from './rng';
+import { cryptoRandomNumberGen } from '../rng';
+import Amount from '../Amount';
+import style from './style'
 
-const RollStats = props => {
+const CurrentDie = props => {
   const [sides, setSides] = useState(props.sides);
   const [result, setResult] = useState(props.sides);
+  const [amount, setAmount] = useState(1);
   const [active, isActive] = useState(false);
   const [done, isDone] = useState(true);
   const ticks = 40;
   const speed = 60;
-  setSides(6);
+  setSides(props.sides);
   const handleClick = () => {
     isActive(true);
     isDone(false);
     const randomArray = [result];
     for (let i = 0; i < ticks; i++) {
-      randomArray.unshift(cryptoRandomNumberGen(6, 18));
+      randomArray.unshift(cryptoRandomNumberGen(amount, amount * sides));
     }
     let displayRefresh = 0;
-    let interval = setInterval(function() {
+    let interval = setInterval(() => {
       setResult(randomArray.shift());
       if (++displayRefresh === ticks) {
         window.clearInterval(interval);
@@ -30,14 +31,17 @@ const RollStats = props => {
     }, speed);
   };
   return (
-    <Base>
+    <>
       <button
         onClick={handleClick}
-        class={`dice ${active ? ' active ' : ''} ${done ? ' done ' : ''}`}>
-        <D6 />
-        <span class="m-auto text-gray-900 bg-teal-400 z-10">{result}</span>
+        class={`${style.dice} ${active && style.active} ${done && style.done}`}>
+          {props.children}
+        <span class="m-auto text-gray-900 bg-teal-400 z-10 rounded-full">
+          {result || sides}
+        </span>
       </button>
-    </Base>
+      <Amount amount={amount} sides={sides} setAmount={setAmount} />
+    </>
   );
 };
-export default RollStats;
+export default CurrentDie;
