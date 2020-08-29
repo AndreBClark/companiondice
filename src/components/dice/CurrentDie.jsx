@@ -1,15 +1,13 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import { cryptoRandomNumberGen } from '../rng';
-import Amount from '../Amount';
 import style from './style'
 import { useSpring, animated, config } from 'react-spring';
-
+import { useRoll } from '../../hooks/useRoll';
+import { useAmount } from '../../hooks/useAmount'
 const CurrentDie = props => {
-  const [sides, setSides] = useState(Number(props.sides));
-  setSides(props.sides);
-  const [result, setResult] = useState(Number(sides));
-  const [amount, setAmount] = useState(1);
+  const { sides, result, setResult } = useRoll();
+  const { amount } = useAmount();
   const [isActive, setActive] = useState(false);
   const ticks = 30;
   const randomArray = [];
@@ -22,8 +20,8 @@ const CurrentDie = props => {
     const lastRollresult = result;
     console.log(lastRollresult);
     requestAnimationFrame(cycleNumbers);
-  };
-  const cycleNumbers = () =>
+  }
+  const cycleNumbers = () => {
     requestAnimationFrame(() => {
       if (randomArray.length !== 1) {
         setResult(randomArray.shift());
@@ -32,6 +30,7 @@ const CurrentDie = props => {
       cancelAnimationFrame(cycleNumbers);
       setActive(false);
     });
+  }
 
   const Spin = useSpring({
     config: config.wobbly,
@@ -49,7 +48,6 @@ const CurrentDie = props => {
           {result}
         </span>
       </button>
-      <Amount amount={amount} sides={sides} setAmount={setAmount} />
     </>
   );
 };
