@@ -6,30 +6,33 @@ import style from './style'
 import { useSpring, animated, config } from 'react-spring';
 
 const CurrentDie = props => {
-  const [sides, setSides] = useState(props.sides);
-  const [result, setResult] = useState(props.sides);
+  const [sides, setSides] = useState(Number(props.sides));
+  setSides(props.sides);
+  const [result, setResult] = useState(Number(sides));
   const [amount, setAmount] = useState(1);
-  const [active, isActive] = useState(false);
-  const [done, isDone] = useState(true);
-  const ticks = 40;
-  const speed = 60;
+  const [isActive, setActive] = useState(false);
+  const ticks = 30;
+  const randomArray = [];
   const handleClick = () => {
-    isActive(true);
-    isDone(false);
-    const randomArray = [result];
+    setActive(true);
     for (let i = 0; i < ticks; i++) {
       randomArray.unshift(cryptoRandomNumberGen(amount, amount * sides));
     }
-    let displayRefresh = 0;
-    let interval = setInterval(() => {
-      setResult(randomArray.shift());
-      if (++displayRefresh === ticks) {
-        window.clearInterval(interval);
-        isActive(false);
-        isDone(true);
-      }
-    }, speed);
+    console.log(randomArray);
+    const lastRollresult = result;
+    console.log(lastRollresult);
+    requestAnimationFrame(cycleNumbers);
   };
+  const cycleNumbers = () =>
+    requestAnimationFrame(() => {
+      if (randomArray.length !== 1) {
+        setResult(randomArray.shift());
+        requestAnimationFrame(cycleNumbers);
+      }
+      cancelAnimationFrame(cycleNumbers);
+      setActive(false);
+    });
+
   const Spin = useSpring({
     config: config.wobbly,
     transform: isActive ? `rotate(${-15}deg)` : 'rotate(0turn)',
@@ -38,12 +41,12 @@ const CurrentDie = props => {
     <>
       <button
         onClick={handleClick}
-        class={`${style.dice} ${active && style.active} ${done && style.done}`}>
-        <span class="m-auto text-gray-900 bg-teal-400 z-10 rounded-full">
-          {result || sides}
+        class={`${style.dice} ${isActive ? style.active : style.done}`}>
           <animated.div style={Spin} class={style.svgWrapper}>
             {props.children}
           </animated.div>
+        <span class={style.number}>
+          {result}
         </span>
       </button>
       <Amount amount={amount} sides={sides} setAmount={setAmount} />
