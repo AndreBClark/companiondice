@@ -3,8 +3,7 @@ import { useState } from 'preact/hooks';
 import { cryptoRandomNumberGen } from '../rng';
 import style from './style'
 import { useSpring, animated, config } from 'react-spring';
-import { useRoll } from '../../hooks/useRoll';
-import { useAmount } from '../../hooks/useAmount'
+import { useRoll, useAmount } from '../../hooks/diceHelpers';
 const CurrentDie = props => {
   const { sides, result, setResult } = useRoll();
   const { amount } = useAmount();
@@ -34,7 +33,7 @@ const CurrentDie = props => {
 
   const Spin = useSpring({
     config: config.wobbly,
-    transform: isActive ? `rotate(${-15}deg)` : 'rotate(0turn)',
+    transform: isActive ? 'rotate(-15}deg)' : 'rotate(0turn)',
   });
   return (
     <>

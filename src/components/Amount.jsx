@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { Button } from './Button';
-import { useAmount } from '../hooks/useAmount';
+import { useAmount } from '../hooks/diceHelpers';
 
 const Amount = props => {
   const { amount, setAmount, reachedLimit, oneOrLess } = useAmount();
