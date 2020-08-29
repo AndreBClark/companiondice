@@ -53,7 +53,8 @@
     "preact-helmet": "^4.0.0-alpha-3",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
-    "purgecss-webpack-plugin": "^2.3.0"
+    "purgecss-webpack-plugin": "^2.3.0",
+    "react-spring": "^8.0.27"
   },
   "jest": {
     "preset": "jest-preset-preact",

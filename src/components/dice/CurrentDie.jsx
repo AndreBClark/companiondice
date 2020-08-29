@@ -3,6 +3,7 @@ import { useState } from 'preact/hooks';
 import { cryptoRandomNumberGen } from '../rng';
 import Amount from '../Amount';
 import style from './style'
+import { useSpring, animated, config } from 'react-spring';
 
 const CurrentDie = props => {
   const [sides, setSides] = useState(props.sides);
@@ -29,14 +30,20 @@ const CurrentDie = props => {
       }
     }, speed);
   };
+  const Spin = useSpring({
+    config: config.wobbly,
+    transform: isActive ? `rotate(${-15}deg)` : 'rotate(0turn)',
+  });
   return (
     <>
       <button
         onClick={handleClick}
         class={`${style.dice} ${active && style.active} ${done && style.done}`}>
-          {props.children}
         <span class="m-auto text-gray-900 bg-teal-400 z-10 rounded-full">
           {result || sides}
+          <animated.div style={Spin} class={style.svgWrapper}>
+            {props.children}
+          </animated.div>
         </span>
       </button>
       <Amount amount={amount} sides={sides} setAmount={setAmount} />

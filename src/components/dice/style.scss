@@ -1,14 +1,6 @@
 :root {
   --glow-passive: drop-shadow(0 0 2px #4fd1c5);
   --glow-done: drop-shadow(0 0 30px #4fd1c5);
-  @keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
 
 @keyframes bling {
   0% {
@@ -23,8 +15,16 @@
 }
 }
 
+.active svg {
+  animation: bling 500ms ease-in;
+}
+.done svg {
+  filter: var(--glow-passive);
+}
+
+
 .dice {
-  @apply relative flex font-bold text-5xl w-56 h-56 block max-h-screen m-auto mb-3;
+  @apply flex font-bold text-5xl w-56 h-56 max-h-screen m-auto mb-3 relative;
   @screen sm {
     @apply w-64 h-64;
   }
@@ -34,11 +34,13 @@
   &:focus {
     @apply outline-none;
   }
-  & span {
-    @apply text-deeppurple-800;
-    position: relative;
+  & .number {
+    @apply text-deeppurple-800 relative m-auto bg-teal-400 rounded-full;
   }
-  & svg {
+  .svgWrapper {
+    @apply w-full h-full absolute top-0 left-0;
+  }
+  svg {
     @apply absolute top-0 fill-current m-auto text-teal-400 w-full h-full;
     transform-box: border-box;
     transform-origin: center;
@@ -46,11 +48,4 @@
   }
 }
 
-.active svg {
-  animation: rotation infinite ease-in-out 2.5s;
-  filter: var(--glow-passive);
-}
-.done svg {
-  animation: bling 500ms ease-in;
-}
 
