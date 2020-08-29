@@ -36,7 +36,7 @@ const App = () => {
           <Profile path="/profile/" user="me" />
           <Profile path="/profile/:user" />
           <RollStats path="/stats" />
-          <HealthTracker path="/hp" sides={20} />
+          <HealthTracker path="/hp" />
           <Redirect path="/" to="/dice/20" />
         </Router>
       </Base>
