@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { Button } from './Button';
 import { useAmount } from '../hooks/diceHelpers';
 
-const Amount = props => {
+const Controls = props => {
   const { amount, setAmount, reachedLimit, oneOrLess } = useAmount();
   return (
     <div class="px-4 lg:px-0">
@@ -31,4 +31,4 @@ const Amount = props => {
     </div>
   );
 };
-export default Amount;
+export default Controls;

@@ -4,7 +4,7 @@ import { cryptoRandomNumberGen } from '../rng';
 import style from './style'
 import { useSpring, animated, config } from 'react-spring';
 import { useRoll, useAmount } from '../../hooks/diceHelpers';
-const CurrentDie = props => {
+const Dicebox = props => {
   const { sides, result, setResult } = useRoll();
   const { amount } = useAmount();
   const [isActive, setActive] = useState(false);
@@ -50,4 +50,4 @@ const CurrentDie = props => {
     </>
   );
 };
-export default CurrentDie;
+export default Dicebox;
