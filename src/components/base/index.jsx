@@ -1,7 +1,7 @@
 import { h, Fragment } from 'preact';
 import SEO from '../SEO';
-import Menu from '../menu/menu'
-import style from './style'
+import Menu from '../menu/menu';
+import style from './style';
 import Header from '../title';
 const Base = ({ children }) => {
   return (

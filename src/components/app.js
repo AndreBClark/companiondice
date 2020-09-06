@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { Router } from 'preact-router';
-import Redirect from '../components/Redirect'
+import Redirect from '../components/Redirect';
 
 // Code-splitting is automated for routes
 import Base from '../components/base';
@@ -20,7 +20,7 @@ const App = () => {
     <div id="app">
       <Base>
         <Router onChange={handleRoute}>
-          <Dice path="/dice/:sides" sides={20} />
+          <Dice path="/dice/:sides" />
           <RollStats path="stats" sides={20} />
           <HealthTracker path="/hp" />
           <Redirect path="/" to="/dice/20" />
@@ -28,5 +28,5 @@ const App = () => {
       </Base>
     </div>
   );
-}
+};
 export default App;

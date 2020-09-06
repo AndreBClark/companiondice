@@ -1,11 +1,11 @@
 import { h } from 'preact';
 import { useState, useRef } from 'preact/hooks';
-import GithubSVG from "../../assets/github.svg";
+import GithubSVG from '../../assets/github.svg';
 import CosmicSVG from '../../assets/cosmicdivision.svg';
 import NateSVG from '../../assets/nkg2.svg';
 import InfoSVG from '../../assets/info.svg';
 import useOutsideClick from '../../hooks/useOutsideClick';
-import style from './style'
+import style from './style';
 const Header = () => {
   const [infobtn, infoClicked] = useState(false);
   const ref = useRef();

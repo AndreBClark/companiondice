@@ -1,16 +1,14 @@
 import { h } from 'preact';
 import { Button } from './Button';
-import { useAmount } from '../hooks/diceHelpers';
+import { useRoll } from '../hooks/diceHelpers';
 
 const Controls = props => {
-  const { amount, setAmount, reachedLimit, oneOrLess } = useAmount();
+  const { amount, setAmount, reachedLimit, oneOrLess } = useRoll();
   return (
     <div class="px-4 lg:px-0">
       <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
         <div class="w-1/5 md:w-1/4">
-          <Button
-            onClick={() => setAmount(amount - 1)}
-            oneOrLess={oneOrLess}>
+          <Button onClick={() => setAmount(amount - 1)} oneOrLess={oneOrLess}>
             -
           </Button>
         </div>

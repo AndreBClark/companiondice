@@ -2,17 +2,17 @@
   --glow-passive: drop-shadow(0 0 2px #4fd1c5);
   --glow-done: drop-shadow(0 0 30px #4fd1c5);
 
-@keyframes bling {
-  0% {
-    filter: var(--glow-passive);
+  @keyframes bling {
+    0% {
+      filter: var(--glow-passive);
+    }
+    50% {
+      filter: var(--glow-done);
+    }
+    100% {
+      filter: var(--glow-passive);
+    }
   }
-  50% {
-    filter: var(--glow-done);
-  }
-  100% {
-    filter: var(--glow-passive);
-  }
-}
 }
 
 .active svg {
@@ -21,7 +21,6 @@
 .done svg {
   filter: var(--glow-passive);
 }
-
 
 .dice {
   @apply flex font-bold text-5xl w-56 h-56 max-h-screen m-auto mb-3 relative;
@@ -47,5 +46,3 @@
     filter: var(--glow-passive);
   }
 }
-
-

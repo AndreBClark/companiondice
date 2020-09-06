@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "preact build --no-inline-css",
+    "build": "preact build --no-inline-css --no-prerender",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "eslint src --fix",
@@ -54,7 +54,8 @@
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
     "purgecss-webpack-plugin": "^2.3.0",
-    "react-spring": "^8.0.27"
+    "react-spring": "^8.0.27",
+    "window-or-global": "^1.0.1"
   },
   "jest": {
     "preset": "jest-preset-preact",

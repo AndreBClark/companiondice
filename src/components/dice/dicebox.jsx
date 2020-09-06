@@ -1,36 +1,12 @@
 import { h } from 'preact';
-import { useState } from 'preact/hooks';
-import { cryptoRandomNumberGen } from '../rng';
-import style from './style'
+import style from './style';
 import { useSpring, animated, config } from 'react-spring';
-import { useRoll, useAmount } from '../../hooks/diceHelpers';
-const Dicebox = props => {
-  const { sides, result, setResult } = useRoll();
-  const { amount } = useAmount();
-  const [isActive, setActive] = useState(false);
-  const ticks = 30;
-  const randomArray = [];
-  const handleClick = () => {
-    setActive(true);
-    for (let i = 0; i < ticks; i++) {
-      randomArray.unshift(cryptoRandomNumberGen(amount, amount * sides));
-    }
-    console.log(randomArray);
-    const lastRollresult = result;
-    console.log(lastRollresult);
-    requestAnimationFrame(cycleNumbers);
-  }
-  const cycleNumbers = () => {
-    requestAnimationFrame(() => {
-      if (randomArray.length !== 1) {
-        setResult(randomArray.shift());
-        requestAnimationFrame(cycleNumbers);
-      }
-      cancelAnimationFrame(cycleNumbers);
-      setActive(false);
-    });
-  }
+import { useRoll } from '../../hooks/diceHelpers';
 
+const Dicebox = props => {
+  const { sides, amount, result, setAmount, rollDice, isActive, setSides } = useRoll();
+  setSides(props.sides);
+console.log(props.sides);
   const Spin = useSpring({
     config: config.wobbly,
     transform: isActive ? 'rotate(-15}deg)' : 'rotate(0turn)',
@@ -38,14 +14,12 @@ const Dicebox = props => {
   return (
     <>
       <button
-        onClick={handleClick}
+        onClick={rollDice}
         class={`${style.dice} ${isActive ? style.active : style.done}`}>
-          <animated.div style={Spin} class={style.svgWrapper}>
-            {props.children}
-          </animated.div>
-        <span class={style.number}>
-          {result}
-        </span>
+        <animated.div style={Spin} class={style.svgWrapper}>
+          {props.children}
+        </animated.div>
+        <span class={style.number}>{result}</span>
       </button>
     </>
   );
