@@ -7,39 +7,35 @@ const Menu = () => {
     <nav class={style.nav}>
       <Link href="/dice/4">
         <D4 />
-        <span>d4</span>
+        <span>4</span>
       </Link>
       <Link href="/dice/6">
         <D6 />
-        <span>d6</span>
+        <span>6</span>
       </Link>
       <Link href="/dice/8">
         <D8 />
-        <span>d8</span>
+        <span>8</span>
       </Link>
       <Link href="/dice/10" exact>
         <D10 />
-        <span>d10</span>
+        <span>10</span>
       </Link>
       <Link href="/dice/12">
         <D12 />
-        <span>d12</span>
+        <span>12</span>
       </Link>
       <Link href="/dice/20">
         <D20 />
-        <span>d20</span>
+        <span>20</span>
       </Link>
       <Link href="/dice/100" exact>
         <D100 />
-        <span>d100</span>
+        <span>100</span>
       </Link>
       <Link href="/dice/stats">
         <D20 />
-        <span>STATS</span>
-      </Link>
-      <Link href="/hp">
-        <D20 />
-        <span>HP</span>
+        <span>stats</span>
       </Link>
     </nav>
   );

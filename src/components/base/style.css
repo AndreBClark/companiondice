@@ -6,9 +6,11 @@ html {
 body {
   @apply bg-deeppurple-800 max-h-screen overflow-hidden font-sans;
 }
-
+.screen {
+  @apply h-screen flex flex-col justify-between w-full;
+}
 .base {
-  @apply mx-auto flex flex-col max-w-2xl justify-between h-screen font-sans;
+  @apply w-full mx-auto flex flex-col max-w-2xl justify-between font-sans;
   @screen xl {
     @apply justify-around;
   }

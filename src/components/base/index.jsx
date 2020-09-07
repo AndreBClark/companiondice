@@ -1,18 +1,20 @@
 import { h, Fragment } from 'preact';
 import SEO from '../SEO';
-import Menu from '../menu/menu';
 import style from './style';
 import Header from '../title';
+import Tabs from '../menu/tabs';
 const Base = ({ children }) => {
   return (
-    <Fragment>
+    <>
       <SEO />
-      <div class={`${style.base} container`}>
+      <div class={style.screen}>
         <Header />
-        <main class={style.main}>{children}</main>
-        <Menu />
+        <div class={`${style.base} container`}>
+          <main class={style.main}>{children}</main>
+        </div>
+        <Tabs />
       </div>
-    </Fragment>
+    </>
   );
 };
 

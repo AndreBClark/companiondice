@@ -6,7 +6,7 @@ import { useRoll, diceContext } from '../../hooks/diceHelpers';
 import Router from 'preact-router';
 import { D4, D6, D8, D10, D12, D20, D100 } from '../../components/dice';
 import RollStats from '../../components/dice/Stats'
-
+import Menu from '../../components/menu/menu'
 const Dice = props => {
   const { setSides, sides } = useRoll();
   setSides(props.sides);
@@ -35,6 +35,7 @@ const Dice = props => {
       </Router>
 
       <Controls sides={sides} />
+      <Menu />
     </diceContext.Provider>
   );
 };
