@@ -1,14 +1,23 @@
 import { h } from 'preact';
+import { useState } from 'preact/hooks'
 import Dicebox from '../../components/dice/dicebox';
 import Controls from '../../components/Controls';
-import { useRoll } from '../../hooks/diceHelpers';
+import { useRoll, diceContext } from '../../hooks/diceHelpers';
 import Router from 'preact-router';
-
 import { D4, D6, D8, D10, D12, D20, D100 } from '../../components/dice';
+
+
 const Dice = props => {
+  const { setSides, sides } = useRoll();
+  setSides(props.sides);
+  const [amount, updateAmount] = useState(1);
+  const increment = () => updateAmount(amount + 1);
+  const decrement = () => updateAmount(amount - 1);
+  const reset = () => updateAmount(1);
+
   return (
-    <>
-      <Dicebox sides={props.sides}>
+    <diceContext.Provider value={{ amount, increment, decrement, reset }}>
+      <Dicebox sides={sides}>
         <Router>
           <D4 path="dice/4" />
           <D6 path="dice/6" />
@@ -19,8 +28,8 @@ const Dice = props => {
           <D100 path="dice/100" />
         </Router>
       </Dicebox>
-      <Controls sides={props.sides} />
-    </>
+      <Controls sides={sides} />
+    </diceContext.Provider>
   );
 };
 

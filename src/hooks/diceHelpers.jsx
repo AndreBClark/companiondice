@@ -1,24 +1,27 @@
-import useLocalStorage from './useLocalStorage';
-import { useState } from 'preact/hooks';
-export const generateRandomInt = (min, max) => {
-  let array = new Uint32Array(1);
-  crypto.getRandomValues(array);
-  let getFloatingPoint = array[0] / Math.pow(2, 32);
-  return Math.ceil(getFloatingPoint * (max - min)) + min;
-};
+import { useState,useContext } from 'preact/hooks';
+import { createContext } from 'preact'
+export const diceContext = createContext({
+  amount: 1,
+  increment: () => this.amount + 1,
+  decrement: () => this.amount - 1,
+  reset: () => this.amount = 1
+});
+
 export const useRoll = () => {
+  const context = useContext(diceContext);
+  const [ amount, setAmount ] = useState(context.amount)
   const [sides, setSides] = useState(20);
   const [result, setResult] = useState(20);
-  const [amount, setAmount] = useState(1);
   const [oneOrLess, setOneOrLess] = useState(true);
   const [reachedLimit, setReachedLimit] = useState(false);
   const [isActive, setActive] = useState(false);
-  const ticks = 30;
-  const randomArray = [];
-  const rollDice = () => {
+  const ticks = 30, randomArray = [];
+  const rollDice = (min = 1, max = 20) => {
     setActive(true);
     for (let i = 0; i < ticks; i++) {
-      randomArray.unshift(generateRandomInt(amount, amount * sides));
+      randomArray.unshift(
+        generateRandomInt(min, max)
+      );
     }
     requestAnimationFrame(cycleNumbers);
   };
@@ -28,17 +31,15 @@ export const useRoll = () => {
         setResult(randomArray.shift());
         requestAnimationFrame(cycleNumbers);
       }
-      cancelAnimationFrame(cycleNumbers);
-      setActive(false);
+        cancelAnimationFrame(cycleNumbers);
+        setActive(false);
     });
   };
 
-  setOneOrLess(amount <= 1);
-  setReachedLimit(amount >= 40);
+  setOneOrLess(context.amount <= 1);
+  setReachedLimit(context.amount >= 40);
 
   return {
-    amount,
-    setAmount,
     oneOrLess,
     reachedLimit,
     sides,
@@ -46,7 +47,13 @@ export const useRoll = () => {
     result,
     setResult,
     isActive,
-    rollDice,
-    generateRandomInt,
+    rollDice
   };
 }
+
+const generateRandomInt = (min = 1, max = 20) => {
+  let array = new Uint32Array(1);
+  crypto.getRandomValues(array);
+  let getFloatingPoint = array[0] / Math.pow(2, 32);
+  return Math.ceil(getFloatingPoint * (max - min)) + min;
+};
