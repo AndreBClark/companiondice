@@ -33,7 +33,7 @@ const Menu = () => {
         <D100 />
         <span>d100</span>
       </Link>
-      <Link href="/stats">
+      <Link href="/dice/stats">
         <D20 />
         <span>STATS</span>
       </Link>

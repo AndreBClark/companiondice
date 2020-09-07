@@ -2,14 +2,10 @@ import { useState,useContext } from 'preact/hooks';
 import { createContext } from 'preact'
 export const diceContext = createContext({
   amount: 1,
-  increment: () => this.amount + 1,
-  decrement: () => this.amount - 1,
-  reset: () => this.amount = 1
 });
 
 export const useRoll = () => {
-  const context = useContext(diceContext);
-  const [ amount, setAmount ] = useState(context.amount)
+  const { amount } = useContext(diceContext);
   const [sides, setSides] = useState(20);
   const [result, setResult] = useState(20);
   const [oneOrLess, setOneOrLess] = useState(true);
@@ -36,8 +32,8 @@ export const useRoll = () => {
     });
   };
 
-  setOneOrLess(context.amount <= 1);
-  setReachedLimit(context.amount >= 40);
+  setOneOrLess(amount <= 1);
+  setReachedLimit(amount >= 40);
 
   return {
     oneOrLess,

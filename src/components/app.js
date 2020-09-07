@@ -21,7 +21,6 @@ const App = () => {
       <Base>
         <Router onChange={handleRoute}>
           <Dice path="/dice/:sides" />
-          <RollStats path="stats" sides={20} />
           <HealthTracker path="/hp" />
           <Redirect path="/" to="/dice/20" />
         </Router>
