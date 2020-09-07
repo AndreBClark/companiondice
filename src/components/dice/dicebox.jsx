@@ -5,10 +5,10 @@ import { useRoll, diceContext } from '../../hooks/diceHelpers';
 import { useContext } from 'preact/hooks';
 
 const Dicebox = (props) => {
-  const { result, rollDice, isActive, setSides, sides } = useRoll();
+  const { result, rollDice, isActive, setSides, setResult, sides } = useRoll();
   const { amount } = useContext(diceContext);
   setSides(props.sides);
-
+  setResult(props.sides);
   console.log('dicebox amount:', amount);
   const Spin = useSpring({
     config: config.wobbly,
