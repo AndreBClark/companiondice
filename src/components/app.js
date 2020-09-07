@@ -5,8 +5,8 @@ import Redirect from '../components/Redirect';
 // Code-splitting is automated for routes
 import Base from '../components/base';
 import Dice from '../routes/dice';
-import HealthTracker from '../components/HealthTracker';
 import RollStats from './dice/Stats';
+import HealthTracker from '../routes/health';
 
 const App = () => {
   /** Gets fired when the route changes.

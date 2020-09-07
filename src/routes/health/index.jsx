@@ -1,6 +1,6 @@
 import { h } from 'preact';
-import { HPButton } from './Button';
-import { useHP } from '../hooks/useHP';
+import { HPButton } from '../../components/Button';
+import { useHP } from '../../hooks/useHP';
 import NumericInput from 'react-numeric-input';
 
 const HealthTracker = () => {
