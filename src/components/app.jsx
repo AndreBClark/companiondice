@@ -1,9 +1,9 @@
 import { h } from 'preact';
 import { Router } from 'preact-router';
-import Redirect from '../components/Redirect';
+import Redirect from './Redirect';
 
 // Code-splitting is automated for routes
-import Base from '../components/base';
+import Base from './base';
 import Dice from '../routes/dice';
 import HealthTracker from '../routes/health';
 

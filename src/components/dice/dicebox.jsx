@@ -2,13 +2,13 @@ import { h } from 'preact';
 import style from './style';
 import { useSpring, animated, config } from 'react-spring';
 import { useRoll, diceContext } from '../../hooks/diceHelpers';
-import { useContext } from 'preact/hooks';
+import { useContext, useEffect } from 'preact/hooks';
 
 const Dicebox = (props) => {
   const { result, rollDice, isActive, setSides, setResult, sides } = useRoll();
-  const { amount } = useContext(diceContext);
+  useEffect(() => setResult(sides), [sides, setResult])
   setSides(props.sides);
-  setResult(props.sides);
+  const { amount } = useContext(diceContext);
   console.log('dicebox amount:', amount);
   const Spin = useSpring({
     config: config.wobbly,

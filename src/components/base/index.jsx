@@ -1,8 +1,9 @@
-import { h, Fragment } from 'preact';
+import { h } from 'preact';
 import SEO from '../SEO';
 import style from './style';
 import Header from '../title';
 import Tabs from '../menu/tabs';
+import SpeedDialButton from '../menu/speeddial';
 const Base = ({ children }) => {
   return (
     <>
@@ -14,6 +15,7 @@ const Base = ({ children }) => {
         </div>
         <Tabs />
       </div>
+      <SpeedDialButton />
     </>
   );
 };

@@ -5,6 +5,7 @@ import { Link } from 'preact-router';
 import { useState } from 'preact/hooks';
 const styles = {
   root: {
+    palette: 'dark',
     backgroundColor: '#21193b',
     color: '#319795',
   },

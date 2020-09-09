@@ -5,20 +5,5 @@
         ["preact-cli/babel", { "modules": "commonjs" }]
       ]
     }
-  },
-  "plugins": [
-    [
-      "module-resolver",
-      {
-        "root": [
-          "./src"
-        ],
-        "alias": {
-          "test": "./test",
-          "underscore": "lodash",
-          "@components": "./src/components"
-        }
-      }
-    ]
-  ]
+  }
 }

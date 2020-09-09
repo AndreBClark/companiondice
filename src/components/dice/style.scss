@@ -23,7 +23,7 @@
 }
 
 .dice {
-  @apply flex font-bold text-5xl w-56 h-56 max-h-screen m-auto mb-3 relative;
+  @apply flex font-bold text-6xl w-56 h-56 max-h-screen m-auto mb-3 relative;
   @screen sm {
     @apply w-64 h-64;
   }
@@ -40,7 +40,7 @@
     @apply w-full h-full absolute top-0 left-0;
   }
   svg {
-    @apply absolute top-0 fill-current m-auto text-teal-400 w-full h-full;
+    @apply absolute top-0 left-0 fill-current m-auto text-teal-400 w-full h-full;
     transform-box: border-box;
     transform-origin: center;
     filter: var(--glow-passive);
