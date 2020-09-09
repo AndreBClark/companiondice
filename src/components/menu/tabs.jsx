@@ -1,6 +1,10 @@
 import { h } from 'preact';
 import { CasinoOutlined, FavoriteBorder } from '@material-ui/icons';
-import { BottomNavigation, BottomNavigationAction, withStyles } from '@material-ui/core';
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  withStyles,
+} from '@material-ui/core';
 import { Link } from 'preact-router';
 import { useState } from 'preact/hooks';
 const styles = {
@@ -11,9 +15,9 @@ const styles = {
   },
 };
 
-const Tabs = (props) => {
-const { classes } = props;
-const [value, setValue] = useState(0);
+const Tabs = props => {
+  const { classes } = props;
+  const [value, setValue] = useState(0);
   return (
     <BottomNavigation
       showLabels
@@ -46,5 +50,5 @@ const [value, setValue] = useState(0);
       </Link>
     </BottomNavigation>
   );
-}
+};
 export default withStyles(styles)(Tabs);

@@ -4,9 +4,9 @@ import { useSpring, animated, config } from 'react-spring';
 import { useRoll, diceContext } from '../../hooks/diceHelpers';
 import { useContext, useEffect } from 'preact/hooks';
 
-const Dicebox = (props) => {
+const Dicebox = props => {
   const { result, rollDice, isActive, setSides, setResult, sides } = useRoll();
-  useEffect(() => setResult(sides), [sides, setResult])
+  useEffect(() => setResult(sides), [sides, setResult]);
   setSides(props.sides);
   const { amount } = useContext(diceContext);
   console.log('dicebox amount:', amount);
@@ -15,17 +15,17 @@ const Dicebox = (props) => {
     transform: isActive ? 'rotate(-30deg)' : 'rotate(0turn)',
   });
   function handleDiceRoll() {
-    return rollDice(amount, amount * sides)
+    return rollDice(amount, amount * sides);
   }
   return (
-      <button
-        onClick={handleDiceRoll}
-        class={`${style.dice} ${isActive ? style.active : style.done}`}>
-        <animated.div style={Spin} class={style.svgWrapper}>
-          {props.children}
-        </animated.div>
-        <span class={style.number}>{result}</span>
-      </button>
+    <button
+      onClick={handleDiceRoll}
+      class={`${style.dice} ${isActive ? style.active : style.done}`}>
+      <animated.div style={Spin} class={style.svgWrapper}>
+        {props.children}
+      </animated.div>
+      <span class={style.number}>{result}</span>
+    </button>
   );
 };
 export default Dicebox;

@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { useState } from 'preact/hooks'
+import { useState } from 'preact/hooks';
 import { makeStyles } from '@material-ui/core/styles';
 import { SpeedDial, SpeedDialAction } from '@material-ui/lab';
 import { D20, D4, D6, D8, D10, D12, D100 } from '../dice';
@@ -33,7 +33,7 @@ export default function SpeedDialTooltipOpen() {
             tooltipOpen
             classes={{
               fab: classes.fab,
-              staticTooltipLabel: classes.staticTooltipLabel
+              staticTooltipLabel: classes.staticTooltipLabel,
             }}
           />
         ))}
@@ -119,4 +119,3 @@ const actions = [
     name: 'd12',
   },
 ];
-

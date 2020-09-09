@@ -11,7 +11,7 @@ const Controls = props => {
     <div class="px-4 lg:px-0">
       <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
         <div class="w-1/5 md:w-1/4">
-          <Button onClick={ decrement} oneOrLess={oneOrLess}>
+          <Button onClick={decrement} oneOrLess={oneOrLess}>
             -
           </Button>
         </div>
@@ -19,9 +19,7 @@ const Controls = props => {
           {amount}d{props.sides}
         </span>
         <div class="w-1/5 md:w-1/4">
-          <Button
-            onClick={increment}
-            reachedLimit={reachedLimit}>
+          <Button onClick={increment} reachedLimit={reachedLimit}>
             <div>+</div>
           </Button>
         </div>

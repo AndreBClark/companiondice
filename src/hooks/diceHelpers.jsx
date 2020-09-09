@@ -1,5 +1,5 @@
-import { useState,useContext } from 'preact/hooks';
-import { createContext } from 'preact'
+import { useState, useContext } from 'preact/hooks';
+import { createContext } from 'preact';
 export const diceContext = createContext({
   amount: 1,
 });
@@ -11,13 +11,12 @@ export const useRoll = () => {
   const [oneOrLess, setOneOrLess] = useState(true);
   const [reachedLimit, setReachedLimit] = useState(false);
   const [isActive, setActive] = useState(false);
-  const ticks = 30, randomArray = [];
+  const ticks = 30,
+    randomArray = [];
   const rollDice = (min = 1, max = 20) => {
     setActive(true);
     for (let i = 0; i < ticks; i++) {
-      randomArray.unshift(
-        generateRandomInt(min, max)
-      );
+      randomArray.unshift(generateRandomInt(min, max));
     }
     requestAnimationFrame(cycleNumbers);
   };
@@ -27,8 +26,8 @@ export const useRoll = () => {
         setResult(randomArray.shift());
         requestAnimationFrame(cycleNumbers);
       }
-        cancelAnimationFrame(cycleNumbers);
-        setActive(false);
+      cancelAnimationFrame(cycleNumbers);
+      setActive(false);
     });
   };
 
@@ -43,9 +42,9 @@ export const useRoll = () => {
     result,
     setResult,
     isActive,
-    rollDice
+    rollDice,
   };
-}
+};
 
 const generateRandomInt = (min = 1, max = 20) => {
   let array = new Uint32Array(1);
