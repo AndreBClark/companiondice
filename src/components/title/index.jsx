@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header class={`${infobtn ? style.overlay : ''} ${style.header}`}>
       <h1 class={style.h1}>
-        Companion Dice
+        Luckbringer
         <button
           aria-label="more info button"
           class="py-4 px-2"
