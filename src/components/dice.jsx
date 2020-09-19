@@ -1,10 +1,3 @@
-import d4 from '../assets/d4.svg';
-import d6 from '../assets/d6.svg';
-import d8 from '../assets/d8.svg';
-import d10 from '../assets/d10.svg';
-import d12 from '../assets/d12.svg';
-import d20 from '../assets/d20.svg';
-import d100 from '../assets/d100.svg';
 import SvgIcon from '@material-ui/core/SvgIcon';
 export const D4 = props => {
   return (
