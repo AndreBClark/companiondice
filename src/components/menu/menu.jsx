@@ -2,9 +2,6 @@ import { h } from 'preact';
 import { Link } from 'preact-router';
 import { D4, D6, D8, D10, D12, D20, D100 } from '../dice';
 import style from './style';
-import SpeedDial from '@material-ui/lab/SpeedDial';
-import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
 const Menu = () => {
   return (
     <nav class={style.nav}>
