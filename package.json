@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "preact build --no-inline-css --no-prerender",
+    "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "eslint src --fix",
@@ -20,6 +20,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-import": "^1.13.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-preact-pure": "^2.0.0",
     "eslint": "^6.0.1",

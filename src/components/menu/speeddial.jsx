@@ -118,4 +118,12 @@ const actions = [
     ),
     name: 'd12',
   },
+  {
+    icon: (
+      <Link href="/dice/100">
+        <D100 />
+      </Link>
+    ),
+    name: 'd100',
+  },
 ];
