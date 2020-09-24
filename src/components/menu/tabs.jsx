@@ -19,15 +19,7 @@ const Tabs = props => {
   const { classes } = props;
   const [value, setValue] = useState(0);
   return (
-    <BottomNavigation
-      showLabels
-      value={value}
-      onChange={(event, newValue) => {
-        setValue(newValue);
-      }}
-      classes={{
-        root: classes.root,
-      }}>
+    <div class={styles.root}>
       <Link href="/dice/20">
         <BottomNavigationAction
           label="Dice"
@@ -36,7 +28,7 @@ const Tabs = props => {
             root: classes.root,
           }}
           icon={<CasinoOutlined />}
-        />
+          />
       </Link>
       <Link href="/hp">
         <BottomNavigationAction
@@ -46,9 +38,9 @@ const Tabs = props => {
             root: classes.root,
           }}
           icon={<FavoriteBorder />}
-        />
+          />
       </Link>
-    </BottomNavigation>
+    </div>
   );
 };
 export default withStyles(styles)(Tabs);
