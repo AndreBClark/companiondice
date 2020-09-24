@@ -1,6 +1,7 @@
 const tailwind = require('preact-cli-tailwind');
 const preactCliSvgLoader = require('preact-cli-svg-loader');
 const preactCliPostCSS = require('preact-cli-postcss');
+const netlifyPlugin = require('preact-cli-plugin-netlify');
 const notFoundError = name => `Please pass the ${name} parameter to plugin`;
 
 const defaultParams = {
@@ -45,4 +46,5 @@ export default function(config, env, helpers) {
   // Use postcss.config.js instead of default postCSS config
   preactCliPostCSS(config, helpers);
   preactCliSvgLoader(config, helpers);
+  netlifyPlugin(config);
 }
