@@ -9,7 +9,6 @@ import { Link } from 'preact-router';
 import { useState } from 'preact/hooks';
 const styles = {
   root: {
-    palette: 'dark',
     backgroundColor: '#21193b',
     color: '#319795',
   },
@@ -19,7 +18,15 @@ const Tabs = props => {
   const { classes } = props;
   const [value, setValue] = useState(0);
   return (
-    <div class={styles.root}>
+    <BottomNavigation
+      showLabels
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      classes={{
+        root: classes.root,
+      }}>
       <Link href="/dice/20">
         <BottomNavigationAction
           label="Dice"
@@ -28,7 +35,7 @@ const Tabs = props => {
             root: classes.root,
           }}
           icon={<CasinoOutlined />}
-          />
+        />
       </Link>
       <Link href="/hp">
         <BottomNavigationAction
@@ -38,9 +45,9 @@ const Tabs = props => {
             root: classes.root,
           }}
           icon={<FavoriteBorder />}
-          />
+        />
       </Link>
-    </div>
+    </BottomNavigation>
   );
 };
 export default withStyles(styles)(Tabs);
