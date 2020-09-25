@@ -1,7 +1,8 @@
 {
   "private": true,
   "name": "luckbringer",
-  "version": "1.2.0",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
     "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
