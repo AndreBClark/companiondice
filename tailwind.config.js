@@ -2,6 +2,7 @@ const darken = require('polished/lib/color/darken');
 module.exports = {
     future: {
         removeDeprecatedGapUtilities: true,
+        purgeLayersByDefault: true
     },
     purge: {
         enabled: true,
