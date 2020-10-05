@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
 const actions = [
   {
     icon: (
-      <Link href="/dice/20">
+      <Link href="/dice/20" ariaLabel="d20">
         <D20 />
       </Link>
     ),
@@ -81,7 +81,7 @@ const actions = [
   },
   {
     icon: (
-      <Link href="/dice/4">
+      <Link href="/dice/4" ariaLabel="d4">
         <D4 />
       </Link>
     ),
@@ -89,7 +89,7 @@ const actions = [
   },
   {
     icon: (
-      <Link href="/dice/6">
+      <Link href="/dice/6" ariaLabel="d6">
         <D6 />
       </Link>
     ),
@@ -97,7 +97,7 @@ const actions = [
   },
   {
     icon: (
-      <Link href="/dice/8">
+      <Link href="/dice/8" ariaLabel="d8">
         <D8 />
       </Link>
     ),
@@ -105,7 +105,7 @@ const actions = [
   },
   {
     icon: (
-      <Link href="/dice/10">
+      <Link href="/dice/10" ariaLabel="d10">
         <D10 />
       </Link>
     ),
@@ -113,7 +113,7 @@ const actions = [
   },
   {
     icon: (
-      <Link href="/dice/12">
+      <Link href="/dice/12" ariaLabel="d12">
         <D12 />
       </Link>
     ),
@@ -121,7 +121,7 @@ const actions = [
   },
   {
     icon: (
-      <Link href="/dice/100">
+      <Link href="/dice/100" ariaLabel="d100">
         <D100 />
       </Link>
     ),
