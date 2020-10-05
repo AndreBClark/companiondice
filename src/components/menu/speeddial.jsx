@@ -27,6 +27,7 @@ export default function SpeedDialTooltipOpen() {
         open={open}>
         {actions.map(action => (
           <SpeedDialAction
+            ariaLabel={action.name}
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
