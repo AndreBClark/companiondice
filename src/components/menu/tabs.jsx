@@ -51,4 +51,4 @@ const Tabs = props => {
     </BottomNavigation>
   );
 };
-export default withStyles(styles)(Tabs);
+export default Tabs;
