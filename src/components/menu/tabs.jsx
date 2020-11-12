@@ -3,20 +3,20 @@ import { CasinoOutlined, FavoriteBorder } from '@material-ui/icons';
 import {
   BottomNavigation,
   BottomNavigationAction,
-  withStyles,
 } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'preact-router';
 import { useState } from 'preact/hooks';
-const styles = {
+
+const useStyles = makeStyles({
   root: {
-    palette: 'dark',
     backgroundColor: '#21193b',
     color: '#319795',
   },
-};
+})
 
 const Tabs = props => {
-  const { classes } = props;
+  const classes = useStyles();
   const [value, setValue] = useState(0);
   return (
     <BottomNavigation
@@ -25,17 +25,17 @@ const Tabs = props => {
       onChange={(event, newValue) => {
         setValue(newValue);
       }}
-      // classes={{
-      //   root: classes.root,
-      // }}
+      classes={{
+        root: classes.root,
+      }}
       >
       <Link href="/dice/20">
         <BottomNavigationAction
           label="Dice"
           showLabel
-          // classes={{
-          //   root: classes.root,
-          // }}
+          classes={{
+            root: classes.root,
+          }}
           icon={<CasinoOutlined />}
         />
       </Link>
@@ -43,9 +43,9 @@ const Tabs = props => {
         <BottomNavigationAction
           label="Health"
           showLabel
-          // classes={{
-          //   root: classes.root,
-          // }}
+          classes={{
+            root: classes.root,
+          }}
           icon={<FavoriteBorder />}
         />
       </Link>
