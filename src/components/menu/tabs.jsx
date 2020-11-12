@@ -25,16 +25,17 @@ const Tabs = props => {
       onChange={(event, newValue) => {
         setValue(newValue);
       }}
-      classes={{
-        root: classes.root,
-      }}>
+      // classes={{
+      //   root: classes.root,
+      // }}
+      >
       <Link href="/dice/20">
         <BottomNavigationAction
           label="Dice"
           showLabel
-          classes={{
-            root: classes.root,
-          }}
+          // classes={{
+          //   root: classes.root,
+          // }}
           icon={<CasinoOutlined />}
         />
       </Link>
@@ -42,9 +43,9 @@ const Tabs = props => {
         <BottomNavigationAction
           label="Health"
           showLabel
-          classes={{
-            root: classes.root,
-          }}
+          // classes={{
+          //   root: classes.root,
+          // }}
           icon={<FavoriteBorder />}
         />
       </Link>
