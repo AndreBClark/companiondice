@@ -1,39 +1,27 @@
 import { h } from 'preact';
 import style from './style'
 import { CasinoOutlined, FavoriteBorder } from '@material-ui/icons';
-import {
-  BottomNavigation,
-  BottomNavigationAction,
-} from '@material-ui/core';
 import { Link } from 'preact-router';
-import { useState } from 'preact/hooks';
 
-const Tabs = props => {
-  const [value, setValue] = useState(0);
+const Action = ({ children, ...props }) => {
+  return(
+    <Link href={props.alink}>
+      <button className={style.button}>
+        <div class={style.wrapper}>
+          {props.icon}
+          <label className={style.label}>{props.label}</label>
+        </div>
+      </button>
+    </Link>
+  )
+}
+const Tabs = () => {
   return (
-    <div className='MuiBottomNavigation-root'
-      // value={value}
-      // onChange={(event, newValue) => {
-      //   setValue(newValue);
-      // }}
-      >
-      <Link href="/dice/20" className={style['BottomNavigationAction-root']}>
-        <BottomNavigationAction
-          label="Dice"
-          className={style['BottomNavigationAction-root']}
-          showLabel
-          icon={<CasinoOutlined />}
-        />
-      </Link>
-      <Link href="/hp" className={style['BottomNavigationAction-root']}>
-        <BottomNavigationAction
-          label="Health"
-          className={style['BottomNavigationAction-root']}
-          showLabel
-          icon={<FavoriteBorder />}
-        />
-      </Link>
+    <div class={style.nav}>
+      <Action alink="/dice/20" label="Dice" icon={<CasinoOutlined />} />
+      <Action alink="/hp" label="Health" icon={<FavoriteBorder />} />
     </div>
-  );
+  )
 };
-export default Tabs;
+
+  export default Tabs;

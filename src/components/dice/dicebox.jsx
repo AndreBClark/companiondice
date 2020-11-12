@@ -4,7 +4,7 @@ import { useSpring, animated, config } from 'react-spring';
 import { useRoll, diceContext } from '../../hooks/diceHelpers';
 import { useContext, useEffect } from 'preact/hooks';
 
-const Dicebox = props => {
+const Dicebox = ({children, ...props}) => {
   const { result, rollDice, isActive, setSides, setResult, sides } = useRoll();
   useEffect(() => setResult(sides), [sides, setResult]);
   setSides(props.sides);
@@ -22,7 +22,7 @@ const Dicebox = props => {
       onClick={handleDiceRoll}
       class={`${style.dice} ${isActive ? style.active : style.done}`}>
       <animated.div style={Spin} class={style.svgWrapper}>
-        {props.children}
+        {children}
       </animated.div>
       <span class={style.number}>{result}</span>
     </button>
