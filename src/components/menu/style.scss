@@ -1,26 +1,16 @@
-.nav {
-  @apply flex justify-between w-full flex-wrap mt-2;
-  @screen lg {
-    @apply mt-8;
-  }
-  a {
-    @apply font-bold text-center opacity-75 mb-2 fill-current flex flex-col justify-between items-center content-center w-1/4 relative top-auto;
-    transition: opacity 500ms, transform 500ms;
-    transition-timing-function: ease-in-out;
-    @screen md {
-      @apply w-auto;
-    }
-    & svg {
-      @apply fill-current w-12 p-1 text-teal-400 bg-teal-900 rounded-full;
-    }
-    span {
-      @apply absolute text-teal-900 top-auto py-3;
-    }
-    &:hover,
-    &.active,
-    &[aria-current] {
-      @apply opacity-100;
-      transform: scale(1.2);
-    }
-  }
+:global(.MuiBottomNavigation-root) {
+  color: #319795 !important;
+  background-color: #21193b !important;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+}
+:global(.MuiBottomNavigationAction-root) {
+  flex: 1;
+  color: #319795 !important;
+  padding: 6px 12px 8px;
+  max-width: 168px;
+  min-width: 80px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+  padding-top 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
