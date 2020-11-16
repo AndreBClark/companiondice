@@ -16,7 +16,7 @@ const SpeedDialList = props => {
 
 
   return(
-    <div class={style.fabList}>
+    <div class={open ? style.fabActive : style.fabList}>
       <button class={style.fab} onClick={handleOpen}>
         <D20 />
       </button>

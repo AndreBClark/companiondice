@@ -53,8 +53,13 @@
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
-  width: 3rem;
-  height: 32rem;
+  width: 4rem;
+  height: 4rem;
   bottom: 20px;
-  right: 30px;
+  right: 10px;
+  transition: all 300ms;
+}
+.fabActive {
+  composes: fabList;
+  height: 32rem;
 }
