@@ -6,6 +6,7 @@ import Redirect from './Redirect';
 import Base from './base';
 import Dice from '../routes/dice';
 import HealthTracker from '../routes/health';
+import style from './style'
 
 const App = () => {
   /** Gets fired when the route changes.
@@ -16,7 +17,7 @@ const App = () => {
     const currentUrl = e.url;
   };
   return (
-    <div id="app">
+    <div id="app" class={style.app}>
       <Base>
         <Router onChange={handleRoute}>
           <Dice path="/dice/:sides" />
