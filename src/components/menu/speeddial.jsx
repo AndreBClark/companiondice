@@ -29,6 +29,7 @@ const SpeedDialAction = props =>{
     <Link href={props.link}
       className={style.fabAction}>
       {props.icon}
+      {props.name}
     </Link>
   )
 }
@@ -39,7 +40,8 @@ export default function SpeedDialTooltipOpen() {
         {actions.map(action => (
           <SpeedDialAction
             link={action.url}
-            icon={action.icon}
+            // icon={action.icon}
+            name={action.name}
           />
         ))}
     </SpeedDialList>
