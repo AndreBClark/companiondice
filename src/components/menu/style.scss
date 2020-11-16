@@ -35,3 +35,26 @@
     user-select: none;
   }
 }
+.bubble {
+  @apply fill-current w-12 h-12 py-3 text-teal-400 bg-teal-900 rounded-full z-10 text-center;
+}
+.fab {
+  composes: bubble;
+  width: 4rem;
+  height: 4rem;
+  @apply bg-deeppurple-100 p-4 -mx-2;
+}
+.fabAction {
+  composes: bubble;
+  @apply mb-3;
+}
+.fabList {
+  @apply absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  width: 3rem;
+  height: 32rem;
+  bottom: 20px;
+  right: 30px;
+}

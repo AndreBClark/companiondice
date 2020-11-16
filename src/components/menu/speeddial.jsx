@@ -1,130 +1,85 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
-import { makeStyles } from '@material-ui/core/styles';
-import { SpeedDial, SpeedDialAction } from '@material-ui/lab';
+// import { makeStyles } from '@material-ui/core/styles';
+// import { SpeedDial, SpeedDialAction } from '@material-ui/lab';
 import { D20, D4, D6, D8, D10, D12, D100 } from '../dice';
 import { Link } from 'preact-router';
+import style from './style'
+// import { SpeedDialAction } from '@material-ui/lab';
 
-export default function SpeedDialTooltipOpen() {
-  const classes = useStyles();
+const SpeedDialList = props => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
-    setOpen(true);
+    setOpen(!open);
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+
+  return(
+    <div class={style.fabList}>
+      <button class={style.fab} onClick={handleOpen}>
+        <D20 />
+      </button>
+      { open ? props.children : ''}
+    </div>
+  )
+}
+const SpeedDialAction = props =>{
+  return(
+    <Link href={props.link}
+      className={style.fabAction}>
+      {props.icon}
+    </Link>
+  )
+}
+export default function SpeedDialTooltipOpen() {
+
   return (
-    <div className={classes.root}>
-      <SpeedDial
-        ariaLabel="Dice Tower"
-        className={classes.speedDial}
-        icon={<D20 />}
-        onClose={handleClose}
-        onOpen={handleOpen}
-        open={open}>
+    <SpeedDialList>
         {actions.map(action => (
           <SpeedDialAction
-            ariaLabel={action.name}
-            key={action.name}
+            link={action.url}
             icon={action.icon}
-            tooltipTitle={action.name}
-            tooltipOpen
-            classes={{
-              fab: classes.fab,
-              staticTooltipLabel: classes.staticTooltipLabel,
-            }}
           />
         ))}
-      </SpeedDial>
-    </div>
+    </SpeedDialList>
   );
 }
-const useStyles = makeStyles(theme => ({
-  root: {
-    height: 380,
-    backgroundColor: '#21193b',
-    color: '#319795',
-    // transform: 'translateZ(0px)',
-    flexGrow: 1,
-  },
-  speedDial: {
-    position: 'absolute',
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
-  },
-  fab: {
-    backgroundColor: '#21193b',
-    color: '#319795',
-  },
-  actions: {
-    backgroundColor: '#21193b',
-    color: '#319795',
-  },
-  staticTooltipLabel: {
-    fontWeight: 'bold',
-    backgroundColor: '#21193b',
-    color: '#319795',
-  },
-}));
 
 const actions = [
   {
-    icon: (
-      <Link href="/dice/20" ariaLabel="d20">
-        <D20 />
-      </Link>
-    ),
+    icon: (<D20 />),
+    url: "/dice/20",
     name: 'd20',
   },
   {
-    icon: (
-      <Link href="/dice/4" ariaLabel="d4">
-        <D4 />
-      </Link>
-    ),
+    icon: "Stats",
+    url: "/dice/stats",
+    name: 'stats',
+  },
+  {
+    icon: (<D4 />),
+    url: "/dice/4",
     name: 'd4',
   },
   {
-    icon: (
-      <Link href="/dice/6" ariaLabel="d6">
-        <D6 />
-      </Link>
-    ),
+    icon: (<D6 />),
+    url: "/dice/6",
     name: 'd6',
   },
   {
-    icon: (
-      <Link href="/dice/8" ariaLabel="d8">
-        <D8 />
-      </Link>
-    ),
+    icon: (<D8 />),
+    url: "/dice/8",
     name: 'd8',
   },
   {
-    icon: (
-      <Link href="/dice/10" ariaLabel="d10">
-        <D10 />
-      </Link>
-    ),
+    icon: (<D10 />),
+    url: "/dice/10",
     name: 'd10',
   },
   {
-    icon: (
-      <Link href="/dice/12" ariaLabel="d12">
-        <D12 />
-      </Link>
-    ),
+    icon: (<D12 />),
+    url: "/dice/12",
     name: 'd12',
-  },
-  {
-    icon: (
-      <Link href="/dice/100" ariaLabel="d100">
-        <D100 />
-      </Link>
-    ),
-    name: 'd100',
   },
 ];
