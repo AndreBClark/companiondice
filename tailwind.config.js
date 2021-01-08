@@ -5,7 +5,7 @@ module.exports = {
         purgeLayersByDefault: true
     },
     purge: {
-        enabled: true,
+        enabled: false,
         content: [ 
             './src/**/*.html',
             './src/**/*.vue',
