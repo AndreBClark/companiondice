@@ -1,0 +1,15 @@
+{
+  "name": "companiondice",
+  "displayName": "companiondice",
+  "expo": {
+    "name": "companiondice",
+    "slug": "companiondice",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#171129",
+    "primaryColor": "#34D399"
+  }
+}
