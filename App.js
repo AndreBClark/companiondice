@@ -6,7 +6,7 @@ import { tailwind, getColor } from './tailwind'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={tailwind('text-green-400')}>Open up App.js to start working on your app!</Text>
+      <Text style={tailwind('text-green-400 font-sans')}>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -16,6 +16,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: getColor('deeppurple-800')
+    backgroundColor: getColor('deeppurple-800'),
   },
 });
