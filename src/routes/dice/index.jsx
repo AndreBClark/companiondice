@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react'
 import { useState } from 'preact/hooks';
 import Dicebox from '../../components/dice/dicebox';
 import Controls from '../../components/Controls';

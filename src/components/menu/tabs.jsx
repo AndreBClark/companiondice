@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react'
 import style from './style'
 import { CasinoOutlined, FavoriteBorder } from '@material-ui/icons';
 import { Link } from 'preact-router';

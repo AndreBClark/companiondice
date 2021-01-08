@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react'
 import { HPButton } from '../../components/Button';
 import { useHP } from '../../hooks/useHP';
 import NumericInput from 'react-numeric-input';

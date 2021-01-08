@@ -4,7 +4,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-import { h } from 'preact';
+import React from 'react'
 import Helmet from 'preact-helmet';
 import PropTypes from 'prop-types';
 

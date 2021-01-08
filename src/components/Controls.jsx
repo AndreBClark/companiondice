@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react'
 import { Button } from './Button';
 import { useRoll, diceContext } from '../hooks/diceHelpers';
 import { useContext } from 'preact/hooks';

@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react'
 import style from './style';
 import { useSpring, animated, config } from 'react-spring';
 import { useRoll, diceContext } from '../../hooks/diceHelpers';

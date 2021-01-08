@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react'
 import SEO from '../SEO';
 import style from './style';
 import Header from '../title';

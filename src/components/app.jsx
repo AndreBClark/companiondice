@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react'
 import { Router } from 'preact-router';
 import Redirect from './Redirect';
 
