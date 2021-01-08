@@ -14,22 +14,22 @@ const HealthTracker = () => {
   } = useHP();
 
   return (
-    <div class="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl">
-      <div class="flex flex-col justify-around text-center w-full px-4 xl:px-0">
-        <div>
+    <View className="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl">
+      <View className="flex flex-col justify-around text-center w-full px-4 xl:px-0">
+        <View>
           <HPButton onClick={longRest}>Long Rest</HPButton>
-        </div>
-        <div>
-          <div>Heal</div>
-          <div className="grid grid-cols-3 gap-4 col-gap-4">
+        </View>
+        <View>
+          <View>Heal</View>
+          <View className="grid grid-cols-3 gap-4 col-gap-4">
             <HPButton onClick={() => modifyHP(1)}>+</HPButton>
             <HPButton onClick={() => modifyHP(5)}>5</HPButton>
             <HPButton onClick={() => modifyHP(10)}>10</HPButton>
-          </div>
-        </div>
-        <div class="grid grid-cols-3 col-gap-4 gap-4 mt-4">
-          <div class="flex flex-col justify-center font-black bg-deeppurple-700 rounded-lg">
-            <span class="text-2xl font-bold">Current</span>
+          </View>
+        </View>
+        <View className="grid grid-cols-3 col-gap-4 gap-4 mt-4">
+          <View className="flex flex-col justify-center font-black bg-deeppurple-700 rounded-lg">
+            <span className="text-2xl font-bold">Current</span>
             <NumericInput
               placeholder="--"
               value={hitpoints}
@@ -43,12 +43,12 @@ const HealthTracker = () => {
               snap
               strict
             />
-          </div>
-          <span class="flex-col justify-center pt-4 text-8xl xl:text-10xl">
+          </View>
+          <span className="flex-col justify-center pt-4 text-8xl xl:text-10xl">
             /
           </span>
-          <div class="flex flex-col justify-center font-black bg-deeppurple-700 rounded-lg">
-            <span class="text-2xl font-bold">Max</span>
+          <View className="flex flex-col justify-center font-black bg-deeppurple-700 rounded-lg">
+            <span className="text-2xl font-bold">Max</span>
             <NumericInput
               placeholder="--"
               value={maxHP}
@@ -62,18 +62,18 @@ const HealthTracker = () => {
               inputmode="numeric"
               strict
             />
-          </div>
-        </div>
-        <div>
-          <div>Damage</div>
-          <div className="grid grid-cols-3 gap-4 col-gap-4 ">
+          </View>
+        </View>
+        <View>
+          <View>Damage</View>
+          <View className="grid grid-cols-3 gap-4 col-gap-4 ">
             <HPButton onClick={() => modifyHP(-1)}>-</HPButton>
             <HPButton onClick={() => modifyHP(-5)}>5</HPButton>
             <HPButton onClick={() => modifyHP(-10)}>10</HPButton>
-          </div>
-        </div>
-      </div>
-    </div>
+          </View>
+        </View>
+      </View>
+    </View>
   );
 };
 export default HealthTracker;

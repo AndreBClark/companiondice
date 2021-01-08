@@ -17,7 +17,7 @@ const App = () => {
     const currentUrl = e.url;
   };
   return (
-    <div id="app" class={style.app}>
+    <View id="app" className={style.app}>
       <Base>
         {/* <Router onChange={handleRoute}>
           <Dice path="/dice/:sides" />
@@ -25,7 +25,7 @@ const App = () => {
           <Redirect path="/" to="/dice/20" />
         </Router> */}
       </Base>
-    </div>
+    </View>
   );
 };
 export default App;

@@ -16,12 +16,12 @@ const SpeedDialList = props => {
 
 
   return(
-    <div class={open ? style.fabActive : style.fabList}>
-      <button class={style.fab} onClick={handleOpen}>
+    <View className={open ? style.fabActive : style.fabList}>
+      <button className={style.fab} onClick={handleOpen}>
         <D20 />
       </button>
       { open ? props.children : ''}
-    </div>
+    </View>
   )
 }
 const SpeedDialAction = props =>{

@@ -1,4 +1,4 @@
-import { useEffect } from 'preact/hooks';
+import { useEffect } from 'react';
 
 const useOutsideClick = (ref, callback) => {
   const handleClick = e => {

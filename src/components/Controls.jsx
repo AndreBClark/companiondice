@@ -8,26 +8,26 @@ const Controls = props => {
   const { reachedLimit, oneOrLess } = useRoll();
   console.log('controls amount:', amount);
   return (
-    <div class="px-4 lg:px-0">
-      <div class="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
-        <div class="w-1/5 md:w-1/4">
+    <View className="px-4 lg:px-0">
+      <View className="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
+        <View className="w-1/5 md:w-1/4">
           <Button onClick={decrement} oneOrLess={oneOrLess}>
             -
           </Button>
-        </div>
-        <span class="w-3/5 md:w-1/2 pt-2 text-center">
+        </View>
+        <span className="w-3/5 md:w-1/2 pt-2 text-center">
           {amount}d{props.sides}
         </span>
-        <div class="w-1/5 md:w-1/4">
+        <View className="w-1/5 md:w-1/4">
           <Button onClick={increment} reachedLimit={reachedLimit}>
-            <div>+</div>
+            <View>+</View>
           </Button>
-        </div>
-      </div>
-      <div class="text-2xl">
+        </View>
+      </View>
+      <View className="text-2xl">
         <Button onClick={reset}>Reset</Button>
-      </div>
-    </div>
+      </View>
+    </View>
   );
 };
 export default Controls;

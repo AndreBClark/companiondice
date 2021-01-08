@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useState } from 'react';
 
 export default function useLocalStorage(key, initialValue) {
   // State to store our value

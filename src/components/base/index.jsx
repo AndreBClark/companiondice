@@ -8,13 +8,13 @@ const Base = ({ children }) => {
   return (
     <>
       <SEO />
-      <div class={style.screen}>
+      <View className={style.screen}>
         <Header />
-        <div class={`${style.base} container`}>
-          <main class={style.main}>{children}</main>
-        </div>
+        <View className={`${style.base} container`}>
+          <main className={style.main}>{children}</main>
+        </View>
         <Tabs />
-      </div>
+      </View>
       <SpeedDialButton />
     </>
   );

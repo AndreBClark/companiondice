@@ -7,20 +7,20 @@ const Action = ({ children, ...props }) => {
   return(
     <Link href={props.alink}>
       <button className={style.button}>
-        <div class={style.wrapper}>
+        <View className={style.wrapper}>
           {props.icon}
           <label className={style.label}>{props.label}</label>
-        </div>
+        </View>
       </button>
     </Link>
   )
 }
 const Tabs = () => {
   return (
-    <div class={style.nav}>
+    <View className={style.nav}>
       <Action alink="/dice/20" label="Dice" icon={<CasinoOutlined />} />
       <Action alink="/hp" label="Health" icon={<FavoriteBorder />} />
-    </div>
+    </View>
   )
 };
 

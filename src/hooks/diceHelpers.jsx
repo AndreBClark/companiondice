@@ -1,5 +1,5 @@
-import { useState, useContext } from 'preact/hooks';
-import { createContext } from 'preact';
+import { useState, useContext, createContext } from 'react';
+
 export const diceContext = createContext({
   amount: 1,
 });

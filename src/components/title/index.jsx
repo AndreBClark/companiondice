@@ -1,11 +1,11 @@
-import React from 'react'
-import { useState, useRef } from 'preact/hooks';
-import GithubSVG from '../../assets/github.svg';
-import CosmicSVG from '../../assets/cosmicdivision.svg';
-import NateSVG from '../../assets/nkg2.svg';
-import InfoSVG from '../../assets/info.svg';
+import React, { useState, useRef } from 'react'
+import { Text, View, Button } from 'react-native';
+import { GithubSVG, CosmicSVG, NateSVG, InfoSVG } from '../dice';
 import useOutsideClick from '../../hooks/useOutsideClick';
-import style from './style';
+import style from './style.scss';
+import tailwind from 'tailwind-rn';
+
+
 const Header = () => {
   const [infobtn, infoClicked] = useState(false);
   const ref = useRef();
@@ -15,18 +15,19 @@ const Header = () => {
     }
   });
   return (
-    <header class={`${infobtn ? style.overlay : ''} ${style.header}`}>
-      <h1 class={style.h1}>
+    <View style={infobtn ? style.overlay : '' && style.header}>
+      <Text className={style.Text}>
         Luckbringer
-        <button
-          aria-label="more info button"
-          class="py-4 px-2"
+        <Button
+          aria-label="more info Button"
+          className="py-4 px-2"
           onClick={() => infoClicked(!infobtn)}>
           <InfoSVG />
-        </button>
-      </h1>
-      <div class={`${style.modal} ${infobtn ? style.active : ''}`} ref={ref}>
-        <h2 class="text-center">Created By</h2>
+        </Button>
+      </Text>
+      <View style={tailwind("justify-around font-bold mx-auto transition duration-700 ease-out transition-all absolute p-4 z-20 h-96 rounded bg-deeppurple-500 inset-x-0 flex-col flex text-center max-w-full")}
+      className={infobtn ? style.active : ''} ref={ref}>
+        <Text className="text-center">Created By</Text>
         <a href="https://cosmicdivision.dev">
           <CosmicSVG />
           Andre Clark
@@ -41,8 +42,8 @@ const Header = () => {
           <GithubSVG />
           Github Repo
         </a>
-      </div>
-    </header>
+      </View>
+    </View>
   );
 };
 export default Header;

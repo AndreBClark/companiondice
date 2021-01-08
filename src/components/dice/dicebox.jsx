@@ -20,11 +20,11 @@ const Dicebox = ({children, ...props}) => {
   return (
     <button
       onClick={handleDiceRoll}
-      class={`${style.dice} ${isActive ? style.active : style.done}`}>
-      <animated.div style={Spin} class={style.svgWrapper}>
+      className={`${style.dice} ${isActive ? style.active : style.done}`}>
+      <animated.div style={Spin} className={style.svgWrapper}>
         {children}
       </animated.div>
-      <span class={style.number}>{result}</span>
+      <span className={style.number}>{result}</span>
     </button>
   );
 };
