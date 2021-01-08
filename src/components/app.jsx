@@ -4,8 +4,8 @@ import Redirect from './Redirect';
 
 // Code-splitting is automated for routes
 import Base from './base';
-import Dice from '../routes/dice';
-import HealthTracker from '../routes/health';
+// import Dice from '../routes/dice';
+// import HealthTracker from '../routes/health';
 import style from './style'
 
 const App = () => {
@@ -19,11 +19,11 @@ const App = () => {
   return (
     <div id="app" class={style.app}>
       <Base>
-        <Router onChange={handleRoute}>
+        {/* <Router onChange={handleRoute}>
           <Dice path="/dice/:sides" />
           <HealthTracker path="/hp" />
           <Redirect path="/" to="/dice/20" />
-        </Router>
+        </Router> */}
       </Base>
     </div>
   );
