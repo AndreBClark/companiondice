@@ -26,5 +26,5 @@ export default function App() {
 }
 const styles = StyleSheet.create({
   container: tailwind(`justify-between flex-auto items-center bg-purple-800`),
-  paragraph: tailwind('text-green-400 h-full items-center')
+  paragraph: tailwind('text-green-400 items-center')
 });
