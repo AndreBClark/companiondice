@@ -13,9 +13,7 @@ const Header = () => {
   });
   return (
     <View style={styles.header} ref={ref}>
-      <BaseText style={styles.h1}>
-        Luckbringer
-      </BaseText>
+      <BaseText styleProps={styles.heading1}>Luckbringer</BaseText>
       <Pressable
         accessibilityHint="more info Pressable"
         style={styles.btn}
@@ -62,8 +60,9 @@ const Modal = () => {
   )
 }
 const styles = StyleSheet.create({
+  heading1: tailwind(`text-4xl font-bold`),
   header: tailwind(`w-full text-green-400 text-center`),
-  modal: tailwind("justify-around font-bold mx-auto absolute p-4 z-20 h-96 rounded bg-purple-500 inset-x-0 flex-col flex text-center max-w-full max-w-lg w-96  -top-full"),
+  modal: tailwind("justify-around font-bold mx-auto absolute p-4 z-20 h-96 rounded bg-purple-500 inset-x-0 flex-col flex text-center max-w-full max-w-lg w-96 -top-full"),
   overlay: tailwind(`h-full absolute opacity-75 z-10 w-full top-0 left-0`),
   btn: tailwind(`py-4 px-2 h-6 text-green-400`),
   h1: tailwind(`text-2xl font-light text-center`),
@@ -72,5 +71,5 @@ const styles = StyleSheet.create({
 })
 
 const BaseText = props => {
-    return <Text style={tailwind(`text-green-400 font-semibold`)}>{props.children}</Text>
+  return <Text style={{ ...tailwind(`text-green-400 font-semibold`, ...props.style)}}>{props.children}</Text>
 }
