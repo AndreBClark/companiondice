@@ -8,9 +8,7 @@ import Anchor from '../Anchor';
 const Header = () => {
   const [infobtn, infoPressed] = useState(false);
   const ref = useRef();
-  useOutsideClick(ref, () => {
-    infobtn === true && infoPressed(false);
-  });
+  useOutsideClick(ref, () => infobtn === true && infoPressed(false));
   return (
     <View style={styles.header} ref={ref}>
       <BaseText style={styles.heading1}>
