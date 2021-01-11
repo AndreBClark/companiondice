@@ -28,7 +28,7 @@ const HealthTracker = () => {
           </View>
         </View>
         <View className="grid grid-cols-3 col-gap-4 gap-4 mt-4">
-          <View className="flex flex-col justify-center font-black bg-deeppurple-700 rounded-lg">
+          <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
             <span className="text-2xl font-bold">Current</span>
             <NumericInput
               placeholder="--"
@@ -47,7 +47,7 @@ const HealthTracker = () => {
           <span className="flex-col justify-center pt-4 text-8xl xl:text-10xl">
             /
           </span>
-          <View className="flex flex-col justify-center font-black bg-deeppurple-700 rounded-lg">
+          <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
             <span className="text-2xl font-bold">Max</span>
             <NumericInput
               placeholder="--"

@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  @apply bg-deeppurple-800 max-h-screen overflow-hidden font-sans;
+  @apply bg-purple-800 max-h-screen overflow-hidden font-sans;
 }
 .screen {
   @apply h-screen flex flex-col justify-between w-full;

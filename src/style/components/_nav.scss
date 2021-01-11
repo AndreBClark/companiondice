@@ -17,7 +17,7 @@
 }
 
 .modal {
-  @apply justify-around font-bold mx-auto transition duration-700 ease-out transition-all absolute p-4 z-20 h-96 rounded bg-deeppurple-500 inset-x-0 flex-col flex text-center max-w-full;
+  @apply justify-around font-bold mx-auto transition duration-700 ease-out transition-all absolute p-4 z-20 h-96 rounded bg-purple-500 inset-x-0 flex-col flex text-center max-w-full;
   @screen lg {
     width: 20vw;
   }
