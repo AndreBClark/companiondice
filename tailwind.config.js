@@ -32,7 +32,7 @@ module.exports = {
                 xs: '330px'
             },
             colors: {
-                deeppurple: {
+                purple: {
                     900: darken(.25, "#44337a"),
                     800: darken(.225, "#44337a"),
                     700: darken(.2, "#44337a"),
@@ -46,6 +46,8 @@ module.exports = {
             }
         }
     },
-    variants: {},
+    variants: {
+        margin: ['responsive'],
+    },
     plugins: []
 }
