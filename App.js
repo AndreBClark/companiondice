@@ -5,26 +5,25 @@ import { tailwind } from './src/components/tailwind'
 import Header from './src/components/title'
 import AppLoading from 'expo-app-loading';
 import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
-import Tabs from './src/components/menu/tabs';
+import TabNav from './src/components/menu/tabNavigation';
 
 export default function App() {
-  let [fontsLoaded] = useFonts({
-    Inter_900Black,
-  });
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+  // let [fontsLoaded] = useFonts({
+  //   Inter_900Black,
+  // });
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // }
 
   return (
     <View style={styles.container}>
       <Header />
-      <Text style={styles.paragraph}>Open up App.js to start working on your app!</Text>
-      <Tabs />
+      <TabNav />
       <StatusBar style="dark" />
     </View>
   );
 }
 const styles = StyleSheet.create({
-  container: tailwind(`justify-between flex-auto items-center bg-purple-800`),
+  container: tailwind(`relative justify-between w-full h-full bg-purple-800 overflow-hidden`),
   paragraph: tailwind('text-green-400 items-center')
 });

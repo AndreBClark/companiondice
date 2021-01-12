@@ -1,8 +1,8 @@
-import React from 'react'
-import style from './style';
+import React, { useContext, useEffect } from 'react'
 import { useSpring, animated, config } from 'react-spring';
 import { useRoll, diceContext } from '../../hooks/diceHelpers';
-import { useContext, useEffect } from 'preact/hooks';
+import { StyleSheet } from 'react-native';
+import tailwind from 'tailwind-rn';
 
 const Dicebox = ({children, ...props}) => {
   const { result, rollDice, isActive, setSides, setResult, sides } = useRoll();
@@ -18,14 +18,19 @@ const Dicebox = ({children, ...props}) => {
     return rollDice(amount, amount * sides);
   }
   return (
-    <button
-      onClick={handleDiceRoll}
-      className={`${style.dice} ${isActive ? style.active : style.done}`}>
+    <Pressable
+      onPress={handleDiceRoll}
+      style={`${style.dice} ${isActive ? style.active : style.done}`}>
       <animated.div style={Spin} className={style.svgWrapper}>
         {children}
       </animated.div>
       <span className={style.number}>{result}</span>
-    </button>
+    </Pressable>
   );
 };
+
+const style = StyleSheet.create({
+  dice: tailwind(`flex font-bold w-56 h-56 mb-3 relative`)
+})
+
 export default Dicebox;

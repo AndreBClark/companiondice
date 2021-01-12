@@ -1,67 +1,71 @@
-import React, { useState, useRef } from 'react'
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-import { GithubSVG, CosmicSVG, NateSVG, InfoSVG, SvgIcon } from '../Svg';
-import useOutsideClick from '../../hooks/useOutsideClick';
-import { tailwind } from '../tailwind';
+import React, { useState } from 'react'
+import { StyleSheet, View, Dimensions, Platform, Pressable } from 'react-native';
+import { CosmicSVG, NateSVG, SvgIcon } from '../Svg';
+import { tailwind, getColor } from '../tailwind';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons'; 
+import BaseText from '../BaseText';
 import Anchor from '../Anchor';
+import Modal from 'react-native-modal';
+
+const deviceWidth = Dimensions.get("window").width;
+const deviceHeight = Platform.OS === "ios"
+  ? Dimensions.get("window").height
+  : require("react-native-extra-dimensions-android").get("REAL_WINDOW_HEIGHT");
 
 const Header = () => {
-  const [infobtn, infoPressed] = useState(false);
-  const ref = useRef();
-  useOutsideClick(ref, () => infobtn === true && infoPressed(false));
+  const [isModalVisible, setModalVisible] = useState(false);
   return (
-    <View style={styles.header} ref={ref}>
-      <BaseText style={styles.heading1}>
-        Luckbringer
-        <Pressable
-          accessibilityHint="more info Pressable"
-          style={styles.btn}
-          onPress={() => infoPressed(!infobtn)}>
-          <SvgIcon Svg={<InfoSVG />} />
-        </Pressable>
-      </BaseText>
-      {infobtn && <Modal />}
-    </View>
+    <>
+      <View style={styles.header}>
+        <BaseText style={styles.heading1}>
+          Luckbringer
+            <Pressable
+              style={styles.btn}
+              onPress={() => setModalVisible(true)}>
+              <View style={styles.btn}>
+                <MaterialCommunityIcons name="information" size={24} color={getColor(`green-400`)} />
+              </View>
+            </Pressable>
+        </BaseText>
+      </View>
+      <Modal
+        onBackdropPress={() => setModalVisible(false)}
+        isVisible={isModalVisible}
+        coverScreen={true}
+        deviceWidth={deviceWidth}
+        deviceHeight={deviceHeight}
+        >
+        <View style={styles.modal}>
+          <BaseText style={tailwind(`text-center`)}>Created By</BaseText>
+          <Anchor style={styles.flexCol} href="https://cosmicdivision.dev">
+            <SvgIcon Svg={<CosmicSVG size="50px" />} label1="Andre Clark" label2="Developer" />
+          </Anchor>
+          <Anchor style={styles.flexCol} href="https://nathangoullette.com">
+            <SvgIcon Svg={<NateSVG />} label1="Nathan Goullette" label2="Designer" />
+          </Anchor>
+          <Anchor
+            href="https://github.com/AndreBClark/companiondice">
+            <Octicons name="mark-github" size={24} color={getColor(`green-400`)} />
+            <View>
+              <BaseText>Github Repo</BaseText>
+            </View>
+          </Anchor>
+        </View>
+      </Modal>
+    </>
   );
 };
-export default Header;
 
-const Modal = () => {
-  return(
-    <>
-      <View style={styles.modal}>
-        <BaseText style={tailwind(`text-center`)}>Created By</BaseText>
-        <Anchor style={styles.flexCol} href="https://cosmicdivision.dev">
-          <SvgIcon Svg={<CosmicSVG />} label1="Andre Clark" label2="Developer" />
-        </Anchor>
-        <Anchor style={styles.flexCol} href="https://nathangoullette.com">
-          <SvgIcon Svg={<NateSVG />} label1="Nathan Goullette" label2="Designer" />
-        </Anchor>
-        <Anchor
-          style={styles.flexCol}
-          href="https://github.com/AndreBClark/companiondice">
-          <SvgIcon Svg={<GithubSVG />} label1="Github Repo" />
-        </Anchor>
-      </View>
-      <View style={styles.overlay} />
-    </>
-  )
-}
 const styles = StyleSheet.create({
-  heading1: tailwind(`text-4xl font-bold`),
-  header: tailwind(`w-full text-green-400 text-center`),
-  modal: tailwind("justify-around font-bold mx-auto absolute p-4 z-20 h-96 rounded bg-purple-500 inset-x-0 flex-col flex text-center max-w-full max-w-lg w-96 -top-full"),
+  heading1: tailwind(`text-4xl font-bold text-center my-4`),
+  header: tailwind(`w-full text-green-400 text-center bg-purple-500`),
+  modal: tailwind("justify-around font-bold mx-auto h-96 rounded bg-purple-500 flex-col flex text-center max-w-full max-w-lg w-96"),
+  modalWrapper: tailwind(`self-stretch absolute`),
   overlay: tailwind(`h-full absolute opacity-75 z-10 w-full top-0 left-0`),
-  btn: tailwind(`ml-2 w-6 h-6 text-green-400`),
-  paragraphCenter: tailwind(`mx-auto`),
-  flexCol: tailwind(`flex flex-col`)
+  btn: tailwind(`w-8 h-6 text-green-400`),
+  paragraphCenter: tailwind(`mx-auto text-center`),
+  flexCol: tailwind(`flex flex-col text-center`)
 })
 
-export const BaseText = props => {
-  return(
-    <Text {...props} 
-      style={[tailwind('text-green-400 font-semibold'), props.style]}>
-      {props.children}
-    </Text>
-  )
-}
+export default Header;

@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button } from './Button';
 import { useRoll, diceContext } from '../hooks/diceHelpers';
-import { useContext } from 'preact/hooks';
 
 const Controls = props => {
   const { amount, increment, decrement, reset } = useContext(diceContext);
