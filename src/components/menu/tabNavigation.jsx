@@ -3,10 +3,10 @@ import { Text, View } from 'react-native';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getColor } from '../tailwind';
-import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import HP from '../../routes/health'
 const MyTheme = {
   ...DarkTheme,
+import { MaterialCommunityIcons } from '@expo/vector-icons';
   dark: true,
   colors: {
     background: 'none',
