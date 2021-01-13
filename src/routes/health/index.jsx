@@ -16,66 +16,67 @@ const HealthTracker = () => {
   } = useHP();
 
   return (
-    <View className="text-center mx-auto text-indigo-600 font-bold w-2xl text-2xl">
-      <View className="flex flex-col justify-around text-center w-full px-4 xl:px-0">
-        <View>
-          <HPButton onClick={longRest}>Long Rest</HPButton>
+    <View style={tw.container}>
+      <HPButton onPress={longRest} Label="Long Rest" />
+      <View>
+        <BaseText>Heal</BaseText>
+        <View style={tw.col}>
+          <HPButton onPress={() => modifyHP(1)} Label="+" />
+          <HPButton onPress={() => modifyHP(5)} Label="5" />
+          <HPButton onPress={() => modifyHP(10)} Label="10" />
         </View>
-        <View>
-          <View>Heal</View>
-          <View className="grid grid-cols-3 gap-4 col-gap-4">
-            <HPButton onClick={() => modifyHP(1)}>+</HPButton>
-            <HPButton onClick={() => modifyHP(5)}>5</HPButton>
-            <HPButton onClick={() => modifyHP(10)}>10</HPButton>
-          </View>
-        </View>
-        <View className="grid grid-cols-3 col-gap-4 gap-4 mt-4">
-          <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
-            <span className="text-2xl font-bold">Current</span>
-            <NumericInput
-              placeholder="--"
-              value={hitpoints}
-              onChange={setHitpoints}
-              step={1}
-              min={0}
-              max={maxHP}
-              className="w-full text-6xl text-center text-teal-400 bg-none xl:text-10xl"
-              noStyle
-              inputmode="numeric"
-              snap
-              strict
+      </View>
+      <View className="grid grid-cols-3 col-gap-4 gap-4 mt-4">
+        <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
+          <BaseText className="text-2xl font-bold">Current</BaseText>
+          <TextInput
+            selectionColor={brandColor}
+            keyboardType="numeric"
+            keyboardAppearance="dark"
+            textContentType="none"
+            textAlign="center"
+            placeholder="--"
+            maxLength={3}
+            onChangeText={setHitpoints}
+            value={hitpoints}
+            defaultValue={24}
+            style={tw.input}
             />
-          </View>
-          <span className="flex-col justify-center pt-4 text-8xl xl:text-10xl">
-            /
-          </span>
-          <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
-            <span className="text-2xl font-bold">Max</span>
-            <NumericInput
+        </View>
+        <BaseText style={tw.slash}>/</BaseText>
+        <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
+          <BaseText className="text-2xl font-bold">Max</BaseText>
+            <TextInput
+              selectionColor={brandColor}
+              keyboardType="numeric"
+              keyboardAppearance="dark"
+              textContentType="none"
+              textAlign="center"
               placeholder="--"
+              maxLength={3}
+              onChangeText={setMaxHP}
               value={maxHP}
-              step={1}
-              min={0}
-              max={999}
-              onChange={setMaxHP}
-              snap
-              className="w-full text-6xl text-center text-indigo-600  bg-none xl:text-10xl"
-              noStyle
-              inputmode="numeric"
-              strict
+              style={tw.input}
             />
-          </View>
         </View>
-        <View>
-          <View>Damage</View>
-          <View className="grid grid-cols-3 gap-4 col-gap-4 ">
-            <HPButton onClick={() => modifyHP(-1)}>-</HPButton>
-            <HPButton onClick={() => modifyHP(-5)}>5</HPButton>
-            <HPButton onClick={() => modifyHP(-10)}>10</HPButton>
-          </View>
+      </View>
+      <View>
+        <BaseText>Damage</BaseText>
+        <View className="grid grid-cols-3 gap-4 col-gap-4 ">
+          <HPButton onPress={() => modifyHP(-1)} Label="-" />
+          <HPButton onPress={() => modifyHP(-5)} Label="5" />
+          <HPButton onPress={() => modifyHP(-10)} Label="10" />
         </View>
       </View>
     </View>
   );
 };
+const tw = StyleSheet.create({
+  container: tailwind(`text-center mx-auto text-indigo-600 font-bold text-2xl`),
+  input: tailwind(`w-full text-6xl text-center text-green-400`),
+  slash: tailwind(`flex-col justify-center pt-4 text-8xl`),
+  col: tailwind(`flex flex-initial`)
+
+  
+})
 export default HealthTracker;

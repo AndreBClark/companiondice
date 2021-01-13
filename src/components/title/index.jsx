@@ -20,7 +20,7 @@ const Header = () => {
         <BaseText style={styles.heading1}>
           Luckbringer
             <Pressable
-              style={styles.greenText}
+              style={styles.infoWrapper}
               onPress={() => setModalVisible(true)}
               hitSlop={48}>
                 <MaterialCommunityIcons
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   heading1: tailwind(`text-4xl font-bold text-center my-4`),
   header: tailwind(`w-full text-green-400 text-center bg-purple-500 pt-4`),
   modal: tailwind(`justify-around font-bold mx-auto h-96 rounded bg-purple-500 flex-col flex text-center w-72`),
-  greenText: tailwind(`text-green-400`),
+  infoWrapper: tailwind(`text-green-400 px-2`),
   paragraphCenter: tailwind(`mx-auto text-center`),
   flexCol: tailwind(`flex flex-col justify-center text-center`)
 })

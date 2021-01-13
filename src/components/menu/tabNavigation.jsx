@@ -4,8 +4,7 @@ import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getColor } from '../tailwind';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
-import Dice from '../../routes/dice'
-
+import HP from '../../routes/health'
 const MyTheme = {
   ...DarkTheme,
   dark: true,
@@ -62,7 +61,7 @@ export default function TabNav() {
           },
         })}>
         <Tab.Screen name="Dice" component={HomeScreen} />
-        <Tab.Screen name="Health" component={SettingsScreen} />
+        <Tab.Screen name="Health" component={HP} />
       </Tab.Navigator>
     </NavigationContainer>
   );
