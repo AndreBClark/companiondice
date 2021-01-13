@@ -54,7 +54,8 @@
     "react-test-renderer": "~16.13.1",
     "stylelint-config-css-modules": "^2.2.0",
     "tailwind-rn": "^3.0.0",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "use-async-storage": "^1.2.0",
   },
   "devDependencies": {
     "babel-plugin-import": "^1.13.0",
