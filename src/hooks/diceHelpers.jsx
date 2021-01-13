@@ -31,8 +31,8 @@ export const useRoll = () => {
     });
   };
 
-  setOneOrLess(amount <= 1);
-  setReachedLimit(amount >= 40);
+  // setOneOrLess(amount <= 1);
+  // setReachedLimit(amount >= 40);
 
   return {
     oneOrLess,

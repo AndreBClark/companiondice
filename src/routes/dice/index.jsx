@@ -24,9 +24,11 @@ const Dice = props => {
             <D100 path="dice/100" />
           </Router>
         </Dicebox> */}
-      {/* <RollStats path="dice/stats" sides={20}>
-        <D6 />
-      </RollStats>  */}
+      <RollStats
+        // path="dice/stats" 
+        sides={20}>
+        <D6 size="100%"/>
+      </RollStats> 
       {/* </Router> */}
       {/* <Controls sides={sides} /> */}
     </diceContext.Provider>

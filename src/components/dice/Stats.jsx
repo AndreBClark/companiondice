@@ -1,14 +1,13 @@
 import React, { useContext } from 'react'
-import { useSpring, animated, config } from 'react-spring';
+import { useSpring, animated, config } from 'react-spring/native';
 import { useRoll, diceContext } from '../../hooks/diceHelpers';
-import { Pressable, StyleSheet } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { tailwind } from '../tailwind'
+import TailwindText from '../TailwindText';
+const AnimatedView = animated(View);
 const Dicebox = props => {
-  const { result, rollDice, isActive, setSides } = useRoll();
-  const { amount } = useContext(diceContext);
-  setSides(props.sides);
+  const { result, rollDice, isActive } = useRoll();
 
-  console.log('dicebox amount:', amount);
   const Spin = useSpring({
     config: config.wobbly,
     transform: isActive ? 'rotate(-30deg)' : 'rotate(0turn)',
@@ -19,17 +18,25 @@ const Dicebox = props => {
   return (
     <Pressable
       onPress={handleDiceRoll}
-      className={`${style.dice} ${isActive ? style.active : style.done}`}>
-      <animated.div style={Spin} className={style.svgWrapper}>
+      style={tw.dice}>
+      <AnimatedView 
+        style={[tw.svgWrapper, Spin]}>
         {props.children}
-      </animated.div>
-      <span className={style.number}>{result}</span>
+      </AnimatedView>
+      <TailwindText 
+        style={tw.number} 
+        size="7xl" 
+        color="purple-800">{
+        result}
+      </TailwindText>
     </Pressable>
   );
 };
 
-const style = StyleSheet.create({
-  dice: tailwind(`flex font-bold w-56 h-56 mb-3 relative`)
+const tw = StyleSheet.create({
+  dice: tailwind(`flex font-bold mb-3 relative mx-auto`),
+  number: tailwind(`relative mx-auto bg-green-400 rounded-full`),
+  svgWrapper: tailwind(`w-full h-full absolute top-0 left-0`)
 })
 
 export default Dicebox;
