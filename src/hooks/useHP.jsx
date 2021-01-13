@@ -10,8 +10,9 @@ export function useHP() {
     setHitpoints(validatedValue);
   };
   const longRest = () => {
-    setHitpoints(Number(maxHP));
-    setMaxHP(Number(maxHP))
+    const ResetHP = Number(maxHP);
+    setHitpoints(ResetHP);
+    setMaxHP(ResetHP)
   };
   return { maxHP, setMaxHP, hitpoints, setHitpoints, modifyHP, longRest };
 }
