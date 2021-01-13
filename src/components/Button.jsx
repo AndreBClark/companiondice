@@ -19,16 +19,19 @@ export const Button = ({ children, ...props }) => {
 export const HPButton = ({ children, ...props }) => {
   return (
     <Button
+      {...props}
       onPress={props.onPress}
       Label={props.Label}
-      style={styles.hpButton}>
+      style={[styles.button, styles.hpButton]}
+
+      >
       {children}
     </Button>
   );
 };
 
 const styles = StyleSheet.create({
-  button: tailwind(`w-full font-bold mx-auto bg-green-600 text-purple-800 my-2 rounded-md py-2`),
-  disabled: tailwind(`bg-green-900 `),
-  hpButton: tailwind(`w-full font-bold bg-green-600 text-purple-800 rounded-lg py-2`)
+  button: tailwind(`font-bold bg-green-600 my-2 rounded-md py-2 flex-1`),
+  disabled: tailwind(`bg-green-900`),
+  hpButton: tailwind(`flex-1 mx-8 rounded-lg`)
 })
