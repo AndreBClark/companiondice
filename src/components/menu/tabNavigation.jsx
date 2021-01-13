@@ -1,16 +1,18 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getColor } from '../tailwind';
-import HP from '../../routes/health'
-const MyTheme = {
-  ...DarkTheme,
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import HP from '../../routes/health';
+import tailwind from '../tailwind';
+
+const theme = {
   dark: true,
   colors: {
+    ...DarkTheme,
     background: 'none',
-    primary: getColor(`green-400`),
+    primary: getColor('green-400'),
     text: getColor(`green-600`),
     card: getColor(`purple-500`),
     border: getColor(`purple-700`)
@@ -27,42 +29,49 @@ function HomeScreen() {
   );
 }
 
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNav() {
   return (
     <NavigationContainer
-      theme={MyTheme}>
+      theme={theme}>
       <Tab.Navigator
+        tabBarOptions={{
+          style: style.bar,
+          labelStyle: style.label
+        }
+        }
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, size }) => {
             let iconName;
 
-            if (route.name === 'Dice') {
-              iconName = focused
-                ? 'dice-multiple'
-                : 'dice-multiple-outline';
-            } else if (route.name === 'Health') {
+            if (route.name === 'Health') {
               iconName = focused
                 ? 'heart-circle'
                 : 'heart-circle-outline';
+            } else if (route.name === 'Dice') {
+              iconName = focused
+                ? 'dice-multiple'
+                : 'dice-multiple-outline';
             }
-
             // You can return any component that you like here!
-            return <MaterialCommunityIcons name={iconName} size={size} color={getColor(`green-400`)} />;
+            return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
           },
-        })}>
-        <Tab.Screen name="Dice" component={HomeScreen} />
+        })}
+        >
         <Tab.Screen name="Health" component={HP} />
+        <Tab.Screen name="Dice" component={HomeScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
+const style = StyleSheet.create({
+  label: {
+    fontSize: 16,
+    fontWeight: 'bold'
+  },
+  bar: {
+    height: 64
+  }
+})
