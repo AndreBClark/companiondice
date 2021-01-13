@@ -41,7 +41,7 @@ const HealthTracker = () => {
                 textAlign="center"
                 placeholder="--"
                 maxLength={3}
-                onChangeText={setHitpoints}
+                onChangeText={val => setHitpoints(Number(val))}
                 value={hitpoints}
                 style={tw.input}
                 />
@@ -57,7 +57,7 @@ const HealthTracker = () => {
                   textAlign="center"
                   placeholder="--"
                   maxLength={3}
-                  onChangeText={setMaxHP}
+                  onChangeText={val => setMaxHP(Number(val))}
                   value={maxHP}
                   style={tw.input}
                 />
