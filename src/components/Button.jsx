@@ -1,25 +1,34 @@
 import React from 'react'
+import { Pressable, StyleSheet } from 'react-native';
+import BaseText from './BaseText';
+import { tailwind } from './tailwind';
 export const Button = ({ children, ...props }) => {
   return (
-    <button
-      onClick={props.onClick}
+    <Pressable
+      onPress={props.onPress}
       disabled={props.reachedLimit || props.oneOrLess}
-      className={`w-full block font-bold mx-auto bg-teal-600 text-purple-800 my-2 rounded-md py-2 ${
-        props.oneOrLess && 'no-cursor-allowed bg-teal-900 '
-      }${
-        props.reachedLimit && 'no-cursor-allowed bg-teal-900 '
-        }`}>
-      {children}
-    </button>
+      style={[styles.button, (props.oneOrLess || props.reachedLimit) && styles.disabled
+      ]} 
+      >
+      {props.Label && <BaseText>{props.Label}</BaseText>}
+      {children && children}
+    </Pressable>
   );
 };
 
 export const HPButton = ({ children, ...props }) => {
   return (
-    <button
-      onClick={props.onClick}
-      className="w-full font-bold bg-teal-600 text-purple-800 rounded-lg py-2">
+    <Button
+      onPress={props.onPress}
+      Label={props.Label}
+      style={styles.hpButton}>
       {children}
-    </button>
+    </Button>
   );
 };
+
+const styles = StyleSheet.create({
+  button: tailwind(`w-full font-bold mx-auto bg-green-600 text-purple-800 my-2 rounded-md py-2`),
+  disabled: tailwind(`bg-green-900 `),
+  hpButton: tailwind(`w-full font-bold bg-green-600 text-purple-800 rounded-lg py-2`)
+})
