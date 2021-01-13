@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { StyleSheet, View, Dimensions, Platform, Pressable } from 'react-native';
 import { CosmicSVG, NateSVG, SvgIcon } from '../Svg';
-import { tailwind, getColor } from '../tailwind';
+import { tailwind } from '../tailwind';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons'; 
 import BaseText from '../BaseText';
 import Anchor from '../Anchor';
 import Modal from 'react-native-modal';
+import brandColor from '../brandColor';
 
 const deviceWidth = Dimensions.get("window").width;
 const deviceHeight = Platform.OS === "ios"

@@ -1,11 +1,11 @@
 import React from 'react'
 import Svg, { Path } from 'react-native-svg';
 import { View } from 'react-native';
+import { tailwind } from './tailwind'
 import BaseText from './BaseText';
-import { getColor, tailwind } from './tailwind'
 
 
-export const brandColor = getColor(`green-400`)
+import brandColor from './brandColor'
 
 
 export const SvgIcon = props => {
