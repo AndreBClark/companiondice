@@ -1757,6 +1757,9 @@
 		"fontSize": 36,
 		"lineHeight": 40
 	},
+	"text-6xl": {
+		"fontSize": 60
+	},
 	"text-7xl": {
 		"fontSize": 80
 	},
