@@ -25,7 +25,7 @@ const Header = () => {
               style={styles.btn}
               onPress={() => setModalVisible(true)}>
               <View style={styles.btn}>
-                <MaterialCommunityIcons name="information" size={24} color={getColor(`green-400`)} />
+                <MaterialCommunityIcons name="information" size={24} color={brandColor} />
               </View>
             </Pressable>
         </BaseText>
@@ -47,8 +47,8 @@ const Header = () => {
           </Anchor>
           <Anchor
             href="https://github.com/AndreBClark/companiondice">
-            <Octicons name="mark-github" size={24} color={getColor(`green-400`)} />
             <View>
+              <Octicons name="mark-github" size={48} color={brandColor} />
               <BaseText>Github Repo</BaseText>
             </View>
           </Anchor>
