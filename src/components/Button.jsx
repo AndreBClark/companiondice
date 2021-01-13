@@ -1,6 +1,6 @@
 import React from 'react'
 import { Pressable, StyleSheet } from 'react-native';
-import BaseText from './BaseText';
+import TailwindText from './TailwindText';
 import { tailwind } from './tailwind';
 export const Button = ({ children, ...props }) => {
   return (
@@ -10,7 +10,7 @@ export const Button = ({ children, ...props }) => {
       style={[styles.button, (props.oneOrLess || props.reachedLimit) && styles.disabled
       ]} 
       >
-      {props.Label && <BaseText>{props.Label}</BaseText>}
+      {props.Label && <TailwindText color="purple-800" weight="bold" size="4xl">{props.Label}</TailwindText>}
       {children && children}
     </Pressable>
   );

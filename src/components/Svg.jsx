@@ -2,7 +2,7 @@ import React from 'react'
 import { View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { tailwind } from './tailwind'
-import BaseText from './BaseText';
+import TailwindText from './TailwindText';
 import brandColor from './brandColor'
 
 
@@ -10,8 +10,8 @@ export const SvgIcon = props => {
   return(
     <View style={tailwind(`w-full items-center justify-center text-center`)}>
       {props.children}
-      {props.label1 && <BaseText>{props.label1}</BaseText>}
-      {props.label2 && <BaseText>{props.label2}</BaseText>}
+      {props.label1 && <TailwindText weight="bold">{props.label1}</TailwindText>}
+      {props.label2 && <TailwindText>{props.label2}</TailwindText>}
     </View>
   )
 }

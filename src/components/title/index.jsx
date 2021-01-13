@@ -4,7 +4,7 @@ import { CosmicSVG, NateSVG, SvgIcon as SvgWrapper } from '../Svg';
 import { tailwind } from '../tailwind';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import BaseText from '../BaseText';
+import TailwindText from '../TailwindText';
 import Anchor from '../Anchor';
 import Modal from 'react-native-modal';
 import ModalWeb from 'modal-enhanced-react-native-web'
@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <>
       <View style={styles.header}>
-        <BaseText style={styles.heading1}>
+        <TailwindText style={styles.heading1} size="4xl" weight="bold">
           Luckbringer
             <Pressable
               style={styles.infoWrapper}
@@ -26,7 +26,7 @@ const Header = () => {
                 <MaterialCommunityIcons
                   name="information" size={24} color={brandColor} />
             </Pressable>
-        </BaseText>
+        </TailwindText>
       </View>
       {isWeb ? <ModalWeb
       onBackdropPress={() => setModalVisible(false)}
@@ -46,7 +46,9 @@ const Header = () => {
 const Credits = () => {
   return(
     <View style={styles.modal}>
-      <BaseText style={tailwind(`text-center font-bold text-2xl`)}>Created By</BaseText>
+      <TailwindText
+        size="2xl"
+        weight="bold">Created By</TailwindText>
       <Anchor 
         style={styles.flexCol} 
         href="https://cosmicdivision.dev">
@@ -73,7 +75,7 @@ const Credits = () => {
 }
 
 const styles = StyleSheet.create({
-  heading1: tailwind(`text-4xl font-bold text-center my-4`),
+  heading1: tailwind(`my-4`),
   header: tailwind(`w-full text-green-400 text-center bg-purple-500 pt-4`),
   modal: tailwind(`justify-around font-bold mx-auto h-96 rounded bg-purple-500 flex-col flex text-center w-72`),
   infoWrapper: tailwind(`text-green-400 px-2`),

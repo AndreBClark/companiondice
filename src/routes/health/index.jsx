@@ -3,7 +3,7 @@ import { HPButton } from '../../components/Button';
 import { useHP } from '../../hooks/useHP';
 import { View, TextInput, StyleSheet } from 'react-native'
 import { tailwind } from '../../components/tailwind';
-import BaseText from '../../components/BaseText';
+import TailwindText from '../../components/TailwindText';
 import brandColor from '../../components/brandColor';
 
 
@@ -21,7 +21,7 @@ const HealthTracker = () => {
         <View style={tw.container}>
           <HPButton onPress={longRest} Label="Long Rest" />
           <View>
-            <BaseText>Heal</BaseText>
+            <TailwindText size="4xl" weight="bold">Heal</TailwindText>
             <View style={tw.col}>
               <HPButton onPress={() => modifyHP(1)} Label="+" />
               <HPButton onPress={() => modifyHP(5)} Label="5" />
@@ -30,7 +30,7 @@ const HealthTracker = () => {
           </View>
           <View className="grid grid-cols-3 col-gap-4 gap-4 mt-4">
             <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
-              <BaseText className="text-2xl font-bold">Current</BaseText>
+              <TailwindText size="2xl">Current</TailwindText>
               <TextInput
                 selectionColor={brandColor}
                 keyboardType="numeric"
@@ -44,9 +44,9 @@ const HealthTracker = () => {
                 style={tw.input}
                 />
             </View>
-            <BaseText style={tw.slash}>/</BaseText>
             <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
-              <BaseText className="text-2xl font-bold">Max</BaseText>
+            <TailwindText style={tw.slash} size="7xl" weight="black">/</TailwindText>
+              <TailwindText size="2xl">Max</TailwindText>
                 <TextInput
                   selectionColor={brandColor}
                   keyboardType="numeric"
@@ -62,8 +62,8 @@ const HealthTracker = () => {
             </View>
           </View>
           <View>
-            <BaseText>Damage</BaseText>
             <View className="grid grid-cols-3 gap-4 col-gap-4 ">
+            <TailwindText size="4xl" weight="bold">Damage</TailwindText>
               <HPButton onPress={() => modifyHP(-1)} Label="-" />
               <HPButton onPress={() => modifyHP(-5)} Label="5" />
               <HPButton onPress={() => modifyHP(-10)} Label="10" />
