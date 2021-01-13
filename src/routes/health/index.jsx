@@ -1,8 +1,10 @@
 import React from 'react'
 import { HPButton } from '../../components/Button';
 import { useHP } from '../../hooks/useHP';
-import NumericInput from 'react-numeric-input';
-
+import { View, TextInput, StyleSheet } from 'react-native'
+import { tailwind } from '../../components/tailwind';
+import BaseText from '../../components/BaseText';
+import brandColor from '../../components/brandColor';
 const HealthTracker = () => {
   const {
     hitpoints,
