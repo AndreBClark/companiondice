@@ -11,15 +11,17 @@ import brandColor from '../../components/brandColor';
 const HealthTracker = () => {
   const {
     hitpoints = 0,
-    setHitpoints,
     maxHP = 0,
+    setHitpoints,
     setMaxHP,
     modifyHP,
     longRest,
   } = useHP();
   return (
         <View style={tw.container}>
-          <HPButton onPress={longRest} Label="Long Rest" />
+          <View style={tw.col}>
+            <HPButton onPress={longRest} Label="Long Rest" />
+          </View>
           <View>
             <TailwindText size="4xl" weight="bold">Heal</TailwindText>
             <View style={tw.col}>
@@ -28,8 +30,8 @@ const HealthTracker = () => {
               <HPButton onPress={() => modifyHP(10)} Label="10" />
             </View>
           </View>
-          <View className="grid grid-cols-3 col-gap-4 gap-4 mt-4">
-            <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
+          <View style={[tailwind(`flex flex-row my-4`), {gap: '1rem'}]}>
+            <View style={tw.inputContainer}>
               <TailwindText size="2xl">Current</TailwindText>
               <TextInput
                 selectionColor={brandColor}
@@ -44,8 +46,8 @@ const HealthTracker = () => {
                 style={tw.input}
                 />
             </View>
-            <View className="flex flex-col justify-center font-black bg-purple-700 rounded-lg">
             <TailwindText style={tw.slash} size="7xl" weight="black">/</TailwindText>
+            <View style={tw.inputContainer}>
               <TailwindText size="2xl">Max</TailwindText>
                 <TextInput
                   selectionColor={brandColor}
@@ -62,8 +64,8 @@ const HealthTracker = () => {
             </View>
           </View>
           <View>
-            <View className="grid grid-cols-3 gap-4 col-gap-4 ">
             <TailwindText size="4xl" weight="bold">Damage</TailwindText>
+            <View style={tw.col}>
               <HPButton onPress={() => modifyHP(-1)} Label="-" />
               <HPButton onPress={() => modifyHP(-5)} Label="5" />
               <HPButton onPress={() => modifyHP(-10)} Label="10" />
@@ -75,11 +77,14 @@ const HealthTracker = () => {
   );
 };
 const tw = StyleSheet.create({
-  container: tailwind(`text-center mx-auto text-indigo-600 font-bold text-2xl`),
+  container: tailwind(`max-w-screen-sm text-center mx-auto mt-8 text-indigo-600 font-bold text-2xl`),
+  inputContainer: tailwind(`flex flex-1 flex-col justify-center font-black bg-purple-700 rounded-lg`),
   input: tailwind(`w-full text-6xl text-center text-green-400`),
-  slash: tailwind(`flex-col justify-center pt-4 text-8xl`),
-  col: tailwind(`flex flex-initial`)
-
+  slash: tailwind(`flex-col justify-center pt-4 flex-1`),
+  col: {
+    ...tailwind(`flex flex-row`),
+    gap: '1rem'
+  }
   
 })
 export default HealthTracker;
