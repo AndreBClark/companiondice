@@ -1,19 +1,18 @@
 {
   "name": "luckbringer",
   "version": "0.0.0",
-  "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "start": "expo start",
+    "tunnel": "expo start --tunnel",
+    "web": "expo start --web",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest",
     "lint": "eslint src --fix",
     "format": "npm run format-css && npm run format-js",
     "format-css": "prettier --write src/**/*.{css,scss}",
-    "format-js": "prettier --write src/**/*.{js,jsx}",
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "web": "expo start --web",
-    "start": "expo start",
-    "test": "jest",
-    "tunnel": "expo start --tunnel"
+    "format-js": "prettier --write src/**/*.{js,jsx}"
   },
   "dependencies": {
     "@babel/core": "~7.9.0",

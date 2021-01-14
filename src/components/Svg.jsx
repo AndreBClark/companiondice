@@ -15,34 +15,27 @@ export const SvgIcon = props => {
     </View>
   )
 }
-
-const SVGDice = props => {
-  return(
-    <Svg {...props} fill={brandColor} width={props.size} height={props.size}>
-      {props.children}
-    </Svg>
-  )
-}
-
 export const D4 = props => {
   return (
-    <SVGDice {...props} fill={brandColor} size={100}>
+    <Svg 
+      {...props} 
+      fill={brandColor}>
       <Path d="M12,0l12,24l-24,0l12,-24Z" />
-    </SVGDice>
+    </Svg>
   );
 };
 export const D6 = props => {
   return (
-    <SVGDice {...props} fill={brandColor} width={props.size} height={props.size}>
+    <Svg viewBox="0 0 24 24" fill={brandColor} width={props.size} height={props.size}>
       <Path d="M3.8 3h16.4c.4 0 .8.4.8.8v16.4c0 .4-.4.8-.8.8H3.8a.8.8 0 0 1-.8-.8V3.8c0-.4.4-.8.8-.8z" fillRule="nonzero" />
-    </SVGDice>
+    </Svg>
   );
 };
 export const D8 = props => {
   return (
-    <SVGDice {...props} fill={brandColor}>
+    <Svg {...props} fill={brandColor}>
       <Path d="M12.41 2.17l8.42 9.42c.23.23.23.6 0 .82l-8.42 9.42a.6.6 0 0 1-.82 0l-8.42-9.42a.57.57 0 0 1 0-.82l8.42-9.42a.6.6 0 0 1 .82 0z" fillRule="nonzero" />
-    </SVGDice>
+    </Svg>
   );
 };
 export const D10 = props => {

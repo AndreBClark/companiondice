@@ -7,7 +7,6 @@ import TailwindText from '../../components/TailwindText';
 import brandColor from '../../components/brandColor';
 
 
-
 const HealthTracker = () => {
   const {
     hitpoints = 0,

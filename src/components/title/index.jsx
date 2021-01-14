@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Platform, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
 import { CosmicSVG, NateSVG, SvgIcon as SvgWrapper } from '../Svg';
 import { tailwind } from '../tailwind';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import TailwindText from '../TailwindText';
 import Anchor from '../Anchor';
-import Modal from 'react-native-modal';
-import ModalWeb from 'modal-enhanced-react-native-web'
+import Modal from '../Modal'
 import brandColor from '../brandColor';
-
-const isWeb = Platform.OS == "web";
 
 const Header = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -28,20 +25,16 @@ const Header = () => {
             </Pressable>
         </TailwindText>
       </View>
-      {isWeb ? <ModalWeb
-      onBackdropPress={() => setModalVisible(false)}
-      isVisible={isModalVisible}>
-        <Credits />
-      </ModalWeb>
-      : <Modal
-      onBackdropPress={() => setModalVisible(false)}
-      isVisible={isModalVisible}>
+      <Modal
+        onBackdropPress={() => setModalVisible(false)}
+        isVisible={isModalVisible}>
         <Credits />
       </Modal>
-      }
     </>
   );
 };
+
+
 
 const Credits = () => {
   return(
