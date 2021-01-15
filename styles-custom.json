@@ -2,5 +2,15 @@
   "mx-auto": {
     "marginLeft": "auto",
     "marginRight": "auto"
+  },
+  "my-auto": {
+    "marginTop": "auto",
+    "marginBottom": "auto"
+  },
+  "m-auto": {
+    "marginLeft": "auto",
+    "marginRight": "auto",
+    "marginTop": "auto",
+    "marginBottom": "auto"
   }
 }
