@@ -15,9 +15,7 @@ const Dicebox = ({children, ...props}) => {
   //   config: config.wobbly,
   //   transform: isActive ? 'rotate(-30deg)' : 'rotate(0turn)',
   // });
-  function handleDiceRoll() {
-    return rollDice(amount, amount * sides);
-  }
+  const handleDiceRoll = () => rollDice(amount, amount * sides);
   return (
     <Pressable
       onPress={handleDiceRoll}
