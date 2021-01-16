@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'preact/hooks';
+import { useState } from 'react';
 // import { makeStyles } from '@material-ui/core/styles';
 // import { SpeedDial, SpeedDialAction } from '@material-ui/lab';
 import { D20, D4, D6, D8, D10, D12, D100 } from '../dice';
@@ -17,10 +17,10 @@ const SpeedDialList = props => {
 
   return(
     <View className={open ? style.fabActive : style.fabList}>
-      <button className={style.fab} onClick={handleOpen}>
+      <Pressable className={style.fab} onClick={handleOpen}>
         <D20 />
-      </button>
-      { open ? props.children : ''}
+      </Pressable>
+      { open && props.children}
     </View>
   )
 }

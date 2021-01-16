@@ -22,12 +22,13 @@ export const useRoll = () => {
   };
   const cycleNumbers = () => {
     requestAnimationFrame(() => {
-      if (randomArray.length !== 1) {
-        setResult(randomArray.shift());
+      if (randomArray.length == 1) {
+        cancelAnimationFrame(cycleNumbers);
+        setActive(false);
+      } else {
         requestAnimationFrame(cycleNumbers);
+        setResult(randomArray.shift());
       }
-      cancelAnimationFrame(cycleNumbers);
-      setActive(false);
     });
   };
 

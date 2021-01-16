@@ -2,10 +2,11 @@ import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { getColor } from '../tailwind';
+import { getColor, tailwind } from '../tailwind';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HP from '../../routes/health';
 import Dice from '../../routes/dice'
+import Stats from '../dice/Stats';
 const theme = {
   dark: true,
   colors: {
@@ -19,16 +20,6 @@ const theme = {
 };
 
 
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
-
-
 const Tab = createBottomTabNavigator();
 
 export default function TabNav() {
@@ -39,20 +30,23 @@ export default function TabNav() {
         tabBarOptions={{
           style: style.bar,
           labelStyle: style.label
-        }
-        }
+        }}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, size }) => {
             let iconName;
-
-            if (route.name === 'Health') {
-              iconName = focused
-                ? 'heart-circle'
-                : 'heart-circle-outline';
-            } else if (route.name === 'Dice') {
-              iconName = focused
-                ? 'dice-multiple'
-                : 'dice-multiple-outline';
+            switch (route.name) {
+              case 'Health': iconName = focused
+                  ? 'heart-circle'
+                  : 'heart-circle-outline';
+              case 'Stats': iconName = focused
+                  ? 'dice-multiple'
+                  : 'dice-multiple-outline';
+              case 'Dice': iconName = focused
+                  ? 'dice-multiple'
+                  : 'dice-multiple-outline';
+              default: iconName = focused
+                  ? 'dice-multiple'
+                  : 'dice-multiple-outline';
             }
             // You can return any component that you like here!
             return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
@@ -61,16 +55,15 @@ export default function TabNav() {
         >
         <Tab.Screen name="Health" component={HP} />
         <Tab.Screen name="Dice" component={Dice} />
+        <Tab.Screen name="Stats" component={Stats} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
 const style = StyleSheet.create({
   label: {
-    fontSize: 16,
-    fontWeight: 'bold'
+    ...tailwind(`font-semibold`),
+    fontSize: 14,
   },
-  bar: {
-    height: 64
-  }
+  bar: tailwind(`h-16 py-2`)
 })

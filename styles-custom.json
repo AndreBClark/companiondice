@@ -12,5 +12,13 @@
     "marginRight": "auto",
     "marginTop": "auto",
     "marginBottom": "auto"
+  },
+  "transition-all": {
+    "transitionProperty": "all",
+    "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transitionDuration": "150ms"
+  },
+  "rotate-0": {
+    "transform": "rotate(0deg)"
   }
 }
