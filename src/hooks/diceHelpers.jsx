@@ -47,9 +47,4 @@ export const useRoll = () => {
   };
 };
 
-const generateRandomInt = (min = 1, max = 20) => {
-  let array = new Uint32Array(1);
-  crypto.getRandomValues(array);
-  let getFloatingPoint = array[0] / Math.pow(2, 32);
-  return Math.ceil(getFloatingPoint * (max - min)) + min;
-};
+const generateRandomInt = (min = 1, max = 20) => Math.ceil(Math.random() * (max - min)) + min;
