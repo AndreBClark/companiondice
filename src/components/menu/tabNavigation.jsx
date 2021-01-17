@@ -3,22 +3,12 @@ import { Text, View, StyleSheet } from 'react-native';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getColor, tailwind } from '../tailwind';
+import { tailwind } from '../tailwind';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HP from '../../routes/health';
 import Dice from '../../routes/dice'
 import Stats from '../dice/Stats';
-const theme = {
-  dark: true,
-  colors: {
-    ...DarkTheme,
-    background: 'none',
-    primary: getColor('green-400'),
-    text: getColor(`green-600`),
-    card: getColor(`purple-500`),
-    border: getColor(`purple-700`)
-  },
-};
-
+import { theme, LinkingUrls } from '../Constants';
 
 const Tab = createBottomTabNavigator();
 

@@ -4,6 +4,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useRoll } from '../../hooks/diceHelpers';
 import { tailwind } from '../tailwind'
 import TailwindText from '../TailwindText';
+import { isWeb } from '../Constants';
 
 
 export const SpinTransform = {
