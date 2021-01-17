@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import SEO from '../SEO';
 import style from './style';
 import Header from '../title';

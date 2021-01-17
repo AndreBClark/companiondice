@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Router } from 'preact-router';
 import Redirect from './Redirect';
 
@@ -6,7 +6,7 @@ import Redirect from './Redirect';
 import Base from './base';
 // import Dice from '../routes/dice';
 // import HealthTracker from '../routes/health';
-import style from './style'
+import style from './style';
 
 const App = () => {
   /** Gets fired when the route changes.

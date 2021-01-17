@@ -12,5 +12,5 @@ const Anchor = props => {
       {props.children}
     </Text>
   );
-}
+};
 export default Anchor;

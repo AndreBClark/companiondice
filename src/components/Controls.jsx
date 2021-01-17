@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { Button } from './Button';
 import { useRoll, diceContext } from '../hooks/diceHelpers';
 

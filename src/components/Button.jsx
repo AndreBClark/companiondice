@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 import TailwindText from './TailwindText';
 import { tailwind } from './tailwind';
@@ -7,10 +7,15 @@ export const Button = ({ children, ...props }) => {
     <Pressable
       onPress={props.onPress}
       disabled={props.reachedLimit || props.oneOrLess}
-      style={[styles.button, (props.oneOrLess || props.reachedLimit) && styles.disabled
-      ]} 
-      >
-      {props.Label && <TailwindText color="purple-800" weight="bold" size="4xl">{props.Label}</TailwindText>}
+      style={[
+        styles.button,
+        (props.oneOrLess || props.reachedLimit) && styles.disabled,
+      ]}>
+      {props.Label && (
+        <TailwindText color="purple-800" weight="bold" size="4xl">
+          {props.Label}
+        </TailwindText>
+      )}
       {children && children}
     </Pressable>
   );
@@ -22,9 +27,7 @@ export const HPButton = ({ children, ...props }) => {
       {...props}
       onPress={props.onPress}
       Label={props.Label}
-      style={[styles.button, styles.hpButton]}
-
-      >
+      style={[styles.button, styles.hpButton]}>
       {children}
     </Button>
   );
@@ -33,5 +36,5 @@ export const HPButton = ({ children, ...props }) => {
 const styles = StyleSheet.create({
   button: tailwind(`font-bold bg-green-600 my-2 rounded-md py-2 flex-1`),
   disabled: tailwind(`bg-green-900`),
-  hpButton: tailwind(`flex-1 mx-8 rounded-lg`)
-})
+  hpButton: tailwind(`flex-1 mx-8 rounded-lg`),
+});

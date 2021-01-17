@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { StyleSheet, View, Pressable } from 'react-native';
 import { CosmicSVG, NateSVG, SvgIcon as SvgWrapper } from '../Svg';
 import { tailwind } from '../tailwind';
@@ -16,16 +16,16 @@ const Header = () => {
       <View style={styles.header}>
         <TailwindText style={styles.heading1} size="4xl" weight="bold">
           Luckbringer
-            <Pressable
-              style={styles.infoWrapper}
-              onPress={() => setModalVisible(true)}
-              hitSlop={48}>
-            </Pressable>
+          <Pressable
+            style={styles.infoWrapper}
+            onPress={() => setModalVisible(true)}
+            hitSlop={48}>
             <MaterialCommunityIcons
               name="information"
               size={24}
               color={theme.colors.primary}
             />
+          </Pressable>
         </TailwindText>
       </View>
       <Modal

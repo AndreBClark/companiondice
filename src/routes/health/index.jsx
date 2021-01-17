@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { HPButton } from '../../components/Button';
 import { useHP } from '../../hooks/useHP';
-import { View, TextInput, StyleSheet } from 'react-native'
+import { View, TextInput, StyleSheet } from 'react-native';
 import { tailwind } from '../../components/tailwind';
 import TailwindText from '../../components/TailwindText';
 import { theme } from '../../components/Constants';
@@ -15,6 +15,12 @@ const HealthTracker = () => {
     modifyHP,
     longRest,
   } = useHP();
+  const onchangeHP = () => {
+    val => setHitpoints(val);
+  };
+  const onchangeMaxHP = () => {
+    val => setMaxHP(val);
+  };
   return (
     <View style={tw.container}>
       <View style={tw.col}>
@@ -77,14 +83,15 @@ const HealthTracker = () => {
   );
 };
 const tw = StyleSheet.create({
-  container: tailwind(`max-w-screen-sm text-center mx-auto mt-8 text-indigo-600 font-bold text-2xl`),
-  inputContainer: tailwind(`flex flex-1 flex-col justify-center font-black bg-purple-700 rounded-lg`),
+  container: tailwind(
+    `max-w-screen-sm text-center mx-auto mt-8 text-indigo-600 justify-center h-full mx-2`
+  ),
+  inputContainer: tailwind(
+    `flex flex-1 flex-col justify-center font-black bg-purple-700 rounded-lg`
+  ),
   input: tailwind(`w-full text-6xl text-center text-green-400`),
   slash: tailwind(`flex-col justify-center pt-4 flex-1`),
-  col: {
-    ...tailwind(`flex flex-row`),
-    gap: '1rem'
-  }
-  
-})
+  col: tailwind(`flex flex-row`),
+  dicebox: tailwind(`justify-center h-full`),
+});
 export default HealthTracker;

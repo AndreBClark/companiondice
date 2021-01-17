@@ -17,7 +17,7 @@ function useAsyncStorage(key, initialValue) {
     getStoredItem(key, initialValue);
   }, [key, initialValue]);
 
-  const setValue = async (value) => {
+  const setValue = async value => {
     try {
       const valueToStore =
         value instanceof Function ? value(storedValue) : value;
