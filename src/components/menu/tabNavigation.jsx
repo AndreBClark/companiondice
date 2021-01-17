@@ -1,21 +1,18 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { getColor, tailwind } from '../tailwind';
 import { tailwind } from '../tailwind';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HP from '../../routes/health';
-import Dice from '../../routes/dice'
-import Stats from '../dice/Stats';
+import { Stats, Dice } from '../dice/dicebox';
 import { theme, LinkingUrls } from '../Constants';
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNav() {
   return (
-    <NavigationContainer
-      theme={theme}>
+    <NavigationContainer linking={{ LinkingUrls }} theme={theme}>
       <Tab.Navigator
         tabBarOptions={{
           style: tw.buttonList,
@@ -41,10 +38,9 @@ export default function TabNav() {
             // You can return any component that you like here!
             return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
           },
-        })}
-        >
-        <Tab.Screen name="Health" component={HP} />
+        })}>
         <Tab.Screen name="Dice" component={Dice} />
+        <Tab.Screen name="Health" component={HP} />
         <Tab.Screen name="Stats" component={Stats} />
       </Tab.Navigator>
     </NavigationContainer>
