@@ -4,8 +4,7 @@ import { useHP } from '../../hooks/useHP';
 import { View, TextInput, StyleSheet } from 'react-native'
 import { tailwind } from '../../components/tailwind';
 import TailwindText from '../../components/TailwindText';
-import brandColor from '../../components/brandColor';
-
+import { theme } from '../../components/Constants';
 
 const HealthTracker = () => {
   const {
@@ -17,62 +16,64 @@ const HealthTracker = () => {
     longRest,
   } = useHP();
   return (
-        <View style={tw.container}>
-          <View style={tw.col}>
-            <HPButton onPress={longRest} Label="Long Rest" />
-          </View>
-          <View>
-            <TailwindText size="4xl" weight="bold">Heal</TailwindText>
-            <View style={tw.col}>
-              <HPButton onPress={() => modifyHP(1)} Label="+" />
-              <HPButton onPress={() => modifyHP(5)} Label="5" />
-              <HPButton onPress={() => modifyHP(10)} Label="10" />
-            </View>
-          </View>
-          <View style={[tailwind(`flex flex-row my-4`), {gap: '1rem'}]}>
-            <View style={tw.inputContainer}>
-              <TailwindText size="2xl">Current</TailwindText>
-              <TextInput
-                selectionColor={brandColor}
-                keyboardType="numeric"
-                keyboardAppearance="dark"
-                textContentType="none"
-                textAlign="center"
-                placeholder="--"
-                maxLength={3}
-                onChangeText={val => setHitpoints(Number(val))}
-                value={hitpoints}
-                style={tw.input}
-                />
-            </View>
-            <TailwindText style={tw.slash} size="7xl" weight="black">/</TailwindText>
-            <View style={tw.inputContainer}>
-              <TailwindText size="2xl">Max</TailwindText>
-                <TextInput
-                  selectionColor={brandColor}
-                  keyboardType="numeric"
-                  keyboardAppearance="dark"
-                  textContentType="none"
-                  textAlign="center"
-                  placeholder="--"
-                  maxLength={3}
-                  onChangeText={val => setMaxHP(Number(val))}
-                  value={maxHP}
-                  style={tw.input}
-                />
-            </View>
-          </View>
-          <View>
-            <TailwindText size="4xl" weight="bold">Damage</TailwindText>
-            <View style={tw.col}>
-              <HPButton onPress={() => modifyHP(-1)} Label="-" />
-              <HPButton onPress={() => modifyHP(-5)} Label="5" />
-              <HPButton onPress={() => modifyHP(-10)} Label="10" />
-            </View>
-          </View>
+    <View style={tw.container}>
+      <View style={tw.col}>
+        <HPButton onPress={longRest} Label="Long Rest" />
+      </View>
+      <View>
+        <TailwindText size="4xl" weight="bold">
+          Heal
+        </TailwindText>
+        <View style={tw.col}>
+          <HPButton onPress={() => modifyHP(1)} Label="+" />
+          <HPButton onPress={() => modifyHP(5)} Label="5" />
+          <HPButton onPress={() => modifyHP(10)} Label="10" />
         </View>
-      //   )}
-      // </Formik>
+      </View>
+      <View style={[tailwind(`flex flex-row my-4`), { gap: '1rem' }]}>
+        <View style={tw.inputContainer}>
+          <TailwindText size="2xl">Current</TailwindText>
+          <TextInput
+            selectionColor={theme.colors.primary}
+            keyboardType="numeric"
+            keyboardAppearance="dark"
+            textContentType="none"
+            textAlign="center"
+            maxLength={3}
+            onChangeText={onchangeHP}
+            value={hitpoints}
+            style={tw.input}
+          />
+        </View>
+        <TailwindText style={tw.slash} size="7xl" weight="black">
+          /
+        </TailwindText>
+        <View style={tw.inputContainer}>
+          <TailwindText size="2xl">Max</TailwindText>
+          <TextInput
+            selectionColor={theme.colors.primary}
+            keyboardType="numeric"
+            keyboardAppearance="dark"
+            textContentType="none"
+            textAlign="center"
+            maxLength={3}
+            onChangeText={onchangeMaxHP}
+            value={maxHP}
+            style={tw.input}
+          />
+        </View>
+      </View>
+      <View>
+        <TailwindText size="4xl" weight="bold">
+          Damage
+        </TailwindText>
+        <View style={tw.col}>
+          <HPButton onPress={() => modifyHP(-1)} Label="-" />
+          <HPButton onPress={() => modifyHP(-5)} Label="5" />
+          <HPButton onPress={() => modifyHP(-10)} Label="10" />
+        </View>
+      </View>
+    </View>
   );
 };
 const tw = StyleSheet.create({
