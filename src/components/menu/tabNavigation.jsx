@@ -18,8 +18,8 @@ export default function TabNav() {
       theme={theme}>
       <Tab.Navigator
         tabBarOptions={{
-          style: style.bar,
-          labelStyle: style.label
+          style: tw.buttonList,
+          labelStyle: tw.label,
         }}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, size }) => {
@@ -50,10 +50,10 @@ export default function TabNav() {
     </NavigationContainer>
   );
 }
-const style = StyleSheet.create({
+const tw = StyleSheet.create({
   label: {
-    ...tailwind(`font-semibold`),
-    fontSize: 14,
+    ...tailwind(`font-semibold pb-1`),
   },
-  bar: tailwind(`h-16 py-2`)
-})
+  buttonList: tailwind(``),
+  bar: tailwind(`bg-purple-500 w-full justify-center mx-auto`),
+});
