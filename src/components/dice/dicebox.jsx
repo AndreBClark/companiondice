@@ -1,50 +1,52 @@
-import React, { useContext } from 'react';
-import { useSpring, animated } from 'react-spring';
+import React, { useContext, useEffect } from 'react';
+import { useSpring, animated, config } from 'react-spring/native';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useRoll, diceContext } from '../../hooks/diceHelpers';
 import { tailwind } from '../tailwind';
 import TailwindText from '../TailwindText';
-import { isWeb } from '../Constants';
 import { D6, D20 } from '../Svg';
 
-const AnimatedView = animated(View);
+const SpinnableView = animated(View);
 
-export const Dice = props => {
-  const { result, rollDice, isActive } = useRoll();
-  const { amount } = useContext(diceContext);
-  const handleDiceRoll = () => rollDice();
-
+const DiceBox = props => {
+  const { result, rollDice, spins } = useRoll();
+  const handleDiceRoll = () => rollDice(props.min, props.max);
+  const Spin = useSpring({
+    transform: `rotateZ(${spins}turn)`,
+    config: config.slow,
+  });
   return (
     <View style={tw.dicebox}>
       <Pressable onPress={handleDiceRoll} style={tw.dice}>
         <TailwindText style={tw.number} size="7xl" color="purple-800">
           {result}
         </TailwindText>
-        <AnimatedView
-          style={tw.svgWrapper}>
-          <D20 size="100%" />
-        </AnimatedView>
+        <SpinnableView
+          style={[tw.spinnableView, Spin]}>
+          {props.children}
+        </SpinnableView>
       </Pressable>
     </View>
   );
 };
 
-export const Stats = props => {
-  const { result, rollDice, isActive } = useRoll();
-  const handleDiceRoll = () => rollDice(6, 18);
+export const Dice = props => {
+  const { sides } = useRoll();
+  const { amount } = useContext(diceContext);
+
   return (
-    <View style={tw.dicebox}>
-      <Pressable onPress={handleDiceRoll} style={tw.dice}>
-        <TailwindText style={tw.number} size="7xl" color="purple-800">
-          {result}
-        </TailwindText>
-        <AnimatedView
-          style={tw.svgWrapper}>
-          <D6 size="100%" />
-        </AnimatedView>
-      </Pressable>
-    </View>
+    <DiceBox min={amount} max={amount * sides}>
+      <D20 />
+    </DiceBox>
   );
+};
+
+export const Stats = props => {
+  return(
+    <DiceBox min={6} max={18}>
+      <D6 />
+    </DiceBox>
+  )
 };
 
 const tw = StyleSheet.create({
@@ -52,24 +54,10 @@ const tw = StyleSheet.create({
     `flex font-bold mb-3 relative m-auto w-64 h-64 items-center justify-center relative`
   ),
   number: tailwind(
-    `bg-green-400 rounded-full justify-center m-auto items-center justify-center z-10`
+    `bg-green-400 rounded-full justify-center m-auto items-center absolute justify-center z-10`
   ),
-  svgWrapper: tailwind(
-    `w-full h-full absolute top-0 left-0 justify-center items-center ${isWeb ? 'transition-all' : ''}`
+  spinnableView: tailwind(
+    `w-full h-full absolute top-0 left-0 justify-center items-center`
   ),
   dicebox: tailwind(`justify-center h-full`),
 });
-
-const SpinTransform = {
-  from: {
-    transform: {
-      rotateX: '0deg',
-    }
-  },
-  to: {
-    transform: {
-      rotateX: '30deg'
-    }
-  }
-
-};

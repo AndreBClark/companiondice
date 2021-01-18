@@ -11,10 +11,12 @@ export const useRoll = () => {
   const [oneOrLess, setOneOrLess] = useState(true);
   const [reachedLimit, setReachedLimit] = useState(false);
   const [isActive, setActive] = useState(false);
+  const [spins, setSpins ] = useState(0)
   const ticks = 30,
     randomArray = [];
   const rollDice = (min = 1, max = 20) => {
     setActive(true);
+    setSpins(spins + 1)
     for (let i = 0; i < ticks; i++) {
       randomArray.unshift(generateRandomInt(min, max));
     }
@@ -43,6 +45,8 @@ export const useRoll = () => {
     result,
     setResult,
     isActive,
+    spins,
+    setSpins,
     rollDice,
   };
 };
