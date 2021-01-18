@@ -18,7 +18,7 @@ export const SvgIcon = props => {
 };
 export const D4 = props => {
   return (
-    <Svg {...props} viewBox="0 0 24 24" fill={theme.colors.primary}>
+    <Svg {...props} width={props.size} height={props.size} viewBox="0 0 24 24" fill={theme.colors.primary}>
       <Path d="M12,0l12,24l-24,0l12,-24Z" />
     </Svg>
   );
@@ -27,6 +27,7 @@ export const D6 = props => {
   return (
     <Svg {...props}
       viewBox="0 0 24 24"
+      width={props.size} height={props.size}
       fill={theme.colors.primary}>
       <Path
         d="M3.8 3h16.4c.4 0 .8.4.8.8v16.4c0 .4-.4.8-.8.8H3.8a.8.8 0 0 1-.8-.8V3.8c0-.4.4-.8.8-.8z"
@@ -37,7 +38,7 @@ export const D6 = props => {
 };
 export const D8 = props => {
   return (
-    <Svg {...props} fill={theme.colors.primary} viewBox="0 0 24 24">
+    <Svg {...props} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24">
       <Path
         d="M12.41 2.17l8.42 9.42c.23.23.23.6 0 .82l-8.42 9.42a.6.6 0 0 1-.82 0l-8.42-9.42a.57.57 0 0 1 0-.82l8.42-9.42a.6.6 0 0 1 .82 0z"
         fillRule="nonzero"
@@ -47,7 +48,7 @@ export const D8 = props => {
 };
 export const D10 = props => {
   return (
-    <Svg {...props} fill={theme.colors.primary} viewBox="0 0 24 24">
+    <Svg {...props} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24">
       <Path
         d="M20.75 14.69l-8.35 6.19a.71.71 0 0 1-.8 0l-8.3-6.16c-.18-.1-.3-.6-.3-.77V9.98c0-.2.16-.72.4-.83l8.2-6.03a.71.71 0 0 1 .8 0l8.2 6.03c.24.11.4.62.4.83v3.97c0 .16-.1.63-.25.74z"
         fillRule="nonzero"
