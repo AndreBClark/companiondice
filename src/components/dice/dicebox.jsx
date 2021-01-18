@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { useSpring, animated, config } from 'react-spring/native';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { useRoll, diceContext } from '../../hooks/diceHelpers';
@@ -31,8 +31,7 @@ const DiceBox = props => {
 };
 
 export const Dice = props => {
-  const { sides } = useRoll();
-  const { amount } = useContext(diceContext);
+  const { sides, amount } = useRoll();
 
   return (
     <DiceBox min={amount} max={amount * sides}>
