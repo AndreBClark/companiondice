@@ -10,6 +10,9 @@
     ],
     "userInterfaceStyle": "dark",
     "backgroundColor": "#171129",
-    "primaryColor": "#34D399"
+    "primaryColor": "#34D399",
+    "android": {
+      "package": "com.cosmicdivision.companiondice"
+    }
   }
 }
