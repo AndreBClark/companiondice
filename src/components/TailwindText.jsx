@@ -1,8 +1,13 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { tailwind } from './tailwind';
+import { useFonts, Inter_400Regular } from '@expo-google-fonts/inter';
+
 
 const TailwindText = props => {
+  let [fontsLoaded] = useFonts({
+    Inter_400Regular,
+  });
   const getStyleString = (obj = {}) =>
     Object.values(obj)
       .join(' ')
@@ -17,7 +22,9 @@ const TailwindText = props => {
     <Text
       {...props}
       selectable={false}
-      style={[tailwind(getStyleString(tw)), props.style]}>
+      style={[tailwind(getStyleString(tw)), props.style, {
+        fontFamily: `Inter_400Regular`
+      }]}>
       {props.children}
     </Text>
   );
