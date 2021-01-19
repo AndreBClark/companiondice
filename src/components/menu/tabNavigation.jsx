@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-import { NavigationContainer, DarkTheme } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from 'react-navigation-bottom-tabs-no-warnings';
 import { tailwind } from '../tailwind';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -38,7 +38,7 @@ export default function TabNav() {
             // You can return any component that you like here!
             return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
           },
-        })}>
+      })}>
         <Tab.Screen name="Dice" component={Dice} />
         <Tab.Screen name="Health" component={HP} />
         <Tab.Screen name="Stats" component={Stats} />
@@ -50,6 +50,5 @@ const tw = StyleSheet.create({
   label: {
     ...tailwind(`font-semibold pb-1`),
   },
-  buttonList: tailwind(``),
   bar: tailwind(`bg-purple-500 w-full justify-center mx-auto`),
 });
