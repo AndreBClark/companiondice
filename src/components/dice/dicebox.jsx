@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSpring, animated, config } from 'react-spring/native';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { useRoll, diceContext } from '../../hooks/diceHelpers';
+import { useRoll } from '../../hooks/diceHelpers';
 import { tailwind } from '../tailwind';
 import TailwindText from '../TailwindText';
 import { D6, D20 } from '../Svg';
