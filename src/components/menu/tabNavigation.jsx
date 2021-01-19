@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from 'react-navigation-bottom-tabs-no-warnings';
 import { tailwind } from '../tailwind';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HP from '../../routes/health';
