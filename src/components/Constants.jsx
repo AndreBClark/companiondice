@@ -19,3 +19,8 @@ export const theme = {
     border: getColor(`purple-700`),
   },
 };
+export const springConfig = {
+  mass: 16,
+  tension: 280,
+  friction: 120
+}

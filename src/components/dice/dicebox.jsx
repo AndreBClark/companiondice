@@ -5,6 +5,7 @@ import { useRoll } from '../../hooks/diceHelpers';
 import { tailwind } from '../tailwind';
 import TailwindText from '../TailwindText';
 import { D6, D20 } from '../Svg';
+import { springConfig } from '../Constants';
 
 const SpinnableView = animated(View);
 
@@ -16,7 +17,7 @@ const DiceBox = props => {
       Spin: 0
     },
     Spin: spins,
-    config: config.slow
+    config: springConfig,
   })
   return (
     <View style={tw.dicebox}>
