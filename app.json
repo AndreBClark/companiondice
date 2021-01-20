@@ -4,6 +4,7 @@
   "expo": {
     "name": "companiondice",
     "slug": "companiondice",
+    "scheme": "companiondice",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
