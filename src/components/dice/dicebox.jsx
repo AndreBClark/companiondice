@@ -11,10 +11,13 @@ const SpinnableView = animated(View);
 const DiceBox = props => {
   const { result, rollDice, spins } = useRoll();
   const handleDiceRoll = () => rollDice(props.min, props.max);
-  const Spin = useSpring({
-    transform: `rotateZ(${spins}turn)`,
-    config: config.slow,
-  });
+  const { Spin } = useSpring({
+    from:{
+      Spin: 0
+    },
+    Spin: spins,
+    config: config.slow
+  })
   return (
     <View style={tw.dicebox}>
       <Pressable onPress={handleDiceRoll} style={tw.dice}>
@@ -22,7 +25,16 @@ const DiceBox = props => {
           {result}
         </TailwindText>
         <SpinnableView
-          style={[tw.spinnableView, Spin]}>
+          style={[
+            tw.spinnableView,
+            {transform: [{ 
+              rotate: Spin.interpolate({
+                range: [0, 1],
+                output: [0, 360]
+              }).interpolate(Spin => `${Spin}deg`)
+            }]
+            }
+          ]}>
           {props.children}
         </SpinnableView>
       </Pressable>
