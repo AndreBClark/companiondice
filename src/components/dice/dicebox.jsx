@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSpring, animated, config } from 'react-spring/native';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { useRoll } from '../../hooks/diceHelpers';
 import { tailwind } from '../tailwind';
 import TailwindText from '../TailwindText';
@@ -11,6 +10,12 @@ const SpinnableView = animated(View);
 
 const DiceBox = props => {
   const { result, rollDice, spins } = useRoll();
+  const window = useWindowDimensions();
+  const deviceWidthPercentage = 0.75;
+  const diceScale = {
+    width: window.width * deviceWidthPercentage,
+    height: window.width * deviceWidthPercentage,
+  };
   const handleDiceRoll = () => rollDice(props.min, props.max);
   const { Spin } = useSpring({
     Spin: spins,
@@ -26,7 +31,12 @@ const DiceBox = props => {
   }
   return (
     <View style={tw.dicebox}>
-      <Pressable onPress={handleDiceRoll} style={tw.dice}>
+      <Pressable 
+        onPress={handleDiceRoll} 
+        style={[
+          tw.dice,
+          diceScale,
+        ]}>
         <TailwindText style={tw.number} size="7xl" color="purple-800">
           {result}
         </TailwindText>
@@ -62,11 +72,11 @@ export const Stats = props => {
 
 const tw = StyleSheet.create({
   dice: tailwind(
-    `flex font-bold mb-3 relative m-auto w-64 h-64 items-center justify-center relative`
-  ),
+      ` max-w-md flex font-bold relative m-auto items-center justify-center relative`
+    ),
   number: tailwind(
     `bg-green-400 rounded-full justify-center m-auto items-center absolute justify-center z-10`
   ),
   spinnableView: tailwind(`w-full h-full absolute top-0 left-0 justify-center items-center`),
-  dicebox: tailwind(`justify-center h-full w-full`),
+  dicebox: tailwind(`justify-center h-full w-full max-w-xl mx-auto`),
 });
