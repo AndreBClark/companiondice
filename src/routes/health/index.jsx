@@ -16,11 +16,13 @@ const HealthTracker = () => {
     longRest,
   } = useHP();
   const onchangeHP = () => {
-    val => setHitpoints(val);
+    val => setHitpoints(Number(val));
   };
   const onchangeMaxHP = () => {
-    val => setMaxHP(val);
+    val => setMaxHP(Number(val));
   };
+  const hitpointString = hitpoints.toString();
+  const maxHPString = maxHP.toString()
   return (
     <View style={tw.container}>
       <View style={tw.col}>
@@ -47,7 +49,7 @@ const HealthTracker = () => {
             textAlign="center"
             maxLength={3}
             onChangeText={onchangeHP}
-            value={hitpoints}
+            value={hitpointString}
             style={tw.input}
           />
         </View>
@@ -64,7 +66,7 @@ const HealthTracker = () => {
             textAlign="center"
             maxLength={3}
             onChangeText={onchangeMaxHP}
-            value={maxHP}
+            value={maxHPString}
             style={tw.input}
           />
         </View>
