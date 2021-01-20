@@ -86,14 +86,13 @@ const HealthTracker = () => {
 };
 const tw = StyleSheet.create({
   container: tailwind(
-    `max-w-screen-sm text-center mx-auto mt-8 text-indigo-600 justify-center h-full mx-2`
+    `max-w-2xl text-center mx-auto mt-8 text-indigo-600 justify-center h-full w-full`
   ),
   inputContainer: tailwind(
     `flex flex-1 flex-col justify-center font-black bg-purple-700 rounded-lg`
   ),
   input: tailwind(`w-full text-6xl text-center text-green-400`),
   slash: tailwind(`flex-col justify-center pt-4 flex-1`),
-  col: tailwind(`flex flex-row`),
-  dicebox: tailwind(`justify-center h-full`),
+  col: tailwind(`flex flex-row mx-2`),
 });
 export default HealthTracker;
