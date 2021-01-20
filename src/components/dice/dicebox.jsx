@@ -13,9 +13,6 @@ const DiceBox = props => {
   const { result, rollDice, spins } = useRoll();
   const handleDiceRoll = () => rollDice(props.min, props.max);
   const { Spin } = useSpring({
-    from:{
-      Spin: 0
-    },
     Spin: spins,
     config: springConfig,
   })
