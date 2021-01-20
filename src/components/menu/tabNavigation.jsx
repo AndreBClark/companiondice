@@ -22,13 +22,13 @@ export default function TabNav() {
           tabBarIcon: ({ focused, size }) => {
             let iconName;
             switch (route.name) {
-              case 'Health': iconName = focused
+              case 'health': iconName = focused
                   ? 'heart-circle'
                   : 'heart-circle-outline';
-              case 'Stats': iconName = focused
+              case 'stats': iconName = focused
                   ? 'dice-multiple'
                   : 'dice-multiple-outline';
-              case 'Dice': iconName = focused
+              case 'dice': iconName = focused
                   ? 'dice-multiple'
                   : 'dice-multiple-outline';
               default: iconName = focused
@@ -39,9 +39,9 @@ export default function TabNav() {
             return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
           },
       })}>
-        <Tab.Screen name="Dice" component={Dice} />
-        <Tab.Screen name="Health" component={HP} />
-        <Tab.Screen name="Stats" component={Stats} />
+        <Tab.Screen name="dice" component={Dice} />
+        <Tab.Screen name="health" component={HP} />
+        <Tab.Screen name="stats" component={Stats} />
       </Tab.Navigator>
     </NavigationContainer>
   );
