@@ -16,6 +16,14 @@ const DiceBox = props => {
     Spin: spins,
     config: springConfig,
   })
+  const SpinInterpolation = {
+    transform: [{ 
+      rotate: Spin.interpolate({
+        range: [0, 1],
+        output: [0, 360]
+      }).interpolate(Spin => `${Spin}deg`)
+    }]
+  }
   return (
     <View style={tw.dicebox}>
       <Pressable onPress={handleDiceRoll} style={tw.dice}>
@@ -25,13 +33,7 @@ const DiceBox = props => {
         <SpinnableView
           style={[
             tw.spinnableView,
-            {transform: [{ 
-              rotate: Spin.interpolate({
-                range: [0, 1],
-                output: [0, 360]
-              }).interpolate(Spin => `${Spin}deg`)
-            }]
-            }
+            SpinInterpolation
           ]}>
           {props.children}
         </SpinnableView>
