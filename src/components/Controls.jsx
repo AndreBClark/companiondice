@@ -1,32 +1,37 @@
 import React, { useContext } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { Button } from './Button';
 import { useRoll, diceContext } from '../hooks/diceHelpers';
+import { tailwind } from './tailwind';
+import TailwindText from './TailwindText';
 
 const Controls = props => {
   const { amount, increment, decrement, reset } = useContext(diceContext);
   const { reachedLimit, oneOrLess } = useRoll();
   console.log('controls amount:', amount);
   return (
-    <View className="px-4 lg:px-0">
-      <View className="flex justify-between mx-auto text-indigo-600 text-5xl font-bold">
-        <View className="w-1/5 md:w-1/4">
-          <Button onClick={decrement} oneOrLess={oneOrLess}>
-            -
-          </Button>
+    <View style={tw.controls}>
+      <View style={tw.row}>
+        <View style={tw.buttonColumn}>
+          <Button onPress={decrement} oneOrLess={oneOrLess} Label="-" />
         </View>
-        <span className="w-3/5 md:w-1/2 pt-2 text-center">
-          {amount}d{props.sides}
-        </span>
-        <View className="w-1/5 md:w-1/4">
-          <Button onClick={increment} reachedLimit={reachedLimit}>
-            <View>+</View>
-          </Button>
+        <TailwindText style={tw.diceIndicator} weight="bold" size="5xl">
+          {amount}d{sides}
+        </TailwindText>
+        <View style={tw.buttonColumn}>
+          <Button onPress={increment} reachedLimit={reachedLimit} Label="+" />
         </View>
       </View>
-      <View className="text-2xl">
-        <Button onClick={reset}>Reset</Button>
+      <View>
+        <Button onPress={reset} Label="Reset" size="2xl" />
       </View>
     </View>
   );
 };
+const tw = StyleSheet.create({
+  controls: tailwind(`px-4 w-full mx-auto max-w-2xl`),
+  row: tailwind(`justify-between flex-row`),
+  buttonColumn: tailwind(`w-1/5`),
+  diceIndicator: tailwind(`w-3/5 pt-2`)
+})
 export default Controls;

@@ -20,5 +20,8 @@
   },
   "rotate-0": {
     "transform": "rotate(0deg)"
+  },
+  "text-5xl": {
+    "fontSize": 48
   }
 }
