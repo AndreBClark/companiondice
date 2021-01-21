@@ -31,12 +31,11 @@ export default function TabNav() {
                 : 'dice-multiple-outline';
                 break;
               case 'dice': iconName = focused
-              default: iconName = focused
-                  ? 'dice-multiple'
-                  : 'dice-multiple-outline';
                 ? 'dice-multiple'
                 : 'dice-multiple-outline';
                 break;
+              default: 
+                throw new Error();
             }
             // You can return any component that you like here!
             return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
