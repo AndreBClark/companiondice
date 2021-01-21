@@ -77,11 +77,11 @@ export const Stats = props => {
 
 const tw = StyleSheet.create({
   dice: tailwind(
-      ` max-w-md flex font-bold relative m-auto items-center justify-center relative`
+      `max-w-md flex font-bold relative m-auto mb-16 items-center justify-center relative max-h-84`
     ),
   number: tailwind(
     `bg-green-400 rounded-full justify-center m-auto items-center absolute justify-center z-10`
   ),
   spinnableView: tailwind(`w-full h-full absolute top-0 left-0 justify-center items-center`),
-  dicebox: tailwind(`justify-center h-full w-full max-w-xl mx-auto`),
+  dicebox: tailwind(`justify-center w-full max-w-xl mx-auto`),
 });
