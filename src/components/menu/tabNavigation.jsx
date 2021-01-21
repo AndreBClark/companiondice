@@ -23,17 +23,20 @@ export default function TabNav() {
             let iconName;
             switch (route.name) {
               case 'health': iconName = focused
-                  ? 'heart-circle'
-                  : 'heart-circle-outline';
+                ? 'heart-circle'
+                : 'heart-circle-outline';
+                break;
               case 'stats': iconName = focused
-                  ? 'dice-multiple'
-                  : 'dice-multiple-outline';
+                ? 'dice-multiple'
+                : 'dice-multiple-outline';
+                break;
               case 'dice': iconName = focused
-                  ? 'dice-multiple'
-                  : 'dice-multiple-outline';
               default: iconName = focused
                   ? 'dice-multiple'
                   : 'dice-multiple-outline';
+                ? 'dice-multiple'
+                : 'dice-multiple-outline';
+                break;
             }
             // You can return any component that you like here!
             return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
