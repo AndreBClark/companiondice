@@ -1,29 +1,41 @@
-import React, { useContext } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { Button } from './Button';
-import { useRoll, diceContext } from '../hooks/diceHelpers';
+import { useRoll } from '../hooks/diceHelpers';
 import { tailwind } from './tailwind';
 import TailwindText from './TailwindText';
 
 const Controls = props => {
-  const { amount, increment, decrement, reset } = useContext(diceContext);
   const { reachedLimit, oneOrLess } = useRoll();
-  console.log('controls amount:', amount);
+  const incrementAmount = () => {
+    props.setAmount(props.amount + 1)
+  }
+  const decrementAmount = () => {
+    props.setAmount(props.amount - 1)
+  }
+  const resetAmount= () => {
+    props.setAmount(1)
+  }
   return (
     <View style={tw.controls}>
       <View style={tw.row}>
         <View style={tw.buttonColumn}>
-          <Button onPress={decrement} oneOrLess={oneOrLess} Label="-" />
+          <Button 
+            onPress={decrementAmount}
+            oneOrLess={oneOrLess} Label="-" />
         </View>
         <TailwindText style={tw.diceIndicator} weight="bold" size="5xl">
-          {amount}d{sides}
+          {props.amount}d{props.sides}
         </TailwindText>
         <View style={tw.buttonColumn}>
-          <Button onPress={increment} reachedLimit={reachedLimit} Label="+" />
+          <Button 
+            onPress={incrementAmount}
+            reachedLimit={reachedLimit} Label="+" />
         </View>
       </View>
       <View>
-        <Button onPress={reset} Label="Reset" size="2xl" />
+        <Button 
+          onPress={resetAmount} Label="Reset" size="2xl" />
       </View>
     </View>
   );

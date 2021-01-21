@@ -1,21 +1,23 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring/native';
 import { Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
-import { useRoll } from '../../hooks/diceHelpers';
+import { useRoll, diceContext } from '../../hooks/diceHelpers';
 import { tailwind } from '../tailwind';
 import TailwindText from '../TailwindText';
 import { D6, D20 } from '../Svg';
 import { springConfig } from '../Constants';
+import Controls from '../Controls';
+
 
 const SpinnableView = animated(View);
 
 const DiceBox = props => {
-  const { result, rollDice, spins } = useRoll();
+  const { result, rollDice, spins, setAmount, amount } = useRoll();
   const window = useWindowDimensions();
-  const deviceWidthPercentage = 0.75;
+  const deviceWidthPercentage = 0.5;
   const diceScale = {
     width: window.width * deviceWidthPercentage,
-    height: window.width * deviceWidthPercentage,
+    height: window.height * deviceWidthPercentage,
   };
   const handleDiceRoll = () => rollDice(props.min, props.max);
   const { Spin } = useSpring({
@@ -54,12 +56,14 @@ const DiceBox = props => {
 };
 
 export const Dice = props => {
-  const { sides, amount } = useRoll();
-
+  const { sides, amount, setAmount } = useRoll();
   return (
-    <DiceBox min={amount} max={amount * sides}>
-      <D20 />
-    </DiceBox>
+    <View style={tailwind(`my-auto`)}>
+      <DiceBox min={amount} max={amount * sides}>
+        <D20 />
+      </DiceBox>
+      <Controls amount={amount} setAmount={setAmount} sides={sides} />
+    </View> 
   );
 };
 

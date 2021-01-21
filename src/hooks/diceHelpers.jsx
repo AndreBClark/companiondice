@@ -1,11 +1,7 @@
 import { useState, useContext, createContext } from 'react';
 
-export const diceContext = createContext({
-  amount: 1,
-});
-
 export const useRoll = () => {
-  const { amount } = useContext(diceContext);
+  const [amount, setAmount] = useState(1);
   const [sides, setSides] = useState(20);
   const [result, setResult] = useState(20);
   const [oneOrLess, setOneOrLess] = useState(true);
@@ -39,9 +35,10 @@ export const useRoll = () => {
 
   return {
     oneOrLess,
-    amount,
     reachedLimit,
     sides,
+    amount,
+    setAmount,
     setSides,
     result,
     setResult,
