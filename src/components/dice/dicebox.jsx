@@ -15,8 +15,6 @@ const SpinnableView = animated(View);
 
 const DiceBox = props => {
   const { result, rollDice, spins } = useRoll();
-  const window = useWindowDimensions();
-  const deviceWidthPercentage = 0.5;
   const handleDiceRoll = () => rollDice(props.min, props.max);
   const { Spin } = useSpring({
     Spin: spins,
@@ -33,9 +31,7 @@ const DiceBox = props => {
     <View style={tw.dicebox}>
       <Pressable
         onPress={handleDiceRoll}
-        style={[
-          tw.dice,
-        ]}>
+        style={tw.dice}>
         <TailwindText style={tw.number} size="7xl" color="purple-800">
           {result}
         </TailwindText>
