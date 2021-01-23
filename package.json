@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
+    "build:web": "expo build:web",
     "tunnel": "expo start --tunnel",
     "web": "expo start --web",
     "android": "react-native run-android",
