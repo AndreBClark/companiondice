@@ -2,6 +2,7 @@ import React from 'react';
 import { useSpring, animated } from 'react-spring/native';
 import { Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { useRoll, diceContext } from '../../hooks/diceHelpers';
+import { useDiceSides } from '@hooks/useDiceSides';
 import { tailwind } from '../tailwind';
 import TailwindText from '../TailwindText';
 import { D6, D20 } from '../Svg';
@@ -57,6 +58,8 @@ const DiceBox = props => {
 
 export const Dice = props => {
   const { sides, amount, setAmount } = useRoll();
+  const [ useSidesState ] = useDiceSides();
+  const sides = useSidesState.sides;
   return (
     <View style={tailwind(`my-auto`)}>
       <DiceBox min={amount} max={amount * sides}>
