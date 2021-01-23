@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Button } from './Button';
-import { useRoll } from '../hooks/diceHelpers';
+import { useRoll } from '../hooks/useRoll';
 import { tailwind } from './tailwind';
 import TailwindText from './TailwindText';
 

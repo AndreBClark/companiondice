@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring/native';
 import { Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
-import { useRoll, diceContext } from '../../hooks/diceHelpers';
+import { useRoll } from '@hooks/useRoll';
 import { useDiceSides } from '@hooks/useDiceSides';
 import { tailwind } from '../tailwind';
 import TailwindText from '../TailwindText';

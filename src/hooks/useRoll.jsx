@@ -36,6 +36,8 @@ export const useRoll = () => {
   return {
     oneOrLess,
     reachedLimit,
+    setReachedLimit,
+    setOneOrLess,
     sides,
     amount,
     setAmount,
