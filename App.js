@@ -8,7 +8,10 @@ import { Inter_400Regular, Inter_700Bold, useFonts } from '@expo-google-fonts/in
 import TabNav from './src/components/menu/tabNavigation';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+import { Provider } from 'react-native-paper';
 import * as Font from 'expo-font'
+import { theme } from './src/components/Constants';
+import { DiceSidesProvider } from '@hooks/useDiceSides';
 
 export default function App() {
   const [isReady, setReady] = useState(false);
@@ -38,7 +41,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header />
-      <TabNav />
+      <Provider theme={theme} >
+        <DiceSidesProvider>
+          <TabNav />
+        </DiceSidesProvider>
+      </Provider>
       <StatusBar style="dark" />
     </View>
   );
