@@ -8,12 +8,13 @@ import TailwindText from '../TailwindText';
 import { D6, D20 } from '../Svg';
 import { springConfig } from '../Constants';
 import Controls from '../Controls';
+import FabGroup from '../menu/fabGroup';
 
 
 const SpinnableView = animated(View);
 
 const DiceBox = props => {
-  const { result, rollDice, spins, setAmount, amount } = useRoll();
+  const { result, rollDice, spins } = useRoll();
   const window = useWindowDimensions();
   const deviceWidthPercentage = 0.5;
   const diceScale = {
@@ -57,7 +58,7 @@ const DiceBox = props => {
 };
 
 export const Dice = props => {
-  const { sides, amount, setAmount } = useRoll();
+  const { amount, setAmount } = useRoll();
   const [ useSidesState ] = useDiceSides();
   const sides = useSidesState.sides;
   return (
@@ -67,6 +68,9 @@ export const Dice = props => {
       </DiceBox>
       <Controls amount={amount} setAmount={setAmount} sides={sides} />
     </View> 
+    <>
+      <FabGroup />
+    </>
   );
 };
 
