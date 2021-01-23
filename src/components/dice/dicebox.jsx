@@ -23,9 +23,8 @@ const DiceBox = props => {
     config: springConfig,
   })
   const SpinInterpolation = {
-    transform: [{ 
+    transform: [{
       rotate: Spin.interpolate({
-        range: [0, 1],
         output: [0, 360]
       }).interpolate(Spin => `${Spin}deg`)
     }]
