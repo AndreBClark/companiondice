@@ -87,11 +87,11 @@ export const Stats = () => (
 
 const tw = StyleSheet.create({
   dice: tailwind(
-      `max-w-md flex font-bold relative m-auto mb-16 items-center justify-center relative max-h-84`
-    ),
+    `max-w-md flex font-bold relative m-auto items-center justify-center relative h-64 w-64`
+  ),
   number: tailwind(
-    `bg-green-400 rounded-full justify-center m-auto items-center absolute justify-center z-10`
+    `bg-green-500 rounded-full justify-center m-auto items-center absolute justify-center z-10`
   ),
   spinnableView: tailwind(`w-full h-full absolute top-0 left-0 justify-center items-center`),
-  dicebox: tailwind(`justify-center w-full max-w-xl mx-auto`),
+  dicebox: tailwind(`justify-center my-auto w-full max-w-xl mx-auto h-full`),
 });
