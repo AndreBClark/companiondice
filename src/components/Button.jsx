@@ -34,7 +34,7 @@ export const HPButton = ({ children, ...props }) => {
 };
 
 const styles = StyleSheet.create({
-  button: tailwind(`font-bold bg-green-600 my-2 rounded-md py-2 flex-1`),
+  button: tailwind(`font-bold bg-green-400 my-2 rounded-md py-2 flex-1`),
   disabled: tailwind(`bg-green-900`),
   hpButton: tailwind(`flex-1 mx-8 rounded-lg`),
 });
