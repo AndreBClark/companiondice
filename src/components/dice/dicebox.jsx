@@ -5,7 +5,7 @@ import { useRoll } from '@hooks/useRoll';
 import { useDiceSides } from '@hooks/useDiceSides';
 import { tailwind } from '../tailwind';
 import TailwindText from '../TailwindText';
-import { D6, D20 } from '../Svg';
+import { D4, D6, D8, D10, D12, D20 } from '../Svg';
 import { springConfig } from '../Constants';
 import Controls from '../Controls';
 import FabGroup from '../menu/fabGroup';
@@ -55,14 +55,25 @@ export const Dice = props => {
   const { amount, setAmount } = useRoll();
   const [ useSidesState ] = useDiceSides();
   const sides = useSidesState.sides;
+  const DiceSwitch = () => {
+    switch (sides) {
+      case 4: return <D4 />;
+      case 6: return <D6 />;
+      case 8: return <D8 />;
+      case 10: return <D10 />;
+      case 12: return <D12 />;
+      case 20: return <D20 />;
+      default: throw new Error(`invalid Die ${sides} ${typeof sides} `);
+    }
+  }
   return (
-    <View style={tailwind(`my-auto`)}>
-      <DiceBox min={amount} max={amount * sides}>
-        <D20 />
-      </DiceBox>
-      <Controls amount={amount} setAmount={setAmount} sides={sides} />
-    </View> 
     <>
+      <View style={tailwind('justify-center items-center')}>
+        <DiceBox min={amount} max={amount * sides}>
+          {DiceSwitch()}
+        </DiceBox>
+        <Controls amount={amount} setAmount={setAmount} sides={sides} />
+      </View>
       <FabGroup />
     </>
   );
