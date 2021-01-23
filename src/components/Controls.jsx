@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Button } from './Button';
 import { useRoll } from '../hooks/useRoll';
@@ -6,7 +6,7 @@ import { tailwind } from './tailwind';
 import TailwindText from './TailwindText';
 
 const Controls = props => {
-  const { reachedLimit, oneOrLess } = useRoll();
+  const { reachedLimit, oneOrLess, setReachedLimit,setOneOrLess } = useRoll();
   const incrementAmount = () => {
     props.setAmount(props.amount + 1)
   }
@@ -16,6 +16,10 @@ const Controls = props => {
   const resetAmount= () => {
     props.setAmount(1)
   }
+  useEffect(()=> {
+    setReachedLimit(props.amount >= 40);
+    setOneOrLess(props.amount <= 1);
+  }, [props.amount, props.sides])
   return (
     <View style={tw.controls}>
       <View style={tw.row}>
@@ -33,7 +37,7 @@ const Controls = props => {
             reachedLimit={reachedLimit} Label="+" />
         </View>
       </View>
-      <View>
+      <View style={tw.row}>
         <Button 
           onPress={resetAmount} Label="Reset" size="2xl" />
       </View>
@@ -41,8 +45,8 @@ const Controls = props => {
   );
 };
 const tw = StyleSheet.create({
-  controls: tailwind(`px-4 w-full mx-auto max-w-2xl`),
-  row: tailwind(`justify-between flex-row`),
+  controls: tailwind(`px-4 w-full mx-auto max-w-2xl mb-24`),
+  row: tailwind(`justify-between flex-row py-2`),
   buttonColumn: tailwind(`w-1/5`),
   diceIndicator: tailwind(`w-3/5 pt-2`)
 })
