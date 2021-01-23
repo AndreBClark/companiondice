@@ -26,13 +26,13 @@ export default function TabNav() {
                 ? 'heart-circle'
                 : 'heart-circle-outline';
                 break;
-              case 'stats': iconName = focused
-                ? 'dice-multiple'
-                : 'dice-multiple-outline';
+                case 'stats': iconName = focused
+                ? 'dice-d6'
+                : 'dice-d6-outline';
                 break;
-              case 'dice': iconName = focused
-                ? 'dice-multiple'
-                : 'dice-multiple-outline';
+                case 'dice': iconName = focused
+                ? 'dice-d20'
+                : 'dice-d20-outline';
                 break;
               default: 
                 throw new Error();
