@@ -17,10 +17,6 @@ const DiceBox = props => {
   const { result, rollDice, spins } = useRoll();
   const window = useWindowDimensions();
   const deviceWidthPercentage = 0.5;
-  const diceScale = {
-    width: window.width * deviceWidthPercentage,
-    height: window.height * deviceWidthPercentage,
-  };
   const handleDiceRoll = () => rollDice(props.min, props.max);
   const { Spin } = useSpring({
     Spin: spins,
