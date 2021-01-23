@@ -34,13 +34,13 @@ export default function TabNav() {
                 ? 'dice-d20'
                 : 'dice-d20-outline';
                 break;
-              default: 
-                throw new Error();
-            }
-            // You can return any component that you like here!
-            return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
-          },
-      })}>
+                default:
+                  throw new Error(`invalid route.name: ${route.name}`);
+                }
+                // You can return any component that you like here!
+                return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
+              },
+            })}>
         <Tab.Screen name="dice" component={Dice} />
         <Tab.Screen name="health" component={HP} />
         <Tab.Screen name="stats" component={Stats} />
