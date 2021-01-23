@@ -31,11 +31,10 @@ const DiceBox = props => {
   }
   return (
     <View style={tw.dicebox}>
-      <Pressable 
-        onPress={handleDiceRoll} 
+      <Pressable
+        onPress={handleDiceRoll}
         style={[
           tw.dice,
-          diceScale,
         ]}>
         <TailwindText style={tw.number} size="7xl" color="purple-800">
           {result}
@@ -69,13 +68,11 @@ export const Dice = props => {
   );
 };
 
-export const Stats = props => {
-  return(
-    <DiceBox min={6} max={18}>
-      <D6 />
-    </DiceBox>
-  )
-};
+export const Stats = () => (
+  <DiceBox min={6} max={18}>
+    <D6 />
+  </DiceBox>
+)
 
 const tw = StyleSheet.create({
   dice: tailwind(
