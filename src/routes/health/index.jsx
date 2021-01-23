@@ -6,15 +6,9 @@ import { tailwind } from '../../components/tailwind';
 import TailwindText from '../../components/TailwindText';
 import { theme } from '../../components/Constants';
 
-const HealthTracker = () => {
-  const {
-    hitpoints = 0,
-    maxHP = 0,
-    setHitpoints,
-    setMaxHP,
-    modifyHP,
-    longRest,
-  } = useHP();
+const HealthTracker = ({route}) => {
+  
+  const { hitpoints = 0, maxHP = 0, setHitpoints, setMaxHP, modifyHP, longRest } = useHP();
   const onchangeHP = () => {
     val => setHitpoints(Number(val));
   };
@@ -22,7 +16,8 @@ const HealthTracker = () => {
     val => setMaxHP(Number(val));
   };
   const hitpointString = hitpoints.toString();
-  const maxHPString = maxHP.toString()
+  const maxHPString = maxHP.toString();
+
   return (
     <View style={tw.container}>
       <View style={tw.col}>
