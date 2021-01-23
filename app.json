@@ -14,6 +14,9 @@
     "primaryColor": "#34D399",
     "android": {
       "package": "com.cosmicdivision.companiondice"
+    },
+    "ios": {
+      "bundleIdentifier": "com.cosmicdivision.companiondice"
     }
   }
 }
