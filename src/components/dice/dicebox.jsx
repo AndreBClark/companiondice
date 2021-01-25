@@ -75,7 +75,7 @@ export const Dice = props => {
       case 10: return <D10 />;
       case 12: return <D12 />;
       case 20: return <D20 />;
-      default: throw new Error(`invalid Die ${sides} ${typeof sides} `);
+      default: throw new Error(`invalid Die ${sides} \n returned type of: ${typeof sides} should return number`);
     }
   }
   return (
