@@ -35,16 +35,16 @@ export const D6 = props => {
 };
 export const D8 = props => {
   return (
-    <SvgCss style={tw.rotate45} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
+    <Svg style={tw.rotate45} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
       <Rect x="3" y="3" width="18" height="18" rx="2" />
-    </SvgCss>
+    </Svg>
   );
 };
 export const D10 = props => {
   return (
-    <SvgCss style={tw.rotate45} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
+    <Svg style={tw.rotate45} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
       <Rect x="3" y="3" width="18" height="18" rx="2" />
-    </SvgCss>
+    </Svg>
   );
 };
 export const D12 = props => {
@@ -65,7 +65,7 @@ export const D12 = props => {
 };
 export const D20 = props => {
   return (
-    <SvgCss
+    <Svg
       {...props}
       style={tw.rotate90}
       viewBox="0 0 24 24"
@@ -77,7 +77,7 @@ export const D20 = props => {
       strokeLinejoin="round"
       strokeLinecap="round">
       <Polygon points="7.2,3.6 16.8,3.6 21.6,12 16.8,20.4 7.2,20.4 2.4,12" />
-    </SvgCss>
+    </Svg>
   );
 };
 export const D100 = props => {
