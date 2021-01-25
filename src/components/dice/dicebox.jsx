@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring/native';
 import { Pressable, StyleSheet, View, Switch, Text } from 'react-native';
 import { useRoll } from '@hooks/useRoll';
