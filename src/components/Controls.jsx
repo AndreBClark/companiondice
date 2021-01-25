@@ -46,7 +46,7 @@ const Controls = props => {
 };
 const tw = StyleSheet.create({
   controls: tailwind(`px-4 w-full mx-auto max-w-2xl mb-24`),
-  row: tailwind(`justify-between flex-row py-2`),
+  row: tailwind(`justify-between flex-row`),
   buttonColumn: tailwind(`w-1/5`),
   diceIndicator: tailwind(`w-3/5 pt-2`)
 })
