@@ -19,7 +19,25 @@
     "transitionDuration": "150ms"
   },
   "rotate-0": {
-    "transform": "rotate(0deg)"
+    "transform": [
+      {
+        "rotate": "0deg"
+      }
+    ]
+  },
+  "rotate-90": {
+    "transform": [
+      {
+        "rotate": "90deg"
+      }
+    ]
+  },
+  "rotate-45": {
+    "transform": [
+      {
+        "rotate": "45deg"
+      }
+    ]
   },
   "text-5xl": {
     "fontSize": 48

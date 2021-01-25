@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
-import Svg, { Path, Polygon, Rect } from 'react-native-svg';
+import { View, StyleSheet } from 'react-native';
+import Svg, { SvgCss, Path, Polygon, Rect } from 'react-native-svg';
 import { tailwind } from './tailwind';
 import TailwindText from './TailwindText';
 import { theme } from './Constants';
@@ -35,16 +35,16 @@ export const D6 = props => {
 };
 export const D8 = props => {
   return (
-    <Svg width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
-      <Rect x="3" y="3" rotation="45" origin="12,12" width="18" height="18" rx="2" />
-    </Svg>
+    <SvgCss style={tw.rotate45} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
+      <Rect x="3" y="3" width="18" height="18" rx="2" />
+    </SvgCss>
   );
 };
 export const D10 = props => {
   return (
-    <Svg width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
-      <Rect x="3" y="3" rotation="45" origin="12,12" width="18" height="18" rx="2" />
-    </Svg>
+    <SvgCss style={tw.rotate45} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
+      <Rect x="3" y="3" width="18" height="18" rx="2" />
+    </SvgCss>
   );
 };
 export const D12 = props => {
@@ -65,8 +65,9 @@ export const D12 = props => {
 };
 export const D20 = props => {
   return (
-    <Svg
+    <SvgCss
       {...props}
+      style={tw.rotate90}
       viewBox="0 0 24 24"
       fill={theme.colors.primary}
       stroke={theme.colors.primary}
@@ -75,11 +76,8 @@ export const D20 = props => {
       strokeWidth="4.5"
       strokeLinejoin="round"
       strokeLinecap="round">
-      <Polygon points="7.2,3.6 16.8,3.6 21.6,12 16.8,20.4 7.2,20.4 2.4,12"
-        rotation="90"
-        origin="12,12"
-      />
-    </Svg>
+      <Polygon points="7.2,3.6 16.8,3.6 21.6,12 16.8,20.4 7.2,20.4 2.4,12" />
+    </SvgCss>
   );
 };
 export const D100 = props => {
@@ -126,3 +124,8 @@ export const NateSVG = props => {
     </Svg>
   );
 };
+
+const tw = StyleSheet.create({
+  rotate90: tailwind('rotate-90'),
+  rotate45: tailwind('rotate-45')
+})
