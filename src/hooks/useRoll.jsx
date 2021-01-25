@@ -1,4 +1,5 @@
-import { useState, useContext, createContext } from 'react';
+import { useState } from 'react';
+import * as Random from 'expo-random';
 
 export const useRoll = () => {
   const [amount, setAmount] = useState(1);
@@ -51,4 +52,9 @@ export const useRoll = () => {
   };
 };
 
-const generateRandomInt = (min = 1, max = 20) => Math.ceil(Math.random() * (max - min)) + min;
+const generateRandomInt = (min = 1, max = 20) => {
+  const _UInt8Array = Random.getRandomBytes(1);
+  let getFloatingPoint = _UInt8Array[0] / Math.pow(2, 8);
+  const RandomInt = Math.ceil(getFloatingPoint * (max - min)) + min
+  return RandomInt;
+};
