@@ -66,7 +66,8 @@ export const Dice = props => {
   const { amount, setAmount } = useRoll();
   const [ useSidesState ] = useDiceSides();
   const sides = useSidesState.sides;
-  const DiceSwitch = () => {
+  
+  function DiceSwitch() {
     switch (sides) {
       case 4: return <D4 />;
       case 6: return <D6 />;
