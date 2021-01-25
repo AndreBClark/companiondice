@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Svg, { SvgCss, Path, Polygon, Rect } from 'react-native-svg';
+import Svg, { Path, Polygon, Rect } from 'react-native-svg';
 import { tailwind } from './tailwind';
 import TailwindText from './TailwindText';
 import { theme } from './Constants';
