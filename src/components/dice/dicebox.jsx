@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring/native';
-import { Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { Pressable, StyleSheet, View, Switch, Text } from 'react-native';
 import { useRoll } from '@hooks/useRoll';
 import { useDiceSides } from '@hooks/useDiceSides';
 import { tailwind } from '../tailwind';
@@ -14,11 +14,15 @@ import FabGroup from '../menu/fabGroup';
 const SpinnableView = animated(View);
 
 const DiceBox = props => {
-  const { result, rollDice, spins } = useRoll();
+  const { rollDice, spins, result, isActive, setResult } = useRoll();
+  const [isDone, setDone] = useState(false);
+const isStatsDice = props.max === 18;
   const handleDiceRoll = () => rollDice(props.min, props.max);
   const { Spin } = useSpring({
     Spin: spins,
     config: springConfig,
+    onRest: () => setDone(isActive),
+    onStart: () => setDone(isActive),
   })
   const SpinInterpolation = {
     transform: [{
@@ -27,22 +31,33 @@ const DiceBox = props => {
       }).interpolate(Spin => `${Spin}deg`)
     }]
   }
+  const blur = useSpring({
+    radius: isDone ? 2 : 30, 
+    config: springConfig
+  })
+  const BlingEffect = {
+    filter: blur.radius.interpolate(size => `drop-shadow(0 0 ${size}px #4fd1c5)`)
+  }
   return (
-    <View style={tw.dicebox}>
-      <Pressable
-        onPress={handleDiceRoll}
-        style={tw.dice}>
-        <TailwindText style={tw.number} size="7xl" color="purple-800">
-          {result}
-        </TailwindText>
-        <SpinnableView
-          style={[
-            tw.spinnableView,
-            SpinInterpolation
-          ]}>
-          {props.children}
-        </SpinnableView>
-      </Pressable>
+    <View style={tw.container}>
+      <View style={tw.dicebox}>
+        <Pressable
+          onPress={handleDiceRoll}
+          style={[tw.dice, isStatsDice && tw.smallDice]}>
+          <TailwindText
+            style={tw.number} size={isStatsDice ? "4xl" : "7xl"} color="purple-800">
+            {result}
+          </TailwindText>
+          <SpinnableView
+            style={[
+              tw.spinnableView,
+              SpinInterpolation,
+              BlingEffect,
+            ]}>
+            {props.children}
+          </SpinnableView>
+        </Pressable>
+      </View>
     </View>
   );
 };
