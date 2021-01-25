@@ -39,7 +39,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={tw.container}>
       <Header />
       <Provider theme={theme} >
         <DiceSidesProvider>
@@ -50,7 +50,7 @@ export default function App() {
     </View>
   );
 }
-const styles = StyleSheet.create({
+const tw = StyleSheet.create({
   container: tailwind(`relative justify-between w-full h-full bg-purple-800 overflow-hidden`),
   paragraph: tailwind('text-green-400 items-center')
 });
