@@ -89,20 +89,69 @@ export const Dice = props => {
   );
 };
 
-export const Stats = () => (
-  <DiceBox min={6} max={18}>
-    <D6 />
-  </DiceBox>
-)
+export const Stats = () => {
+  const [isGraceEnabled, setGraceRules] = useState(true);
+  function handleChange() {
+    setGraceRules(!isGraceEnabled)
+  }
+  return(
+    <>
+      <View style={tailwind('my-auto')}>
+        <View style={tailwind('flex-row justify-around')}>
+          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+            <D6 />
+          </DiceBox>
+          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+            <D6 />
+          </DiceBox>
+          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+            <D6 />
+          </DiceBox>
+        </View>
+        <View style={tailwind('flex-row justify-around')}>
+          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+            <D6 />
+          </DiceBox>
+          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+            <D6 />
+          </DiceBox>
+          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+            <D6 />
+          </DiceBox>
+        </View>
+      </View>
+      <View style={tw.body}>
+        <TailwindText align="left">
+          Roll your ability scores with 3d6 method
+        </TailwindText>
+        <View style={tw.graceRules}>
+          <TailwindText align="left"> Reroll Ones 
+            <TailwindText color="green-100" weight="bold">
+              {isGraceEnabled ? ' enabled': ' disabled'}
+            </TailwindText>
+          </TailwindText>
+          <Switch
+            size='large'
+            onValueChange={handleChange}
+            value={isGraceEnabled}
+          />
+        </View>
+      </View>
+    </>
+  )
+}
 
 const tw = StyleSheet.create({
   container: tailwind('justify-center items-center my-auto'),
   dice: tailwind(
     `max-w-md flex font-bold relative m-auto items-center justify-center relative h-64 w-64`
   ),
+  smallDice: tailwind('h-24 w-24 max-w-xs'),
   number: tailwind(
     `bg-green-500 rounded-full justify-center m-auto items-center absolute justify-center z-10`
   ),
   spinnableView: tailwind(`w-full h-full absolute top-0 left-0 justify-center items-center`),
   dicebox: tailwind(`justify-center my-auto w-full max-w-xl mx-auto h-full`),
+  body: tailwind(`my-20 max-w-sm mx-auto`),
+  graceRules: tailwind('justify-between py-2 flex-row')
 });
