@@ -6,6 +6,11 @@
     "slug": "companiondice",
     "scheme": "companiondice",
     "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+      ],
     "assetBundlePatterns": [
       "**/*"
     ],
