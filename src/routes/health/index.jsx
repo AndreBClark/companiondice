@@ -6,8 +6,19 @@ import { tailwind } from '../../components/tailwind';
 import TailwindText from '../../components/TailwindText';
 import { theme } from '../../components/Constants';
 
-const HealthTracker = ({route}) => {
-  
+const HPInput = props => (
+  <TextInput 
+    {...props}
+    selectionColor={theme.colors.primary}
+    keyboardType="numeric"
+    keyboardAppearance="dark"
+    textContentType="none"
+    textAlign="center"
+    maxLength={3}
+    style={tw.input}
+  />
+)
+const HealthTracker = () => {
   const { hitpoints = 0, maxHP = 0, setHitpoints, setMaxHP, modifyHP, longRest } = useHP();
   const onchangeHP = () => {
     val => setHitpoints(Number(val));
@@ -36,16 +47,9 @@ const HealthTracker = ({route}) => {
       <View style={[tailwind(`flex flex-row my-4`), { gap: '1rem' }]}>
         <View style={tw.inputContainer}>
           <TailwindText size="2xl">Current</TailwindText>
-          <TextInput
-            selectionColor={theme.colors.primary}
-            keyboardType="numeric"
-            keyboardAppearance="dark"
-            textContentType="none"
-            textAlign="center"
-            maxLength={3}
+          <HPInput 
             onChangeText={onchangeHP}
             value={hitpointString}
-            style={tw.input}
           />
         </View>
         <TailwindText style={tw.slash} size="7xl" weight="black">
@@ -53,16 +57,9 @@ const HealthTracker = ({route}) => {
         </TailwindText>
         <View style={tw.inputContainer}>
           <TailwindText size="2xl">Max</TailwindText>
-          <TextInput
-            selectionColor={theme.colors.primary}
-            keyboardType="numeric"
-            keyboardAppearance="dark"
-            textContentType="none"
-            textAlign="center"
-            maxLength={3}
+          <HPInput
             onChangeText={onchangeMaxHP}
             value={maxHPString}
-            style={tw.input}
           />
         </View>
       </View>
