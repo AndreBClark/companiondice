@@ -80,12 +80,10 @@ export const Dice = props => {
   }
   return (
     <>
-      <View style={tailwind('justify-center items-center')}>
-        <DiceBox min={amount} max={amount * sides}>
-          {DiceSwitch()}
-        </DiceBox>
-        <Controls amount={amount} setAmount={setAmount} sides={sides} />
-      </View>
+      <DiceBox min={amount} max={amount * sides}>
+        {DiceSwitch()}
+      </DiceBox>
+      <Controls amount={amount} setAmount={setAmount} sides={sides} />
       <FabGroup />
     </>
   );
@@ -98,6 +96,7 @@ export const Stats = () => (
 )
 
 const tw = StyleSheet.create({
+  container: tailwind('justify-center items-center my-auto'),
   dice: tailwind(
     `max-w-md flex font-bold relative m-auto items-center justify-center relative h-64 w-64`
   ),
