@@ -62,7 +62,7 @@ const isStatsDice = props.max === 18;
   );
 };
 
-export const Dice = props => {
+export const Dice = () => {
   const { amount, setAmount } = useRoll();
   const [ useSidesState ] = useDiceSides();
   const sides = useSidesState.sides;
