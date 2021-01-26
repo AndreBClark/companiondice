@@ -61,19 +61,16 @@ export const D10 = props => {
 };
 export const D12 = props => {
   return (
-    <Svg {...props} strokeWidth="4">
+    <Dice {...props} strokeWidth="4">
       <Polygon points="12,2.4 21.6,9.6 18,20 6,20 2.4,9.6" />
-    </Svg>
+    </Dice>
   );
 };
 export const D20 = props => {
   return (
-    <Svg
-      {...props}
-      style={tw.rotate90}
-      strokeWidth="4.5">
+    <Dice {...props} style={tw.rotate90} strokeWidth="4.5">
       <Polygon points="7.2,3.6 16.8,3.6 21.6,12 16.8,20.4 7.2,20.4 2.4,12" />
-    </Svg>
+    </Dice>
   );
 };
 export const D100 = props => {
