@@ -33,8 +33,8 @@ const Dice = props => {
 }
 export const D4 = props => {
   return (
-    <Dice {...props} strokeWidth='2' viewBox="0 1 24 24">
-      <Polygon fill={theme.colors.primary} points="12,2.4 22.8,21.6 1.2,21.6" rx="2" />
+    <Dice {...props} strokeWidth='2.5' viewBox="0 1 24 24">
+      <Polygon points="12,2.4 22.8,21.6 1.2,21.6" rx="2" />
     </Dice>
   );
 };
