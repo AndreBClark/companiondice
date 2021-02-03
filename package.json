@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
-    "build:web": "npm i -g expo-cli && expo build:web",
+    "build:web": "expo build:web",
+    "optimize": "expo optimize",
     "deploy:netlify": "npm i -g expo-cli && expo build:web && netlify deploy --dir web-build --prod",
     "tunnel": "expo start --tunnel",
     "web": "expo start --web",
@@ -23,6 +24,7 @@
     "babel-jest": "~25.2.6",
     "expo": "~40.0.0",
     "expo-app-loading": "^1.0.1",
+    "expo-cli": "^4.1.6",
     "expo-constants": "~9.3.3",
     "expo-font": "~8.4.0",
     "expo-linking": "~2.0.0",
