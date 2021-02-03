@@ -16,83 +16,68 @@ export const SvgIcon = props => {
     </View>
   );
 };
+const Dice = props => {
+  return(
+    <Svg 
+      {...props} 
+      stroke={theme.colors.primary}
+      fill={theme.colors.primary} 
+      viewBox={props.viewBox || "0 0 24 24"}
+      width={props.size} 
+      height={props.size}
+      strokeLinecap='round' 
+      strokeLinejoin='round'>
+      {props.children}
+    </Svg>
+  )
+}
 export const D4 = props => {
   return (
-    <Svg {...props} stroke={theme.colors.primary} strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' width={props.size} height={props.size} viewBox="0 1 24 24">
-      <Polygon fill={theme.colors.primary} points="12,2.4 22.8,21.6 1.2,21.6" rx="2" />
-    </Svg>
+    <Dice {...props} strokeWidth='2.5' viewBox="0 1 24 24">
+      <Polygon points="12,2.4 22.8,21.6 1.2,21.6" rx="2" />
+    </Dice>
   );
 };
 export const D6 = props => {
   return (
-    <Svg {...props}
-      viewBox="0 0 24 24"
-      width={props.size} height={props.size}
-      fill={theme.colors.primary}>
+    <Dice {...props}>
       <Rect x="2" y="2" width="20" height="20" rx="4" ry="4" />
-    </Svg>
+    </Dice>
   );
 };
 export const D8 = props => {
   return (
-    <Svg style={tw.rotate45} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
+    <Dice {...props} style={tw.rotate45}>
       <Rect x="3" y="3" width="18" height="18" rx="2" />
-    </Svg>
+    </Dice>
   );
 };
 export const D10 = props => {
   return (
-    <Svg style={tw.rotate45} width={props.size} height={props.size} fill={theme.colors.primary} viewBox="0 0 24 24" {...props}>
+    <Dice {...props} style={tw.rotate45}>
       <Rect x="3" y="3" width="18" height="18" rx="2" />
-    </Svg>
+    </Dice>
   );
 };
 export const D12 = props => {
   return (
-    <Svg
-      {...props}
-      viewBox="0 0 24 24"
-      stroke={theme.colors.primary}
-      fill={theme.colors.primary}
-      strokeLinejoin="round"
-      strokeWidth="4"
-      width={props.size}
-      height={props.size}
-      strokeLinecap="round">
+    <Dice {...props} strokeWidth="4">
       <Polygon points="12,2.4 21.6,9.6 18,20 6,20 2.4,9.6" />
-    </Svg>
+    </Dice>
   );
 };
 export const D20 = props => {
   return (
-    <Svg
-      {...props}
-      style={tw.rotate90}
-      viewBox="0 0 24 24"
-      fill={theme.colors.primary}
-      stroke={theme.colors.primary}
-      width={props.size}
-      height={props.size}
-      strokeWidth="4.5"
-      strokeLinejoin="round"
-      strokeLinecap="round">
+    <Dice {...props} style={tw.rotate90} strokeWidth="4.5">
       <Polygon points="7.2,3.6 16.8,3.6 21.6,12 16.8,20.4 7.2,20.4 2.4,12" />
-    </Svg>
+    </Dice>
   );
 };
 export const D100 = props => {
   return (
-    <Svg
-      {...props}
-      fill={theme.colors.primary}
-      width={props.size}
-      height={props.size}
-      viewBox="0 0 24 24">
-      <Path
-        d="M20.75 14.69l-8.35 6.19a.71.71 0 0 1-.8 0l-8.3-6.16c-.18-.1-.3-.6-.3-.77V9.98c0-.2.16-.72.4-.83l8.2-6.03a.71.71 0 0 1 .8 0l8.2 6.03c.24.11.4.62.4.83v3.97c0 .16-.1.63-.25.74z"
-        fillRule="nonzero"
-      />
-    </Svg>
+    <Dice {...props} style={tw.rotate45}>
+      <Rect x="3" y="3" width="18" height="18" rx="2" />
+    </Dice>
   );
 };
 
