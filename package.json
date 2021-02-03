@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
-    "build:web": "expo build:web",
-    "deploy:netlify": "expo build:web && netlify deploy --dir web-build --prod",
+    "build:web": "npm i -g expo-cli && expo build:web",
+    "deploy:netlify": "npm i -g expo-cli && expo build:web && netlify deploy --dir web-build --prod",
     "tunnel": "expo start --tunnel",
     "web": "expo start --web",
     "android": "react-native run-android",
