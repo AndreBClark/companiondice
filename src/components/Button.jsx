@@ -1,7 +1,8 @@
 import React from 'react';
 import { Pressable, StyleSheet } from 'react-native';
-import TailwindText from './TailwindText';
-import { tailwind } from './tailwind';
+import TailwindText from '@/TailwindText';
+import { tailwind } from '@/tailwind';
+
 export const Button = ({ children, ...props }) => {
   return (
     <Pressable
@@ -34,7 +35,7 @@ export const HPButton = ({ children, ...props }) => {
 };
 
 const styles = StyleSheet.create({
-  button: tailwind(`font-bold bg-green-400 my-2 rounded-md py-2 flex-1`),
+  button: tailwind(`font-bold bg-green-400 m-2 rounded-md py-2 flex-1`),
   disabled: tailwind(`bg-green-900`),
   hpButton: tailwind(`flex-1 mx-8 rounded-lg`),
 });

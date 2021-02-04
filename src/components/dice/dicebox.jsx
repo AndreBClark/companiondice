@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring/native';
-import { Pressable, StyleSheet, View, Switch, Text } from 'react-native';
-import { useRoll } from '@hooks/useRoll';
-import { useDiceSides } from '@hooks/useDiceSides';
-import { tailwind } from '../tailwind';
-import TailwindText from '../TailwindText';
-import { D4, D6, D8, D10, D12, D20 } from '../Svg';
-import { springConfig } from '../Constants';
-import Controls from '../Controls';
-import FabGroup from '../menu/fabGroup';
+import { Pressable, StyleSheet, View, Switch } from 'react-native';
+import { useRoll } from 'hooks/useRoll';
+import { useDiceSides } from 'hooks/useDiceSides';
+import { tailwind } from '@/tailwind';
+import TailwindText from '@/TailwindText';
+import { D4, D6, D8, D10, D12, D20 } from '@/Svg';
+import { springConfig } from '@/Constants';
+import Controls from '@/Controls';
+import FabGroup from '@/menu/fabGroup';
 
 
 const SpinnableView = animated(View);
 
-const DiceBox = props => {
-  const { rollDice, spins, result, isActive, setResult } = useRoll();
+const Dice = props => {
+  const { rollDice, spins, result, isActive } = useRoll();
   const [isDone, setDone] = useState(false);
 const isStatsDice = props.max === 18;
   const handleDiceRoll = () => rollDice(props.min, props.max);
@@ -62,7 +62,7 @@ const isStatsDice = props.max === 18;
   );
 };
 
-export const Dice = () => {
+export const RegularDice = () => {
   const { amount, setAmount } = useRoll();
   const [ useSidesState ] = useDiceSides();
   const sides = useSidesState.sides;
@@ -80,16 +80,16 @@ export const Dice = () => {
   }
   return (
     <>
-      <DiceBox min={amount} max={amount * sides}>
+      <Dice min={amount} max={amount * sides}>
         {DiceSwitch()}
-      </DiceBox>
+      </Dice>
       <Controls amount={amount} setAmount={setAmount} sides={sides} />
       <FabGroup />
     </>
   );
 };
 
-export const Stats = () => {
+export const AbilityScoreDice = () => {
   const [isGraceEnabled, setGraceRules] = useState(true);
   function handleChange() {
     setGraceRules(!isGraceEnabled)
@@ -98,26 +98,26 @@ export const Stats = () => {
     <>
       <View style={tailwind('my-auto')}>
         <View style={tailwind('flex-row justify-around')}>
-          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+          <Dice min={isGraceEnabled ? 6 : 3} max={18}>
             <D6 />
-          </DiceBox>
-          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+          </Dice>
+          <Dice min={isGraceEnabled ? 6 : 3} max={18}>
             <D6 />
-          </DiceBox>
-          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+          </Dice>
+          <Dice min={isGraceEnabled ? 6 : 3} max={18}>
             <D6 />
-          </DiceBox>
+          </Dice>
         </View>
         <View style={tailwind('flex-row justify-around')}>
-          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+          <Dice min={isGraceEnabled ? 6 : 3} max={18}>
             <D6 />
-          </DiceBox>
-          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+          </Dice>
+          <Dice min={isGraceEnabled ? 6 : 3} max={18}>
             <D6 />
-          </DiceBox>
-          <DiceBox min={isGraceEnabled ? 6 : 3} max={18}>
+          </Dice>
+          <Dice min={isGraceEnabled ? 6 : 3} max={18}>
             <D6 />
-          </DiceBox>
+          </Dice>
         </View>
       </View>
       <View style={tw.body}>

@@ -1,10 +1,9 @@
-import { useNavigation, useRoute } from '@react-navigation/native';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native'
-import { FAB, Portal } from 'react-native-paper';
-import { useDiceSides } from '../../hooks/useDiceSides';
-import { theme } from '../Constants';
-import { tailwind } from '../tailwind';
+import { FAB } from 'react-native-paper';
+import { useDiceSides } from 'hooks/useDiceSides';
+import { theme } from '@/Constants';
+import { tailwind } from '@/tailwind';
 const FabGroup = props => {
   const [useSidesState, useSidesDispatch] = useDiceSides();
   const [isVisible, setVisibility] = useState(true);

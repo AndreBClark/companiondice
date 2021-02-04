@@ -1,7 +1,7 @@
 import { Platform } from 'react-native';
 import Constants, { AppOwnership } from 'expo-constants';
 import * as Linking from 'expo-linking';
-import { getColor } from '../components/tailwind';
+import { getColor } from '@/tailwind';
 import { DefaultTheme } from 'react-native-paper';
 
 export const isWeb = Platform.OS == 'web';

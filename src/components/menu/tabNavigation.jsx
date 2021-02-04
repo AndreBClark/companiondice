@@ -2,11 +2,11 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from 'react-navigation-bottom-tabs-no-warnings';
-import { tailwind } from '../tailwind';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import HP from '../../routes/health';
-import { Stats, Dice } from '../dice/dicebox';
-import { theme, LinkingUrls } from '../Constants';
+import HP from 'screens/health';
+import { tailwind } from '@/tailwind';
+import { AbilityScoreDice, RegularDice } from '@/dice/dicebox';
+import { theme, LinkingUrls } from '@/Constants';
 
 const Tab = createBottomTabNavigator();
 
@@ -41,9 +41,9 @@ export default function TabNav() {
                 return <MaterialCommunityIcons name={iconName} size={size} color={theme.colors.primary} />;
               },
             })}>
-        <Tab.Screen name="dice" component={Dice} />
+        <Tab.Screen name="dice" component={RegularDice} />
         <Tab.Screen name="health" component={HP} />
-        <Tab.Screen name="stats" component={Stats} />
+        <Tab.Screen name="stats" component={AbilityScoreDice} />
       </Tab.Navigator>
     </NavigationContainer>
   );

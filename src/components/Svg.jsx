@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Svg, { Path, Polygon, Rect } from 'react-native-svg';
-import { tailwind } from './tailwind';
-import TailwindText from './TailwindText';
-import { theme } from './Constants';
+import { tailwind } from '@/tailwind';
+import TailwindText from '@/TailwindText';
+import { theme } from '@/Constants';
 
 export const SvgIcon = props => {
   return (
