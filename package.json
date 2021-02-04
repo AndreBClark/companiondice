@@ -4,15 +4,13 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
-    "build:web": "expo build:web",
-    "optimize": "expo optimize",
-    "deploy:netlify": "npm i -g expo-cli && expo build:web && netlify deploy --dir web-build --prod",
     "tunnel": "expo start --tunnel",
     "web": "expo start --web",
+    "lint": "eslint src --fix",
     "android": "react-native run-android",
+    "build:web": "expo build:web",
     "ios": "react-native run-ios",
-    "test": "jest",
-    "lint": "eslint src --fix"
+    "test": "jest"
   },
   "dependencies": {
     "@babel/core": "~7.9.0",

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Button } from './Button';
-import { useRoll } from '../hooks/useRoll';
-import { tailwind } from './tailwind';
-import TailwindText from './TailwindText';
+import { useRoll } from 'hooks/useRoll';
+import { Button } from '@/Button';
+import { tailwind } from '@/tailwind';
+import TailwindText from '@/TailwindText';
 
 const Controls = props => {
   const { reachedLimit, oneOrLess, setReachedLimit,setOneOrLess } = useRoll();

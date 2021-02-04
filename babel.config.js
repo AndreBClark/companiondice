@@ -1,4 +1,4 @@
-module.exports = function(api) {
+export default function(api) {
   api.cache(true);
   return {
     presets: ['babel-preset-expo'],
@@ -8,8 +8,8 @@ module.exports = function(api) {
         {
           root: ["./src/"],
           alias: {
-            "@components": "./src/components",
-            "@hooks": "./src/hooks"
+            "@": "./src/components",
+            "hooks": "./src/hooks"
           }
         }
       ]

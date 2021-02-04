@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import { tailwind } from './src/components/tailwind'
-import Header from './src/components/title'
 import AppLoading from 'expo-app-loading';
-import { Inter_400Regular, Inter_700Bold, useFonts } from '@expo-google-fonts/inter';
-import TabNav from './src/components/menu/tabNavigation';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-
 import { Provider } from 'react-native-paper';
+import { Inter_400Regular, Inter_700Bold, useFonts } from '@expo-google-fonts/inter';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Font from 'expo-font'
-import { theme } from './src/components/Constants';
-import { DiceSidesProvider } from '@hooks/useDiceSides';
+
+import { DiceSidesProvider } from 'hooks/useDiceSides';
+import { tailwind } from '@/tailwind'
+import Header from '@/title'
+import TabNav from '@/menu/tabNavigation';
+import { theme } from '@/Constants';
 
 export default function App() {
   const [isReady, setReady] = useState(false);
