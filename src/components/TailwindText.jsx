@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { tailwind } from './tailwind';
+import { tailwind } from '@/tailwind';
 
 
 const TailwindText = props => {
