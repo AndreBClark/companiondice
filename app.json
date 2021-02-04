@@ -2,6 +2,7 @@
   "name": "companiondice",
   "displayName": "companiondice",
   "expo": {
+    "entryPoint": "./src/index.js",
     "name": "companiondice",
     "slug": "companiondice",
     "scheme": "companiondice",
