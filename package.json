@@ -4,16 +4,13 @@
   "main": "index.js",
   "scripts": {
     "start": "expo start",
-    "build:web": "expo build:web",
     "tunnel": "expo start --tunnel",
     "web": "expo start --web",
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "test": "jest",
     "lint": "eslint src --fix",
-    "format": "npm run format-css && npm run format-js",
-    "format-css": "prettier --write src/**/*.{css,scss}",
-    "format-js": "prettier --write src/**/*.{js,jsx}"
+    "android": "react-native run-android",
+    "build:web": "expo build:web",
+    "ios": "react-native run-ios",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/core": "~7.9.0",
