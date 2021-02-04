@@ -3,11 +3,12 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from 'react-navigation-bottom-tabs-no-warnings';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import HP from 'screens/health';
 import { tailwind } from '@/tailwind';
-import { AbilityScoreDice, RegularDice } from '@/dice/dicebox';
 import { theme, LinkingUrls } from '@/Constants';
 
+import HP from 'screens/health';
+import RegularDice from 'screens/dice/RegularDice'
+import AbilityScoreDice from 'screens/dice/AbilityScoreDice'
 const Tab = createBottomTabNavigator();
 
 export default function TabNav() {
@@ -49,8 +50,6 @@ export default function TabNav() {
   );
 }
 const tw = StyleSheet.create({
-  label: {
-    ...tailwind(`font-semibold pb-1`),
-  },
+  label: tailwind(`font-semibold pb-1`),
   bar: tailwind(`bg-purple-500 w-full justify-center mx-auto`),
 });
