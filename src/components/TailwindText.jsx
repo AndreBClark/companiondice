@@ -13,6 +13,7 @@ const TailwindText = props => {
     weight: `font-${props.weight || 'semibold'}`,
     color: `text-${props.color || 'green-400'}`,
     align: `text-${props.align || 'center'}`,
+    width: `w-${props.width || 'full'}`
   };
   const fontFamily = { fontFamily: `Inter_400Regular`}
     return (
@@ -22,6 +23,7 @@ const TailwindText = props => {
       style={[
         tailwind(getStyleString(tw)),
         fontFamily,
+
         props.style, 
       ]}>
       {props.children}

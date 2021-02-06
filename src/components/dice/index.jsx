@@ -40,7 +40,11 @@ const Dice = props => {
           onPress={handleDiceRoll}
           style={[tw.dice, props.smallDice && props.smallDice]}>
           <TailwindText
-            style={tw.number} size={isStatsDice ? "4xl" : "7xl"} color="purple-800">
+            style={tw.number} 
+            size={isStatsDice ? "4xl" : "7xl"} 
+            color="purple-800"
+            width={isStatsDice ? "12" : "28"}
+          >
             {result}
           </TailwindText>
           <SpinnableView
