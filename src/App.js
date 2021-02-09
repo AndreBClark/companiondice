@@ -7,7 +7,7 @@ import { Inter_400Regular, Inter_700Bold, useFonts } from '@expo-google-fonts/in
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as Font from 'expo-font'
 
-import { DiceSidesProvider } from 'hooks/useDiceSides';
+import { DiceSidesProvider } from '_?/useDiceSides';
 import { tailwind } from '@/tailwind'
 import Header from '@/title'
 import TabNav from '@/menu/tabNavigation';

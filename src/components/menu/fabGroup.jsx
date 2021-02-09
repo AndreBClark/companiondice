@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native'
 import { FAB } from 'react-native-paper';
-import { useDiceSides } from 'hooks/useDiceSides';
+import useDiceSides from '_?/useDiceSides';
 import { theme } from '@/Constants';
 import { tailwind } from '@/tailwind';
 const FabGroup = props => {
