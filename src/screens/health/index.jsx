@@ -1,90 +1,109 @@
-import React from 'react';
-import { HPButton } from '../../components/Button';
-import { useHP } from '../../hooks/useHP';
+import React, { useEffect } from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
-import { tailwind } from '../../components/tailwind';
-import TailwindText from '../../components/TailwindText';
-import { theme } from '../../components/Constants';
+import { HPButton } from '@/Button';
+import useHP from '_?/useHP';
+import TailwindText from '@/TailwindText'
+import { tailwind } from '@/tailwind'
+import { theme } from '@/Constants'
+const HPInput = props => {
+  return(
+    <View style={tw.inputContainer}>
+      <TailwindText size="2xl">{props.Label}</TailwindText>
+        <TextInput
+          {...props}
+          selectionColor={theme.colors.primary}
+          keyboardType="numeric"
+          keyboardAppearance="dark"
+          textContentType="none"
+          textAlign="center"
+          maxLength={3}
+          style={tw.input}
+        />
+    </View>
+  )
+}
 
-const HPInput = props => (
-  <TextInput 
-    {...props}
-    selectionColor={theme.colors.primary}
-    keyboardType="numeric"
-    keyboardAppearance="dark"
-    textContentType="none"
-    textAlign="center"
-    maxLength={3}
-    style={tw.input}
-  />
-)
-const HealthTracker = () => {
-  const { hitpoints = 0, maxHP = 0, setHitpoints, setMaxHP, modifyHP, longRest } = useHP();
-  const onchangeHP = () => {
-    val => setHitpoints(Number(val));
-  };
-  const onchangeMaxHP = () => {
-    val => setMaxHP(Number(val));
-  };
-  const hitpointString = hitpoints.toString();
-  const maxHPString = maxHP.toString();
-
+const HealButtonGroup = ({ operator = 1, update, Label = "Heal"}) => {
+  const numbers = [1,5,10];
+  const isPositive = operator === 1 ? '+' : '-';
+  const buttonGroup = numbers.map(
+    number =>
+      <HPButton
+        key={number}
+        onPress={() => update(number, operator)}
+        Label={`${isPositive+number}`}
+      />
+  )
   return (
-    <View style={tw.container}>
-      <View style={tw.col}>
-        <HPButton onPress={longRest} Label="Long Rest" />
+    <View>
+      <TailwindText size="4xl" weight="bold">
+        {Label}
+      </TailwindText>
+      <View style={tw.row}>
+        {buttonGroup}
       </View>
-      <View>
-        <TailwindText size="4xl" weight="bold">
-          Heal
-        </TailwindText>
-        <View style={tw.col}>
-          <HPButton onPress={() => modifyHP(1)} Label="+" />
-          <HPButton onPress={() => modifyHP(5)} Label="5" />
-          <HPButton onPress={() => modifyHP(10)} Label="10" />
-        </View>
+    </View>
+  )
+}
+export default function HealthTracker() {
+  const {
+    setMaxHP,
+    setCurrentHP,
+    HPValue,
+    maxHPValue,
+    getMaxHP,
+    getCurrentHP,
+    updateHP,
+    resetHP,
+  } = useHP();
+  useEffect(() => {
+    getMaxHP();
+    getCurrentHP();
+  });
+  const HPString = HPValue.toString();
+  const maxHPString = maxHPValue.toString();
+  return (
+    <View
+      style={tw.container}
+    >
+      <View style={tw.row}>
+        <HPButton onPress={resetHP} Label="Long Rest" />
       </View>
-      <View style={[tailwind(`flex flex-row my-4`), { gap: '1rem' }]}>
-        <View style={tw.inputContainer}>
-          <TailwindText size="2xl">Current</TailwindText>
-          <HPInput 
-            onChangeText={onchangeHP}
-            value={hitpointString}
-          />
-        </View>
+      <HealButtonGroup update={updateHP} />
+      <View style={tw.row}>
+        <HPInput
+          Label="Current"
+          onChangeText={val => setCurrentHP(val)}
+          onSubmitEditing={() => setCurrentHP(HPValue)}
+          value={HPString}
+        />
         <TailwindText style={tw.slash} size="7xl" weight="black">
           /
         </TailwindText>
-        <View style={tw.inputContainer}>
-          <TailwindText size="2xl">Max</TailwindText>
-          <HPInput
-            onChangeText={onchangeMaxHP}
-            value={maxHPString}
-          />
-        </View>
+        <HPInput
+          Label="Max"
+          onChangeText={val => setMaxHP(val)}
+          onSubmitEditing={()=> setMaxHP(maxHPValue)}
+          value={maxHPString}
+        />
       </View>
-      <View>
-        <TailwindText size="4xl" weight="bold">
-          Damage
-        </TailwindText>
-        <View style={tw.col}>
-          <HPButton onPress={() => modifyHP(-1)} Label="-" />
-          <HPButton onPress={() => modifyHP(-5)} Label="5" />
-          <HPButton onPress={() => modifyHP(-10)} Label="10" />
-        </View>
-      </View>
+      <HealButtonGroup operator={-1} update={updateHP} Label="Damage" />
     </View>
   );
-};
+}
+
 const tw = StyleSheet.create({
   container: tailwind(
-    `max-w-2xl text-center mx-auto mt-8 text-indigo-600 justify-center h-full w-full`
+    `max-w-2xl text-center mx-auto mt-8 justify-center h-full w-full`
   ),
-  inputContainer: tailwind(
-    `flex flex-1 flex-col justify-center font-black bg-purple-700 rounded-lg`
-  ),
-  input: tailwind(`w-full text-6xl text-center text-green-400`),
+  inputContainer: {
+    backgroundColor: theme.colors.card,
+    ...tailwind(`flex flex-1 flex-col mx-4 justify-center font-black rounded-lg`),
+  },
+  input: {
+    color: theme.colors.primary,
+    ...tailwind(`w-full text-6xl text-center`),
+  },
   slash: tailwind(`flex-col justify-center pt-4 flex-1`),
-  col: tailwind(`flex flex-row mx-2`),
+  row: tailwind(`flex flex-row mx-2 my-4`)
 });
-export default HealthTracker;
