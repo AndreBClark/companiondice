@@ -14,7 +14,7 @@ export const LinkingUrls = {
 
 
 
-const EldritchBlast = {
+const EldritchBlast = {  // eslint-disable-line no-unused-vars
   ...DarkTheme,
   dark: true,
   colors: {
@@ -35,7 +35,7 @@ const EldritchBlast = {
     disabled: getColor('green-900')
   },
 };
-const AmberSilver = {
+const AmberSilver = { // eslint-disable-line no-unused-vars
   ...DarkTheme,
   dark: true,
   colors: {

@@ -20,7 +20,7 @@ export default function TabNav() {
           labelStyle: tw.label,
         }}
         screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, size }) => {
+          tabBarIcon: ({ focused, size }) => { // eslint-disable-line react/display-name
             let iconName;
             switch (route.name) {
               case 'health': iconName = focused

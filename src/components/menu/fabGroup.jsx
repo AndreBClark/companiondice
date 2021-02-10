@@ -3,10 +3,9 @@ import { StyleSheet } from 'react-native'
 import { FAB } from 'react-native-paper';
 import  { useDiceSides } from 'hooks/useDiceSides';
 import { theme } from '@/Constants';
-import { tailwind } from '@/tailwind';
-const FabGroup = props => {
+const FabGroup = () => {
   const [useSidesState, useSidesDispatch] = useDiceSides();
-  const [isVisible, setVisibility] = useState(true);
+  const [isVisible ] = useState(true);
   const sides = useSidesState.sides;
   const [state, setState] = useState({ open: false });
   const onStateChange = ({ open }) => {
