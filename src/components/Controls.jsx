@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { useRoll } from '_?/useRoll';
+import { useRoll } from 'hooks/useRoll';
 import { Button } from '@/Button';
 import { tailwind } from '@/tailwind';
 import TailwindText from '@/TailwindText';

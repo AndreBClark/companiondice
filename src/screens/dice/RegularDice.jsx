@@ -1,6 +1,6 @@
 import React from 'react';
-import { useRoll } from '_?/useRoll';
-import { useDiceSides } from '_?/useDiceSides';
+import { useRoll } from 'hooks/useRoll';
+import { useDiceSides } from 'hooks/useDiceSides';
 import { D4, D6, D8, D10, D12, D20 } from '@/Svg';
 import Controls from '@/Controls';
 import FabGroup from '@/menu/fabGroup';

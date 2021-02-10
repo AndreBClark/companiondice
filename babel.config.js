@@ -9,7 +9,7 @@ module.exports = function(api) {
           root: ["./src/"],
           alias: {
             "@": "./src/components",
-            "_?": "./src/hooks"
+            "hooks": "./src/hooks"
           }
         }
       ]

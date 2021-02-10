@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring/native';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { useRoll } from '_?/useRoll';
+import { useRoll } from 'hooks/useRoll';
 import { tailwind } from '@/tailwind';
 import TailwindText from '@/TailwindText';
 import { springConfig, theme } from '@/Constants';

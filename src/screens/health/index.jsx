@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import { HPButton } from '@/Button';
-import useHP from '_?/useHP';
+import useHP from 'hooks/useHP';
 import TailwindText from '@/TailwindText'
 import { tailwind } from '@/tailwind'
 import { theme } from '@/Constants'
