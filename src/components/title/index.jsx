@@ -66,11 +66,18 @@ const Credits = () => {
 
 const styles = StyleSheet.create({
   heading1: tailwind(`my-4`),
-  header: tailwind(`w-full text-green-400 text-center bg-purple-500 pt-4`),
-  modal: tailwind(
-    `justify-around font-bold mx-auto h-96 rounded bg-purple-500 flex-col flex text-center w-72`
-  ),
-  infoWrapper: tailwind(`text-green-400 px-2`),
+  header: {
+    backgroundColor: theme.colors.card,
+    ...tailwind(`w-full text-center pt-4`),
+  },
+  modal: {
+    backgroundColor: theme.colors.card,
+    ...tailwind(`justify-around font-bold mx-auto h-96 rounded flex-col flex text-center w-72`),
+  },
+  infoWrapper: {
+    color: theme.colors.primary,
+    ...tailwind(`px-2`),
+  },
   paragraphCenter: tailwind(`mx-auto text-center`),
   flexCol: tailwind(`flex flex-col justify-center text-center`),
 });

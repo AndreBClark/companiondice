@@ -16,7 +16,7 @@ export default function TabNav() {
     <NavigationContainer linking={{ LinkingUrls }} theme={theme}>
       <Tab.Navigator
         tabBarOptions={{
-          style: tw.buttonList,
+          style: tw.bar,
           labelStyle: tw.label,
         }}
         screenOptions={({ route }) => ({
@@ -50,6 +50,9 @@ export default function TabNav() {
   );
 }
 const tw = StyleSheet.create({
-  label: tailwind(`font-semibold pb-1`),
-  bar: tailwind(`bg-purple-500 w-full justify-center mx-auto`),
+  label: tailwind(`font-bold uppercase pb-1`),
+  bar: {
+    backgroundColor: theme.colors.card,
+    ...tailwind(`w-full justify-center mx-auto border-transparent`),
+  }
 });

@@ -1,4 +1,7 @@
 {
+  "flex-1": {
+    "flex": 1
+  },
   "mx-auto": {
     "marginLeft": "auto",
     "marginRight": "auto"

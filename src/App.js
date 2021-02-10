@@ -39,18 +39,20 @@ export default function App() {
   }
 
   return (
-    <View style={tw.container}>
-      <Header />
-      <Provider theme={theme} >
-        <DiceSidesProvider>
-          <TabNav />
-        </DiceSidesProvider>
-      </Provider>
+    <Provider theme={theme} >
+      <View style={tw.container}>
+        <Header />
+          <DiceSidesProvider>
+            <TabNav />
+          </DiceSidesProvider>
+      </View>
       <StatusBar style="dark" />
-    </View>
+    </Provider>
   );
 }
 const tw = StyleSheet.create({
-  container: tailwind(`relative justify-between w-full h-full bg-purple-800 overflow-hidden`),
-  paragraph: tailwind('text-green-400 items-center')
+  container: {
+    backgroundColor: theme.colors.background,
+    ...tailwind(`relative justify-between w-full h-full overflow-hidden`),
+  },
 });

@@ -4,7 +4,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { useRoll } from '_?/useRoll';
 import { tailwind } from '@/tailwind';
 import TailwindText from '@/TailwindText';
-import { springConfig } from '@/Constants';
+import { springConfig, theme } from '@/Constants';
 
 const SpinnableView = animated(View);
 
@@ -31,7 +31,7 @@ const Dice = props => {
     config: springConfig
   })
   const BlingEffect = {
-    filter: blur.radius.interpolate(size => `drop-shadow(0 0 ${size}px #4fd1c5)`)
+    filter: blur.radius.interpolate(size => `drop-shadow(0 0 ${size}px ${theme.colors.primary})`)
   }
   return (
     <View style={tw.container}>
@@ -42,8 +42,10 @@ const Dice = props => {
           <TailwindText
             style={tw.number} 
             size={isStatsDice ? "4xl" : "7xl"} 
-            color="purple-800"
-            width={isStatsDice ? "12" : "28"}
+            color={theme.colors.background}
+            width={isStatsDice ? "12" : "44"}
+            adjustsFontSizeToFit
+            numberOfLines={1}
           >
             {result}
           </TailwindText>
@@ -64,11 +66,11 @@ const Dice = props => {
 const tw = StyleSheet.create({
   container: tailwind('justify-center items-center my-auto'),
   dice: tailwind(
-    `max-w-md flex font-bold relative m-auto items-center justify-center relative h-64 w-64`
+    `max-w-md flex font-bold relative m-auto items-center justify-center relative h-64 w-64 z-0`
   ),
-  number: tailwind(
-    `bg-green-500 rounded-full justify-center m-auto items-center absolute justify-center z-10`
-  ),
+  number: {
+    ...tailwind(`rounded-full justify-center m-auto items-center absolute justify-center z-10`),
+  },
   spinnableView: tailwind(`w-full h-full absolute top-0 left-0 justify-center items-center`),
   dicebox: tailwind(`justify-center my-auto w-full max-w-xl mx-auto h-full`),
 });

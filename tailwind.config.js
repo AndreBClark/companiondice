@@ -1,4 +1,5 @@
 const darken = require('polished/lib/color/darken');
+const colors = require('tailwindcss/colors')
 module.exports = {
     future: {
         removeDeprecatedGapUtilities: true,
@@ -43,7 +44,8 @@ module.exports = {
                     300: darken(.1, "#44337a"),
                     200: darken(.05, "#44337a"),
                     100: darken(.025, "#44337a"),
-                }
+                },
+                yellow: colors.orange,
             }
         }
     },

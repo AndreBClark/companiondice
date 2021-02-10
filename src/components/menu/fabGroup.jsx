@@ -87,9 +87,9 @@ const tw = StyleSheet.create({
   FabGroup: {
   backgroundColor: theme.colors.primary,
   },
-  Fab: tailwind(''),
   actions: {
-    backgroundColor: theme.colors.card
+    backgroundColor: theme.colors.card,
+    color: theme.colors.primary
   }
 })
 

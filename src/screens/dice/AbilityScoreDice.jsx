@@ -4,7 +4,7 @@ import { tailwind } from '@/tailwind';
 import TailwindText from '@/TailwindText';
 import { D6 } from '@/Svg';
 import Dice from '@/dice'
-
+import { theme } from '@/Constants'
 const SmallDice = props => {
   return(
     <Dice 
@@ -39,13 +39,14 @@ const AbilityScoreDice = () => {
           Roll your ability scores with 3d6 method
         </TailwindText>
         <View style={tw.graceRules}>
-          <TailwindText align="left"> Reroll Ones
-            <TailwindText color="green-100" weight="bold">
+          <TailwindText align="left">Reroll Ones
+            <TailwindText color={theme.colors.error} weight="bold">
               {isGraceEnabled ? ' enabled' : ' disabled'}
             </TailwindText>
           </TailwindText>
           <Switch
-            size='large'
+            color={theme.colors.primary}
+            trackColor={theme.colors.card}
             onValueChange={handleChange}
             value={isGraceEnabled}
           />
