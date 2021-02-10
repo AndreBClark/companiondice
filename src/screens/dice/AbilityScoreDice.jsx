@@ -7,7 +7,7 @@ import Dice from '@/dice'
 import { theme } from '@/Constants'
 const SmallDice = props => {
   return(
-    <Dice 
+    <Dice
       min={props.isGraceEnabled ? 6 : 3} 
       max={18} 
       smallDice={tw.smallDice}>
@@ -20,18 +20,17 @@ const AbilityScoreDice = () => {
   function handleChange() {
     ToggleGraceRules(!isGraceEnabled)
   }
+  const numbers = [1, 2, 3, 4, 5, 6];
   return (
     <>
-      <View style={tailwind('my-auto')}>
+      <View style={tw.container}>
         <View style={tw.row}>
-          <SmallDice isGraceEnabled={isGraceEnabled} />
-          <SmallDice isGraceEnabled={isGraceEnabled} />
-          <SmallDice isGraceEnabled={isGraceEnabled} />
-        </View>
-        <View style={tw.row}>
-          <SmallDice isGraceEnabled={isGraceEnabled} />
-          <SmallDice isGraceEnabled={isGraceEnabled} />
-          <SmallDice isGraceEnabled={isGraceEnabled} />
+          {numbers.map(number => (
+            <SmallDice 
+              key={number.toString()}
+              isGraceEnabled={isGraceEnabled}
+            />
+          ))}
         </View>
       </View>
       <View style={tw.body}>
