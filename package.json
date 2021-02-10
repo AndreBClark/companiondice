@@ -7,6 +7,7 @@
     "tunnel": "expo start --tunnel",
     "web": "expo start --web",
     "lint": "eslint src --fix",
+    "reloadstyles": "npx create-tailwind-rn",
     "android": "react-native run-android",
     "build:web": "expo build:web",
     "ios": "react-native run-ios",
