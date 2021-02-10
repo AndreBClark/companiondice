@@ -28,7 +28,7 @@ const Controls = props => {
             onPress={decrementAmount}
             oneOrLess={oneOrLess} Label="-" />
         </View>
-        <TailwindText style={tw.diceIndicator} weight="bold" size="5xl">
+        <TailwindText style={tw.diceIndicator} width="1/2" weight="bold" size="5xl">
           {props.amount}d{props.sides}
         </TailwindText>
         <View style={tw.buttonColumn}>
