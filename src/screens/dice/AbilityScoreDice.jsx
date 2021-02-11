@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { tailwind } from '@/tailwind';
 import TailwindText from '@/TailwindText';
-import { D6 } from '@/Svg';
+import { D6 } from '@/dice/Svg';
 import Dice from '@/dice';
 import { theme } from '@/Constants';
 import { Switch } from 'react-native-paper';

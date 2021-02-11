@@ -3,8 +3,8 @@ import useRoll from 'hooks/useRoll';
 import { useDiceSides } from 'hooks/useDiceSides';
 import {
   D4, D6, D8, D10, D12, D20,
-} from '@/Svg';
-import Controls from '@/Controls';
+} from '@/dice/Svg';
+import Controls from '@/dice/Controls';
 import FabGroup from '@/menu/fabGroup';
 import Dice from '@/dice';
 
