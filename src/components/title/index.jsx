@@ -11,7 +11,7 @@ import { theme } from '@/Constants';
 const tw = StyleSheet.create({
   heading1: tailwind('my-4'),
   header: {
-    backgroundColor: theme.colors.card,
+    backgroundColor: theme.colors.accent,
     ...tailwind('w-full text-center pt-4'),
   },
   modal: {

@@ -12,7 +12,7 @@ import AbilityScoreDice from 'screens/dice/AbilityScoreDice';
 const tw = StyleSheet.create({
   label: tailwind('font-bold uppercase pb-1'),
   bar: {
-    backgroundColor: theme.colors.card,
+    backgroundColor: theme.colors.accent,
     ...tailwind('w-full justify-center mx-auto border-transparent'),
   },
 });
