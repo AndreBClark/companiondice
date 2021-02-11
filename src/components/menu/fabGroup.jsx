@@ -1,16 +1,27 @@
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
-import  { useDiceSides } from 'hooks/useDiceSides';
+import { useDiceSides } from 'hooks/useDiceSides';
 import { theme } from '@/Constants';
+
+const tw = StyleSheet.create({
+  FabGroup: {
+    backgroundColor: theme.colors.primary,
+  },
+  actions: {
+    backgroundColor: theme.colors.card,
+    color: theme.colors.primary,
+  },
+});
+
 const FabGroup = () => {
   const [useSidesState, useSidesDispatch] = useDiceSides();
-  const [isVisible ] = useState(true);
-  const sides = useSidesState.sides;
+  const [isVisible] = useState(true);
+  const { sides } = useSidesState;
   const [state, setState] = useState({ open: false });
   const onStateChange = ({ open }) => {
     setState({ open });
-  }
+  };
   const { open } = state;
   return (
     <FAB.Group
@@ -26,7 +37,7 @@ const FabGroup = () => {
           icon: 'dice-d4',
           label: 'D4',
           color: theme.colors.primary,
-          onPress: () => useSidesDispatch({ type: 'd4'}),
+          onPress: () => useSidesDispatch({ type: 'd4' }),
           style: tw.actions,
           small: false,
 
@@ -68,9 +79,9 @@ const FabGroup = () => {
           label: 'D20',
           color: theme.colors.primary,
           style: tw.actions,
-          onPress: () => useSidesDispatch({type: 'd20'}),
+          onPress: () => useSidesDispatch({ type: 'd20' }),
           small: false,
-        }
+        },
       ]}
       onStateChange={onStateChange}
       onPress={() => {
@@ -81,15 +92,5 @@ const FabGroup = () => {
     />
   );
 };
-
-const tw = StyleSheet.create({
-  FabGroup: {
-  backgroundColor: theme.colors.primary,
-  },
-  actions: {
-    backgroundColor: theme.colors.card,
-    color: theme.colors.primary
-  }
-})
 
 export default FabGroup;

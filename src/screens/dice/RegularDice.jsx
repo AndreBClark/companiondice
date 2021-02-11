@@ -1,15 +1,17 @@
 import React from 'react';
-import { useRoll } from 'hooks/useRoll';
+import useRoll from 'hooks/useRoll';
 import { useDiceSides } from 'hooks/useDiceSides';
-import { D4, D6, D8, D10, D12, D20 } from '@/Svg';
+import {
+  D4, D6, D8, D10, D12, D20,
+} from '@/Svg';
 import Controls from '@/Controls';
 import FabGroup from '@/menu/fabGroup';
-import Dice from '@/dice'
+import Dice from '@/dice';
 
 const RegularDice = () => {
   const { amount, setAmount } = useRoll();
   const [useSidesState] = useDiceSides();
-  const sides = useSidesState.sides;
+  const { sides } = useSidesState;
 
   function DiceSwitch() {
     switch (sides) {
