@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Pressable } from 'react-native';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-import { CosmicSVG, NateSVG, SvgIcon as SvgWrapper } from '../Svg';
-import { tailwind } from '../tailwind';
-import TailwindText from '../TailwindText';
-import Anchor from '../Anchor';
-import Modal from '../Modal';
-import { theme } from '../Constants';
+import { CosmicSVG, NateSVG, SvgIcon as SvgWrapper } from '@/dice/Svg';
+import { tailwind } from '@/tailwind';
+import TailwindText from '@/TailwindText';
+import Anchor from '@/Anchor';
+import Modal from '@/Modal';
+import { theme } from '@/Constants';
 
 const tw = StyleSheet.create({
   heading1: tailwind('my-4'),
