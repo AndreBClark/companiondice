@@ -29,8 +29,10 @@ export const SvgIcon = ({
 const Dice = ({
   viewBox,
   children,
+  ...props
 }) => (
   <Svg
+    {...props}
     stroke={theme.colors.primary}
     fill={theme.colors.primary}
     viewBox={viewBox}
