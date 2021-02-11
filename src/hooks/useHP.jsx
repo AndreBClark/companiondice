@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function useMaxHP() {
   const { getItem, setItem } = useAsyncStorage('Max HP');
-  const [maxHPValue, setMaxHPValue ] = useState(0);
+  const [maxHPValue, setMaxHPValue] = useState(0);
 
   const getMaxHP = async () => {
     const item = await getItem();
@@ -11,7 +11,7 @@ function useMaxHP() {
     return Number(item);
   };
 
-  const setMaxHP = async newValue => {
+  const setMaxHP = async (newValue) => {
     await setItem(newValue);
     setMaxHPValue(newValue);
   };
@@ -19,12 +19,12 @@ function useMaxHP() {
   return {
     setMaxHP,
     getMaxHP,
-    maxHPValue
-  }
+    maxHPValue,
+  };
 }
 function useCurrentHP() {
   const { getItem, setItem } = useAsyncStorage('Current HP');
-  const [ HPValue, setHPValue ] = useState(0);
+  const [HPValue, setHPValue] = useState(0);
   const { maxHPValue, getMaxHP } = useMaxHP();
   const maxHP = Number(maxHPValue);
   const gmaxHP = getMaxHP();
@@ -35,7 +35,7 @@ function useCurrentHP() {
     return Number(item);
   };
 
-  const setCurrentHP = async newValue => {
+  const setCurrentHP = async (newValue) => {
     await setItem(newValue);
     setHPValue(newValue.toString());
   };
@@ -44,28 +44,26 @@ function useCurrentHP() {
     const newHP = Number(currentHP) + operand * operator;
     const isPositive = newHP >= 0;
     const underLimit = newHP <= maxHP;
-    let absoluteValue = isPositive ? newHP : 0;
-    let validatedValue = underLimit ? absoluteValue : maxHP;
-    setCurrentHP(validatedValue.toString())
-  }
+    const absoluteValue = isPositive ? newHP : 0;
+    const validatedValue = underLimit ? absoluteValue : maxHP;
+    setCurrentHP(validatedValue.toString());
+  };
   const resetHP = () => {
     setCurrentHP((maxHP || gmaxHP).toString());
-  }
+  };
 
   return {
     setCurrentHP,
     getCurrentHP,
     HPValue,
     updateHP,
-    resetHP
-  }
+    resetHP,
+  };
 }
-
-
 
 export default function useHP() {
   return {
     ...useCurrentHP(),
     ...useMaxHP(),
-  }
+  };
 }
